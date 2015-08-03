@@ -2,10 +2,10 @@
 
 This is the summary of my book.
 
-* [欢迎](section1/README.md)
-    * [快速入门](section1/example1.md)
-    * [hello西瓜](section1/example2.md)
-    * [视频教程](section1/example3.md)
+* [欢迎](section1/index.md)
+    * [快速入门](section1/quick_start.md)
+    * [hello西瓜](section1/hello_xgsdk.md)
+    * [视频教程](section1/video_tutorial.md)
 
 * [客户端接入指南](section2/README.md)
     * [cocos引擎](section2/Cocos2d.md)
