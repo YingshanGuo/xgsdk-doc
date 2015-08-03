@@ -2,7 +2,7 @@
 
 This is the summary of my book.
 
-* [欢迎](section1/index.md)
+* [10分钟掌握西瓜SDK](section1/index.md)
     * [快速入门](section1/quick_start.md)
     * [hello西瓜](section1/hello_xgsdk.md)
     * [视频教程](section1/video_tutorial.md)
