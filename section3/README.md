@@ -1,7 +1,13 @@
-#<center><b><font face='微软雅黑' >-----西瓜SDK服务端接入指南-----</font></b></br></center>
+#<center><b><font face='微软雅黑' >西瓜SDK服务端接入指南</font></b></br></center>
 ----
 
 
+<font
+face="微软雅黑">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本章节介绍游戏服务器如何接入西瓜服务器，适用于游戏服务端开发人员。游戏服务端开发人员可以忽略客户端引擎的差异，直接参考本章节的接入文档进行接入，其中账号验证和支付验证为必接接口（接入文档分别对应<b>[session验证](./session.md)</b>和<b>[支付通知](./支付通知.md)</b>）。在进行服务端接入之前，建议首先阅读《西瓜SDK流程说明》，可以有效的提高接入效率。
+</font></br>
+
+
+***
 
 <b>[session验证](./session.md)</b>
 

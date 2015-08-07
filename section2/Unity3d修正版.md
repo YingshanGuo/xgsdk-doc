@@ -22,34 +22,14 @@
 </script>
 <div id="category" style="display:none"></div>
 
-****
-<!--
-###文档信息
-
-	渠道SDK Unity3d Android客户端接入文档
-	作者：林立
-	SDK版本：0.9.0
-	文档版本：0.9.0
-	日期：2015.7.29
--->
-
-###文档版本说明
-<table>
-<tr>
-<td>SDK版本</td><td>文档版本</td> <td>DK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
-</tr>
-<tr>
-<td>0.9.0 </td><td>0.9.0</td> <td>初版</td> <td>初版</td> <td>2015.7.29</td>
-</tr>
-</table>
-
-----
 
 
-##一、西瓜渠道版SDK概述
-
-	此文档为Unity3d引擎Android游戏客户端接入文档。详细说明了接入渠道版SDK需要的资料和开发步骤
-
+##一、文档概述
+<font face="微软雅黑">此文档为Unity3d引擎Android游戏客户端接入文档。</br>
+本文介绍如何在Unity3d引擎平台下，Android游戏客户端快速接入西瓜SDK。
+文档分成三大部分:接入环境下载/搭建，西瓜SDK接口说明以及参考代码。逐步细述了整个接入过程；同时罗列出了4种类型的接口，
+分别为：用户相关接口、充值接口、统计接口、扩展接口，便于游戏方的接入人员可以按照需求更加快速便捷的进行接入。
+</font>
 
 
 ##二、环境搭建
@@ -59,21 +39,58 @@
 	JDK6以上
 	Android4.0.3以上
 
-###2.2 SDK下载包
+###2.2开发工具
+	Unity4.6.2f1
+	Android SDK
 
-	<p></p>
+
+###2.3 SDK下载包
+
+
 <div>
 <b><font face="微软雅黑" size='3' color='#FF0000'>渠道版SDK下载包包含：</font></br></b>
 <font face="微软雅黑" color='#0000FF'>&nbsp&nbsp&nbsp&nbsp 1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-core.jar，xgsdk-data.jar，xgsdk-common-lib.jar，xgsdk-lib.jar。</font> </br>
 <font face="微软雅黑" color='0000FF'>&nbsp&nbsp&nbsp&nbsp 2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs、SafetyValue.cs、XgsdkDemo.cs。</font></br>
 <font face="微软雅黑" color='0000FF'>&nbsp&nbsp&nbsp&nbsp 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</font></br>
+M
+</div>
 
+###2.4 接入步骤
+####2.4.1.将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中<br/>
+
+<div>
+<img src='./img/CsFile.png'>
+</div>
+
+<div>
+<img src='img/jar.png'>
+</div>
+
+<font face="微软雅黑" size='3' color='#FF0000'>注意：导入的cs脚本文件名称不可修改。</font>
+
+####2.4.2导入文件
+
+打开Unity,点击File->Open Project->Open Other... ， 打开文件所在的目录，将工程导入。
+
+<div>
+<img src='img/import1.png'>
+</div>
+
+####2.4.3配置SDK路径
+
+点击Edit->Preferences，打开Unity Preferences窗口,点击External Tools，在Android SDK Location配置自己的Android SDK路径
+
+<div>
+<img src = 'img/Preferences.png'>
 </div>
 
 
-###2.3 项目配置
 
-####2.3.1 配置AndroidManifext.xml文件
+
+####2.4.4.配置AndroidMainfest.xml文件<br/>
+
+
+
 **配置权限**
 
 
@@ -92,6 +109,9 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<div>
+<img src='img/AndroidMainFest1.png'>
+</div>
 
 **<application>标签中<activity>标签的属性android:name必须配置成com.xgsdk.client.unity3d.XGUnityActivity**
 
@@ -111,18 +131,59 @@
         </activity>
     </application>
 
+<div>
+<img src='img/AndroidMainFest2.png'>
+</div>
+
+####2.4.5 运行
+
+首先点击Main Camera，是否关联脚本，若还未关联，则将脚本添加上去。
+
+<div>
+<img src='img/MainCamera.png'>
+</div>
+
+然后点击File->Build Setting->Player Settings，在Other Settings中，配置Bundle Identifier，设置Company Name和Product Name。
+
+<div>
+<img src='img/identifier.png'>
+</div>
+
+接下来点击Build Settings中Platform的Android，然后点击Switch Platform,再执行build and run，这样，demo就能在手机上运行了。
+
+<div>
+<img src='img/Build.png'>
+</div>
 
 
-####2.3.2 导入SDK及插件
-
-将下载的SDK包中的所有jar包拷贝至<项目目录>\Assets\Plugins\Android\libs，并将所有的cs脚本文件放入<项目目录>\Assets中。<br/>
-<font face="微软雅黑" size='3' color='#FF0000'>注意：导入的cs脚本文件名称不可修改。</font>
 
 ##三、接口接入
 
-###3.1必接接口
+###3.1 用户相关接口
 
-####3.1.1 登录接口
+####3.1.1 初始化
+
+<font face="微软雅黑" size='3' color='#0000ff'>西瓜SDK2.0不提供初始化接口，只提供初始化失败回调方法。</font>
+
+**回调方法：**
+
+#####3.1.1.1初始化失败回调
+
+	public void onInitFail(string json){
+		Dictionary<string, object> retTable = MiniJSON.Json.Deserialize(json) as Dictionary<string, object>;
+		int code = Convert.ToInt32(retTable ["code"]);
+		string msg = retTable ["msg"] as String;
+		Debug.Log ("InitFail,code: " + code + " message:" + msg);
+
+	}
+
+**回调说明：**
+当游戏初始化失败时，会收到初始化失败回调。
+
+**参数说明：**
+返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是初始化失败的信息。
+
+####3.1.2 登录接口（必接）
 
 	public static void login(string customParams)
         {
@@ -131,13 +192,158 @@
             #endif
         }
 
+
 **接口说明：**
 登录时调用。
 
 **参数说明：**
 customParams参数用于扩展，接入时直接置空即可。
 
-####3.1.2 支付接口
+**回调方法:**<br/>
+
+#####3.1.2.1 登录成功回调：
+
+	public void onLoginSuccess(string msg) {
+		Debug.Log ("LoginSuccess, authinfo is:" + msg);
+	}
+
+**回调说明：**
+登录成功之后，会收到登录成功回调。
+
+**参数说明：**
+返回的参数msg是用户登录成功后的用户信息。
+
+#####3.1.2.2 登录取消回调：
+
+	public void onLoginCancel(string msg){
+		Debug.Log ("LoginCancel, message: " + msg);
+	}
+
+**回调说明：**
+当用户取消登录之后，会受到登录取消的回调。
+
+**参数说明：**
+返回参数msg是登录取消的信息。
+
+#####3.1.2.3 登录失败回调:
+
+	public void onLoginFail(string json){
+		Dictionary<string, object> retTable = MiniJSON.Json.Deserialize(json) as Dictionary<string, object>;
+		int code = Convert.ToInt32(retTable ["code"]);
+		string msg = retTable ["msg"] as String;
+		Debug.Log ("LoginFail,code: " + code + " message:" + msg);
+	}
+
+**回调说明：**
+登录失败后，会收到登录失败的回调。
+
+**参数说明：**
+返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是登录失败的信息。
+
+####3.1.3 登出接口（必接）
+       public static void logout(string customParams)
+       {
+           Debug.Log("call xgsdk logout...");
+           #if UNITY_ANDROID
+           callSdkApi("logout", customParams);
+           #endif
+       }
+
+**接口说明：**
+登出时调用。
+
+**参数说明：**
+customParams参数用于扩展，接入时直接置空即可。
+
+**回调方法：**
+
+
+#####3.1.3.1 登出成功回调
+
+	public void onLogoutSuccess(string msg){
+		Debug.Log ("LogoutSuccess");
+		authinfo = "";
+	}
+
+**回调说明：**
+登出成功后，会收到登出成功的回调。
+
+**参数说明：**
+返回的msg无意义。
+
+#####3.1.3.2 登出失败回调
+
+	public void onLogoutFail(string json){
+		Dictionary<string, object> retTable = MiniJSON.Json.Deserialize(json) as Dictionary<string, object>;
+		int code = Convert.ToInt32(retTable ["code"]);
+		string msg = retTable ["msg"] as String;
+		Debug.Log ("LogoutFail,code: " + code + " message:" + msg);
+	}
+
+**回调说明：**
+登出失败后，会收到登出失败的回调。
+
+**参数说明：**
+返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是登出失败的信息。
+
+
+####3.1.4 退出接口（必接）
+		public static void exit(string customParams)
+		{
+			Debug.Log("call xgsdk exit...");
+			#if UNITY_ANDROID
+			callSdkApi("exit", customParams);
+			#endif
+		}
+
+**接口说明：**
+退出时调用。
+
+**参数说明：**
+customParams参数用于扩展，接入时直接置空即可。
+
+**回调方法：**
+
+#####3.1.4.1 直接退出回调
+
+	public void onExit(string msg){
+		Debug.Log ("Exit");
+	}
+
+**回调说明：**
+直接退出时，会收到直接退出的回调。
+
+**参数说明：**
+参数msg无意义。
+
+#####3.1.4.2 使用游戏方退出回调
+
+	public void onNoChannelExiter(string msg){
+		Debug.Log ("No ChannelExiter");
+	}
+
+**回调说明：**
+使用游戏方退出时，会收到使用游戏方退出的回调。
+
+**参数说明：**
+参数msg无意义。
+
+#####3.1.4.3 取消退出回调
+
+	public void onExitCancel(string msg){
+		Debug.Log("ExitCancel");
+	}
+
+**回调说明：**
+取消退出时，会收到取消退出的回调。
+
+**参数说明：**
+参数msg无意义。
+
+
+###3.2 充值接口
+
+####3.2.1 支付接口（必接）
 		public static void pay(string userid, int productTotalPirce, int productCount,
 		                       int productUnitPrice,string productId,
 		                       string productName,string productDesc,
@@ -242,37 +448,52 @@ customParams参数用于扩展，接入时直接置空即可。
 </tr>
 </table>
 
-####3.1.3 退出接口
-		public static void exit(string customParams)
-		{
-			Debug.Log("call xgsdk exit...");
-			#if UNITY_ANDROID
-			callSdkApi("exit", customParams);
-			#endif
-		}
+**回调方法：**
 
-**接口说明：**
-退出时调用。
+#####3.2.1.1 支付成功回调
 
-**参数说明：**
-customParams参数用于扩展，接入时直接置空即可。
+	public void onPaySuccess(string msg){
+		Debug.Log ("PaySuccess, message:" + msg);
+	}
 
-####3.1.4登出接口
-       public static void logout(string customParams)
-       {
-           Debug.Log("call xgsdk logout...");
-           #if UNITY_ANDROID
-           callSdkApi("logout", customParams);
-           #endif
-       }
+**回调说明：**
+支付成功后，会收到支付成功的回调。
 
-**接口说明：**
-登出时调用。
+**参数说明**
+返回的参数是支付成功的信息。
+
+#####3.2.1.2 支付取消回调
+
+	public void onPayCancel(string msg){
+		Debug.Log ("PayCancel, message:" + msg);
+	}
+
+**回调说明：**
+支付取消后，会收到支付取消回调。
 
 **参数说明：**
-customParams参数用于扩展，接入时直接置空即可。
+返回的参数是支付取消的信息。
 
-####3.1.5 进入游戏
+#####3.2.1.3 支付失败回调
+
+	public void onPayFail(string json){
+		Dictionary<string, object> retTable = MiniJSON.Json.Deserialize(json) as Dictionary<string, object>;
+		int code = Convert.ToInt32(retTable ["code"]);
+		string msg = retTable ["msg"] as String;
+		Debug.Log ("PayFail,code: " + code + " message:" + msg);
+	}
+
+**回调说明：**
+支付失败后，会收到支付失败的回调。
+
+**参数说明：**
+返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是支付失败的信息。
+
+
+
+###3.3 统计相关接口
+
+####3.3.1 进入游戏（必接）
 
 	public static void onEnterGame(string userId, string username, string roleId,
 		                              string roleName, string gender, string level, string vipLevel,
@@ -329,7 +550,7 @@ customParams参数用于扩展，接入时直接置空即可。
 <td>serverName</td><td>string</td><td>服务器名称</td>
 </tr></table>
 
-####3.1.6 创建角色
+####3.3.2 创建角色
 
 		public static void onCreateRole(RoleInfo roleInfo)
 		{
@@ -371,7 +592,7 @@ customParams参数用于扩展，接入时直接置空即可。
 </tr>
 </table>
 
-####3.1.7 角色升级
+####3.3.3 角色升级
 
 		public static void onRoleLevelup(RoleInfo roleInfo)
 		{
@@ -414,88 +635,8 @@ customParams参数用于扩展，接入时直接置空即可。
 </table>
 
 
-###3.2可选接口
 
-####3.2.1 切换账号
-
-		public static void switchAccount()
-		{
-			Debug.Log("call xgsdk switchAccount...");
-			#if UNITY_ANDROID
-			callSdkApi("switchAccount");
-			#endif
-		}
-
-**接口说明：**
-切换账号时调用。
-
-
-####3.2.2 创建角色
-
-		public static void onCreateRole(string roleId, string roleName, string gender,
-		                                string level, string vipLevel, string balance, string partyName)
-		{
-			Debug.Log("call xgsdk createRole...");
-			#if UNITY_ANDROID
-			callSdkApi("onCreateRole", roleId, roleName, gender,
-			           level, vipLevel, balance, partyName);
-			#endif
-		}
-
-**接口说明：**
-创建角色时调用。
-
-**参数说明**
-<table>
-<tr>
-<td>参数名</td><td>类型</td><td>说明</td>
-</tr>
-<tr>
-<td>roleId</td><td>string</td><td>角色ID</td>
-</tr>
-<tr>
-<td>eoleName</td><td>string</td><td>角色名称</td>
-</tr>
-<tr>
-<td>gender</td><td>string</td><td>性别</td>
-</tr>
-<tr>
-<td>level</td><td>string</td><td>等级</td>
-</tr>
-<tr>
-<td>vipLevel</td><td>string</td><td>VIP等级</td>
-</tr>
-<tr>
-<td>balance</td><td>string</td><td>余额</td>
-</tr>
-<tr>
-<td>partyName</td><td>string</td><td>公会名称</td>
-</tr>
-</table>
-
-####3.2.3 角色升级
-
-		public static void onRoleLevelup(string level)
-		{
-			Debug.Log("call xgsdk onRoleLevelup");
-			#if UNITY_ANDROID
-			callSdkApi("onRoleLevelup", level);
-			#endif
-		}
-
-**接口说明：**
-角色升级时调用。
-
-**参数说明**
-<table>
-<tr>
-<td>参数名</td><td>类型</td><td>说明</td>
-</tr>
-<td>level</td><td>string</td><td>等级</td>
-</table>
-
-
-####3.2.5 自定义事件
+####3.3.4 自定义事件
 
 
 		public static void onEvent(string eventID, string content)
@@ -522,7 +663,22 @@ customParams参数用于扩展，接入时直接置空即可。
 </tr>
 </table>
 
-####3.2.6访问用户中心
+###3.4 扩展接口
+
+####3.4.1 切换账号
+
+		public static void switchAccount()
+		{
+			Debug.Log("call xgsdk switchAccount...");
+			#if UNITY_ANDROID
+			callSdkApi("switchAccount");
+			#endif
+		}
+
+**接口说明：**
+切换账号时调用。
+
+####3.4.2 访问用户中心
 
 		public static void openUserCenter()
 		{
@@ -536,7 +692,7 @@ customParams参数用于扩展，接入时直接置空即可。
 访问用户中心时使用。
 
 
-####3.2.7 判断当前渠道是否提供该接口
+####3.4.3 判断当前渠道是否提供该接口
 
 		public static bool isMethodSupport(string methodName)
 		{
@@ -572,7 +728,7 @@ customParams参数用于扩展，接入时直接置空即可。
 </tr>
 </table>
 
-####3.2.8 获取渠道tag
+####3.4.4 获取渠道tag
 
 		public static string getChannelId()
 		{
@@ -598,7 +754,7 @@ customParams参数用于扩展，接入时直接置空即可。
 </tr>
 </table>
 
-####3.2.9 toast功能接口
+####3.4.5 提示接口
 
 		public static void showAndroidToast(string msg)
 		{
@@ -609,182 +765,24 @@ customParams参数用于扩展，接入时直接置空即可。
 		}
 
 **接口说明：**
-用于提示toast想要展示的信息。
+用于显示一个Android平台的toast提示。
 
 **参数说明**
 <table>
 <tr>
 <td>参数名</td><td>类型</td><td>说明</td>
 </tr>
-<td>msg</td><td>string</td><td>toast想要展示的信息</td>
+<td>msg</td><td>string</td><td>待显示的提示信息</td>
 </table>
 
-##四、回调方法
+****
 
-##4.1初始化回调
-
-###4.1.1初始化失败回调
-
-	public void onInitFail(string json){
-		Dictionary<string, object> retTable = MiniJSON.Json.Deserialize(json) as Dictionary<string, object>;
-		int code = Convert.ToInt32(retTable ["code"]);
-		string msg = retTable ["msg"] as String;
-		Debug.Log ("InitFail,code: " + code + " message:" + msg);
-
-	}
-
-**回调说明：**
-当游戏初始化失败时，会收到初始化失败回调。
-
-**参数说明：**
-返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是初始化失败的信息。
-
-##4.2 登录回调
-
-###4.2.1 登录成功回调
-
-	public void onLoginSuccess(string msg) {
-		Debug.Log ("LoginSuccess, authinfo is:" + msg);
-	}
-
-**回调说明：**
-登录成功之后，会收到登录成功回调。
-
-**参数说明：**
-返回的参数msg是用户登录成功后的用户信息。
-
-###4.2.2 登录取消回调
-
-	public void onLoginCancel(string msg){
-		Debug.Log ("LoginCancel, message: " + msg);
-	}
-
-**回调说明：**
-当用户取消登录之后，会受到登录取消的回调。
-
-**参数说明：**
-返回参数msg是登录取消的信息。
-
-###4.2.3 登录失败回调
-
-	public void onLoginFail(string json){
-		Dictionary<string, object> retTable = MiniJSON.Json.Deserialize(json) as Dictionary<string, object>;
-		int code = Convert.ToInt32(retTable ["code"]);
-		string msg = retTable ["msg"] as String;
-		Debug.Log ("LoginFail,code: " + code + " message:" + msg);
-	}
-
-**回调说明：**
-登录失败后，会收到登录失败的回调。
-
-**参数说明：**
-返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是登录失败的信息。
-
-##4.3 支付回调
-
-###4.3.1 支付成功回调
-
-	public void onPaySuccess(string msg){
-		Debug.Log ("PaySuccess, message:" + msg);
-	}
-
-**回调说明：**
-支付成功后，会收到支付成功的回调。
-
-**参数说明**
-返回的参数是支付成功的信息。
-
-###4.3.2 支付取消回调
-
-	public void onPayCancel(string msg){
-		Debug.Log ("PayCancel, message:" + msg);
-	}
-
-**回调说明：**
-支付取消后，会收到支付取消回调。
-
-**参数说明：**
-返回的参数是支付取消的信息。
-
-###4.3.3 支付失败回调
-
-	public void onPayFail(string json){
-		Dictionary<string, object> retTable = MiniJSON.Json.Deserialize(json) as Dictionary<string, object>;
-		int code = Convert.ToInt32(retTable ["code"]);
-		string msg = retTable ["msg"] as String;
-		Debug.Log ("PayFail,code: " + code + " message:" + msg);
-	}
-
-**回调说明：**
-支付失败后，会收到支付失败的回调。
-
-**参数说明：**
-返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是支付失败的信息。
-
-##4.4 登出回调
-
-###4.4.1 登出成功回调
-
-	public void onLogoutSuccess(string msg){
-		Debug.Log ("LogoutSuccess");
-		authinfo = "";
-	}
-
-**回调说明：**
-登出成功后，会收到登出成功的回调。
-
-**参数说明：**
-返回的msg无意义。
-
-###4.4.2 登出失败回调
-
-	public void onLogoutFail(string json){
-		Dictionary<string, object> retTable = MiniJSON.Json.Deserialize(json) as Dictionary<string, object>;
-		int code = Convert.ToInt32(retTable ["code"]);
-		string msg = retTable ["msg"] as String;
-		Debug.Log ("LogoutFail,code: " + code + " message:" + msg);
-	}
-
-**回调说明：**
-登出失败后，会收到登出失败的回调。
-
-**参数说明：**
-返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是登出失败的信息。
-
-##4.5 退出回调
-
-###4.5.1 直接退出回调
-
-	public void onExit(string msg){
-		Debug.Log ("Exit");
-	}
-
-**回调说明：**
-直接退出时，会收到直接退出的回调。
-
-**参数说明：**
-参数msg无意义。
-
-###4.5.2 使用游戏方退出回调
-
-	public void onNoChannelExiter(string msg){
-		Debug.Log ("No ChannelExiter");
-	}
-
-**回调说明：**
-使用游戏方退出时，会收到使用游戏方退出的回调。
-
-**参数说明：**
-参数msg无意义。
-
-###4.5.3 取消退出回调
-
-	public void onExitCancel(string msg){
-		Debug.Log("ExitCancel");
-	}
-
-**回调说明：**
-取消退出时，会收到取消退出的回调。
-
-**参数说明：**
-参数msg无意义。
+###文档版本说明
+<table>
+<tr>
+<td>SDK版本</td><td>文档版本</td> <td>DK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
+</tr>
+<tr>
+<td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.29</td>
+</tr>
+</table>

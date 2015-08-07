@@ -1,6 +1,10 @@
 #西瓜SDK session验证文档
+---
 
-****
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="微软雅黑">此文档是西瓜SDK服务端接入登录验证文档。介绍游戏服务器如何验证用户登录信息，游戏客户端在接受到西瓜登录成功的回调后，
+将对应的信息发送到游戏服务器，游戏服务器使用登录认证接口向西瓜登录服务器验证并获取用户登录信息。</font>
+<font face="微软雅黑" color="FF0000">注意</font>：<font face="微软雅黑">登录认证接口为登录流程必接接口。</font>
+
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
@@ -22,7 +26,6 @@
 </script>
 <div id="category" style="display:none"></div>
 
-****
 <!--
 ###文档信息
 
@@ -32,16 +35,6 @@
 	文档版本：1.0
 	日期：2015.7.31
 -->
-
-###文档版本说明
-<table>
-<tr>
-<td>SDK版本</td><td>文档版本</td> <td>DK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
-</tr>
-<tr>
-<td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.31</td>
-</tr>
-</table>
 
 ##一、登录认证接口
 
@@ -67,7 +60,10 @@
 <td>请求地址</td><td>http://pay.xgsdk.com:8180/account/verify_session/{sdkAppid}</td>
 </tr>
 </table>
-**其中sdkAppid是游戏在XGSDK的唯一标示，如西游伏魔是1024appid。**
+
+```
+其中sdkAppid是游戏在XGSDK的唯一标示，如西游伏魔是1024appid。
+```
 
 **功能描述:**
 游戏服务器向XGSDK服务端发送请求，确认客户端发过来的sessionId是有效的，并获取准确的渠道账号。
@@ -400,3 +396,13 @@ OPPO:gameBalance</td>
 	        "uId": "3099245"
 	    }
 	}
+
+###文档版本说明
+<table>
+<tr>
+<td>SDK版本</td><td>文档版本</td> <td>DK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
+</tr>
+<tr>
+<td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.31</td>
+</tr>
+</table>
