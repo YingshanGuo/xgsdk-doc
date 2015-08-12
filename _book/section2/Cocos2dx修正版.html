@@ -34,9 +34,22 @@
         
     </head>
     <body>
+        <nav class="nav navbar">
+  <div><img src="/gitbook/images/logo.png" width="50"/></div>
+
+</nav>
+<style>
+  .navbar{background: #2c3e50;height:50px;z-index: 100;position: relative;}
+  .book .book-summary ul.summary li.active>a, .book .book-summary ul.summary li a:hover{color:#fff; background:#00abfd;}
+  .book .book-summary ul.summary li ul{padding-left:0;}
+  .book .book-summary ul.summary li ul li>a{padding-left:20px;}
+  .book .book-summary .book-search{z-index:1;}
+  .sharing-link{display: none;}
+
+</style>
+
         
-        
-    <div class="book" data-level="2.1" data-basepath=".." data-revision="Sat Aug 08 2015 11:55:19 GMT+0800 (CST)">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Wed Aug 12 2015 11:02:49 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -211,7 +224,15 @@
     
         <li class="chapter " data-level="2.3.2" data-path="section2/example5.html">
             
-            <span><b>2.3.2.</b> ios</span>
+                
+                    <a href="../section2/example5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                        ios
+                    </a>
             
             
         </li>
@@ -390,7 +411,15 @@
     
         <li class="chapter " data-level="5" data-path="section5/index.html">
             
-            <span><b>5.</b> 数据分析使用指南</span>
+                
+                    <a href="../section5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        数据分析使用指南
+                    </a>
             
             
             <ul class="articles">
@@ -398,21 +427,45 @@
     
         <li class="chapter " data-level="5.1" data-path="section5/example1.html">
             
-            <span><b>5.1.</b> 准备工作</span>
+                
+                    <a href="../section5/example1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        准备工作
+                    </a>
             
             
         </li>
     
         <li class="chapter " data-level="5.2" data-path="section5/example2.html">
             
-            <span><b>5.2.</b> 运营指标</span>
+                
+                    <a href="../section5/example2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        运营指标
+                    </a>
             
             
         </li>
     
         <li class="chapter " data-level="5.3" data-path="section5/example3.html">
             
-            <span><b>5.3.</b> 网络状况分析</span>
+                
+                    <a href="../section5/example3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        网络状况分析
+                    </a>
             
             
         </li>
@@ -593,7 +646,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="%E8%A5%BF%E7%93%9Csdk%EF%BC%88cocos2d-x-android%E7%89%88%EF%BC%89%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3">&#x897F;&#x74DC;SDK&#xFF08;Cocos2d-x Android&#x7248;&#xFF09;&#x63A5;&#x5165;&#x6587;&#x6863;</h1>
+                        <h1 id="%E8%A5%BF%E7%93%9Csdk%EF%BC%88cocos2d-x-android%E7%89%88%EF%BC%89%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3">&#x897F;&#x74DC;SDK&#xFF08;Cocos2d-X Android&#x7248;&#xFF09;&#x63A5;&#x5165;&#x6587;&#x6863;</h1>
 <hr>
 <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css">
 
@@ -619,32 +672,122 @@
 
 <div id="category" style="display:none"></div>
 
-
+<div id="doc"></div>
 
 <h2 id="1-%E6%96%87%E6%A1%A3%E6%A6%82%E8%BF%B0">1. &#x6587;&#x6863;&#x6982;&#x8FF0;</h2>
-<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x6587;&#x6863;&#x4E3A;Cocos2d-x&#x5F15;&#x64CE;Android&#x6E38;&#x620F;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x5165;&#x6587;&#x6863;&#x3002;<br>
-&#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728;Cocos2d-x&#x5F15;&#x64CE;&#x5E73;&#x53F0;&#x4E0B;&#xFF0C;Android&#x6E38;&#x620F;&#x5BA2;&#x6237;&#x7AEF;&#x5FEB;&#x901F;&#x63A5;&#x5165;&#x897F;&#x74DC;SDK&#x3002;
+<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x6587;&#x6863;&#x4E3A;Cocos2d-X&#x5F15;&#x64CE;Android&#x6E38;&#x620F;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x5165;&#x6587;&#x6863;&#x3002;<br>
+&#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5728;Cocos2d-X&#x5F15;&#x64CE;&#x5E73;&#x53F0;&#x4E0B;&#xFF0C;Android&#x6E38;&#x620F;&#x5BA2;&#x6237;&#x7AEF;&#x5FEB;&#x901F;&#x63A5;&#x5165;&#x897F;&#x74DC;SDK&#x3002;
 &#x6587;&#x6863;&#x5206;&#x6210;&#x4E09;&#x5927;&#x90E8;&#x5206;:&#x63A5;&#x5165;&#x73AF;&#x5883;&#x4E0B;&#x8F7D;/&#x642D;&#x5EFA;&#xFF0C;&#x897F;&#x74DC;SDK&#x63A5;&#x53E3;&#x8BF4;&#x660E;&#x4EE5;&#x53CA;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#x3002;&#x9010;&#x6B65;&#x7EC6;&#x8FF0;&#x4E86;&#x6574;&#x4E2A;&#x63A5;&#x5165;&#x8FC7;&#x7A0B;&#xFF1B;&#x540C;&#x65F6;&#x7F57;&#x5217;&#x51FA;&#x4E86;4&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x63A5;&#x53E3;&#xFF0C;
 &#x5206;&#x522B;&#x4E3A;&#xFF1A;&#x7528;&#x6237;&#x4E2D;&#x5FC3;&#x63A5;&#x53E3;&#x3001;&#x5145;&#x503C;&#x63A5;&#x53E3;&#x3001;&#x7EDF;&#x8BA1;&#x63A5;&#x53E3;&#x3001;&#x6269;&#x5C55;&#x63A5;&#x53E3;&#xFF0C;&#x4FBF;&#x4E8E;&#x6E38;&#x620F;&#x65B9;&#x7684;&#x63A5;&#x5165;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x9700;&#x6C42;&#x66F4;&#x52A0;&#x5FEB;&#x901F;&#x4FBF;&#x6377;&#x7684;&#x8FDB;&#x884C;&#x63A5;&#x5165;&#x3002;
 </font>
 
-<h3 id="1-1-sdk%E4%B8%8B%E8%BD%BD%E5%8C%85">1.1 SDK&#x4E0B;&#x8F7D;&#x5305;</h3>
+<div id="docStructure"></div>
+
+<h3 id="1-1-%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84">1.1 &#x6587;&#x6863;&#x7ED3;&#x6784;</h3>
+<div>
+<ol type="1">
+    <li>
+        <a href="#doc">&#x6587;&#x6863;&#x6982;&#x8FF0;</a>
+            <ul type="disc">
+                <li><a href="#docStructure">&#x6587;&#x6863;&#x7ED3;&#x6784;</a></li>
+                <li><a href="#SDKDownload">SDK&#x4E0B;&#x8F7D;&#x5305;</a></li>
+            </ul>
+    </li>
+    <li>
+        <a href="#configure">&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x4E0E;&#x5FEB;&#x901F;&#x63A5;&#x5165;&#x7B80;&#x4ECB;</a>
+            <ul type="disc">
+                <li><a href="#conditions">&#x5F00;&#x53D1;&#x548C;&#x63A5;&#x5165;&#x6240;&#x9700;&#x57FA;&#x672C;&#x73AF;&#x5883;</a></li>
+                <li><a href="#steps">Cocos2d-x Android&#x63A5;&#x5165;&#x57FA;&#x672C;&#x6B65;&#x9AA4;&#x7B80;&#x4ECB;</a></li>
+                <li><a href="#import">&#x5BFC;&#x5165;Cocos2d-x&#x7684;&#x76F8;&#x5E94;&#x5DE5;&#x7A0B;&#x5230;&#x5F00;&#x53D1;&#x5DE5;&#x5177;</a>
+                </li><li><a href="#import_android">&#x5BFC;&#x5165;Android&#x5DE5;&#x7A0B;</a>
+                </li><li><a href="#solutions">&#x5BFC;&#x5165;&#x540E;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x627E;&#x4E0D;&#x5230;Cocos2d-x&#x76F8;&#x5173;&#x7C7B;&#x7684;&#x9519;&#x8BEF;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</a>
+            </li></ul>
+    </li>
+    <li>
+        <a href="#adjust">&#x4FEE;&#x6539;&#x76F8;&#x5E94;&#x5E73;&#x53F0;&#x5DE5;&#x7A0B;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</a>
+            <ul type="disc">
+                <li><a href="#copyJar">&#x590D;&#x5236;SDK&#x7684;Jar&#x5305;</a></li>
+                <li><a href="#copyInterface">&#x590D;&#x5236;&#x63A5;&#x53E3;&#x6587;&#x4EF6;</a></li>
+                <li><a href="#adjustActivity">&#x4FEE;&#x6539;&#x6E38;&#x620F;&#x7684;&#x4E3B;Activity</a>
+                </li><li><a href="#androidMk">&#x4FEE;&#x6539;Android&#x9879;&#x76EE;&#x7684;Android.mk&#x6587;&#x4EF6;</a>
+            </li></ul>
+    </li>
+    <li>
+        <a href="#ready">&#x63A5;&#x5165;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</a>
+    </li>
+    <li>
+        <a href="#userInterface">&#x7528;&#x6237;&#x63A5;&#x53E3;</a>
+            <ul type="disc">
+                <li><a href="#init">&#x521D;&#x59CB;&#x5316;&#x63A5;&#x53E3;</a></li>
+                <li><a href="#initCallback">&#x521D;&#x59CB;&#x5316;&#x56DE;&#x8C03;&#x63A5;&#x53E3;</a></li>
+                <li><a href="#login">&#x767B;&#x5F55;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#loginCallback">&#x767B;&#x5F55;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#logout">&#x767B;&#x51FA;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#logoutCallback">&#x767B;&#x51FA;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#exit">&#x9000;&#x51FA;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#exitCallback">&#x9000;&#x51FA;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#releaseResource">&#x8D44;&#x6E90;&#x91CA;&#x653E;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+            </ul>
+    </li>
+    <li>
+        <a href="#payInterface">&#x5145;&#x503C;&#x63A5;&#x53E3;</a>
+            <ul type="disc">
+                <li><a href="#pay">&#x652F;&#x4ED8;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#payCallback">&#x652F;&#x4ED8;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+            </ul>
+    </li>
+
+    <li>
+        <a href="#statics">&#x7EDF;&#x8BA1;&#x63A5;&#x53E3;</a>
+            <ul type="disc">
+                <li><a href="#onCreateRole">&#x521B;&#x5EFA;&#x89D2;&#x8272;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#onRoleLevelup">&#x89D2;&#x8272;&#x5347;&#x7EA7;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#onEnterGame">&#x8FDB;&#x5165;&#x6E38;&#x620F;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</a></li>
+            </ul>
+    </li>
+    <li>
+        <a href="#extraInterface">&#x6269;&#x5C55;&#x63A5;&#x53E3;</a>
+            <ul type="disc">
+                <li><a href="#switchAccount">&#x5207;&#x6362;&#x8D26;&#x53F7;&#xFF08;&#x9009;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#openUserCenter">&#x8FDB;&#x5165;&#x7528;&#x6237;&#x4E2D;&#x5FC3;&#xFF08;&#x9009;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#getChannelId">&#x83B7;&#x53D6;&#x6E20;&#x9053;ID&#xFF08;&#x9009;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#isMethodSupport">&#x5224;&#x65AD;&#x8BE5;&#x6E20;&#x9053;&#x662F;&#x5426;&#x652F;&#x6301;&#x67D0;&#x65B9;&#x6CD5;&#xFF08;&#x9009;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#init">&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#xFF08;&#x9009;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#onEvent">&#x83B7;&#x53D6;&#x6E20;&#x9053;ID&#xFF08;&#x9009;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#onMissionBegin">&#x4EFB;&#x52A1;&#x5F00;&#x59CB;&#xFF08;&#x9009;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#onMissionSuccess">&#x4EFB;&#x52A1;&#x6210;&#x529F;&#xFF08;&#x9009;&#x63A5;&#xFF09;</a></li>
+                <li><a href="#onMissionFail">&#x4EFB;&#x52A1;&#x5931;&#x8D25;&#xFF08;&#x9009;&#x63A5;&#xFF09;</a></li>
+            </ul>
+    </li>
+    <li>
+        <a href="#version">&#x6587;&#x6863;&#x7248;&#x672C;</a>
+    </li>
+</ol>
+</div>
+
+<div id="SDKDownload"></div>
+
+<h3 id="1-2-sdk%E4%B8%8B%E8%BD%BD%E5%8C%85">1.2 SDK&#x4E0B;&#x8F7D;&#x5305;</h3>
 <p></p><p></p><p></p>
 <div>
 <b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;" size="3">&#x6E20;&#x9053;&#x7248;SDK&#x4E0B;&#x8F7D;&#x5305;&#x5305;&#x542B;&#xFF1A;</font><br></b>
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#xA0;&#xA0;&#xA0;&#xA0; 1. &#x897F;&#x74DC;SDK&#x7684;Jar&#x5305;&#xFF1A;xgsdk-core.jar&#xFF0C;xgsdk-data.jar&#xFF0C;xgsdk-lib.jar&#xFF0C;xgsdk-api.jar&#xFF1B;</font> <br>
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#xA0;&#xA0;&#xA0;&#xA0; 2. &#x63A5;&#x53E3;&#x6587;&#x4EF6;&#xFF1A;ProtocolXGSDK.h&#x548C;ProtocolXGSDK.cpp&#xFF1B;</font><br>
-<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#xA0;&#xA0;&#xA0;&#xA0; 3. Cocos2dx&#x7684;Android&#x63A5;&#x5165;Demo&#xFF1B;</font><br>
-<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#xA0;&#xA0;&#xA0;&#xA0; 4. &#x897F;&#x5C71;&#x5C45;&#x79FB;&#x52A8;&#x6E38;&#x620F;-&#x6E20;&#x9053;SDK(Cocos2dx-Android)&#x63A5;&#x5165;&#x6587;&#x6863;&#x3002;</font>
+<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#xA0;&#xA0;&#xA0;&#xA0; 3. Cocos2d-X&#x7684;Android&#x63A5;&#x5165;Demo&#xFF1B;</font><br>
+<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#xA0;&#xA0;&#xA0;&#xA0; 4. &#x897F;&#x5C71;&#x5C45;&#x79FB;&#x52A8;&#x6E38;&#x620F;-&#x6E20;&#x9053;SDK(Cocos2d-X Android)&#x63A5;&#x5165;&#x6587;&#x6863;&#x3002;</font>
 </div>
 
+<div id="configure"></div>
+
 <h2 id="2-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5%E7%AE%80%E4%BB%8B">2. &#x914D;&#x7F6E;&#x73AF;&#x5883;&#x4E0E;&#x5FEB;&#x901F;&#x63A5;&#x5165;&#x7B80;&#x4ECB;</h2>
+<div id="conditions"></div>
+
 <h3 id="2-1-%E5%BC%80%E5%8F%91%E5%92%8C%E6%8E%A5%E5%85%A5%E6%89%80%E9%9C%80%E5%9F%BA%E6%9C%AC%E7%8E%AF%E5%A2%83">2.1 &#x5F00;&#x53D1;&#x548C;&#x63A5;&#x5165;&#x6240;&#x9700;&#x57FA;&#x672C;&#x73AF;&#x5883;</h3>
 <p></p><p></p><p></p>
 <div>
-<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;" size="3">Cocos2d-x&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</font> </b> <br>
-<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;"> &#xA0;&#xA0;&#xA0;&#xA0; Cocos2d-x&#x7248;&#x672C;&#xFF1A;&#x6240;&#x6709;&#x7248;&#x672C;&#x5747;&#x53EF;</font> <br>
-<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;"> &#xA0;&#xA0;&#xA0;&#xA0; Cocos2d-x&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#xFF1A;VS2012&#x7B49;</font> <br>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;" size="3">Cocos2d-X&#x5F00;&#x53D1;&#x73AF;&#x5883;&#xFF1A;</font> </b> <br>
+<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;"> &#xA0;&#xA0;&#xA0;&#xA0; Cocos2d-X&#x7248;&#x672C;&#xFF1A;&#x6240;&#x6709;&#x7248;&#x672C;&#x5747;&#x53EF;</font> <br>
+<font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;"> &#xA0;&#xA0;&#xA0;&#xA0; Cocos2d-X&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#xFF1A;VS2012&#x7B49;</font> <br>
 </div>
 <p></p>
 <div>
@@ -653,10 +796,12 @@
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;"> &#xA0;&#xA0;&#xA0;&#xA0; Android&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#xFF1A;Android SDK&#x548C;Android Eclipse&#x7B49;</font> <br>
 </div>
 
-<h3 id="2-2-cocos2d-x-android%E6%8E%A5%E5%85%A5%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4%E7%AE%80%E4%BB%8B">2.2 Cocos2d-x Android&#x63A5;&#x5165;&#x57FA;&#x672C;&#x6B65;&#x9AA4;&#x7B80;&#x4ECB;</h3>
+<div id="steps"></div>
+
+<h3 id="2-2-cocos2d-x-android%E6%8E%A5%E5%85%A5%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4%E7%AE%80%E4%BB%8B">2.2 Cocos2d-X Android&#x63A5;&#x5165;&#x57FA;&#x672C;&#x6B65;&#x9AA4;&#x7B80;&#x4ECB;</h3>
 <ol type="1" start="1">
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">
-    <li>&#x5C06;Cocos2d-x Android&#x5DE5;&#x7A0B;&#x5BFC;&#x5165;&#x5230;Eclipse&#x6216;&#x8005;Android Studio&#xFF1B;</li>
+    <li>&#x5C06;Cocos2d-X Android&#x5DE5;&#x7A0B;&#x5BFC;&#x5165;&#x5230;Eclipse&#x6216;&#x8005;Android Studio&#xFF1B;</li>
     <li>&#x5C06;XGSDK&#x7684;jar&#x5305;&#x653E;&#x7F6E;&#x5230;Android&#x5DE5;&#x7A0B;&#x7684;libs&#x76EE;&#x5F55;&#x4E0B;&#xFF1B;</li>
     <li>&#x4FEE;&#x6539;&#x6E38;&#x620F;&#x7684;MainActivity&#x4EE3;&#x7801;&#xFF0C;&#x8BA9;&#x5176;&#x7EE7;&#x627F;XGCocos2dxActivity&#xFF1B;</li>
     <li>&#x5C06;&#x63A5;&#x53E3;&#x6587;&#x4EF6;ProtocolXGSDK.h&#x548C;ProtocolXGSDK.cpp&#x6587;&#x653E;&#x7F6E;&#x5230;jni/hellocpp&#x76EE;&#x5F55;&#x4E0B;&#xFF1B;</li>
@@ -664,32 +809,42 @@
     <li>&#x5728;&#x6E38;&#x620F;&#x4EE3;&#x7801;&#x4E2D;&#x5F15;&#x5165;ProtocolXGSDK.h&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x7EE7;&#x627F;&#x5B9E;&#x73B0;XGSDKCallback&#x56DE;&#x8C03;&#x63A5;&#x53E3;&#x7C7B;&#xFF1B;</li>
     <li>&#x5728;Cocos&#x6E38;&#x620F;&#x4EE3;&#x7801;&#x4E2D;&#x6DFB;&#x52A0;ProtocolXGSDK&#x6210;&#x5458;&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x4E14;&#x5728;init()&#x65B9;&#x6CD5;&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x548C;&#x8C03;&#x7528;prepare&#x65B9;&#x6CD5;&#xFF1B;</li>
     <li>&#x5728;init()&#x65B9;&#x6CD5;&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x56DE;&#x8C03;&#x63A5;&#x53E3;&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x8C03;&#x7528;ProtocolXGSDK&#x7684;setListener()&#x6210;&#x5458;&#x65B9;&#x6CD5;&#xFF1B;</li>
-    <li>&#x6700;&#x540E;&#x5B8C;&#x6210;&#x767B;&#x9646;&#x3001;&#x652F;&#x4ED8;&#x3001;&#x6E05;&#x7406;&#x8D44;&#x6E90;&#x7B49;&#x5FC5;&#x63A5;&#x63A5;&#x53E3;&#x7684;&#x63A5;&#x5165;&#x4FBF;&#x5B8C;&#x6210;&#x4E86;Cocos2d-x&#x539F;&#x751F;&#x63A5;&#x5165;&#x7684;&#x6240;&#x6709;&#x6B65;&#x9AA4;&#xFF1B;</li>
+    <li>&#x6700;&#x540E;&#x5B8C;&#x6210;&#x767B;&#x9646;&#x3001;&#x652F;&#x4ED8;&#x3001;&#x6E05;&#x7406;&#x8D44;&#x6E90;&#x7B49;&#x5FC5;&#x63A5;&#x63A5;&#x53E3;&#x7684;&#x63A5;&#x5165;&#x4FBF;&#x5B8C;&#x6210;&#x4E86;Cocos2d-X&#x539F;&#x751F;&#x63A5;&#x5165;&#x7684;&#x6240;&#x6709;&#x6B65;&#x9AA4;&#xFF1B;</li>
     <li>&#x7F16;&#x8BD1;&#x6253;&#x5305;&#x6D4B;&#x8BD5;&#x901A;&#x8FC7;&#x3002;</li>
 </font>
 </ol>
 
-<h2 id="3-%E5%AF%BC%E5%85%A5cocos2d-x%E7%9A%84%E7%9B%B8%E5%BA%94%E5%B7%A5%E7%A8%8B%E5%88%B0%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7">3. &#x5BFC;&#x5165;Cocos2d-x&#x7684;&#x76F8;&#x5E94;&#x5DE5;&#x7A0B;&#x5230;&#x5F00;&#x53D1;&#x5DE5;&#x5177;</h2>
+<div id="import"></div>
+
+<h2 id="3-%E5%AF%BC%E5%85%A5cocos2d-x%E7%9A%84%E7%9B%B8%E5%BA%94%E5%B7%A5%E7%A8%8B%E5%88%B0%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7">3. &#x5BFC;&#x5165;Cocos2d-X&#x7684;&#x76F8;&#x5E94;&#x5DE5;&#x7A0B;&#x5230;&#x5F00;&#x53D1;&#x5DE5;&#x5177;</h2>
+<div id="import_android"></div>
+
 <h3 id="3-1-%E5%AF%BC%E5%85%A5android%E5%B7%A5%E7%A8%8B">3.1 &#x5BFC;&#x5165;Android&#x5DE5;&#x7A0B;</h3>
 <div>
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">
-Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;&#x76EE;&#x4E0B;&#x7684;proj.android&#xFF0C;&#x5C06;&#x8BE5;&#x5DE5;&#x7A0B;&#x5BFC;&#x5165;&#x5230;Eclipse&#x6216;&#x8005;Andorid Studio&#x4E2D;&#x3002;&#x8BE5;&#x6587;&#x6863;&#x4E3B;&#x8981;&#x8BB2;&#x89E3;Eclipse&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;&#x4F3C;&#xFF0C;Eclipse&#x5BFC;&#x5165;android&#x5DE5;&#x7A0B;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;<br>
+Cocos2d-X&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;&#x76EE;&#x4E0B;&#x7684;proj.android&#xFF0C;&#x5C06;&#x8BE5;&#x5DE5;&#x7A0B;&#x5BFC;&#x5165;&#x5230;Eclipse&#x6216;&#x8005;Andorid Studio&#x4E2D;&#x3002;&#x8BE5;&#x6587;&#x6863;&#x4E3B;&#x8981;&#x8BB2;&#x89E3;Eclipse&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7C7B;&#x4F3C;&#xFF0C;Eclipse&#x5BFC;&#x5165;android&#x5DE5;&#x7A0B;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;<br>
 <img src="img/proj_android.png">
 </font>
 </div>
 
-<h3 id="3-2-%E5%AF%BC%E5%85%A5%E5%90%8E%E5%A6%82%E6%9E%9C%E5%87%BA%E7%8E%B0%E6%89%BE%E4%B8%8D%E5%88%B0cocos2d-x%E7%9B%B8%E5%85%B3%E7%B1%BB%E7%9A%84%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%9A">3.2 &#x5BFC;&#x5165;&#x540E;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x627E;&#x4E0D;&#x5230;Cocos2d-x&#x76F8;&#x5173;&#x7C7B;&#x7684;&#x9519;&#x8BEF;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</h3>
+<div id="solutions"></div>
+
+<h3 id="3-2-%E5%AF%BC%E5%85%A5%E5%90%8E%E5%A6%82%E6%9E%9C%E5%87%BA%E7%8E%B0%E6%89%BE%E4%B8%8D%E5%88%B0cocos2d-x%E7%9B%B8%E5%85%B3%E7%B1%BB%E7%9A%84%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%9A">3.2 &#x5BFC;&#x5165;&#x540E;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x627E;&#x4E0D;&#x5230;Cocos2d-X&#x76F8;&#x5173;&#x7C7B;&#x7684;&#x9519;&#x8BEF;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</h3>
 <div>
 <ol type="1" start="1">
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">
-    <li>&#x8BF7;&#x5728;Cocos2d-x&#x7684;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x4E2D;&#x627E;&#x5230;&#x76F8;&#x5E94;&#x76EE;&#x5F55;&#xFF0C;&#x5982;&#xFF1A;D:\cocos2d-x-2.2.6\cocos2dx\platform\android\java&#xFF0C;&#x5BFC;&#x5165;&#x8BE5;&#x5DE5;&#x7A0B;&#x5E76;&#x5173;&#x8054;&#x5230;Android&#x5DE5;&#x7A0B;&#xFF1B;</li>
-    <li>&#x5728;Cocos2d-x&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x4E0B;&#x641C;&#x7D22;libcocos2dx.jar&#xFF0C;&#x6216;&#x8005;&#x76F8;&#x5E94;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x5982;&#xFF1A;D:\cocos2d-x-2.2.6\cocos2dx\platform\android\java\bin&#x627E;&#x5230;libcocos2dx.jar&#x5E76;&#x5BFC;&#x5165;Android&#x5DE5;&#x7A0B;&#x7684;libs&#x76EE;&#x5F55;&#x4E0B;&#xFF1B;</li>
+    <li>&#x8BF7;&#x5728;Cocos2d-X&#x7684;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x4E2D;&#x627E;&#x5230;&#x76F8;&#x5E94;&#x76EE;&#x5F55;&#xFF0C;&#x5982;&#xFF1A;D:\cocos2d-x-2.2.6\cocos2dx\platform\android\java&#xFF0C;&#x5BFC;&#x5165;&#x8BE5;&#x5DE5;&#x7A0B;&#x5E76;&#x5173;&#x8054;&#x5230;Android&#x5DE5;&#x7A0B;&#xFF1B;</li>
+    <li>&#x5728;Cocos2d-X&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x4E0B;&#x641C;&#x7D22;libcocos2dx.jar&#xFF0C;&#x6216;&#x8005;&#x76F8;&#x5E94;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x5982;&#xFF1A;D:\cocos2d-x-2.2.6\cocos2dx\platform\android\java\bin&#x627E;&#x5230;libcocos2dx.jar&#x5E76;&#x5BFC;&#x5165;Android&#x5DE5;&#x7A0B;&#x7684;libs&#x76EE;&#x5F55;&#x4E0B;&#xFF1B;</li>
 </font>
 </ol>
 <img src="img/libcocos2d.png">
 </div>
 
+<div id="adjust"></div>
+
 <h2 id="4-%E4%BF%AE%E6%94%B9%E7%9B%B8%E5%BA%94%E5%B9%B3%E5%8F%B0%E5%B7%A5%E7%A8%8B%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF">4. &#x4FEE;&#x6539;&#x76F8;&#x5E94;&#x5E73;&#x53F0;&#x5DE5;&#x7A0B;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</h2>
+<div id="copyJar"></div>
+
 <h3 id="4-1-%E5%A4%8D%E5%88%B6sdk%E7%9A%84jar%E5%8C%85">4.1 &#x590D;&#x5236;SDK&#x7684;Jar&#x5305;</h3>
 <div>
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x897F;&#x74DC;SDKV2&#x7684;Jar&#x5305;&#xFF0C;xgsdk-core.jar&#xFF0C;xgsdk-data.jar&#xFF0C;xgsdk-lib.jar&#xFF0C;xgsdk-api.jar&#xFF0C;xgsdk-common-lib.jar&#xFF0C;&#x62F7;&#x8D1D;&#x5230;Android&#x5DE5;&#x7A0B;&#x7684;libs&#x76EE;&#x5F55;&#x4E0B;&#xFF1A;
@@ -697,11 +852,15 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
 <img src="img/proj_android.png">
 </div>
 
+<div id="copyInterface"></div>
+
 <h3 id="4-2-%E5%A4%8D%E5%88%B6%E6%8E%A5%E5%8F%A3%E6%96%87%E4%BB%B6">4.2 &#x590D;&#x5236;&#x63A5;&#x53E3;&#x6587;&#x4EF6;</h3>
 <div>
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x590D;&#x5236;&#x63A5;&#x53E3;&#x6587;&#x4EF6;ProtocolXGSDK.h&#x548C;ProtocolXGSDK.cpp&#x5230;Android&#x5DE5;&#x7A0B;&#x4E2D;&#x7684;jni/hellocpp&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x5982;&#x56FE;&#xFF1A;</font> <br>
 <img src="img/protocolXGSDK.png">
 </div>
+
+<div id="adjustActivity"></div>
 
 <h3 id="4-3-%E4%BF%AE%E6%94%B9%E6%B8%B8%E6%88%8F%E7%9A%84%E4%B8%BBactivity">4.3 &#x4FEE;&#x6539;&#x6E38;&#x620F;&#x7684;&#x4E3B;Activity</h3>
 <div>
@@ -716,7 +875,9 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
 
 <pre><code>
     public class CoCosDemo extends XGCocos2dxActivity
-</code></pre><h3 id="4-4-%E4%BF%AE%E6%94%B9android%E9%A1%B9%E7%9B%AE%E7%9A%84android-mk%E6%96%87%E4%BB%B6">4.4 &#x4FEE;&#x6539;Android&#x9879;&#x76EE;&#x7684;Android.mk&#x6587;&#x4EF6;</h3>
+</code></pre><div id="androidMk"></div>
+
+<h3 id="4-4-%E4%BF%AE%E6%94%B9android%E9%A1%B9%E7%9B%AE%E7%9A%84android-mk%E6%96%87%E4%BB%B6">4.4 &#x4FEE;&#x6539;Android&#x9879;&#x76EE;&#x7684;Android.mk&#x6587;&#x4EF6;</h3>
 <div>
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x5728;Android.mk&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x56FE;&#x6240;&#x6846;&#x7684;&#x4E24;&#x884C;&#xFF1A;</font><br>
 <img src="img/AndroidMk.png"><br>
@@ -728,7 +889,9 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
                    ../../Classes/AppDelegate.cpp \
                    ../../Classes/XGCocosDemo.cpp \
                    hellocpp/ProtocolXGSDK.cpp
-</code></pre><h2 id="5-%E6%8E%A5%E5%85%A5%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">5.&#x63A5;&#x5165;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h2>
+</code></pre><div id="ready"></div>
+
+<h2 id="5-%E6%8E%A5%E5%85%A5%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">5.&#x63A5;&#x5165;&#x524D;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h2>
 <div>
 <b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">1. &#x9996;&#x5148;&#x5148;&#x786E;&#x8BA4;ProtocolXGSDK.h&#x5934;&#x6587;&#x4EF6;&#x548C;ProtocolXGSDK.cpp&#x6E90;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x6309;&#x7167;4.2&#x62F7;&#x8D1D;&#x5230;&#x76F8;&#x5E94;&#x76EE;&#x5F55;&#x4E0B;&#x3002;</font></b><br>
 <b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">2. &#x7136;&#x540E;&#x5728;&#x4F7F;&#x7528;&#x5230;ProtocolXGSDK&#x7684;&#x5730;&#x65B9;&#x9996;&#x5148;&#x5BFC;&#x5165;&#x5934;&#x6587;&#x4EF6;&quot;ProtocolXGSDK.h&quot;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x6211;&#x4EEC;&#x7684;Demo&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x56FE;&#x4E2D;&#x6240;&#x793A;&#x4EE3;&#x7801;&#xFF1A;</font></b><br>
@@ -764,11 +927,17 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     mXgSdk-&gt;prepare();
     mTestListener = new XGSDKTestCallback();
     mXgSdk-&gt;setListener(mTestListener);
-</code></pre><h2 id="6-%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3">6.&#x7528;&#x6237;&#x63A5;&#x53E3;</h2>
+</code></pre><div id="userInterface"></div>
+
+<h2 id="6-%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3">6.&#x7528;&#x6237;&#x63A5;&#x53E3;</h2>
+<div id="init"></div>
+
 <h3 id="6-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%8E%A5%E5%8F%A3%EF%BC%88%E5%BA%9F%E5%BC%83%EF%BC%89">6.1 &#x521D;&#x59CB;&#x5316;&#x63A5;&#x53E3;&#xFF08;&#x5E9F;&#x5F03;&#xFF09;</h3>
 <div>
 <b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;" color="ff0000">&#x897F;&#x74DC;SDK2.0&#x7248;&#x672C;&#x5DF2;&#x7ECF;&#x5E9F;&#x5F03;&#x521D;&#x59CB;&#x5316;&#x63A5;&#x53E3;&#x7684;&#x63A5;&#x5165;&#xFF0C;&#x4F46;&#x662F;&#x521D;&#x59CB;&#x5316;&#x5931;&#x8D25;&#x4ECD;&#x6709;&#x56DE;&#x8C03;&#xFF0C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x521D;&#x59CB;&#x5316;&#x5931;&#x8D25;&#x7684;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;</font></b>
 </div>
+
+<div id="initCallback"></div>
 
 <h3 id="6-2-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%9B%9E%E8%B0%83%E6%8E%A5%E5%8F%A3%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.2 &#x521D;&#x59CB;&#x5316;&#x56DE;&#x8C03;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x521D;&#x59CB;&#x5316;&#x5931;&#x8D25;&#x540E;&#x56DE;&#x8C03;&#x6B64;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
@@ -783,6 +952,8 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
 </ul>
 </div>
 
+<div id="login"></div>
+
 <h3 id="6-3-%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.3 &#x767B;&#x5F55;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <div>
 <b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x5728;&#x76F8;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#x8C03;&#x7528;&#x767B;&#x9646;&#x63A5;&#x53E3;&#xFF0C;&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x53EF;&#x53C2;&#x8003;XGCocosDemo.cpp&#xFF0C;&#x6B64;&#x63A5;&#x53E3;&#x5C06;&#x8C03;&#x51FA;&#x6E20;&#x9053;&#x7684;&#x767B;&#x9646;&#x754C;&#x9762;</font></b>
@@ -792,6 +963,8 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
 </code></pre><div>
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;" color="ff0000">&#x8BF7;&#x52FF;&#x6E38;&#x620F;&#x542F;&#x52A8;&#x540E;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x6B64;&#x63A5;&#x53E3;&#xFF0C;&#x90E8;&#x5206;&#x6E20;&#x9053;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x95F4;&#x8F83;&#x957F;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x4E0D;&#x6210;&#x529F;&#x8C03;&#x7528;&#x767B;&#x5F55;&#x63A5;&#x53E3;&#x4F1A;&#x51FA;&#x73B0;&#x6E38;&#x620F;&#x5D29;&#x6E83;&#x7B49;&#x95EE;&#x9898;&#xFF0C;&#x5EFA;&#x8BAE;&#x6DFB;&#x52A0;&#x7528;&#x6237;&#x767B;&#x5F55;&#x754C;&#x9762;&#xFF0C;&#x7531;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x89E6;&#x53D1;&#x767B;&#x9646;&#x64CD;&#x4F5C;</font>
 </div>
+
+<div id="loginCallback"></div>
 
 <h3 id="6-4-%E7%99%BB%E5%BD%95%E5%9B%9E%E8%B0%83%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.4 &#x767B;&#x5F55;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x767B;&#x5F55;&#x540E;&#x56DE;&#x8C03;&#x8FD9;&#x4E9B;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
@@ -813,13 +986,17 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
 </ul>
 </div>
 
+<div id="logout"></div>
+
 <h3 id="6-5-%E7%99%BB%E5%87%BA%E6%8E%A5%E5%8F%A3%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.5 &#x767B;&#x51FA;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <div>
 <b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x8C03;&#x7528;&#x4F4D;&#x7F6E;XGCocosDemo.cpp&#x4E2D;&#xFF0C;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x540E;&#x5C06;&#x4F1A;&#x8C03;&#x51FA;&#x6E20;&#x9053;&#x767B;&#x51FA;&#x754C;&#x9762;&#xFF0C;&#x5E76;&#x4E14;&#x56DE;&#x8C03;onLogout&#x65B9;&#x6CD5;</font></b>
 </div>
 
 <pre><code>    mXgSdk-&gt;logout();
-</code></pre><h3 id="6-6-%E7%99%BB%E5%87%BA%E5%9B%9E%E8%B0%83%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.6 &#x767B;&#x51FA;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
+</code></pre><div id="logoutCallback"></div>
+
+<h3 id="6-6-%E7%99%BB%E5%87%BA%E5%9B%9E%E8%B0%83%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.6 &#x767B;&#x51FA;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x767B;&#x5F55;&#x540E;&#x56DE;&#x8C03;&#x8FD9;&#x4E9B;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
 <pre><code>    void XGSDKTestCallback::onLogoutSuccess(const char *msg){
         cocos2d::CCMessageBox(msg, &quot;INFO&quot;);
@@ -835,13 +1012,18 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
 </ul>
 </div>
 
+<div id="exit"></div>
+
+
 <h3 id="6-7-%E9%80%80%E5%87%BA%E6%8E%A5%E5%8F%A3%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.7 &#x9000;&#x51FA;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <div>
 <b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x8C03;&#x7528;&#x4F4D;&#x7F6E;XGCocosDemo.cpp&#x4E2D;&#xFF0C;&#x9000;&#x51FA;&#x63A5;&#x53E3;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x5728;&#x6E38;&#x620F;&#x4E2D;&#x9700;&#x8981;&#x9000;&#x51FA;&#x6E38;&#x620F;&#x65F6;&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#x3002;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b>
 </div>
 
 <pre><code>    mXgSdk-&gt;exit();
-</code></pre><h3 id="6-8-%E9%80%80%E5%87%BA%E5%9B%9E%E8%B0%83%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.8 &#x9000;&#x51FA;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
+</code></pre><div id="exitCallback"></div>
+
+<h3 id="6-8-%E9%80%80%E5%87%BA%E5%9B%9E%E8%B0%83%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.8 &#x9000;&#x51FA;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x9000;&#x51FA;&#x56DE;&#x8C03;&#x8FD9;&#x4E9B;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x6E20;&#x9053;&#x7684;&#x9000;&#x51FA;&#x63A5;&#x53E3;&#x5219;&#x8C03;&#x7528;&#x6E20;&#x9053;&#x7684;&#x9000;&#x51FA;&#x63A5;&#x53E3;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6E20;&#x9053;&#x7684;&#x9000;&#x51FA;&#x63A5;&#x53E3;&#x5219;&#x8C03;&#x7528;&#x6E38;&#x620F;&#x7684;&#x9000;&#x51FA;&#x3002;</font></b></p>
 <pre><code>    void XGSDKTestCallback::onExit(){
         cocos2d::CCMessageBox(&quot;Exit Success&quot;, &quot;INFO&quot;);
@@ -853,14 +1035,20 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     void XGSDKTestCallback::onCancel(){
         cocos2d::CCMessageBox(&quot;Exit onCancel&quot;, &quot;INFO&quot;);
     }
-</code></pre><h3 id="6-9-%E8%B5%84%E6%BA%90%E9%87%8A%E6%94%BE%E6%8E%A5%E5%8F%A3%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.9 &#x8D44;&#x6E90;&#x91CA;&#x653E;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
+</code></pre><div id="releaseResource"></div>
+
+<h3 id="6-9-%E8%B5%84%E6%BA%90%E9%87%8A%E6%94%BE%E6%8E%A5%E5%8F%A3%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">6.9 &#x8D44;&#x6E90;&#x91CA;&#x653E;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x91CA;&#x653E;&#x8D44;&#x6E90;&#xFF0C;&#x5305;&#x62EC;&#x91CA;&#x653E;ProtocolXGSDK&#xFF0C;&#x91CA;&#x653E;XGSDKCallback&#x7B49;&#x3002;&#x8BF7;&#x5728;&#x6700;&#x7EC8;&#x6E38;&#x620F;&#x9000;&#x51FA;Kill&#x6E38;&#x620F;&#x8FDB;&#x7A0B;&#x524D;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
 <pre><code>    mXgSdk-&gt;releaseResource();
 </code></pre><div>
 <font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;" color="ff0000">&#x8BF7;&#x5728;&#x6700;&#x7EC8;&#x6E38;&#x620F;&#x9000;&#x51FA;Kill&#x6E38;&#x620F;&#x8FDB;&#x7A0B;&#x524D;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x3002;</font>
 </div>
 
+<div id="payInterface"></div>
+
 <h2 id="7-%E5%85%85%E5%80%BC%E6%8E%A5%E5%8F%A3">7.&#x5145;&#x503C;&#x63A5;&#x53E3;</h2>
+<div id="pay"></div>
+
 <h3 id="7-1-%E6%94%AF%E4%BB%98%E6%8E%A5%E5%8F%A3%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">7.1 &#x652F;&#x4ED8;&#x63A5;&#x53E3;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <div>
 <b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x8C03;&#x7528;&#x4F4D;&#x7F6E;XGCocosDemo.cpp&#x4E2D;&#xFF0C;&#x6B64;&#x63A5;&#x53E3;&#x5C06;&#x4F1A;&#x53D1;&#x8D77;&#x7528;&#x6237;&#x5145;&#x503C;&#xFF0C;&#x7CFB;&#x7EDF;&#x4F1A;&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x6E20;&#x9053;SDK&#x5145;&#x503C;&#x754C;&#x9762;&#x3002;&#x652F;&#x4ED8;&#x63A5;&#x53E3;&#x9700;&#x8981;&#x4F20;&#x5165;&#x7C7B;&#x578B;&#x4E3A;PayInfo&#x7684;&#x53C2;&#x6570;&#x3002;</font></b>
@@ -886,6 +1074,8 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
         const char *zoneName;
         const char *roleId;
         const char *roleName;
+        const char *level;
+        const char *vipLevel;
         const char *balance;
         const char *gameOrderId;
         const char *ext;
@@ -946,19 +1136,19 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     <td>currencyName</td>
     <td>const char *</td>
     <td>&#x6E38;&#x620F;&#x91D1;&#x989D;&#x5355;&#x4F4D;&#xFF0C;&#x5982;&#x201C;&#x5143;&#x5B9D;&#x201D;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>serverId</td>
     <td>const char *</td>
     <td>&#x670D;ID</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>serverName</td>
     <td>const char *</td>
     <td>&#x670D;&#x540D;&#x79F0;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>zoneId</td>
@@ -976,25 +1166,37 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     <td>roleId</td>
     <td>const char *</td>
     <td>&#x89D2;&#x8272;ID</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>roleName</td>
     <td>const char *</td>
     <td>&#x89D2;&#x8272;&#x540D;&#x79F0;</td>
-    <td>N</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>level</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>vipLevel</td>
+    <td>const char *</td>
+    <td>VIP&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>balance</td>
     <td>const char *</td>
     <td>&#x4F59;&#x989D;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>gameOrderId</td>
     <td>const char *</td>
     <td>&#x6E38;&#x620F;&#x8BA2;&#x5355;ID</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>ext</td>
@@ -1010,6 +1212,8 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
 </tr>
 </table>
 </div>
+
+<div id="payCallback"></div>
 
 <h3 id="7-2-%E6%94%AF%E4%BB%98%E5%9B%9E%E8%B0%83%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">7.2 &#x652F;&#x4ED8;&#x56DE;&#x8C03;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x652F;&#x4ED8;&#x5B8C;&#x6210;&#x56DE;&#x8C03;&#x8FD9;&#x4E9B;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
@@ -1030,9 +1234,11 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
 </ul>
 </div>
 
-
+<div id="statics"></div>
 
 <h2 id="8-%E7%BB%9F%E8%AE%A1%E6%8E%A5%E5%8F%A3">8.&#x7EDF;&#x8BA1;&#x63A5;&#x53E3;</h2>
+<div id="onCreateRole"></div>
+
 <h3 id="8-1-%E5%88%9B%E5%BB%BA%E8%A7%92%E8%89%B2%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">8.1 &#x521B;&#x5EFA;&#x89D2;&#x8272;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x6E38;&#x620F;&#x4FE1;&#x606F;&#x7EDF;&#x8BA1;&#xFF0C;&#x5F53;&#x521B;&#x5EFA;&#x6E38;&#x620F;&#x89D2;&#x8272;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x8981;&#x6C42;&#x4F20;&#x5165;UserInfo&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
 <pre><code>    mXgSdk-&gt;onCreateRole(UserInfo &amp;userInfo);
@@ -1073,13 +1279,7 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     <td>userName</td>
     <td>const char *</td>
     <td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
-    <td>N</td>
-</tr>
-<tr>
-    <td>productCount</td>
-    <td>int</td>
-    <td>&#x4EA7;&#x54C1;&#x6570;&#x91CF;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>roleId</td>
@@ -1097,25 +1297,25 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     <td>gender</td>
     <td>const char *</td>
     <td>&#x6027;&#x522B;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>level</td>
     <td>const char *</td>
     <td>&#x7B49;&#x7EA7;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>vipLevel</td>
     <td>const char *</td>
     <td>VIP&#x7B49;&#x7EA7;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>balance</td>
     <td>const char *</td>
     <td>&#x4F59;&#x989D;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>partyName</td>
@@ -1127,18 +1327,20 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     <td>serverId</td>
     <td>const char *</td>
     <td>&#x670D;ID</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>serverName</td>
     <td>const char *</td>
     <td>&#x670D;&#x540D;&#x79F0;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 </table>
 </div>
 
-<h3 id="8-2-%E8%A7%92%E8%89%B2%E5%8D%87%E7%BA%A7">8.2 &#x89D2;&#x8272;&#x5347;&#x7EA7;</h3>
+<div id="onRoleLevelup"></div>
+
+<h3 id="8-2-%E8%A7%92%E8%89%B2%E5%8D%87%E7%BA%A7%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">8.2 &#x89D2;&#x8272;&#x5347;&#x7EA7;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x6E38;&#x620F;&#x4FE1;&#x606F;&#x7EDF;&#x8BA1;&#xFF0C;&#x5F53;&#x89D2;&#x8272;&#x5347;&#x7EA7;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x8981;&#x6C42;&#x4F20;&#x5165;UserInfo&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
 <pre><code>    mXgSdk-&gt;onRoleLevelup(UserInfo &amp;userInfo);
 </code></pre><div>
@@ -1178,13 +1380,7 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     <td>userName</td>
     <td>const char *</td>
     <td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
-    <td>N</td>
-</tr>
-<tr>
-    <td>productCount</td>
-    <td>int</td>
-    <td>&#x4EA7;&#x54C1;&#x6570;&#x91CF;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>roleId</td>
@@ -1202,25 +1398,25 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     <td>gender</td>
     <td>const char *</td>
     <td>&#x6027;&#x522B;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>level</td>
     <td>const char *</td>
     <td>&#x7B49;&#x7EA7;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>vipLevel</td>
     <td>const char *</td>
     <td>VIP&#x7B49;&#x7EA7;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>balance</td>
     <td>const char *</td>
     <td>&#x4F59;&#x989D;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>partyName</td>
@@ -1232,28 +1428,623 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
     <td>serverId</td>
     <td>const char *</td>
     <td>&#x670D;ID</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 <tr>
     <td>serverName</td>
     <td>const char *</td>
     <td>&#x670D;&#x540D;&#x79F0;</td>
-    <td>N</td>
+    <td>Y</td>
 </tr>
 </table>
 </div>
 
+<div id="onEnterGame"></div>
+
+<h3 id="8-3-%E8%BF%9B%E5%85%A5%E6%B8%B8%E6%88%8F%EF%BC%88%E5%BF%85%E6%8E%A5%EF%BC%89">8.3 &#x8FDB;&#x5165;&#x6E38;&#x620F;&#xFF08;&#x5FC5;&#x63A5;&#xFF09;</h3>
+<p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x6E38;&#x620F;&#x4FE1;&#x606F;&#x7EDF;&#x8BA1;&#xFF0C;&#x5F53;&#x8FDB;&#x5165;&#x6E38;&#x620F;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x8981;&#x6C42;&#x4F20;&#x5165;UserInfo&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
+<pre><code>    mXgSdk-&gt;onEnterGame(UserInfo &amp;userInfo);
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x7C7B;&#x578B;UserInfo&#x7ED3;&#x6784;&#x4F53;&#x5B9A;&#x4E49;&#x5728;ProtocolXGSDK.h&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#xFF1A;</font></b>
+</div>
+
+<pre><code>
+    struct UserInfo{
+        const char *uid;
+        const char *userName;
+        const char *roleId;
+        const char *roleName;
+        const char *gender;
+        const char *level;
+        const char *vipLevel;
+        const char *balance;
+        const char *partyName;
+        const char *serverId;
+        const char *serverName;
+    };
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x5173;&#x4E8E;UserInfo&#x7684;&#x6210;&#x5458;&#x8BF4;&#x660E;</font></b>
+<table>
+<tr>
+    <th>&#x8F93;&#x5165;&#x53C2;&#x6570;</th>
+    <th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+    <th>&#x8BF4;&#x660E;</th>
+    <th>&#x53EF;&#x7A7A;</th>
+</tr>
+<tr>
+    <td>uid</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>userName</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>roleId</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>roleName</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;&#x540D;&#x5B57;</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>gender</td>
+    <td>const char *</td>
+    <td>&#x6027;&#x522B;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>level</td>
+    <td>const char *</td>
+    <td>&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>vipLevel</td>
+    <td>const char *</td>
+    <td>VIP&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>balance</td>
+    <td>const char *</td>
+    <td>&#x4F59;&#x989D;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>partyName</td>
+    <td>const char *</td>
+    <td>&#x6218;&#x961F;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverId</td>
+    <td>const char *</td>
+    <td>&#x670D;ID</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverName</td>
+    <td>const char *</td>
+    <td>&#x670D;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+</table>
+</div>
+
+<div id="extraInterface"></div>
+
 <h2 id="9-%E6%89%A9%E5%B1%95%E6%8E%A5%E5%8F%A3">9.&#x6269;&#x5C55;&#x63A5;&#x53E3;</h2>
+<div id="switchAccount"></div>
+
 <h3 id="9-1-%E5%88%87%E6%8D%A2%E8%B4%A6%E5%8F%B7%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.1 &#x5207;&#x6362;&#x8D26;&#x53F7;&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x6E38;&#x620F;&#x5207;&#x6362;&#x8D26;&#x53F7;&#xFF0C;&#x6E38;&#x620F;&#x9700;&#x8981;&#x652F;&#x6301;&#x5207;&#x6362;&#x7528;&#x6237;&#x529F;&#x80FD;&#xFF0C;&#x70B9;&#x51FB;&#x5207;&#x6362;&#x7528;&#x6237;&#x6309;&#x94AE;&#x65F6;&#x8C03;&#x7528;&#x3002;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
 <pre><code>    mXgSdk-&gt;switchAccount();
-</code></pre><h3 id="9-1-%E8%BF%9B%E5%85%A5%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.1 &#x8FDB;&#x5165;&#x7528;&#x6237;&#x4E2D;&#x5FC3;&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
+</code></pre><div id="openUserCenter"></div>
+
+<h3 id="9-1-%E8%BF%9B%E5%85%A5%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.1 &#x8FDB;&#x5165;&#x7528;&#x6237;&#x4E2D;&#x5FC3;&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x6E38;&#x620F;&#x8FDB;&#x5165;&#x6E20;&#x9053;&#x7684;&#x7528;&#x6237;&#x4E2D;&#x5FC3;&#xFF0C;&#x70B9;&#x51FB;&#x7528;&#x6237;&#x4E2D;&#x5FC3;&#x6309;&#x94AE;&#x65F6;&#x8C03;&#x7528;&#x3002;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
 <pre><code>    mXgSdk-&gt;openUserCenter();
-</code></pre><h3 id="9-2-%E8%8E%B7%E5%8F%96%E6%B8%A0%E9%81%93id%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.2 &#x83B7;&#x53D6;&#x6E20;&#x9053;ID&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
+</code></pre><div id="getChannelId"></div>
+
+<h3 id="9-2-%E8%8E%B7%E5%8F%96%E6%B8%A0%E9%81%93id%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.2 &#x83B7;&#x53D6;&#x6E20;&#x9053;ID&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
 <p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x83B7;&#x53D6;channelId&#x3002;channelId&#x4E3A;&#x6E20;&#x9053;ID&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
 <pre><code>    char *getChannelId();
-</code></pre><hr>
+</code></pre><div id="isMethodSupport"></div>
+
+<h3 id="9-2-%E5%88%A4%E6%96%AD%E8%AF%A5%E6%B8%A0%E9%81%93%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81%E6%9F%90%E6%96%B9%E6%B3%95%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.2 &#x5224;&#x65AD;&#x8BE5;&#x6E20;&#x9053;&#x662F;&#x5426;&#x652F;&#x6301;&#x67D0;&#x65B9;&#x6CD5;&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
+<p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x5224;&#x65AD;&#x8BE5;&#x6E20;&#x9053;&#x662F;&#x5426;&#x652F;&#x6301;&#x67D0;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x5E03;&#x5C14;&#x7C7B;&#x578B;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
+<pre><code>    bool isMethodSupport();
+</code></pre><div id="onEvent"></div>
+
+<h3 id="9-3-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.3 &#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
+<p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x6E38;&#x620F;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;&#xFF0C;&#x8981;&#x6C42;&#x4F20;&#x5165;EventInfo&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
+<pre><code>    mXgSdk-&gt;onEvent(EventInfo &amp;eventInfo);
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x7C7B;&#x578B;EventInfo&#x7ED3;&#x6784;&#x4F53;&#x5B9A;&#x4E49;&#x5728;ProtocolXGSDK.h&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#xFF1A;</font></b>
+</div>
+
+<pre><code>
+    struct EventInfo {
+        const char *uid;
+        const char *userName;
+        const char *roleId;
+        const char *roleName;
+        const char *gender;
+        const char *level;
+        const char *vipLevel;
+        const char *balance;
+        const char *partyName;
+        const char *serverId;
+        const char *serverName;
+        const char *eventId; //&#x4E8B;&#x4EF6;id
+        const char *eventDesc; //&#x4E8B;&#x4EF6;&#x63CF;&#x8FF0;
+        int eventVal; //&#x4E8B;&#x4EF6;&#x503C;
+        const char *eventBody; //&#x4E8B;&#x4EF6;&#x5185;&#x5BB9; &#x5FC5;&#x987B;&#x662F;json&#x683C;&#x5F0F;
+        const char *customParams; //&#x6269;&#x5C55;&#x5B57;&#x6BB5; &#x5FC5;&#x987B;&#x662F;json&#x683C;&#x5F0F;
+    };
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x5173;&#x4E8E;EventInfo&#x7684;&#x6210;&#x5458;&#x8BF4;&#x660E;</font></b>
+<table>
+<tr>
+    <th>&#x8F93;&#x5165;&#x53C2;&#x6570;</th>
+    <th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+    <th>&#x8BF4;&#x660E;</th>
+    <th>&#x53EF;&#x7A7A;</th>
+</tr>
+<tr>
+    <td>uid</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>userName</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>roleId</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>roleName</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;&#x540D;&#x5B57;</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>gender</td>
+    <td>const char *</td>
+    <td>&#x6027;&#x522B;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>level</td>
+    <td>const char *</td>
+    <td>&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>vipLevel</td>
+    <td>const char *</td>
+    <td>VIP&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>balance</td>
+    <td>const char *</td>
+    <td>&#x4F59;&#x989D;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>partyName</td>
+    <td>const char *</td>
+    <td>&#x6218;&#x961F;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverId</td>
+    <td>const char *</td>
+    <td>&#x670D;ID</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverName</td>
+    <td>const char *</td>
+    <td>&#x670D;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>eventId</td>
+    <td>const char *</td>
+    <td>&#x4E8B;&#x4EF6;ID</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>eventDesc</td>
+    <td>const char *</td>
+    <td>&#x4E8B;&#x4EF6;&#x63CF;&#x8FF0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>eventVal</td>
+    <td>const char *</td>
+    <td>&#x4E8B;&#x4EF6;&#x503C;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>eventBody</td>
+    <td>const char *</td>
+    <td>&#x4E8B;&#x4EF6;&#x5185;&#x5BB9;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>customParams</td>
+    <td>const char *</td>
+    <td>&#x6269;&#x5C55;&#x5B57;&#x6BB5;</td>
+    <td>Y</td>
+</tr>
+
+</table>
+</div>
+
+<div id="onMissionBegin"></div>
+
+<h3 id="9-4-%E4%BB%BB%E5%8A%A1%E5%BC%80%E5%A7%8B%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.4 &#x4EFB;&#x52A1;&#x5F00;&#x59CB;&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
+<p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x7EDF;&#x8BA1;&#xFF0C;&#x5728;&#x4EFB;&#x52A1;&#x5F00;&#x59CB;&#x65F6;&#x8981;&#x6C42;&#x4F20;&#x5165;MissionInfo&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
+<pre><code>    mXgSdk-&gt;onMissionBegin(MissionInfo &amp;missionInfo);
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x7C7B;&#x578B;MissionInfo&#x7ED3;&#x6784;&#x4F53;&#x5B9A;&#x4E49;&#x5728;ProtocolXGSDK.h&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#xFF1A;</font></b>
+</div>
+
+<pre><code>    struct MissionInfo{
+        const char *uid;
+        const char *username;
+        const char *roleId;
+        const char *roleName;
+        const char *gender;
+        const char *level;
+        const char *vipLevel;
+        const char *balance;
+        const char *partyName;
+        const char *serverId;
+        const char *serverName;
+        const char *missionName; //&#x4EFB;&#x52A1;&#x540D;&#x79F0;
+        const char *customParams; //&#x6269;&#x5C55;&#x53C2;&#x6570;&#xFF0C;&#x5FC5;&#x987B;&#x662F;json
+    };
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x5173;&#x4E8E;MissionInfo&#x7684;&#x6210;&#x5458;&#x8BF4;&#x660E;</font></b>
+<table>
+<tr>
+    <th>&#x8F93;&#x5165;&#x53C2;&#x6570;</th>
+    <th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+    <th>&#x8BF4;&#x660E;</th>
+    <th>&#x53EF;&#x7A7A;</th>
+</tr>
+<tr>
+    <td>uid</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>userName</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>roleId</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>roleName</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;&#x540D;&#x5B57;</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>gender</td>
+    <td>const char *</td>
+    <td>&#x6027;&#x522B;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>level</td>
+    <td>const char *</td>
+    <td>&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>vipLevel</td>
+    <td>const char *</td>
+    <td>VIP&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>balance</td>
+    <td>const char *</td>
+    <td>&#x4F59;&#x989D;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>partyName</td>
+    <td>const char *</td>
+    <td>&#x6218;&#x961F;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverId</td>
+    <td>const char *</td>
+    <td>&#x670D;ID</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverName</td>
+    <td>const char *</td>
+    <td>&#x670D;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>missionName</td>
+    <td>const char *</td>
+    <td>&#x4EFB;&#x52A1;&#x540D;&#x5B57;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>customParams</td>
+    <td>const char *</td>
+    <td>&#x6269;&#x5C55;&#x53C2;&#x6570;</td>
+    <td>Y</td>
+</tr>
+</table>
+</div>
+
+<div id="onMissionSuccess"></div>
+
+<h3 id="9-4-%E4%BB%BB%E5%8A%A1%E6%88%90%E5%8A%9F%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.4 &#x4EFB;&#x52A1;&#x6210;&#x529F;&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
+<p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x7EDF;&#x8BA1;&#xFF0C;&#x5728;&#x4EFB;&#x52A1;&#x6210;&#x529F;&#x65F6;&#x8981;&#x6C42;&#x4F20;&#x5165;MissionInfo&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
+<pre><code>    mXgSdk-&gt;onMissionSuccess(MissionInfo &amp;missionInfo);
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x7C7B;&#x578B;MissionInfo&#x7ED3;&#x6784;&#x4F53;&#x5B9A;&#x4E49;&#x5728;ProtocolXGSDK.h&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#xFF1A;</font></b>
+</div>
+
+<pre><code>    struct MissionInfo{
+        const char *uid;
+        const char *username;
+        const char *roleId;
+        const char *roleName;
+        const char *gender;
+        const char *level;
+        const char *vipLevel;
+        const char *balance;
+        const char *partyName;
+        const char *serverId;
+        const char *serverName;
+        const char *missionName; //&#x4EFB;&#x52A1;&#x540D;&#x79F0;
+        const char *customParams; //&#x6269;&#x5C55;&#x53C2;&#x6570;&#xFF0C;&#x5FC5;&#x987B;&#x662F;json
+    };
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x5173;&#x4E8E;MissionInfo&#x7684;&#x6210;&#x5458;&#x8BF4;&#x660E;</font></b>
+<table>
+<tr>
+    <th>&#x8F93;&#x5165;&#x53C2;&#x6570;</th>
+    <th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+    <th>&#x8BF4;&#x660E;</th>
+    <th>&#x53EF;&#x7A7A;</th>
+</tr>
+<tr>
+    <td>uid</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>userName</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>roleId</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>roleName</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;&#x540D;&#x5B57;</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>gender</td>
+    <td>const char *</td>
+    <td>&#x6027;&#x522B;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>level</td>
+    <td>const char *</td>
+    <td>&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>vipLevel</td>
+    <td>const char *</td>
+    <td>VIP&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>balance</td>
+    <td>const char *</td>
+    <td>&#x4F59;&#x989D;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>partyName</td>
+    <td>const char *</td>
+    <td>&#x6218;&#x961F;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverId</td>
+    <td>const char *</td>
+    <td>&#x670D;ID</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverName</td>
+    <td>const char *</td>
+    <td>&#x670D;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>missionName</td>
+    <td>const char *</td>
+    <td>&#x4EFB;&#x52A1;&#x540D;&#x5B57;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>customParams</td>
+    <td>const char *</td>
+    <td>&#x6269;&#x5C55;&#x53C2;&#x6570;</td>
+    <td>Y</td>
+</tr>
+</table>
+</div>
+
+<div id="onMissionFail"></div>
+
+<h3 id="9-4-%E4%BB%BB%E5%8A%A1%E5%A4%B1%E8%B4%A5%EF%BC%88%E9%80%89%E6%8E%A5%EF%BC%89">9.4 &#x4EFB;&#x52A1;&#x5931;&#x8D25;&#xFF08;&#x9009;&#x63A5;&#xFF09;</h3>
+<p><b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x6B64;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x7EDF;&#x8BA1;&#xFF0C;&#x5728;&#x4EFB;&#x52A1;&#x5931;&#x8D25;&#x65F6;&#x8981;&#x6C42;&#x4F20;&#x5165;MissionInfo&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF1A;</font></b></p>
+<pre><code>    mXgSdk-&gt;onMissionFail(MissionInfo &amp;missionInfo);
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x7C7B;&#x578B;MissionInfo&#x7ED3;&#x6784;&#x4F53;&#x5B9A;&#x4E49;&#x5728;ProtocolXGSDK.h&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#xFF1A;</font></b>
+</div>
+
+<pre><code>    struct MissionInfo{
+        const char *uid;
+        const char *username;
+        const char *roleId;
+        const char *roleName;
+        const char *gender;
+        const char *level;
+        const char *vipLevel;
+        const char *balance;
+        const char *partyName;
+        const char *serverId;
+        const char *serverName;
+        const char *missionName; //&#x4EFB;&#x52A1;&#x540D;&#x79F0;
+        const char *customParams; //&#x6269;&#x5C55;&#x53C2;&#x6570;&#xFF0C;&#x5FC5;&#x987B;&#x662F;json
+    };
+</code></pre><div>
+<b><font face="&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;">&#x5173;&#x4E8E;MissionInfo&#x7684;&#x6210;&#x5458;&#x8BF4;&#x660E;</font></b>
+<table>
+<tr>
+    <th>&#x8F93;&#x5165;&#x53C2;&#x6570;</th>
+    <th>&#x6570;&#x636E;&#x7C7B;&#x578B;</th>
+    <th>&#x8BF4;&#x660E;</th>
+    <th>&#x53EF;&#x7A7A;</th>
+</tr>
+<tr>
+    <td>uid</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>userName</td>
+    <td>const char *</td>
+    <td>&#x7528;&#x6237;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>roleId</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;ID</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>roleName</td>
+    <td>const char *</td>
+    <td>&#x89D2;&#x8272;&#x540D;&#x5B57;</td>
+    <td>N</td>
+</tr>
+<tr>
+    <td>gender</td>
+    <td>const char *</td>
+    <td>&#x6027;&#x522B;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>level</td>
+    <td>const char *</td>
+    <td>&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>vipLevel</td>
+    <td>const char *</td>
+    <td>VIP&#x7B49;&#x7EA7;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>balance</td>
+    <td>const char *</td>
+    <td>&#x4F59;&#x989D;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>partyName</td>
+    <td>const char *</td>
+    <td>&#x6218;&#x961F;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverId</td>
+    <td>const char *</td>
+    <td>&#x670D;ID</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>serverName</td>
+    <td>const char *</td>
+    <td>&#x670D;&#x540D;&#x79F0;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>missionName</td>
+    <td>const char *</td>
+    <td>&#x4EFB;&#x52A1;&#x540D;&#x5B57;</td>
+    <td>Y</td>
+</tr>
+<tr>
+    <td>customParams</td>
+    <td>const char *</td>
+    <td>&#x6269;&#x5C55;&#x53C2;&#x6570;</td>
+    <td>Y</td>
+</tr>
+</table>
+</div>
+
+<hr>
+<div id="version"></div>
+
 <h3 id="%E6%96%87%E6%A1%A3%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E">&#x6587;&#x6863;&#x7248;&#x672C;&#x8BF4;&#x660E;</h3>
 <table>
 <tr>
@@ -1284,9 +2075,17 @@ Cocos2d-x&#x7684;android&#x5DE5;&#x7A0B;&#x4F4D;&#x4E8E;&#x6E38;&#x620F;&#x9879;
         
 <script src="../gitbook/app.js"></script>
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-collapsible-menu/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"}};
     gitbook.start(config);
 });
 </script>

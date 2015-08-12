@@ -34,9 +34,22 @@
         
     </head>
     <body>
+        <nav class="nav navbar">
+  <div><img src="/gitbook/images/logo.png" width="50"/></div>
+
+</nav>
+<style>
+  .navbar{background: #2c3e50;height:50px;z-index: 100;position: relative;}
+  .book .book-summary ul.summary li.active>a, .book .book-summary ul.summary li a:hover{color:#fff; background:#00abfd;}
+  .book .book-summary ul.summary li ul{padding-left:0;}
+  .book .book-summary ul.summary li ul li>a{padding-left:20px;}
+  .book .book-summary .book-search{z-index:1;}
+  .sharing-link{display: none;}
+
+</style>
+
         
-        
-    <div class="book" data-level="3.1" data-basepath=".." data-revision="Sat Aug 08 2015 11:55:19 GMT+0800 (CST)">
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="Wed Aug 12 2015 11:02:49 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -211,7 +224,15 @@
     
         <li class="chapter " data-level="2.3.2" data-path="section2/example5.html">
             
-            <span><b>2.3.2.</b> ios</span>
+                
+                    <a href="../section2/example5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                        ios
+                    </a>
             
             
         </li>
@@ -390,7 +411,15 @@
     
         <li class="chapter " data-level="5" data-path="section5/index.html">
             
-            <span><b>5.</b> 数据分析使用指南</span>
+                
+                    <a href="../section5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        数据分析使用指南
+                    </a>
             
             
             <ul class="articles">
@@ -398,21 +427,45 @@
     
         <li class="chapter " data-level="5.1" data-path="section5/example1.html">
             
-            <span><b>5.1.</b> 准备工作</span>
+                
+                    <a href="../section5/example1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        准备工作
+                    </a>
             
             
         </li>
     
         <li class="chapter " data-level="5.2" data-path="section5/example2.html">
             
-            <span><b>5.2.</b> 运营指标</span>
+                
+                    <a href="../section5/example2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        运营指标
+                    </a>
             
             
         </li>
     
         <li class="chapter " data-level="5.3" data-path="section5/example3.html">
             
-            <span><b>5.3.</b> 网络状况分析</span>
+                
+                    <a href="../section5/example3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        网络状况分析
+                    </a>
             
             
         </li>
@@ -980,9 +1033,17 @@ name=name&lt;br/&gt;
         
 <script src="../gitbook/app.js"></script>
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-collapsible-menu/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"layout":{"headerPath":"layouts/header.html","footerPath":"layouts/footer.html"}};
     gitbook.start(config);
 });
 </script>
