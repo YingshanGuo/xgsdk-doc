@@ -3,5 +3,15 @@
   "pluginsConfig": {},
   "theme": "../gitbook/theme/",
   "version": "^2.2.0",
-  "author": "XG SDK"
+  "author": "XG SDK",
+  "links": {
+    "sharing": {
+      "all": false,
+      "google": false,
+      "facebook": false,
+      "twitter": false,
+      "weibo": false,
+      "vk": false
+    }
+  }
 }
