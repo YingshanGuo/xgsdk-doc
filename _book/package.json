@@ -1,0 +1,11 @@
+{
+  "name": "xgsdk-doc",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "./node_modules/.bin/gitbook build"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^0.3.4"
+  },
+  "plugins": ["collapsible-menu"]
+}
