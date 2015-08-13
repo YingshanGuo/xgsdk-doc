@@ -2,9 +2,11 @@
   "plugins": ["collapsible-menu"],
   "pluginsConfig": {},
   "theme": "../gitbook/theme/",
+  "language": "zh-cn",
   "version": "^2.2.0",
   "author": "XG SDK",
   "links": {
+    "gitbook": false,
     "sharing": {
       "all": false,
       "google": false,
