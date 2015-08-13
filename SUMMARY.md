@@ -8,8 +8,12 @@ This is the summary of my book.
     * [视频教程](section1/video_tutorial.md)
 
 * [客户端接入指南](section2/README.md)
-    * [Cocos2d引擎](section2/Cocos2dx修正版.md)
-    * [Unity3D引擎](section2/Unity3d修正版.md)
+    * [Cocos2d-x引擎](section2/Cocos2dx修正版.md)
+        * [android](section2/Cocos2dx修正版.md)
+        * [ios](section2/example5.md)
+    * [Unity3d引擎](section2/Unity3d修正版.md)
+        * [android](section2/Unity3d修正版.md)
+        * [ios](section2/example5.md)
     * [原生接口](section2/原生.md)
         * [android](section2/原生android修正版.md)
         * [ios](section2/example5.md)
@@ -28,10 +32,11 @@ This is the summary of my book.
 
 * [数据分析使用指南](section5/README.md)  
     * [准备工作](section5/example1.md)
-    * [运营指标](section5/example2.md)
+    * [运营指标](section5/operationindex.md)
     * [网络状况分析](section5/example3.md)
 
 * [常见问题](section6/README.md)
     * [常见接入问题](section6/android客户端.md)
     * [渠道接入须知](section6/Note.md)
     * [打包工具](section6/Note11.md)
+    * [获取文件签名](section6/filesign.md)

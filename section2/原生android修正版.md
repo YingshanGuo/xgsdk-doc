@@ -1,85 +1,89 @@
 #西瓜SDK（原生Android版 ）接入文档
 
-****
-<link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css" />
-
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
-
-<script>hljs.initHighlightingOnLoad();</script>
-<script type="text/javascript">
- $(document).ready(function(){
-      $("h2,h3,h4,h5,h6").each(function(i,item){
-        var tag = $(item).get(0).localName;
-        $(item).attr("id","wow"+i);
-        $("#category").append('<a class="new'+tag+'" href="#wow'+i+'">'+$(this).text()+'</a></br>');
-        $(".newh2").css("margin-left",0);
-        $(".newh3").css("margin-left",20);
-        $(".newh4").css("margin-left",40);
-        $(".newh5").css("margin-left",60);
-        $(".newh6").css("margin-left",80);
-      });
- });
-</script>
 
 <div id="category" style="display:none"></div>
 
 
 ##1. 文档概述
 
-<font face="微软雅黑">此文档为使用原生android引擎游戏客户端的接入文档。</br>
+此文档为使用原生android引擎游戏客户端的接入文档。  
 本文介绍如何在原生引擎平台下，Android游戏客户端快速接入西瓜SDK。
-文档分成三大部分:接入环境下载/搭建，西瓜SDK接口说明以及参考代码。逐步细述了整个接入过程；同时罗列出了4种类型的接口，
-分别为：用户中心接口、充值接口、统计接口、扩展接口，便于游戏方的接入人员可以按照需求更加快速便捷的进行接入。
-</font>
+文档分成三大部分:西瓜SDK下载，配置环境，各个接口的接入说明和样例代码。逐步细述了整个接入过程；  
+同时罗列出了4种类型的接口：分别为：*用户与角色接口、充值接口、统计接口、扩展接口*，便于游戏方的接入人员可以按照需求更加快速便捷的进行接入。
+
 
 
 ###1.1 SDK下载包
-	渠道版SDK下载包包含：
-	1. 西瓜SDKV2的Jar包：xgsdk-core.jar，xgsdk-data.jar，xgsdk-lib.jar，xgsdk-api.jar
-	2. xgsdk-demo.jar
-	3. XGSDK 原生Android版 客户端接入文档
+
+<b>渠道版SDK下载包包含：<br /></b>
+	1. 西瓜SDKV2的Jar包：
+ xgsdk-core.jar，xgsdk-data.jar，xgsdk-api.jar<a href="#">下载链接</a><br />
+
+ 	2. xgsdk-testchannel.zip
+
+   <a href="#">下载链接</a>
+   注：解压文件，导入eclipse，右键项目，<br />
+ 选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar
+<img src="img/native_connect_package_import.png"</img>
+	3. XGSDK 原生Android版 客户端接入文档<a href="#">&nbsp&nbsp下载链接</a>
+
 
 ##2. 配置环境与快速接入简介
 
 ###2.1 开发和接入所需基本环境
-Android开发环境：
 
-	Android版本：Android2.2 以上
-	Android开发工具：Android SDK和Android Eclipse等
+>###Android开发环境：
+>>Android版本：Android2.2 以上
+>
+>>Android开发工具：Android SDK和Android Eclipse等
+
 
 ###2.2 接入步骤简介
-	1.配置android权限(AndroidManifest.xml文件)
-	2.增加闪屏
-	3.接入生命周期接口（必接）
-	3.接入登录接口（必接）
-	4.接入充值接口（必接）
-	5.接入统计接口（部分必接）
-	6.接入扩展接口
+<ol type=“1”>
+<li><a href="#permission">配置android权限(AndroidManifest.xml文件)</a></li>
+	<li><a href="#splash">增加闪屏</a></li>
+	<li><a href="#pay">接入充值接口</a></li>
+ 	<li><a href="#liftcyle">接入生命周期接口</a></li>
+	<li><a href="#userAndRole">接入用户和角色接口</a></li>
+	<li><a href="#statistics">接入统计接口</a></li>
+	<li><a href="#extend">接入扩展接口</a></li>
+</ol>
 
 ###2.3 快速接入
 ####2.3.1. 配置AndroidManifest.xml文件<br />
 
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
 
 
 ####2.3.2. 增加闪屏
 
-####2.3.3 接入生命周期接口（必接）<br />
-在游戏各个Activity生命周期中调用SDK生命周期接口<br />
+######1.游戏母包中AndroidManifest.xml增加XGSplashActivity作为启动Activity的声明，根据游戏朝向设定android:screenOrientation
+
+	 <activity
+		 android:name="com.seasun.xgsdk.splash.XGSplashActivity"
+		 android:screenOrientation="portrait"
+		 android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+		 <intent-filter>
+			 <action android:name="android.intent.action.MAIN" />
+			 <category android:name="android.intent.category.LAUNCHER" />
+		 </intent-filter>
+	</activity>
+
+######2.AndroidManifest.xml中将游戏原启动Activity的intent-filter修改为
+
+	<intent-filter>
+		 <action android:name="xg.game.MAIN" />
+		 <category android:name="android.intent.category.DEFAULT" />
+	 </intent-filter>
+
+####2.3.3 接入生命周期接口<br />
+在游戏各个Activity生命周期中调用SDK生命周期接口，样例代码如下：<br />
 
 
 
@@ -87,6 +91,8 @@ Android开发环境：
     protected void onPause() {
         super.onPause();
         XGSDK.getInstance().onPause(this);
+		//第一行调用父类方法，第二行调用西瓜的方法，顺序固定
+		//然后再执行贵游戏的自己的代码逻辑，下面方法类同
     }
 
     @Override
@@ -118,140 +124,11 @@ Android开发环境：
         super.onDestroy();
         XGSDK.getInstance().onDestory(this);
     }
-
-onCreate生命周期方法比较特殊<br />
-<font color="red">注：setUserCallBack在init之前调用</font>
-
-	@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        XGSDK.getInstance().onCreate(this);
-        XGSDK.getInstance().setUserCallBack(new UserCallBack() {}；
-		XGSDK.getInstance().init(this);
-	}
-
-
-####2.3.4 接入登录接口（必接）
-
-#####登入接口<br />
-login(Activity activity, String customParams)
-
-	参数说明：
-		customParams：登录参数
-
-在UserCallBack中实现登录callback接口（登录成功，登录失败，登录取消）<br />
-<font color="red">注：在登录成功callback中，调用xgsdk的onEnterGame接口</font>
-
-		@Override
-        public void onLogoutSuccess(String msg) {
-            ToastUtil.showToast(MainActivity.this, "logout success." + msg);
-        }
-
-        @Override
-        public void onLogoutFail(int code, String msg) {
-            ToastUtil.showToast(MainActivity.this, "logout fail." + code
-                    + " " + msg);
-        }
-
-        @Override
-        public void onLoginSuccess(String authInfo) {
-            Log.w(TAG, "authInfo: \n" + authInfo);
-            XGUser user = AuthUtil.auth(MainActivity.this, authInfo);
-            XGSDK.getInstance().onEnterGame(MainActivity.this, user,
-                    mRoleInfo, mServerInfo);
-        }
-
-        @Override
-        public void onLoginFail(int code, String msg) {
-            ToastUtil.showToast(MainActivity.this, "login fail." + code
-                    + " " + msg);
-        }
-
-        @Override
-        public void onInitFail(int code, String msg) {
-            ToastUtil.showToast(MainActivity.this, "init fail." + code
-                    + " " + msg);
-        }
-
-        @Override
-        public void onLoginCancel(String msg) {
-            ToastUtil.showToast(MainActivity.this, "login cancel." + msg);
-        }
-
-#####登出接口<br />
-logout(Activity activity, String customParams)
-
-	参数说明：
-		customParams：登出参数
-
-#####退出接口<br />
-exit(Activity activity, ExitCallBack exitCallBack,String customParams)
-
-	参数说明：
-		exitCallBack：退出回调
-		customParams：退出参数
-####2.3.5 接入充值接口（必接）
-#####支付接口<br />
-pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
-
-	参数说明：
-		payInfo: 支付信息对象，包含产品ID、名称和数量等
-		paycallback:支付回调
-
-在调用pay接口时，需要实现pay支付callback(支付成功，支付失败，支付取消）
-
- 	@Override
-    public void onSuccess(String msg) {
-        ToastUtil.showToast(MainActivity.this,
-                "pay success." + msg);
-
-    }
-
-    @Override
-    public void onFail(int code, String msg) {
-        ToastUtil.showToast(MainActivity.this,
-                "pay fail." + code + " " + msg);
-    }
-
-    @Override
-    public void onCancel(String msg) {
-        ToastUtil.showToast(MainActivity.this,
-                "pay cancel." + msg);
-
-    }
-
-#####2.3.6 接入统计接口（部分必接）
-#####进入游戏接口（必接）
-注：此接口在调用登录成功callback的时候调用<br />
-onEnterGame(Activity activity, XGUser user, RoleInfo roleInfo,GameServerInfo serverInfo)
-
-	参数说明：
-		user: 用户对象
-		RoleInfo:角色信息
-		serverInfo:服务器信息
-
-#####角色等级接口（必接）<br />
-onRoleLevelup(Activity activity, RoleInfo roleInfo)
-
-	参数说明：
-		roleInfo：角色信息
-
-#####创建角色接口（必接）<br />
-onCreateRole(Activity activity, RoleInfo roleInfo)
-
-	参数说明：
-		roleInfo:角色信息
-
-####2.3.6 接入扩展接口
-#####创建新的意图接口
 	@Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         XGSDK.getInstance().onNewIntent(this, intent);
     }
-
-
-
-#####切换活动页面接口
 	@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -259,17 +136,626 @@ onCreateRole(Activity activity, RoleInfo roleInfo)
                 data);
     }
 
+
+onCreate生命周期方法比较特殊<br />
+注：setUserCallBack在init之前调用，onCreate方法执行之后，三者的顺序不能改变
+
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+        XGSDK.getInstance().onCreate(this);
+        XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
+		XGSDK.getInstance().init(this);
+	}
+
+XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；<br />
+以上代码的表示的意思是实现一个匿名的UserCallBack对象，该对象中实现了登录成功、失败、取消，登出成功、失败，初始化失败接口，<a href="#usercallback">详见这里描述</a>
+
+XGSDK.getInstance().init(this);<br />
+以上代码表示执行xgsdk的初始化工作
+
+
+
+
+####2.3.4 接入用户和角色接口
+<a name="userAndRole" ></a>
+#####登录接口<br />
+login(Activity activity, String customParams)
+
+	接口说明：
+		用户登录接口，传入扩展参数。
+	参数说明：
+		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+<a name="usercallback" ></a>
+在UserCallBack中实现登录callback接口（登录成功、失败、取消，登出成功、失败，初始化失败接口）<br />
+例如登陆成功，游戏在此回调中实现登陆成功后的逻辑,其余的callback接口类似 <br />
+注：在登录成功callback中，调用xgsdk的onEnterGame接口<br />
+样例代码：
+
+		XGSDK.getInstance().setUserCallBack(new UserCallBack() {
+
+            @Override
+            public void onLogoutSuccess(String msg) {
+                ToastUtil.showToast(MainActivity.this, "logout success." + msg);
+
+            }
+
+            @Override
+            public void onLogoutFail(int code, String msg) {
+                ToastUtil.showToast(MainActivity.this, "logout fail." + code
+                        + " " + msg);
+
+            }
+
+            @Override
+            public void onLoginSuccess(final String authInfo) {
+                Log.w(TAG, "authInfo: \n" + authInfo);
+                 XGSDK.getInstance().onEnterGame(
+                                        MainActivity.this, mUser, mRoleInfo,
+                                        mServerInfo);
+            }
+
+            @Override
+            public void onLoginFail(int code, String msg) {
+                ToastUtil.showToast(MainActivity.this, "login fail." + code
+                        + " " + msg);
+
+            }
+
+            @Override
+            public void onInitFail(int code, String msg) {
+                ToastUtil.showToast(MainActivity.this, "init fail." + code
+                        + " " + msg);
+
+            }
+
+            @Override
+            public void onLoginCancel(String msg) {
+                ToastUtil.showToast(MainActivity.this, "login cancel." + msg);
+
+            }
+        });
+
+#####登出接口<br />
+logout(Activity activity, String customParams)
+
+	接口说明：
+		用户登出接口，登出传入扩展参数customParams
+	参数说明：
+		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+注：登出回调接口（onLogoutFail，onLogoutSuccess）要在UserCallBack中实现
+#####退出接口<br />
+exit(Activity activity, ExitCallBack exitCallBack,String customParams)
+
+	接口说明：
+		用户退出接口，传入exitCallback和扩展参数customParams
+	参数说明：
+		exitCallBack：退出回调
+		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+调用案例代码：
+
+	findViewById(RUtil.getId(getApplicationContext(), "xg_exit"))
+                .setOnClickListener(new OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        XGSDK.getInstance().exit(MainActivity.this,
+                                new ExitCallBack() {}，null)}}）；
+
+#####退出接口回调<br />
+在退出接口exit有exitCallBack参数，需要实现该接口的各个回调方法<br />
+三个回调方法：<br />
+onNoChannelExiter 使用游戏方退出框<br />
+onExit 直接退出<br />
+onCancel 取消退出<br />
+
+样例代码：
+
+	new ExitCallBack() {
+
+            @Override
+            public void onNoChannelExiter() {
+                Dialog dialog = new AlertDialog.Builder(
+                        MainActivity.this) ).create();
+                      //调用游戏方退出框
+                dialog.show();
+
+            }
+
+            @Override
+            public void onExit() {
+                finish();
+
+            }
+
+            @Override
+            public void onCancel() {
+                ToastUtil.showToast(MainActivity.this,
+                        "回到游戏");
+
+            }
+     }
+
+#####进入游戏接口
+
+onEnterGame(Activity activity, XGUser user, RoleInfo roleInfo,GameServerInfo serverInfo)
+
+	参数说明：
+		user: 用户对象
+		RoleInfo:角色信息
+		serverInfo:服务器信息
+
+注：此接口在调用登录成功callback的时候调用<br /><p>
+调用案例代码：
+
+	@Override
+    public void onLoginSuccess(final String authInfo) {
+        Log.w(TAG, "authInfo: \n" + authInfo);
+         XGSDK.getInstance().onEnterGame(
+                                MainActivity.this, mUser, mRoleInfo,
+                                mServerInfo);
+    }
+
+
+
+**关于XGUser的成员说明**
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>参数说明</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>String</td>
+	<td>用户ID</td>
+	<td>用户ID</td>
+</tr>
+<tr>
+	<td>userName</td>
+	<td>String</td>
+	<td>用户名称</td>
+	<td>用户名称</td>
+</tr>
+<tr>
+	<td>authInfo</td>
+	<td>String</td>
+	<td>验证信息</td>
+	<td>验证信息</td>
+</tr>
+</table>
+
+
+
+**关于RoleInfo的成员说明**
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>参数说明</th>
+</tr>
+
+<tr>
+	<td>level</td>
+	<td>int</td>
+	<td>角色等级</td>
+	<td>角色等级</td>
+</tr>
+
+<tr>
+	<td>vipLevel</td>
+	<td>int</td>
+	<td>vip角色等级</td>
+	<td>vip角色等级</td>
+</tr>
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>角色ID</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名称</td>
+	<td>角色名称</td>
+</tr>
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>工会名</td>
+	<td>工会名</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>性别</td>
+</tr>
+</table>
+
+**关于GameServerInfo的成员说明**
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>参数说明</th>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服务器ID</td>
+	<td>服务器ID</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>服务器名称</td>
+	<td>服务器名称</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>区ID</td>
+</tr>
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名称</td>
+	<td>区名称</td>
+</tr>
+</table>
+
+
+#####创建角色接口
+onCreateRole(Activity activity, RoleInfo roleInfo)
+
+	接口说明：
+		使用roleInfo来创建角色
+	参数说明：
+		roleInfo:角色信息
+
+调用案例代码
+
+	findViewById(RUtil.getId(getApplicationContext(), "xg_create_role"))
+                .setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mRoleInfo.setRoleId("1112");
+                        mRoleInfo.setRoleName("cuizi");
+                        XGSDK.getInstance().onCreateRole(MainActivity.this,
+                                mRoleInfo);
+                    }
+                });
+
+#####角色等级接口
+onRoleLevelup(Activity activity, XGUser user，RoleInfo roleInfo,
+            GameServerInfo server)
+
+	接口说明：
+		角色等级接口，角色等级提升时调用
+	参数说明：
+		user:用户对象
+		roleInfo：角色信息
+		server:服务对象信息
+
+调用案例代码
+
+	findViewById(RUtil.getId(getApplicationContext(), "xg_role_levelup"))
+                .setOnClickListener(new OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        mRoleInfo.setRoleId("1112");
+                        mRoleInfo.setLevel(2);
+                        XGSDK.getInstance().onRoleLevelup(MainActivity.this,
+                                mUser, mRoleInfo, mServerInfo);
+                    }
+                });
+
+
+####2.3.5 接入充值接口（必接）
+#####支付接口
+pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
+
+	接口说明：
+		充值接口
+	参数说明：
+		payInfo: 支付信息对象，包含产品ID、名称和数量等
+		paycallback:支付回调
+
+调用案例代码：
+
+	//payInfo初始化
+	.......
+	payment.setTotalPrice(totalPrice);
+    payment.setProductUnitPrice(1);
+    XGSDK.getInstance().pay(MainActivity.this, payment,
+            new PayCallBack() {})
+
+####支付场景：某个初级玩家，碰到了商品打折优惠，买100个元宝（价值50元）可享受8折优惠，这样其实他是用40元买了100个元宝，那么他的支付清单是：
+商品id：11111
+产品名称：100个元宝
+产品描述：100个元宝
+商品单位：元宝
+产品打折后价格：100
+产品打折前价格：
+产品单价：50
+产品总量：1
+
+
+
+**关于PayInfo的成员说明**
+
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>参数说明</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>String</td>
+	<td>用户ID</td>
+	<td>用户ID</td>
+</tr>
+<tr>
+	<td>productId</td>
+	<td>String</td>
+	<td>产品ID</td>
+	<td>产品ID</td>
+</tr>
+<tr>
+	<td>productName</td>
+	<td>String</td>
+	<td>产品名称</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>productDesc</td>
+	<td>String</td>
+	<td>产品描述</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>productUnit</td>
+	<td>String</td>
+	<td>商品单位</td>
+	<td>商品单位</td>
+</tr>
+<tr>
+	<td>totalPirce</td>
+	<td>int</td>
+	<td>产品打折后价格</td>
+	<td>产品打折后价格</td>
+</tr>
+<tr>
+	<td>originalPrice</td>
+	<td>int</td>
+	<td>产品打折前价格</td>
+	<td>产品打折前价格</td>
+</tr>
+
+<tr>
+	<td>productUnitPrice</td>
+	<td>int</td>
+	<td>产品单价</td>
+	<td>产品单价</td>
+</tr>
+<tr>
+	<td>productAmount</td>
+	<td>int</td>
+	<td>产品总量</td>
+	<td>产品总量</td>
+</tr>
+<tr>
+	<td>gameTradeNo</td>
+	<td>String</td>
+	<td>游戏商品号</td>
+	<td>游戏商品号</td>
+</tr>
+<tr>
+	<td>currencyName</td>
+	<td>String</td>
+	<td>实际支付的国际标准货币代码,比如CNY(人民币)/USD(美元)</td>
+	<td>实际支付的国际标准货币代码,比如CNY(人民币)/USD(美元)</td>
+</tr>
+<tr>
+	<td>custom</td>
+	<td>String</td>
+	<td>扩展字段</td>
+	<td>扩展字段</td>
+</tr>
+<tr>
+	<td>roleId</td>
+	<td>String</td>
+	<td>角色ID</td>
+	<td>角色ID</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>String</td>
+	<td>角色名称</td>
+	<td>角色名称</td>
+</tr>
+<tr>
+	<td>level</td>
+	<td>int</td>
+	<td>角色等级</td>
+	<td>角色等级</td>
+</tr>
+<tr>
+	<td>vipLevel</td>
+	<td>String</td>
+	<td>角色vip等级</td>
+	<td>角色vip等级</td>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>String</td>
+	<td>服ID</td>
+	<td>服ID</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>String</td>
+	<td>服名称</td>
+	<td>服名称</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>String</td>
+	<td>区ID</td>
+	<td>区ID</td>
+</tr>
+<tr>
+	<td>zoneName</td>
+	<td>String</td>
+	<td>区名称</td>
+	<td>区名称</td>
+</tr>
+<tr>
+	<td>gameCallbackUrl</td>
+	<td>String</td>
+	<td>支付通知URL地址</td>
+	<td>支付通知URL地址</td>
+</tr>
+</table>
+
+
+####常用的国际货币
+
+
+<table>
+<tr>
+	<th>国家</th>
+	<th>货币中文名</th>
+	<th>货币英文名</th>
+	<th>货币代码</th>
+</tr>
+<tr>
+	<td>中国</td>
+	<td>人民币元</td>
+	<td>RenminbiYuan</td>
+	<td>CNY</td>
+</tr>
+<tr>
+	<td>韩国</td>
+	<td>韩圆</td>
+	<td>Korean Won</td>
+	<td>KRW</td>
+</tr>
+<tr>
+	<td>日本</td>
+	<td>日元</td>
+	<td>Japanese Yen</td>
+	<td>JPY</td>
+</tr>
+<tr>
+	<td>美国</td>
+	<td>美元</td>
+	<td>U.S.Dollar</td>
+	<td>USD</td>
+</tr>
+</table>
+
+
+
+#####支付回调接口
+在调用pay接口时，需要实现pay支付callback(支付成功，支付失败，支付取消）
+
+实现的案例代码
+
+ 	XGSDK.getInstance().pay(MainActivity.this, payment,
+        new PayCallBack() {
+
+            @Override
+            public void onSuccess(String msg) {
+                ToastUtil.showToast(MainActivity.this,
+                        "pay success." + msg);
+				//执行贵方游戏的其他业务逻辑代码
+            }
+
+            @Override
+            public void onFail(int code, String msg) {
+                ToastUtil.showToast(MainActivity.this,
+                        "pay fail." + code + " " + msg);
+            }
+            @Override
+            public void onCancel(String msg) {
+                ToastUtil.showToast(MainActivity.this,
+                        "pay cancel." + msg);
+            }
+        });
+
+#####2.3.6 接入统计接口
+
+#####自定义事件接口
+public void onEvent(Activity activity, String eventId, String content)
+
+	接口说明：
+		自定义事件，传入事件id以及事件内容
+	参数说明：
+		eventId：事件id
+		content：事件内容
+
+#####任务开始接口
+
+public void onMissionBegin(Activity activity, XGUser user,
+            RoleInfo roleInfo, GameServerInfo serverInfo, String missionName,Map<String, Object> customParams)  
+
+	接口说明：
+		任务开始接口
+	参数说明：
+		user:用户对象
+		roleInfo:对象信息
+		serverInfo:服务器信息
+		missionName:任务名称
+		customParams:该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+
+#####任务执行成功接口
+public void onMissionSuccess(Activity activity, XGUser user,
+            RoleInfo roleInfo, GameServerInfo serverInfo, String missionName,Map<String, Object> customParams)
+
+	接口说明：
+		任务执行成功接口
+	参数说明：
+		user:用户对象
+		roleInfo:对象信息
+		serverInfo:服务器信息
+		missionName:任务名称
+		customParams:该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+
+
+
+#####任务失败接口
+public void onMissionFail(Activity activity, XGUser user,
+            RoleInfo roleInfo, GameServerInfo serverInfo, String missionName,Map<String, Object> customParams)
+
+	接口说明：
+		任务失败
+	参数说明：
+		user:用户对象
+		roleInfo:对象信息
+		serverInfo:服务器信息
+		missionName:任务名称
+		customParams:该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+
+
+
+####2.3.6 接入扩展接口
 #####切换账号接口
 switchAccount(Activity activity, String customParams)
-
+	接口说明：
+		切换账号，传入扩展参数customParams
 	参数说明：
-		customParams：切换账号参数
+		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 
-#####个人中心接口
-openUserCenter(Activity activity, String customParams)
-
-	参数说明：
-		customParams：个人中心参数
 
 
 ****

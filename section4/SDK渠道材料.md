@@ -1,16 +1,15 @@
 #渠道SDK材料
----
 
-<font face="微软雅黑" >西瓜SDK目前支持Android和iOS两种平台，其中Android平台已支持43个渠道，iOS平台已支持13个渠道。
+
+西瓜SDK目前支持Android和iOS两种平台，其中Android平台已支持43个渠道，iOS平台已支持13个渠道。
 西瓜不仅仅实现了主流渠道的覆盖，而且更多的渠道也在持续加入中。</br>
 为了方便游戏可以更容易的了解各个渠道的不同需求，以下是对现已支持渠道的简单介绍，其中包括：
 渠道名称、渠道ID、渠道最新版本和渠道原始资料。</br>
-</font>
-<h1>
-Android渠道列表<br />
-</h1>
+
+
+##Android渠道列表
+
 <table >
-<tbody>
 <tr>
 <td>
 				渠道名称
@@ -18,29 +17,13 @@ Android渠道列表<br />
 <td>
 				渠道ID
 			</td>
-<!--<td>
-				XGSDK版本
-			</td>-->
 <td>
 				渠道版本
 			</td>
-<!--
-<td>
-				实现说明
-			</td>
-<td>
-				角标说明
-			</td>
-<td>
-				自检规范
-			</td>
-      -->
 <td>
 				原始材料
 			</td>
 </tr>
-</tbody>
-<tbody>
 <tr>
 <td>
 				安智
@@ -48,23 +31,9 @@ Android渠道列表<br />
 <td>
 				anzhi
 			</td>
-<!--<td>
-				1.1
-			</td> -->
 <td>
 				3.3
 			</td>
-<!--
-<td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/ios_91/1.1/渠道实现说明.docx">打开</a>
-			</td>
-<td>
-				<a href="http://doc.xgsdk.com/files/channels/anzhi/1.1/%e5%ae%89%e6%99%ba%e6%b8%a0%e9%81%93%e8%a7%92%e6%a0%87%e8%a7%84%e8%8c%83.zip">下载链接</a>
-			</td>
-<td>
-				<a href="http://doc.xgsdk.com/files/channels/anzhi/1.1/%e5%ae%89%e6%99%ba%e6%b8%a0%e9%81%93%e8%87%aa%e6%a3%80%e8%a7%84%e8%8c%83.xls">下载链接</a>
-			</td>
-      -->
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/anzhi/1.1/安智游戏SDK_3.3开发包_0528.rar">下载链接</a>
 			</td>
@@ -76,11 +45,6 @@ Android渠道列表<br />
 <td>
 				mzw
 			</td>
-      <!--
-<td>
-				1.1
-			</td>
-      -->
 <td>
 				2.1.1
 			</td>
@@ -1091,19 +1055,19 @@ Android渠道列表<br />
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/sina/1.1.1/新浪SDK.zip">下载链接</a><span style="line-height:1.5;">&nbsp;&nbsp;</span>
+				<a href="http://doc.xgsdk.com/files/channels/sina/1.1.1/新浪SDK.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
 <td>
-				乐视&nbsp;&nbsp;&nbsp;&nbsp;
+				乐视
 			</td>
 <td>
 				leshi
 			</td>
 <!--
 <td>
-				1.3 &nbsp;&nbsp;
+				1.3
 			</td>
       -->
 <td>
@@ -1129,11 +1093,11 @@ Android渠道列表<br />
 				乐嗨嗨
 			</td>
 <td>
-				<span>lh</span><span>h</span>
+			lhh
 			</td>
 <!--
 <td>
-				<span>1.3</span>
+				1.3
 			</td>
       -->
 <td>
@@ -1144,7 +1108,7 @@ Android渠道列表<br />
 				<a href="http://doc.xgsdk.com/files/channels/lhh/1.1/%E6%B8%A0%E9%81%93%E5%AE%9E%E7%8E%B0%E8%AF%B4%E6%98%8E.doc">打开</a>
 			</td>
 <td>
-				<span>无</span>
+				无
 			</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/lhh/1.1/%E4%B9%90%E5%97%A8%E5%97%A8SDK%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.xls">下载链接</a>
@@ -1216,14 +1180,14 @@ Android渠道列表<br />
 </tr>
 <tr>
 <td>
-				海马&nbsp;&nbsp;&nbsp;&nbsp;
+				海马
 			</td>
 <td>
-				haima&nbsp;&nbsp;&nbsp;&nbsp;
+				haima
 			</td>
 <!--
 <td>
-				1.3 &nbsp; &nbsp;
+				1.3  
 			</td>
       -->
 <td>
@@ -1305,17 +1269,14 @@ Android渠道列表<br />
 				<a target="_blank" href="http://doc.xgsdk.com/files/channels/youlongi/1.3/游龙SDK（全屏新版）_v1.1.zip">下载链接</a>
 			</td>
 </tr>
-</tbody>
 </table>
-<p>
-	<br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-</p>
-<h1>
-	iOS渠道列表<br />
-</h1>
+
+
+
+
+##iOS渠道列表
+
 <table >
-<tbody>
 <tr>
 <td>
 				渠道名称
@@ -1346,8 +1307,6 @@ Android渠道列表<br />
 				原始材料
 			</td>
 </tr>
-</tbody>
-<tbody>
 <tr>
 <td>
 				快用
@@ -1470,10 +1429,10 @@ Android渠道列表<br />
 </tr>
 <tr>
 <td>
-				<span style="color:#E53333;">海马爱贝（注：海马渠道已独立）</span>
+				海马爱贝（注：海马渠道已独立）
 			</td>
 <td>
-				<span style="color:#E53333;">ios_haima</span>
+			ios_haima
 			</td>
 <!--
 <td>
@@ -1681,11 +1640,11 @@ Android渠道列表<br />
 </tr>
 <tr>
 <td>
-				<span style="color:#E53333;">海马</span>
+			海马
 			</td>
 <td>
 <div>
-					<span style="color:#E53333;">&nbsp;ios_haimav3&nbsp;</span><span style="line-height:1.5;"></span><span style="line-height:1.5;"></span>
+				ios_haimav3
 				</div>
 </td>
 <!--
@@ -1704,7 +1663,7 @@ Android渠道列表<br />
 				<a href="http://doc.xgsdk.com/files/channels/iOS/haimav3/1.1/%E6%B8%A0%E9%81%93%E8%A7%92%E6%A0%87%E8%A7%84%E8%8C%83.zip">下载链接</a>
 			</td>
 <td>
-				<span>无</span>
+				无
 			</td>
       -->
 <td>
@@ -1734,7 +1693,6 @@ Android渠道列表<br />
 <td>
 			</td>
 </tr>
-</tbody>
 </table>
 
 ###文档版本说明

@@ -1,15 +1,10 @@
 #接入常见问题
----
-<!--###Android渠道打包须知：
-1.木蚂蚁渠道：游戏商务在提交木蚂蚁渠道包时，需同时提供该渠道包的MD5码。</br>
-2....
--->
-**<a href="#1">角标问题</a>**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-**<a href="#2">闪屏问题</a>** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-**<a href="#4">登录问题</a>** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-**<a href="#5">支付问题</a>** </br>
 
----
+**<a href="#1">角标问题</a>**                **<a href="#2">闪屏问题</a>**
+**<a href="#4">登录问题</a>**
+**<a href="#5">支付问题</a>**
+
+
 
 ```
 角标

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<table width="1708" border="0" cellpadding="0" cellspacing="0" >
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl23" height="36" width="1636" colspan="6" rowspan="2" style='height:27.00pt;width:1227.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>CP内嵌SDK自测用例</td>
+    <td class="xl22" width="72" style='width:54.00pt;'></td>
+   </tr>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="20" style='height:15.00pt;'>
+    <td class="xl24" height="20" colspan="6" style='height:15.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>游戏名称：</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="20" style='height:15.00pt;'>
+    <td class="xl24" height="20" colspan="6" style='height:15.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>网游/单机：</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl25" height="19" colspan="5" style='height:14.25pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>测试时建议用小米手机，其他手机出现问题可忽略</td>
+    <td class="xl25"></td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="40" style='height:30.00pt;'>
+    <td class="xl26" height="40" style='height:30.00pt;' x:str>序号</td>
+    <td class="xl26" x:str>功能点</td>
+    <td class="xl26" x:str>检查条目（每项均为必填项，若未测试请写明原因）</td>
+    <td class="xl26" x:str>测试结果     （F/P）</td>
+    <td class="xl26" x:str>备注</td>
+    <td class="xl26" x:str>西瓜说明</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="37" style='height:27.75pt;'>
+    <td class="xl27" height="37" style='height:27.75pt;' x:num>1</td>
+    <td class="xl27" rowspan="6" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>关于SDK安装</td>
+    <td class="xl27" x:str>卸载掉手机内&quot;小米游戏安全插件”，进入游戏，点击登录，弹出安装插件提示，点取消，不应退出游戏，而是停留在游戏登录页面，再次点击时再次调起安装提示。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>西瓜已验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>2</td>
+    <td class="xl27" x:str>若手机未装小米安全插件，可以成功安装&quot;小米游戏安全插件”。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>西瓜已验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>3</td>
+    <td class="xl27" x:str>安装&quot;小米游戏安全插件”后可以自动调起登录，出现欢迎小米账户xxx。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>西瓜已验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>4</td>
+    <td class="xl27" x:str><font class="font6">游戏内必须内嵌最新</font><font class="font5">MiGameCenterSDKService.apk</font><font class="font6">发布版，且更新了最新的</font><font class="font5"> SDK_TY_4.2.5.jar</font></td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>西瓜已验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="38" style='height:28.50pt;'>
+    <td class="xl27" height="38" style='height:28.50pt;' x:num>5</td>
+    <td class="xl27" x:str>使用A账号玩一会儿游戏，然后卸载安全插件（如果无法卸载可清除缓存），再次进入游戏账号，仍然是欢迎A账号，且进度不丢失。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="37" style='height:27.75pt;'>
+    <td class="xl27" height="37" style='height:27.75pt;' x:num>6</td>
+    <td class="xl27" x:str>手机内已经安装&quot;小米游戏安全插件”前提，进入游戏不再弹安装插件提示，直接弹出欢迎页面，点击切换，可以切换小号或默认账号</td>
+    <td class="xl28" x:str>需要游戏开通小号功能进行测试</td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="37" style='height:27.75pt;'>
+    <td class="xl27" height="37" style='height:27.75pt;' x:num>7</td>
+    <td class="xl27" rowspan="16" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>登陆</td>
+    <td class="xl27" x:str>点击欢迎条右侧的“切换”按钮，可创建小号，可以选择小号或默认账号登陆（注意：不能重复调用登录接口，导致登录两次或弹出两个小号窗口）。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl29"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>8</td>
+    <td class="xl27" x:str>可以通过小号窗口创建角色并登录游戏。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>9</td>
+    <td class="xl27" x:str>游戏只能用小米账号登录，不能通过注册非小米账号来登录，页面不能有注册功能。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>功能已验证，游戏验证自有功能</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="37" style='height:27.75pt;'>
+    <td class="xl27" height="37" style='height:27.75pt;' x:num>10</td>
+    <td class="xl30" x:str>用户标识务必使用 getUid()接口获得，禁止使用IMEI或者硬件标识来识别用户，若发现产品会进行下架处理</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>功能已验证，游戏验证自有功能</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>11</td>
+    <td class="xl30" x:str><font class="font8">对于网游，最佳登录顺序为：登录小米账号</font><font class="font7">(miLogin) --&gt; </font><font class="font8">选择游戏区服</font><font class="font7">–&gt;</font><font class="font8">选择角色</font><font class="font7">–&gt; </font><font class="font8">玩游戏</font></td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>功能已验证，游戏验证自有功能</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="56" style='height:42.00pt;'>
+    <td class="xl27" height="56" style='height:42.00pt;' x:num>12</td>
+    <td class="xl30" x:str><font class="font8">对于网游，为了避免用户账号丢失，请开发者一定要在服务器端记录用户</font><font class="font7">Uid</font><font class="font8">与区服的匹配关系，当用户清除本地游戏数据后，使用相同的小米</font><font class="font7">ID</font><font class="font8">登录，依然能够载入上次登录的区服。当然如果开发者能够标注出哪些区服用户有玩过就更好了。</font></td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>功能已验证，游戏验证自有功能</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl27" height="144" rowspan="8" style='height:108.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:num>13</td>
+    <td class="xl31" rowspan="8" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str><font class="font8">为了保护小米用户权益，网络游戏要在创建订单时透传服务器、角色、等级等参数，要保证数值准确真实，否则不允许上架。<br/></font><font class="font11">mBundle.putString( GameInfoField.GAME_USER_ROLE_NAME, &quot;meteor&quot; ); //角色名称<br/>mBundle.putString( GameInfoField.GAME_USER_SERVER_NAME, &quot;峡谷&quot; ); //所在服务器<br/>mBundle.putString( GameInfoField.GAME_USER_ROLEID, &quot;123456&quot; );   //角色id<br/>mBundle.putString( GameInfoField.GAME_USER_BALANCE, &quot;1000&quot; );  <span style='mso-spacerun:yes;'>&nbsp; </span>//用户游戏内虚拟币余额，如元宝，金币，符石(必填)<br/>mBundle.putString( GameInfoField.GAME_USER_GAMER_VIP, &quot;vip0&quot; );  //游戏内vip等级<br/>mBundle.putString( GameInfoField.GAME_USER_LV, &quot;20&quot; );        //游戏内主角等级<br/>mBundle.putString( GameInfoField.GAME_USER_PARTY_NAME, &quot;猎人&quot; );<span style='mso-spacerun:yes;'>&nbsp; </span>//工会，帮派</font><font class="font12"><br/></font></td>
+    <td class="xl28" rowspan="8" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;'></td>
+    <td class="xl27" rowspan="8" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;'></td>
+    <td class="xl28" rowspan="8" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>西瓜提供接口，需要游戏传入信息</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>14</td>
+    <td class="xl30" x:str><font class="font8">为了保护网游用户账号安全性，网络游戏一定要接入服务器端校验</font><font class="font7">verifySession</font><font class="font8">的接口。</font></td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>西瓜已验证，游戏需要接入服务端登录</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="56" style='height:42.00pt;'>
+    <td class="xl27" height="56" style='height:42.00pt;' x:num>15</td>
+    <td class="xl30" x:str><font class="font8">对于单机游戏，如果即不使用社交关系，也不需要识别用户，且进度记录存储在本机，则建议不要在游戏启动时调用登录小米账号</font><font class="font7">(miLogin)</font><font class="font8">，这样可以降低每次进入游戏都登录带来的用户流失。<br/></font><font class="font11">注</font><font class="font13">:</font><font class="font11">在支付时</font><font class="font13">SDK</font><font class="font11">会自动调用一次</font><font class="font13">miLogin()</font><font class="font11"> </font></td>
+    <td class="xl27"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>西瓜已验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="54" style='height:40.50pt;'>
+    <td class="xl27" height="54" style='height:40.50pt;' x:num>16</td>
+    <td class="xl34" rowspan="12" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>其他</td>
+    <td class="xl27" x:str>SDK“注销账号”和“切换账号”只能注销小号，不能注销大号。</td>
+    <td class="xl28"></td>
+    <td class="xl35" x:str>开通小号功能是由小米人员开通的如需要的话请发送邮件到xiongxin1@xiaomi.com 如不需要忽略这一步!(没有注销入口)</td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="38" style='height:28.50pt;'>
+    <td class="xl27" height="38" style='height:28.50pt;' x:num>17</td>
+    <td class="xl27" x:str>小米SDK欢迎页面支持横屏显示，可根据自己游戏的屏幕显示尽量调成一致以免横竖屏切换影响玩家体验。（SDK充值页面暂不支持横屏）</td>
+    <td class="xl28"></td>
+    <td class="xl35" x:str>同上</td>
+    <td class="xl35" x:str>西瓜已验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>18</td>
+    <td class="xl27" x:str>若该版本不开计费，请在游戏中暂时去掉充值或点击充值时给予用户提示。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>西瓜已验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="57" style='height:42.75pt;'>
+    <td class="xl27" height="57" style='height:42.75pt;' x:num>19</td>
+    <td class="xl27" x:str>特别提醒网游的游戏，如果启动游戏需要下载较大资源包时，用户处于非WiFi环境，务必提示用户“推荐使用WLAN下载，检测到您当前WLAN还未打开或连接，是否继续下载？”   若无此提示游戏将无法审核上线。</td>
+    <td class="xl28"></td>
+    <td class="xl37" x:str>没有资源包</td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>20</td>
+    <td class="xl27" x:str>提交给小米平台的游戏包名必须是唯一的，不能和其他渠道的包名相同，建议在官方包后面增加&quot;.mi&quot;。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>21</td>
+    <td class="xl27" x:str>要适配所有型号的小米手机，页面不能出现黑边，闪退等问题。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>22</td>
+    <td class="xl27" x:str><font class="font6">适配</font><font class="font5"> icon</font><font class="font6">尺寸大小为</font><font class="font5">192*192,</font><font class="font6">其他机型的也要适配。</font></td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>23</td>
+    <td class="xl27" x:str>游戏当中不能包含其他外链应用的推荐、广告以及官网等，只能存有小米游戏相关的链接。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>24</td>
+    <td class="xl27" x:str>游戏不能显示小米uid</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>25</td>
+    <td class="xl27" x:str>游戏中有展示等信息部分，不能出现非小米的产品，例如：苹果机，三星手机等。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;'></td>
+    <td class="xl28" x:str>若该版本不开计费，请在游戏中暂时去掉充值或点击充值时给予用户提示。</td>
+    <td class="xl28"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;'></td>
+    <td class="xl28" x:str>开充值的游戏请务必测试一下充值消费以后是否可以成功到账</td>
+    <td class="xl27"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>游戏验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" style='height:14.25pt;' x:num>26</td>
+    <td class="xl27" x:str>安全建议</td>
+    <td class="xl30" x:str>AppId / AppKey 不要存储在apk里，这样很容易被反编译</td>
+    <td class="xl39"></td>
+    <td class="xl39"></td>
+    <td class="xl39" x:str>西瓜已验证</td>
+    <td class="xl22"></td>
+   </tr>
+   <![endif]>
+  </table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

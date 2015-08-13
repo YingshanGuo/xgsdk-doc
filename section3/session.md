@@ -1,44 +1,48 @@
 #西瓜SDK session验证文档
 ---
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="微软雅黑">此文档是西瓜SDK服务端接入登录验证文档。介绍游戏服务器如何验证用户登录信息，游戏客户端在接受到西瓜登录成功的回调后，
-将对应的信息发送到游戏服务器，游戏服务器使用登录认证接口向西瓜登录服务器验证并获取用户登录信息。</font>
-<font face="微软雅黑" color="FF0000">注意</font>：<font face="微软雅黑">登录认证接口为登录流程必接接口。</font>
+<a id="doc"></a>
 
-<link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css">
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+##1、文档概述
 
-<script>hljs.initHighlightingOnLoad();</script>
-<script type="text/javascript">
- $(document).ready(function(){
-      $("h2,h3,h4,h5,h6").each(function(i,item){
-        var tag = $(item).get(0).localName;
-        $(item).attr("id","wow"+i);
-        $("#category").append('<a class="new'+tag+'" href="#wow'+i+'">'+$(this).text()+'</a></br>');
-        $(".newh2").css("margin-left",0);
-        $(".newh3").css("margin-left",20);
-        $(".newh4").css("margin-left",40);
-        $(".newh5").css("margin-left",60);
-        $(".newh6").css("margin-left",80);
-      });
- });
-</script>
-<div id="category" style="display:none"></div>
+此文档是西瓜SDK服务端接入登录验证文档。介绍游戏服务器如何验证用户登录信息，游戏客户端在接受到西瓜登录成功的回调后，
+将对应的信息发送到游戏服务器，游戏服务器使用登录认证接口向西瓜登录服务器验证并获取用户登录信息。
+注意：登录认证接口为登录流程必接接口。
 
-<!--
-###文档信息
 
-	渠道SDK服务端接入文档
-	作者：林立
-	SDK版本：2.0
-	文档版本：1.0
-	日期：2015.7.31
--->
+<a id="docStructure"></a>
 
-##一、登录认证接口
+###1.1 文档结构
 
-###1、功能
+<ol type='1'>
+	<li>
+		<a href="#doc">文档概述</a>
+			<ul type="disc">
+				<li><a href="#docStructure">文档结构</a></li>
+			</ul>
+	</li>
+	<li>
+		<a href="#configure">登录认证接口</a>
+			<ul type="disc">
+				<li><a href="#conditions">功能</a></li>
+				<li><a href="#steps">输入</a></li>
+				<li><a href="#import">输出</a>
+				<li><a href="#import_android">请求样例</a>
+        <li><a href="#import_1">返回值样例</a>
+			</ul>
+	</li>
+	<li>
+		<a href="#version">文档版本</a>
+	</li>
+</ol>
+
+<a id="configure"></a>
+
+##2、登录认证接口
+
+<a id="conditions"></a>
+
+###2.1 功能
 
 <table>
 <tr>
@@ -68,7 +72,9 @@
 **功能描述:**
 游戏服务器向XGSDK服务端发送请求，确认客户端发过来的sessionId是有效的，并获取准确的渠道账号。
 
-###2、输入
+<a id="steps"></a>
+
+###2.2 输入
 
 参数说明：
 <table>
@@ -172,7 +178,9 @@ iTools:userName<br/>
 </tr>
 </table>
 
-###3、输出
+<a id="import"></a>
+
+###2.3 输出
 
 返回结果为JSON格式的字符串，分别有如下几个字段：
 <table>
@@ -326,9 +334,11 @@ OPPO:gameBalance</td>
 </tr>
 </table>
 
-###4、请求样例
+<a id="import_android"></a>
 
-####4.1 authInfo结构
+###2.4 请求样例
+
+####2.4.1 authInfo结构
 
 **初始参数：**<br/>
 
@@ -362,7 +372,7 @@ OPPO:gameBalance</td>
 
 	eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsIm5hbWUiOiJuYW1lIixzZGtBcHBpZCI6IjEwMjRhcHBpZCIsInNpZ24iOiIzOTBkNzQzYzA5ZDI0MjhjM2RkZTZmY2FlM2E4MTY2ZjY2ZmQ0NTJhOWM5Y2RiMGU1NjdmMzAxODI2OWUzNDNkIiwidHMiOiIyMDE1MDcyMzE1MDAyOCIsInVJZCI6InVJZCJ9
 
-####4.2 登录验证参数结构
+####2.4.2 登录验证参数结构
 
 **当前时间戳ts为**
 
@@ -384,7 +394,9 @@ OPPO:gameBalance</td>
 
 	http://pay.xgsdk.com:8180/account/login/1024appid?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsIm5hbWUiOiJuYW1lIixzZGtBcHBpZCI6IjEwMjRhcHBpZCIsInNpZ24iOiIzOTBkNzQzYzA5ZDI0MjhjM2RkZTZmY2FlM2E4MTY2ZjY2ZmQ0NTJhOWM5Y2RiMGU1NjdmMzAxODI2OWUzNDNkIiwidHMiOiIyMDE1MDcyMzE1MDAyOCIsInVJZCI6InVJZCJ9&sign=d068f342e04926a0fcbd19db0685984d1f531bacbcc94ecfd4abf57fe7418c1a&ts=20150723150028&type=verify_session
 
-###5、返回值样例
+<a id="import_1"></a>
+
+###2.5 返回值样例
 
 
 		{
@@ -396,6 +408,8 @@ OPPO:gameBalance</td>
 	        "uId": "3099245"
 	    }
 	}
+
+<a id="version"></a>
 
 ###文档版本说明
 <table>
