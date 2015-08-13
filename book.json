@@ -1,6 +1,12 @@
 {
   "plugins": ["collapsible-menu"],
-  "pluginsConfig": {},
+  "pluginsConfig": {
+      "fontSettings": {
+          "theme": "white",
+          "family": "sans",
+          "size": 1
+      }
+  },
   "theme": "../gitbook/theme/",
   "language": "zh-cn",
   "version": "^2.2.0",
