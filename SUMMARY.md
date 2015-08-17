@@ -6,6 +6,7 @@ This is the summary of my book.
     * [快速入门](section1/quick_start.md)
     * [hello西瓜](section1/hello_xgsdk.md)
     * [视频教程](section1/video_tutorial.md)
+    * [快速接入](section1/try.md)
 
 * [客户端接入指南](section2/README.md)
     * [Cocos2d-x引擎](section2/Cocos2dx修正版.md)

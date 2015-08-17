@@ -29,10 +29,10 @@
 ###1.注册账号
 
 
-1.1西瓜SDK需要注册账号才可以进行登录的，登录后可以创建新游戏，所以使用前需要登录西瓜SDK主页进行账号注册（<a href="http://console.xgsdk.com/login">点击注册</a>）；</br>
-<img src="./img/step1.png"> </br>
+1.1进入西瓜SDK官网首页[<a href="http://console.xgsdk.com/login">http://console.xgsdk.com/login</a>]，注册账号并进行登录后可以创建新游戏。；</br>
+<img src="./img/kstep_1.png"> </br>
 1.2在输入框中填入对应信息，点击免费注册即可；</br>
-<img src="./img/step2.png"> </br>
+<img src="./img/kstep_2.png"> </br>
 1.3注册成功输入用户名、密码，进入如下页面即注册成功。</br>
 <img src="./img/step3.png"> </br>
 
@@ -42,8 +42,8 @@
 
 ###2.创建游戏
 
-2.1点击“创建”游戏；
-<img src="./img/step4.png">
+2.1点击“创建”游戏；</br>
+<img src="./img/step4.png" > </br>
 2.2输入游戏名称、选择游戏平台、上传游戏图标（可选项），点击确认即可；</br>
 <img src="./img/step18.png"> </br>
 2.3创建游戏成功。
