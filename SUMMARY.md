@@ -6,18 +6,14 @@ This is the summary of my book.
     * [快速入门](section1/quick_start.md)
     * [hello西瓜](section1/hello_xgsdk.md)
     * [视频教程](section1/video_tutorial.md)
-    * [快速接入](section1/try.md)
 
 * [客户端接入指南](section2/README.md)
     * [Cocos2d-x引擎](section2/Cocos2dx修正版.md)
         * [android](section2/Cocos2dx修正版.md)
-        * [ios](section2/example5.md)
     * [Unity3d引擎](section2/Unity3d修正版.md)
         * [android](section2/Unity3d修正版.md)
-        * [ios](section2/example5.md)
     * [原生接口](section2/原生.md)
         * [android](section2/原生android修正版.md)
-        * [ios](section2/example5.md)
     * [客户端接入验证](section2/测试渠道修正版.md)
 
 * [服务端接入指南](section3/README.md)  
