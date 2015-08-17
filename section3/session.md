@@ -1,29 +1,28 @@
 #西瓜SDK session验证文档
 ---
 
-<a id="doc"></a>
 
 ##1、文档概述
 
-此文档是西瓜SDK服务端接入登录验证文档。介绍游戏服务器如何验证用户登录信息，游戏客户端在接受到西瓜登录成功的回调后，
+此文档是西瓜SDK服务端接入登录验证文档。介绍游戏服务器如何验证用户登录信息，游戏客户端在接收到西瓜登录成功的回调后，
 将对应的信息发送到游戏服务器，游戏服务器使用登录认证接口向西瓜登录服务器验证并获取用户登录信息。
-注意：登录认证接口为登录流程必接接口。
+** 注意：** 登录认证接口为登录流程必接接口。
 
 
-<a id="docStructure"></a>
 
 ###1.1 文档结构
 
-<ol type='1'>
+
+<ol>
 	<li>
 		<a href="#doc">文档概述</a>
-			<ul type="disc">
+			<ul>
 				<li><a href="#docStructure">文档结构</a></li>
 			</ul>
 	</li>
 	<li>
 		<a href="#configure">登录认证接口</a>
-			<ul type="disc">
+			<ul>
 				<li><a href="#conditions">功能</a></li>
 				<li><a href="#steps">输入</a></li>
 				<li><a href="#import">输出</a>
@@ -36,11 +35,12 @@
 	</li>
 </ol>
 
-<a id="configure"></a>
+
+<div id="configure"></div>
 
 ##2、登录认证接口
 
-<a id="conditions"></a>
+<div id="conditions"></div>
 
 ###2.1 功能
 
@@ -61,20 +61,20 @@
 <td>安全机制</td><td>签名</td>
 </tr>
 <tr>
-<td>请求地址</td><td>http://pay.xgsdk.com:8180/account/verify_session/{sdkAppid}</td>
+<td>请求地址</td><td>http://pay.xgsdk.com:8180/account/verify-session/{xgAppId}</td>
 </tr>
 </table>
 
 ```
-其中sdkAppid是游戏在XGSDK的唯一标示，如西游伏魔是1024appid。
+其中xgAppId是游戏在XGSDK的唯一标示，如西游伏魔是1024appid。
 ```
 
 **功能描述:**
 游戏服务器向XGSDK服务端发送请求，确认客户端发过来的sessionId是有效的，并获取准确的渠道账号。
 
-<a id="steps"></a>
+<div id="steps"></div>
 
-###2.2 输入
+###2.2 请求
 
 参数说明：
 <table>
@@ -82,40 +82,40 @@
 <td>参数</td><td width="70">是否必需</td><td>类型</td><td>说明</td>
 </tr>
 <tr>
-<td>type</td><td>是</td><td>String</td><td>接口类型，固定为verify_session</td>
+<td>type</td><td>是</td><td>String</td><td>接口类型，固定为verify-session</td>
 </tr>
 <tr>
 <td>authInfo</td><td>是</td><td>String</td><td>会话验证数据，xgsdk客户端负责生成，反馈给游戏客户端，游戏客户端提交给游戏服务器后，游戏服务器拿这个参数到xgsdk服务器验证登录会话是否有效
-BASE64编码后的json字符串</td>
+BASE64编码后的json字符串。具体数据格式说明请参考<a href="#authInfo">authInfo数据格式</a></td>
 </tr>
 <tr>
-<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028对应2015/7/23 15:00:28</td>
+<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150811085930对应2015/8/11 08:59:30</td>
 </tr>
 <tr>
-<td>sign</td><td>是</td><td>String</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥，签名参数仅包括authInfo和ts</td>
+<td>sign</td><td>是</td><td>String</td><td>签名字符串，签名算法参见签名章节，使用游戏服务端密钥，签名参数仅包括authInfo</td>
 </tr>
 </table>
 
-authInfo数据:
+<a name="authInfo"></a>authInfo数据格式:
 
 <table>
 <tr>
 <td>参数</td><td width="70">是否必需</td><td>类型</td><td>说明</td>
 </tr>
 <tr>
-<td>sdkAppid</td><td>是</td><td>String</td><td>xgsdk分配给游戏的ID</td>
+<td>xgAppId</td><td>是</td><td>String</td><td>xgsdk分配给游戏的唯一AppId</td>
 </tr>
 <tr>
-<td>channelId</td><td>是</td><td>String</td><td>渠道ID</td>
+<td>channelId</td><td>是</td><td>String</td><td>渠道Id</td>
 </tr>
 <tr>
-<td>deviceId</td><td>是</td><td>String</td><td>设备id</td>
+<td>deviceId</td><td>是</td><td>String</td><td>设备Id</td>
 </tr>
 <tr>
 <td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028对应2015/7/23 15:00:28</td>
 </tr>
 <tr>
-<td>authToken</td><td>否</td><td>String</td><td>以下渠道按说明填写,没有的直接填空<br/>
+<td>authToken</td><td>否</td><td>String</td><td>以下渠道按说明填写,没有的直接留空<br/>
 酷派:authorization code<br/>
 Vivo:authtoken<br/>
 金立:AmigoToken<br/>
@@ -139,10 +139,10 @@ iTools:sessionId<br/>
 快用:tokenKey<br/>
 PP助手:token_key<br/>
 同步推:sessionID<br/>
-91:sessionId  </td>
+91:sessionId</td>
 </tr>
 <tr>
-<td>uId</td><td>否</td><td>String</td><td>以下渠道按说明填写,没有的直接填空<br/>
+<td>uId</td><td>否</td><td>String</td><td>以下渠道按说明填写,没有的直接留空<br/>
 Vivo:openid<br/>
 金立:amigoUserId<br/>
 联想:realm<br/>
@@ -174,27 +174,101 @@ iTools:userName<br/>
 快用:username<br/>
 猎豹:clientIp</td>
 </tr>
+<tr>
+<td>planId</td><td>是</td><td>String</td><td>游戏发行计划编号</td>
+</tr>
+<tr>
 <td>sign</td><td>是</td><td>String</td><td>签名，签名算法参见签名章节，使用游戏客户端密钥，签名参数为authInfo中的所有参数</td>
 </tr>
 </table>
 
-<a id="import"></a>
+<div id="import"></div>
 
-###2.3 输出
+####2.2.1 请求示例
 
-返回结果为JSON格式的字符串，分别有如下几个字段：
+#####2.2.1.1 构建authInfo值
+
+######初始参数：
+
+	authToken=61A28C6C94F8F4D37C6EE632DFA43
+    channelId=mi
+    deviceId=1740948824
+	name=Michael
+    planId=1
+    uId=foo2015
+    xgAppId=2001
+
+######当前时间戳ts为：
+
+	20150811085930
+
+######游戏客户端密钥：
+
+	16e532be7c4a401a903c07ef3ea10803
+
+######authInfo生成签名前的字符串为（按Key值升序排列）:
+
+	authToken=61A28C6C94F8F4D37C6EE632DFA43&channelId=mi&deviceId=1740948824&name=Michael&planId=1&ts=20150811085930&uId=foo2015&xgAppId=2001
+
+######对authInfo字符串进行HmacSHA1签名的结果为:
+
+	9150ff12a280b1c234ab4c53e9b3c53a5536dd36
+
+######将上述签名填入到autoInfo的sign字段，填完的结果为:
+
+	{"authToken":"61A28C6C94F8F4D37C6EE632DFA43","channelId":"mi","deviceId":"1740948824","name":"Michael","planId":"1","sign":"9150ff12a280b1c234ab4c53e9b3c53a5536dd36","ts":"20150811085930","uId":"foo2015","xgAppId":"2001"}
+
+######最后对包含签名的authInfo字符串进行Base64编码，结果为：
+
+	eyJhdXRoVG9rZW4iOiI2MUEyOEM2Qzk0RjhGNEQzN0M2RUU2MzJERkE0MyIsImNoYW5uZWxJZCI6Im1pIiwiZGV2aWNlSWQiOiIxNzQwOTQ4ODI0IiwibmFtZSI6Ik1pY2hhZWwiLCJwbGFuSWQiOiIxIiwic2lnbiI6IjkxNTBmZjEyYTI4MGIxYzIzNGFiNGM1M2U5YjNjNTNhNTUzNmRkMzYiLCJ0cyI6IjIwMTUwODExMDg1OTMwIiwidUlkIjoiZm9vMjAxNSIsInhnQXBwSWQiOiIyMDAxIn0=
+
+#####2.2.1.2 构建登录验证URL
+
+######假如当前时间戳ts为：
+
+	20150811085930
+
+######游戏服务端密钥为:
+
+	aefc5134be1543dea3217144eb71e8f8
+
+######登录验证参数为（authInfo + ts + type）：
+
+	authInfo=eyJhdXRoVG9rZW4iOiI2MUEyOEM2Qzk0RjhGNEQzN0M2RUU2MzJERkE0MyIsImNoYW5uZWxJZCI6Im1pIiwiZGV2aWNlSWQiOiIxNzQwOTQ4ODI0IiwibmFtZSI6Ik1pY2hhZWwiLCJwbGFuSWQiOiIxIiwic2lnbiI6IjkxNTBmZjEyYTI4MGIxYzIzNGFiNGM1M2U5YjNjNTNhNTUzNmRkMzYiLCJ0cyI6IjIwMTUwODExMDg1OTMwIiwidUlkIjoiZm9vMjAxNSIsInhnQXBwSWQiOiIyMDAxIn0=&ts=20150811085930&type=verify-session
+
+######对登录验证参数进行HmacSHA1签名的结果为：
+
+	eeea1a2d07e258932679effea36aa0d2fe47e50e
+
+######最终的请求URL：
+
+	http://pay.xgsdk.com:8180//account/verify-session/2001?authInfo=eyJhdXRoVG9rZW4iOiI2MUEyOEM2Qzk0RjhGNEQzN0M2RUU2MzJERkE0MyIsImNoYW5uZWxJZCI6Im1pIiwiZGV2aWNlSWQiOiIxNzQwOTQ4ODI0IiwibmFtZSI6Ik1pY2hhZWwiLCJwbGFuSWQiOiIxIiwic2lnbiI6IjkxNTBmZjEyYTI4MGIxYzIzNGFiNGM1M2U5YjNjNTNhNTUzNmRkMzYiLCJ0cyI6IjIwMTUwODExMDg1OTMwIiwidUlkIjoiZm9vMjAxNSIsInhnQXBwSWQiOiIyMDAxIn0=&sign=eeea1a2d07e258932679effea36aa0d2fe47e50e&ts=20150811085930&type=verify-session
+
+<div id="import_1"></div>
+
+###2.3 返回
+
+返回结果为JSON格式的字符串，分别有如下字段：
 <table>
 <tr>
 <td>字段</td><td>必选</td><td>类型</td><td>说明</td>
 </tr>
 <tr>
-<td>code</td><td>是</td><td>字符串</td><td>返回码，参见错误码章节</td>
+<td>code</td><td>是</td><td>字符串</td><td>返回码，参见错误码章节（如：验证通过为0）</td>
 </tr>
 <tr>
-<td>msg</td><td>是</td><td>字符串</td><td>接口调用信息提示</td>
+<td>msg</td><td>是</td><td>字符串</td><td>接口调用信息提示:<br/>
+- 成功<br/>
+- 验证失败<br/>
+- 输入错误：authToken为空<br/>
+- 输入错误：uId为空<br/>
+- 系统错误：渠道AppSecret为空<br/>
+- 系统错误：渠道无响应<br/>
+- 系统错误：渠道返回结果格式错误<br/>
+</td>
 </tr>
 <tr>
-<td>data</td><td>是</td><td>JSONObject</td><td>当Code为0时候该字段才有意义，否则为空</td>
+<td>data</td><td>是</td><td>JSONObject</td><td>当code为0时候该字段才有意义，否则为空</td>
 </tr>
 </table>
 
@@ -329,77 +403,15 @@ OPPO:gameBalance</td>
 <tr>
 <td>level</td><td>否</td><td>String</td><td>当乐:level</td>
 </tr>
-<tr>
-<td>参数</td><td>是否必需</td><td>类型</td><td>说明</td>
-</tr>
 </table>
 
-<a id="import_android"></a>
-
-###2.4 请求样例
-
-####2.4.1 authInfo结构
-
-**初始参数：**<br/>
-
-	sdkAppid=1024appid<br/>
-	channelId=mi<br/>
-	authToken=authToken<br/>
-	uId=uId<br/>
-	name=name<br/>
-
-**当前时间戳ts为：**<br/>
-
-	20150723150028
-
-**游戏客户端密钥：**<br/>
-
-	123456
-
-**authInfo生成签名前的源串为:**
-
-	authToken=authToken&channelId=mi&name=name&sdkAppid=1024appid&ts=20150723150028&uId=uId123456
-
-**最终SHA256签名为:**<br/>
-
-	390d743c09d2428c3dde6fcae3a8166f66fd452a9c9cdb0e567f3018269e343d
-
-**Base64编码前的authInfo数据为:**
-
-	{"authToken":"authToken","channelId":"mi","name":"name",sdkAppid":"1024appid","sign":"390d743c09d2428c3dde6fcae3a8166f66fd452a9c9cdb0e567f3018269e343d","ts":"20150723150028","uId":"uId"}
-
-**Base64编码后的authInfo数据为：**
-
-	eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsIm5hbWUiOiJuYW1lIixzZGtBcHBpZCI6IjEwMjRhcHBpZCIsInNpZ24iOiIzOTBkNzQzYzA5ZDI0MjhjM2RkZTZmY2FlM2E4MTY2ZjY2ZmQ0NTJhOWM5Y2RiMGU1NjdmMzAxODI2OWUzNDNkIiwidHMiOiIyMDE1MDcyMzE1MDAyOCIsInVJZCI6InVJZCJ9
-
-####2.4.2 登录验证参数结构
-
-**当前时间戳ts为**
-
-	20150723150028
-
-**游戏服务端密钥为:**
-
-	654321
-
-**登录验证参数签名前的源串：**
-
-	authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsIm5hbWUiOiJuYW1lIixzZGtBcHBpZCI6IjEwMjRhcHBpZCIsInNpZ24iOiIzOTBkNzQzYzA5ZDI0MjhjM2RkZTZmY2FlM2E4MTY2ZjY2ZmQ0NTJhOWM5Y2RiMGU1NjdmMzAxODI2OWUzNDNkIiwidHMiOiIyMDE1MDcyMzE1MDAyOCIsInVJZCI6InVJZCJ9&ts=20150723150028&type=verify_session654321
-
-**对应SHA256签名为：**
-
-	d068f342e04926a0fcbd19db0685984d1f531bacbcc94ecfd4abf57fe7418c1a
-
-**请求样例：**
-
-	http://pay.xgsdk.com:8180/account/login/1024appid?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsIm5hbWUiOiJuYW1lIixzZGtBcHBpZCI6IjEwMjRhcHBpZCIsInNpZ24iOiIzOTBkNzQzYzA5ZDI0MjhjM2RkZTZmY2FlM2E4MTY2ZjY2ZmQ0NTJhOWM5Y2RiMGU1NjdmMzAxODI2OWUzNDNkIiwidHMiOiIyMDE1MDcyMzE1MDAyOCIsInVJZCI6InVJZCJ9&sign=d068f342e04926a0fcbd19db0685984d1f531bacbcc94ecfd4abf57fe7418c1a&ts=20150723150028&type=verify_session
-
-<a id="import_1"></a>
-
-###2.5 返回值样例
+<div id="import_android"></div>
 
 
-		{
+######返回示例
+
+
+	{
 	    "code": "0",
 	    "msg": "success",
 	    "data": {
@@ -409,7 +421,7 @@ OPPO:gameBalance</td>
 	    }
 	}
 
-<a id="version"></a>
+<div id="version"></div>
 
 ###文档版本说明
 <table>

@@ -208,20 +208,20 @@
 西瓜SDK平台上所需的appid、appkey、appsecret均在小米后台获取。
 
 ###获取步骤如下：
-<ol>
-	<li>**在小米官方后台注册`小米开发者账号`（<a href="http://dev.xiaomi.com">请点击这里</a>）；**</li>
-	<li>**登陆账号后点击管理控制台进入如下页面，点击“手机及平板应用”；
-    <img src='./img/img3.png'>** </li>
-	<li>**点击“创建应用”；**
+
+1. **在小米官方后台注册`小米开发者账号`（<a href="http://dev.xiaomi.com">请点击这里</a>）；**
+
+ ** 登陆账号后点击管理控制台进入如下页面，点击“手机及平板应用”；**
+    <img src='./img/img3.png'>
+2. ** 点击“创建应用”；**
     <img src='./img/img4.png'>
-    </li>
-	<li>**填写完整下图中的信息，点击创建；**
+3.** 填写完整下图中的信息，点击创建；**
     <img src='./img/img5.png'>
-    </li>
-	<li>**成功申请到应用所需要的appid、appkey、appsecret，如下图；**
+
+4.** 成功申请到应用所需要的appid、appkey、appsecret，如下图；**
     <img src='./img/img6.png'>
-    </li>
-</ol>
+
+
 
 
 
