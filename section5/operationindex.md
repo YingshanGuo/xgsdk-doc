@@ -76,10 +76,12 @@
 <td>         每个账号每日使用时长的数值分布    </td>
 </tr>
 
+
 </table>
 
 示例图片：
 <img src="img/online_server.jpg"/>
+
 
 
 ### 3. 新用户指标 ###
@@ -129,18 +131,31 @@
 </td>
  </tr>
 
+
+
   <tr>
-  <td>新账号充值</td> <td>
+
+  <td>新账号充值</td>
+   <td>
   新账号充值
+
+</td>
+
 </tr>
 
 </table>
+
+
+
 
 示例图片：
 <img src="img/new_user.jpg"/>
 
 
 ### 4. 自定义事件指标 ###
+
+
+
 
 
 <table>
