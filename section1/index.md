@@ -6,3 +6,4 @@
 * [快速入门](./quick_start.md)
 * [hello西瓜](./hello_xgsdk.md)
 * [视频教程](./video_tutorial.md)
+* [打包工具使用指南](./xg_dabao.md)

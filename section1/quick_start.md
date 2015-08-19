@@ -6,7 +6,3 @@
  - 功能签功能详解
  - 打包工具如何使用
  - 充值回调地址 - 参考的图
-
-<img src="./img/mulu1.png">
-
-<img src="./img/liuchengtu_1.png">
