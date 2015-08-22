@@ -7,6 +7,7 @@ This is the summary of my book.
     * [hello西瓜](section1/hello_xgsdk.md)
     * [视频教程](section1/video_tutorial.md)
     * [打包工具使用指南](section1/xg_dabao.md)
+
 * [客户端接入指南](section2/README.md)
     * [Cocos2d-x引擎](section2/Cocos2dx修正版.md)
         * [android](section2/Cocos2dx修正版.md)
@@ -28,9 +29,7 @@ This is the summary of my book.
     * [渠道SDK材料](section4/SDK渠道材料.md)
 
 * [数据分析使用指南](section5/operationindex.md)  
-    * [准备工作](section5/example1.md)
     * [运营指标](section5/operationindex.md)
-    * [网络状况分析](section5/example3.md)
 
 * [常见问题](section6/README.md)
     * [常见接入问题](section6/android客户端.md)
