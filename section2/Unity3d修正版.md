@@ -40,9 +40,7 @@
 						<li><a href = "#login">登录接口</a></li>
 						<li><a href = "#logout">登出接口</a></li>
 						<li><a href = "#exit">退出接口</a></li>
-						<li><a href = "#enterGame">进入游戏</a></li>
-						<li><a href = "#createRole">创建角色</a></li>
-						<li><a href = "#roleLevelUp">角色升级</a></li>
+						
 					</ul>
 				</li>
 				<li><a href = "#rechargeInterface">充值接口</a>
@@ -55,10 +53,16 @@
 						<li><a href = "#missionBegin">任务开始</a></li>
 						<li><a href = "#missionSuccess">任务成功</a></li>
 						<li><a href = "#missionFail">任务失败</a></li>
+						<li><a href = "#onVirtalCurrencyPurchase">统计充值获得的虚拟货币</a></li>
+						<li><a href = "#onVirtualCurrencyReward">统计赠送的虚拟货币</a></li>
+						<li><a href = "#onVirtalCurrencyConsume">统计跟踪虚拟货币的消费</a></li>
 					</ul>
 				</li>
 				<li><a href = "#extraInterface">扩展接口</a>
 					<ul type = "circle">
+						<li><a href = "#enterGame">进入游戏</a></li>
+						<li><a href = "#createRole">创建角色</a></li>
+						<li><a href = "#roleLevelUp">角色升级</a></li>
 						<li><a href = "#onEvent">自定义事件</a></li>
 						<li><a href = "switchAccount">切换账号</a></li>
 						<li><a href = "getChannelId">获取渠道ID</a></li>
@@ -95,8 +99,9 @@ Android SDK和Android Eclipse等</br>
 
 
 渠道版SDK下载包包含：</br>
-1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-core.jar，xgsdk-data.jar，xgsdk-common-lib.jar，xgsdk-lib.jar。</br>
+1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。</br>
 2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs、SafetyValue.cs、XgsdkDemo.cs。</br>
+3. xgsdkchannel.apk<br/>
 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</br>
 
 
@@ -126,7 +131,6 @@ Android SDK和Android Eclipse等</br>
 
 点击Edit->Preferences，打开Unity Preferences窗口,点击External Tools，在Android SDK Location配置自己的Android SDK路径
 
-
 <img src = "img/Preferences.png">
 
 
@@ -154,6 +158,7 @@ Android SDK和Android Eclipse等</br>
 
 ```
 	<application
+		android:name="com.xgsdk.client.api.XGApplication"
         android:allowBackup="true"
         android:icon="@drawable/demo_ic_launcher"
         android:label="@string/app_name"
@@ -174,7 +179,7 @@ Android SDK和Android Eclipse等</br>
 
 **配置文件**  
 
-若要执行西瓜SDK的Unity3D demo，需要连接西瓜SDK提供的测试渠道，需要将sdk_config.properties配置文件拷贝至<项目目录>\Assets\Plugins\Android\assets。
+若要执行西瓜SDK的Unity3D demo，需要连接西瓜SDK提供的测试渠道，需要将sdk_config.properties配置文件以及xgsdkchannel.apk拷贝至<项目目录>\Assets\Plugins\Android\assets。
 
 
 ####2.4.5 运行
@@ -222,8 +227,12 @@ Android SDK和Android Eclipse等</br>
 **回调说明：**
 当游戏初始化失败时，会收到初始化失败回调,游戏在此回调中实现初始化失败后的逻辑。
 
-**参数说明：**
-返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是初始化失败的信息。
+**参数说明：**返回的参数是一个json,解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：返回的信息</li>
+	<li>channelCode：渠道的错误码</li>
+</ul>
 
 <a name = "login"></a>
 ####3.1.2 登录接口
@@ -244,7 +253,7 @@ Android SDK和Android Eclipse等</br>
 #####3.1.2.1 登录成功回调：
 
 ```
-	public void onLoginSuccess(string msg) {
+	public void onLoginSuccess(string json) {
 		//游戏在此实现登录成功回调的逻辑；
 	}
 ```
@@ -252,13 +261,16 @@ Android SDK和Android Eclipse等</br>
 **回调说明：**
 登录成功之后，会收到登录成功回调，游戏在此回调中实现登录成功后的逻辑。
 
-**参数说明：**
-返回的参数msg是用户登录成功后的用户信息。
+**参数说明：**返回的参数是一个json,解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>authInfo：验证信息</li>
+</ul>
 
 #####3.1.2.2 登录取消回调：
 
 ```
-	public void onLoginCancel(string msg){
+	public void onLoginCancel(string json){
 		//游戏在此实现登录取消回调的逻辑
 	}
 ```
@@ -272,7 +284,7 @@ Android SDK和Android Eclipse等</br>
 #####3.1.2.3 登录失败回调:
 
 ```
-	public void onLoginFail(string json){
+	public void onPayFail(string payResult){
 		//游戏在此实现登录失败回调的逻辑
 	}
 ```
@@ -280,8 +292,12 @@ Android SDK和Android Eclipse等</br>
 **回调说明：**
 登录失败后，会收到登录失败的回调，游戏在此回调中实现登录失败后的逻辑。
 
-**参数说明：**
-返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是登录失败的信息。
+**参数说明：**返回的参数是一个json,解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：返回的信息</li>
+	<li>channelCode：渠道错误码</li>
+</ul>
 
 <a name = "logout"></a>
 ####3.1.3 登出接口
@@ -301,7 +317,7 @@ Android SDK和Android Eclipse等</br>
 #####3.1.3.1 登出成功回调
 
 ```
-	public void onLogoutSuccess(string msg){
+	public void onLogoutFinish(string json){
 		//游戏在此实现登出成功回调的逻辑
 	}
 ```
@@ -309,22 +325,13 @@ Android SDK和Android Eclipse等</br>
 **回调说明：**
 登出成功后，会收到登出成功的回调，游戏在此回调中实现登出成功后的逻辑。
 
-**参数说明：**
-返回的msg无意义。
+**参数说明：**返回的参数是一个json,解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的完成码，详情请见<a href="#errorCode">登出完成码表</a></li>
+	<li>msg：返回的信息</li>
+	<li>channelCode:渠道错误码</li>
+</ul>
 
-#####3.1.3.2 登出失败回调
-
-```
-	public void onLogoutFail(string json){
-		//游戏在此实现登出失败回调的逻辑
-	}
-```
-
-**回调说明：**
-登出失败后，会收到登出失败的回调，游戏在此回调中实现登出失败后的逻辑。
-
-**参数说明：**
-返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是登出失败的信息。
 
 <a name = "exit"></a>
 ####3.1.4 退出接口
@@ -343,7 +350,8 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 #####3.1.4.1 直接退出回调
 
 ```
-	public void onExit(string msg){
+	public void doExit(string msg)
+	{
 		//游戏在此实现直接退出游戏回调的逻辑
 	}
 ```
@@ -356,7 +364,8 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 #####3.1.4.2 使用游戏方退出回调
 
 ```
-	public void onNoChannelExiter(string msg){
+	public void onNoChannelExiter(string msg)
+	{
 		//游戏在此实现使用游戏方退出游戏回调的逻辑
 	}
 ```
@@ -382,145 +391,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 参数msg无意义。
 
 <a name = "enterGame"></a>
-####3.1.5 进入游戏
 
-```
-	public static void onEnterGame(UserInfo userInfo)
-```
-
-**接口说明**
-此接口用于游戏信息统计，当进入游戏时调用
-
-**参数说明（UserInfo的成员变量）**
-
-<table>
-<tr>
-<td>参数</td><td>类型</td><td>说明</td>  
-</tr>
-<tr>
-<td>uid</td><td>string</td><td>用户ID</td>
-</tr>
-<tr>
-<td>userName</td><td>string</td><td>用户名</td>
-</tr>
-<tr>
-<td>roleId</td><td>string</td><td>角色ID</td>
-</tr>
-<tr>
-<td>roleName</td><td>string</td><td>角色名称</td>
-</tr>
-<tr>
-<td>gender</td><td>string</td><td>性别</td>
-</tr>
-<tr>
-<td>level</td><td>int</td><td>等级</td>
-</tr>
-<tr>
-<td>vipLevel</td><td>int</td><td>Vip等级</td>
-</tr>
-<tr>
-<td>partyName</td><td>string</td><td>公会名称</td>
-</tr>
-<tr>
-<td>serverId</td><td>string</td><td>服务器ID</td>
-</tr>
-<tr>
-<td>serverName</td><td>string</td><td>服务器名称</td>
-</tr></table>
-
-<a name = "createRole"></a>
-####3.1.6 创建角色
-
-```
-		public static void onCreateRole(UserInfo userInfo)
-```
-
-**接口说明：**
-此接口用于游戏信息统计，当创建游戏角色时调用。
-
-**参数说明(UserInfo的成员变量)**
-<table>
-<tr>
-<td>参数名</td><td>类型</td><td>说明</td>
-</tr>
-<tr>
-<td>uid</td><td>string</td><td>用户ID</td>
-</tr>
-<tr>
-<td>userName</td><td>string</td><td>用户名</td>
-</tr>
-<tr>
-<td>roleId</td><td>string</td><td>角色ID</td>
-</tr>
-<tr>
-<td>roleName</td><td>string</td><td>角色名称</td>
-</tr>
-<tr>
-<td>gender</td><td>string</td><td>性别</td>
-</tr>
-<tr>
-<td>level</td><td>int</td><td>等级</td>
-</tr>
-<tr>
-<td>vipLevel</td><td>int</td><td>VIP等级</td>
-</tr>
-<tr>
-<td>partyName</td><td>string</td><td>公会名称</td>
-</tr>
-<tr>
-<td>serverId</td><td>string</td><td>服务器ID</td>
-</tr>
-<tr>
-<td>serverName</td><td>string</td><td>服务器名称</td>
-</tr>
-</table>
-
-<a name = "roleLevelUp"></a>
-####3.1.7 角色升级
-
-```
-		public static void onRoleLevelup(UserInfo UserInfo)
-```
-
-**接口说明：**
-此接口用于游戏信息统计，当角色升级时调用。
-
-**参数说明（UserInfo的成员变量）**
-<table>
-<tr>
-<td>参数名</td><td>类型</td><td>说明</td>
-</tr>
-<tr>
-<td>uid</td><td>string</td><td>用户ID</td>
-</tr>
-<tr>
-<td>userName</td><td>string</td><td>用户名</td>
-</tr>
-<tr>
-<td>roleId</td><td>string</td><td>角色ID</td>
-</tr>
-<tr>
-<td>roleName</td><td>string</td><td>角色名称</td>
-</tr>
-<tr>
-<td>gender</td><td>string</td><td>性别</td>
-</tr>
-<tr>
-<td>level</td><td>int</td><td>等级</td>
-</tr>
-<tr>
-<td>vipLevel</td><td>int</td><td>VIP等级</td>
-</tr>
-<tr>
-<td>partyName</td><td>string</td><td>公会名称</td>
-</tr>
-<tr>
-<td>serverId</td><td>string</td><td>服务器ID</td>
-</tr>
-<tr>
-<td>serverName</td><td>string</td><td>服务器名称</td>
-</tr>
-</table>
 
 <a name = "rechargeInterface"></a>
 ###3.2 充值接口
@@ -537,88 +408,162 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **参数说明(PayInfo成员变量)**
 <table>
 <tr>
-<td>参数</td><td>类型</td><td>说明</td>  
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>备注</th>
 </tr>
 <tr>
-<td>uid</td><td>string</td><td>用户ID</td>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>productId</td><td>string</td><td>商品ID</td>
+	<td>productId</td>
+	<td>string</td>
+	<td>商品ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>productName</td><td>string</td><td>商品名称</td>
+	<td>productName</td>
+	<td>string</td>
+	<td>商品名称</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>productDesc</td><td>string</td><td>商品描述</td>
+	<td>productDesc</td>
+	<td>string</td>
+	<td>商品描述</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>productAmount</td><td>int</td><td>商品数量</td>
+	<td>productUnit</td>
+	<td>string</td>
+	<td>商品单位</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>productUnit</td><td>string</td><td>商品单位</td>
+	<td>productUnitPrice</td>
+	<td>int</td>
+	<td>商品单价(单位:分)</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>productUnitPrice</td><td>int</td><td>商品单价（单位：元）</td>
+	<td>productQuantity</td>
+	<td>int</td>
+	<td>商品数量</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>totalPirce</td><td>int</td><td>商品总价（实际价）（单位：元）</td>
+	<td>totalAmount</td>
+	<td>int</td>
+	<td>支付价格(单位:分)</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>originalPrice</td><td>int</td><td>商品总价（原价）（单位：元）</td>
+	<td>payAmount</td>
+	<td>int</td>
+	<td>实际支付总价格(单位:分)</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>currencyName</td><td>string</td><td>货币名称(使用国际标准货币代码，如CNY=人民币)</td><td>N</td>
+	<td>currencyName</td>
+	<td>string</td>
+	<td>货币类别</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>custom</td><td>string</td><td>扩展字段</td>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverId</td><td>string</td><td>服务器ID</td>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverName</td><td>string</td><td>服务器名称</td>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>可为空</td>
 </tr>
 <tr>
-<td>zoneId</td><td>string</td><td>区ID</td>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>zoneName</td><td>string</td><td>区名称</td>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleId</td><td>string</td><td>角色ID</td>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleName</td><td>string</td><td>角色名称</td>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>level</td><td>int</td><td>等级</td>
+	<td>virtualCurrencyBalance</td>
+	<td>string</td>
+	<td>虚拟货币余额</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>vipLevel</td><td>int</td><td>vip等级</td>
+	<td>gameTradeNo</td>
+	<td>string</td>
+	<td>游戏订单ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>gameTradeNo</td><td>string</td><td>游戏订单ID</td>
+	<td>gameCallbackUrl</td>
+	<td>string</td>
+	<td>游戏充值回调URL</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>gameCallBackURL</td><td>string</td><td>西瓜服务器通知游戏方支付结果的地址，若不配（为空），将以西瓜服务器配置为准，建议作为测试用</td>
+	<td>additionalParams</td>
+	<td>string</td>
+	<td>扩展参数</td>
+	<td>不可为空</td>
 </tr>
 </table>
+
 
 **回调方法：**
 
 #####3.2.1.1 支付成功回调
 
 ```
-	public void onPaySuccess(string msg){
-		Debug.Log ("PaySuccess, message:" + msg);
+	public void onPaySuccess(string payResult){
+		游戏再次实现支付成功后回调的逻辑
 	}
 ```
 
 **回调说明：**
 支付成功后，会收到支付成功的回调，游戏在此回调中实现支付成功后的逻辑。
 
-**参数说明**
-返回的参数是支付成功的信息。
+**参数说明**返回的参数是一个json,解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：返回的信息</li>
+	<li>gameTradeNo：游戏的订单ID</li>
+	<li>xgTradeNo：西瓜的订单ID</li>
+</ul>
+
+
 
 #####3.2.1.2 支付取消回调
 
@@ -631,8 +576,16 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 支付取消后，会收到支付取消回调，游戏在此回调中实现支付取消后的逻辑。
 
-**参数说明：**
-返回的参数是支付取消的信息。
+**参数说明：**返回的参数是一个json,解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：返回的信息</li>
+	<li>gameTradeNo：游戏的订单ID</li>
+	<li>channelCode：渠道错误码</li>
+	<li>channelMsg：渠道错误信息</li>
+</ul>
+
+
 
 #####3.2.1.3 支付失败回调
 
@@ -645,8 +598,16 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 支付失败后，会收到支付失败的回调，游戏在此回调中实现支付失败后的逻辑。
 
-**参数说明：**
-返回的参数是一个json，解析之后会有code和msg，code是错误码，msg是支付失败的信息。
+**参数说明：**返回的参数是一个json,解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：返回的信息</li>
+	<li>gameTradeNo：游戏的订单ID</li>
+	<li>channelCode：渠道错误码</li>
+	<li>channelMsg：渠道错误信息</li>
+</ul>
+
+
 
 
 <a name = "statisticsInterface"></a>
@@ -656,52 +617,103 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ####3.3.1 任务开始
 
 ```
-	public void onMissionBegin(MissionInfo missionInfo)
+	public void onMissionSuccess(RoleInfo roleInfo, String missionId, string missionName, string customParams)
 ```
 
 **接口说明：**
 此接口用于数据统计，任务开始时调用。
 
-**参数说明（MissionInfo成员变量）：**
+**参数说明：**
 <table>
 <tr>
-<td>参数名</td><td>类型</td><td>说明</td>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
 </tr>
 <tr>
-<td>uid</td><td>string</td><td>用户ID</td>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>userName</td><td>string</td><td>用户名</td>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleId</td><td>string</td><td>角色ID</td>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleName</td><td>string</td><td>角色名称</td>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>gender</td><td>string</td><td>性别</td>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>level</td><td>int</td><td>等级</td>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>vipLevel</td><td>int</td><td>VIP等级</td>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>partyName</td><td>string</td><td>公会名称</td>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverId</td><td>string</td><td>服务器ID</td>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverName</td><td>string</td><td>服务器名称</td>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>missionName</td><td>string</td><td>任务名称</td>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>customParams</td><td>string</td><td>扩展参数，传输时使用json格式，接入时若不需要直接置空即可</td>
+	<td>missionId</td>
+	<td>string</td>
+	<td>任务ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>missionName</td>
+	<td>string</td>
+	<td>任务名称</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>customParams</td>
+	<td>string</td>
+	<td>扩展参数</td>
+	<td>不可为空</td>
 </tr>
 </table>
 
@@ -709,52 +721,103 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ####3.3.2 任务成功
 
 ```
-	public void onMissionSuccess(MissionInfo missionInfo)
+	public void onMissionSuccess(RoleInfo roleInfo, String missionId, string missionName, string customParams)
 ```
 
 **接口说明：**
 此接口用于数据统计，任务成功时调用。
 
-**参数说明（MissionInfo成员变量）：**
+**参数说明：**
 <table>
 <tr>
-<td>参数名</td><td>类型</td><td>说明</td>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
 </tr>
 <tr>
-<td>uid</td><td>string</td><td>用户ID</td>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>userName</td><td>string</td><td>用户名</td>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleId</td><td>string</td><td>角色ID</td>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleName</td><td>string</td><td>角色名称</td>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>gender</td><td>string</td><td>性别</td>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>level</td><td>int</td><td>等级</td>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>vipLevel</td><td>int</td><td>VIP等级</td>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>partyName</td><td>string</td><td>公会名称</td>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverId</td><td>string</td><td>服务器ID</td>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverName</td><td>string</td><td>服务器名称</td>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>missionName</td><td>string</td><td>任务名称</td>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>customParams</td><td>string</td><td>扩展参数，传输时使用json格式，接入时若不需要直接置空即可</td>
+	<td>missionId</td>
+	<td>string</td>
+	<td>任务ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>missionName</td>
+	<td>string</td>
+	<td>任务名称</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>customParams</td>
+	<td>string</td>
+	<td>扩展参数</td>
+	<td>不可为空</td>
 </tr>
 </table>
 
@@ -762,124 +825,786 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ####3.3.3 任务失败
 
 ```
-	public void onMissionFail(MissionInfo missionInfo)
+	public void onMissionFail(RoleInfo roleInfo, String missionId, string missionName, string customParams)
 ```
 
 **接口说明：**
 此接口用于数据统计，任务失败时调用。
 
-**参数说明（MissionInfo成员变量）：**
+**参数说明：**
 <table>
 <tr>
-<td>参数名</td><td>类型</td><td>说明</td>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
 </tr>
 <tr>
-<td>uid</td><td>string</td><td>用户ID</td>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>userName</td><td>string</td><td>用户名</td>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleId</td><td>string</td><td>角色ID</td>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleName</td><td>string</td><td>角色名称</td>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>gender</td><td>string</td><td>性别</td>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>level</td><td>int</td><td>等级</td>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>vipLevel</td><td>int</td><td>VIP等级</td>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>partyName</td><td>string</td><td>公会名称</td>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverId</td><td>string</td><td>服务器ID</td>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverName</td><td>string</td><td>服务器名称</td>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>missionName</td><td>string</td><td>任务名称</td>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>customParams</td><td>string</td><td>扩展参数，传输时使用json格式，接入时若不需要直接置空即可</td>
+	<td>missionId</td>
+	<td>string</td>
+	<td>任务ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>missionName</td>
+	<td>string</td>
+	<td>任务名称</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>customParams</td>
+	<td>string</td>
+	<td>扩展参数</td>
+	<td>不可为空</td>
 </tr>
 </table>
 
+<a name = "onVirtalCurrencyPurchase"></a>
+####3.3.4 充值获得虚拟货币
+```
+	public void onVirtalCurrencyPurchase(RoleInfo roleInfo, int amount, string customParams)
+```
+**接口说明**
+此接口用于游戏信息统计，充值获得虚拟货币时调用。
 
+**参数说明：**
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+<tr>
+	<td>amount</td>
+	<td>string</td>
+	<td>虚拟币数目</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>customParams</td>
+	<td>string</td>
+	<td>扩展参数</td>
+	<td>不可为空</td>
+</tr>
+</table>
+
+<a name = "onVirtalCurrencyPurchase"></a>
+####3.3.5 赠送的虚拟货币
+
+
+```
+	public void onVirtalCurrencyPurchase(RoleInfo roleInfo, int amount, string customParams)
+```
+
+**接口说明：**
+此接口用于游戏信息统计，玩家可以在任务奖励、登录奖励、成就奖励等环节获得赠送的虚拟货币时调用
+
+**参数说明：**
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>reason</td>
+	<td>string</td>
+	<td>获得虚拟货币的原因(登录奖励、新手礼包等)</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>amount</td>
+	<td>string</td>
+	<td>虚拟币数目</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>customParams</td>
+	<td>string</td>
+	<td>扩展参数</td>
+	<td>不可为空</td>
+</tr>
+</table>
+
+<a name = "onVirtalCurrencyConsume"></a>
+####3.3.6 跟踪虚拟货币的消费
+```
+	public void onVirtalCurrencyConsume(RoleInfo roleInfo, string itemName, int amount, string customParams)
+```
+
+**接口说明：**
+此接口用于游戏信息统计，跟踪虚拟货币的消费(建议只跟踪有价值的虚拟货币，普通游戏币的消耗不建议在此跟踪)。
+**参数说明：**
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>itemName</td>
+	<td>string</td>
+	<td>消费点(比如十连抽、购买体力等)</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>amount</td>
+	<td>string</td>
+	<td>虚拟币数目</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>customParams</td>
+	<td>string</td>
+	<td>扩展参数</td>
+	<td>不可为空</td>
+</tr>
+</table>
 
 <a name = "extraInterface"></a>
 ###3.4 扩展接口
 
-<a name = "onEvent"></a>
-####3.4.1 自定义事件
+####3.4.1 进入游戏
 
 ```
-		public static void onEvent(EventInfo eventInfo)
+	public static void onEnterGame(RoleInfo roleInfo)
+```
+
+**接口说明**
+此接口用于游戏信息统计，当进入游戏时调用。
+
+**参数说明（RoleInfo的成员变量）**
+
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
+</tr>
+</table>
+
+<a name = "createRole"></a>
+####3.4.2 创建角色
+
+```
+		public static void onCreateRole(UserInfo userInfo)
+```
+
+**接口说明：**
+此接口用于游戏信息统计，当创建游戏角色时调用。
+
+**参数说明（RoleInfo的成员变量）**
+
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
+</tr>
+</table>
+
+<a name = "roleLevelUp"></a>
+####3.4.3 角色升级
+
+```
+		public static void onRoleLevelup(RoleInfo roleInfo)
+```
+
+**接口说明：**
+此接口用于游戏信息统计，当角色升级时调用。
+
+**参数说明（RoleInfo的成员变量）**
+
+<table>
+<tr>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
+</tr>
+</table>
+
+<a name = "onEvent"></a>
+####3.4.4 自定义事件
+
+```
+		public static void onEvent(RoleInfo roleInfo, string eventId, string eventDesc, int eventVal, string eventBody)
 ```
 
 **接口说明：**
 传递事件时使用，此接口用于游戏的自定义事件。
 
-**参数说明(EventInfo成员变量)：**
+**参数说明：**
+
 <table>
 <tr>
-<td>参数名</td><td>类型</td><td>说明</td>
+	<th>输入参数</th>
+	<th>数据类型</th>
+	<th>说明</th>
+	<th>可空</th>
 </tr>
 <tr>
-<td>uid</td><td>string</td><td>用户ID</td>
+	<td>uid</td>
+	<td>string</td>
+	<td>用户ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>userName</td><td>string</td><td>用户名</td>
+	<td>roleId</td>
+	<td>string</td>
+	<td>角色ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleId</td><td>string</td><td>角色ID</td>
+	<td>roleLevel</td>
+	<td>string</td>
+	<td>角色等级</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>roleName</td><td>string</td><td>角色名称</td>
+	<td>roleVipLevel</td>
+	<td>string</td>
+	<td>角色VIP等级</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>gender</td><td>string</td><td>性别</td>
+	<td>serverId</td>
+	<td>string</td>
+	<td>服ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>level</td><td>int</td><td>等级</td>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>区ID</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>vipLevel</td><td>int</td><td>VIP等级</td>
+	<td>roleName</td>
+	<td>string</td>
+	<td>角色名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>partyName</td><td>string</td><td>公会名称</td>
+	<td>serverName</td>
+	<td>string</td>
+	<td>余额</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverId</td><td>string</td><td>服务器ID</td>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>区名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>serverName</td><td>string</td><td>服务器名称</td>
+	<td>partyName</td>
+	<td>string</td>
+	<td>帮派名字</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>eventID</td><td>string</td><td>事件ID</td>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>eventDesc</td><td>string</td><td>事件描述</td>
+	<td>eventId</td>
+	<td>string</td>
+	<td>事件Id</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>eventVal</td><td>string</td><td>事件值</td>
+	<td>eventDesc</td>
+	<td>string</td>
+	<td>事件描述</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>eventBody</td><td>string</td><td>事件内容 必须是json格式</td>
+	<td>eventVal</td>
+	<td>int</td>
+	<td>事件值</td>
+	<td>不可为空</td>
 </tr>
 <tr>
-<td>CustomParams</td><td>string</td><td>扩展参数，传输时使用json格式，接入时若不需要直接置空即可</td>
+	<td>eventBody</td>
+	<td>string</td>
+	<td>事件内容</td>
+	<td>不可为空</td>
 </tr>
 </table>
 
 <a name = "switchAccount"></a>
-####3.4.2 切换账号
+####3.4.5 切换账号
 
 ```
 		public static void switchAccount(string customParams)
@@ -892,7 +1617,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 
 <a name = "getChannelId"></a>
-####3.4.3 获取渠道ID
+####3.4.6 获取渠道ID
 
 ```
 		public static string getChannelId()
@@ -904,12 +1629,14 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **返回值**
 <table>
 <tr>
-<td>类型</td><td>说明</td>
+<td>参数</td><td>类型</td><td>说明</td>
 </tr>
 <tr>
-<td>stirng</td><td>渠道ID</td>
+<td>channelId</td><td>stirng</td><td>渠道ID</td>
 </tr>
 </table>
+
+
 
 <a name = "errorCode"></a>
 ##4.错误码
