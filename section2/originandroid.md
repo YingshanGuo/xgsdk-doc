@@ -17,15 +17,12 @@
 
 <b>渠道版SDK下载包包含：<br /></b>
 	1. 西瓜SDKV2的Jar包：
- xgsdk-core.jar，xgsdk-data.jar，xgsdk-api.jar<a href="#">下载链接</a><br />
-
- 	2. xgsdk-testchannel.zip
-
-   <a href="#">下载链接</a>
+ xgsdk-channel-core.jar，xgsdk-data.jar，xgsdk-api.jar<a href="#">下载链接</a><br />
+ 	2. xgsdk-testchannel.zip<a href="#">下载链接</a><br />
    注：解压文件，导入eclipse，右键项目，<br />
- 选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar
-<img src="img/native_connect_package_import.png"</img>
-	3. XGSDK 原生Android版 客户端接入文档<a href="#">&nbsp&nbsp下载链接</a>
+ 选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,并且导入原生android的游戏包
+<img src="img/native_connect_package_import.png"></img>
+	3. XGSDK 原生Android版 客户端接入文档<a href="#">下载链接</a>
 
 
 ##2. 配置环境与快速接入简介
@@ -145,14 +142,12 @@ onCreate生命周期方法比较特殊<br />
 		super.onCreate(savedInstanceState);
         XGSDK.getInstance().onCreate(this);
         XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
-		XGSDK.getInstance().init(this);
 	}
 
 XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；<br />
 以上代码的表示的意思是实现一个匿名的UserCallBack对象，该对象中实现了登录成功、失败、取消，登出成功、失败，初始化失败接口，<a href="#usercallback">详见这里描述</a>
 
-XGSDK.getInstance().init(this);<br />
-以上代码表示执行xgsdk的初始化工作
+
 
 
 
@@ -278,12 +273,10 @@ onCancel 取消退出<br />
 
 #####进入游戏接口
 
-onEnterGame(Activity activity, XGUser user, RoleInfo roleInfo,GameServerInfo serverInfo)
+onEnterGame(RoleInfo roleInfo)
 
 	参数说明：
-		user: 用户对象
 		RoleInfo:角色信息
-		serverInfo:服务器信息
 
 注：此接口在调用登录成功callback的时候调用<br /><p>
 调用案例代码：
@@ -291,14 +284,11 @@ onEnterGame(Activity activity, XGUser user, RoleInfo roleInfo,GameServerInfo ser
 	@Override
     public void onLoginSuccess(final String authInfo) {
         Log.w(TAG, "authInfo: \n" + authInfo);
-         XGSDK.getInstance().onEnterGame(
-                                MainActivity.this, mUser, mRoleInfo,
-                                mServerInfo);
+         XGSDK.getInstance().onEnterGame(mRoleInfo);
     }
 
 
-
-**关于XGUser的成员说明**
+**关于RoleInfo的成员说明**
 <table>
 <tr>
 	<th>输入参数</th>
@@ -313,44 +303,6 @@ onEnterGame(Activity activity, XGUser user, RoleInfo roleInfo,GameServerInfo ser
 	<td>用户ID</td>
 </tr>
 <tr>
-	<td>userName</td>
-	<td>String</td>
-	<td>用户名称</td>
-	<td>用户名称</td>
-</tr>
-<tr>
-	<td>authInfo</td>
-	<td>String</td>
-	<td>验证信息</td>
-	<td>验证信息</td>
-</tr>
-</table>
-
-
-
-**关于RoleInfo的成员说明**
-<table>
-<tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
-	<th>说明</th>
-	<th>参数说明</th>
-</tr>
-
-<tr>
-	<td>level</td>
-	<td>int</td>
-	<td>角色等级</td>
-	<td>角色等级</td>
-</tr>
-
-<tr>
-	<td>vipLevel</td>
-	<td>int</td>
-	<td>vip角色等级</td>
-	<td>vip角色等级</td>
-</tr>
-<tr>
 	<td>roleId</td>
 	<td>string</td>
 	<td>角色ID</td>
@@ -363,26 +315,17 @@ onEnterGame(Activity activity, XGUser user, RoleInfo roleInfo,GameServerInfo ser
 	<td>角色名称</td>
 </tr>
 <tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>工会名</td>
-	<td>工会名</td>
+	<td>roleLevel</td>
+	<td>String</td>
+	<td>角色等级</td>
+	<td>角色等级</td>
 </tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>性别</td>
-</tr>
-</table>
 
-**关于GameServerInfo的成员说明**
-<table>
 <tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
-	<th>说明</th>
-	<th>参数说明</th>
+	<td>roleVipLevel</td>
+	<td>String</td>
+	<td>vip角色等级</td>
+	<td>vip角色等级</td>
 </tr>
 <tr>
 	<td>serverId</td>
@@ -408,11 +351,25 @@ onEnterGame(Activity activity, XGUser user, RoleInfo roleInfo,GameServerInfo ser
 	<td>区名称</td>
 	<td>区名称</td>
 </tr>
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>工会名</td>
+	<td>工会名</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+	<td>性别</td>
+	<td>性别</td>
+</tr>
 </table>
 
 
+
+
 #####创建角色接口
-onCreateRole(Activity activity, RoleInfo roleInfo)
+onCreateRole(RoleInfo roleInfo)
 
 	接口说明：
 		使用roleInfo来创建角色
@@ -433,15 +390,12 @@ onCreateRole(Activity activity, RoleInfo roleInfo)
                 });
 
 #####角色等级接口
-onRoleLevelup(Activity activity, XGUser user，RoleInfo roleInfo,
-            GameServerInfo server)
+onRoleLevelup(RoleInfo roleInfo)
 
 	接口说明：
 		角色等级接口，角色等级提升时调用
 	参数说明：
-		user:用户对象
 		roleInfo：角色信息
-		server:服务对象信息
 
 调用案例代码
 
@@ -452,8 +406,7 @@ onRoleLevelup(Activity activity, XGUser user，RoleInfo roleInfo,
                     public void onClick(View v) {
                         mRoleInfo.setRoleId("1112");
                         mRoleInfo.setLevel(2);
-                        XGSDK.getInstance().onRoleLevelup(MainActivity.this,
-                                mUser, mRoleInfo, mServerInfo);
+                        XGSDK.getInstance().onRoleLevelup(mRoleInfo);
                     }
                 });
 
@@ -529,47 +482,34 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 	<td>商品单位</td>
 </tr>
 <tr>
-	<td>totalPirce</td>
-	<td>int</td>
-	<td>产品打折后价格</td>
-	<td>产品打折后价格</td>
-</tr>
-<tr>
-	<td>originalPrice</td>
-	<td>int</td>
-	<td>产品打折前价格</td>
-	<td>产品打折前价格</td>
-</tr>
-
-<tr>
 	<td>productUnitPrice</td>
 	<td>int</td>
-	<td>产品单价</td>
-	<td>产品单价</td>
+	<td>产品单价,单位分</td>
+	<td>产品单价,单位分</td>
 </tr>
 <tr>
-	<td>productAmount</td>
+	<td>productQuantity</td>
 	<td>int</td>
-	<td>产品总量</td>
-	<td>产品总量</td>
+	<td>产品数量</td>
+	<td>产品数量</td>
 </tr>
 <tr>
-	<td>gameTradeNo</td>
-	<td>String</td>
-	<td>游戏商品号</td>
-	<td>游戏商品号</td>
+	<td>totalAmount</td>
+	<td>int</td>
+	<td>产品总额,单位分</td>
+	<td>产品总额,单位分</td>
+</tr>
+<tr>
+	<td>payAmount</td>
+	<td>int</td>
+	<td>付费总额</td>
+	<td>付费总额</td>
 </tr>
 <tr>
 	<td>currencyName</td>
 	<td>String</td>
 	<td>实际支付的国际标准货币代码,比如CNY(人民币)/USD(美元)</td>
 	<td>实际支付的国际标准货币代码,比如CNY(人民币)/USD(美元)</td>
-</tr>
-<tr>
-	<td>custom</td>
-	<td>String</td>
-	<td>扩展字段</td>
-	<td>扩展字段</td>
 </tr>
 <tr>
 	<td>roleId</td>
@@ -584,13 +524,13 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 	<td>角色名称</td>
 </tr>
 <tr>
-	<td>level</td>
+	<td>roleLevel</td>
 	<td>int</td>
 	<td>角色等级</td>
 	<td>角色等级</td>
 </tr>
 <tr>
-	<td>vipLevel</td>
+	<td>roleVipLevel</td>
 	<td>String</td>
 	<td>角色vip等级</td>
 	<td>角色vip等级</td>
@@ -602,28 +542,40 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 	<td>服ID</td>
 </tr>
 <tr>
-	<td>serverName</td>
-	<td>String</td>
-	<td>服名称</td>
-	<td>服名称</td>
-</tr>
-<tr>
 	<td>zoneId</td>
 	<td>String</td>
 	<td>区ID</td>
 	<td>区ID</td>
 </tr>
 <tr>
-	<td>zoneName</td>
+	<td>partyName</td>
 	<td>String</td>
-	<td>区名称</td>
-	<td>区名称</td>
+	<td>帮会名称</td>
+	<td>帮会名称</td>
+</tr>
+<tr>
+	<td>virtualCurrencyBalance</td>
+	<td>String</td>
+	<td>虚拟货币余额</td>
+	<td>虚拟货币余额</td>
+</tr>
+<tr>
+	<td>customInfo</td>
+	<td>String</td>
+	<td>扩展字段，订单支付成功后，透传给游戏</td>
+	<td>扩展字段，订单支付成功后，透传给游戏</td>
+</tr>
+<tr>
+	<td>gameTradeNo</td>
+	<td>String</td>
+	<td>游戏订单ID，支付成功后，透传给游戏</td>
+	<td>游戏订单ID，支付成功后，透传给游戏</td>
 </tr>
 <tr>
 	<td>gameCallbackUrl</td>
 	<td>String</td>
-	<td>支付通知URL地址</td>
-	<td>支付通知URL地址</td>
+	<td>支付回调地址，如果为空，则后台配置的回调地址</td>
+	<td>支付回调地址，如果为空，则后台配置的回调地址</td>
 </tr>
 </table>
 
@@ -667,86 +619,126 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 
 #####支付回调接口
-在调用pay接口时，需要实现pay支付callback(支付成功，支付失败，支付取消）
+在调用pay接口时，需要实现pay支付callback(支付的四种状态：支付成功，支付失败，支付取消,支付其他状态）
 
 实现的案例代码
 
- 	XGSDK.getInstance().pay(MainActivity.this, payment,
-        new PayCallBack() {
+ 	XGSDK.getInstance().pay(MainActivity.this, payment, new PayCallBack() {
 
-            @Override
-            public void onSuccess(String msg) {
-                ToastUtil.showToast(MainActivity.this,
-                        "pay success." + msg);
-				//执行贵方游戏的其他业务逻辑代码
-            }
+			@Override
+			public void onPaySuccess(PayInfo payInfo,PayResult payResult) {
+				ToastUtil.showToastLong(MainActivity.this, "pay success, result is "+payResult.toJson());
+				OrderUtils.storeOrder(MainActivity.this, GameInfo.getInstance().getUid(),payResult.getXgTradeNo(),payment);
+			}
 
-            @Override
-            public void onFail(int code, String msg) {
-                ToastUtil.showToast(MainActivity.this,
-                        "pay fail." + code + " " + msg);
-            }
-            @Override
-            public void onCancel(String msg) {
-                ToastUtil.showToast(MainActivity.this,
-                        "pay cancel." + msg);
-            }
-        });
+			@Override
+			public void onPayFail(PayInfo payInfo,PayResult payResult) {
+				ToastUtil.showToastLong(MainActivity.this, "pay failed, result is "+payResult.toJson());
+			}
+
+			@Override
+			public void onPayCancel(PayInfo payInfo,PayResult payResult) {
+				ToastUtil.showToastLong(MainActivity.this, "pay canceled, result is "+payResult.toJson());
+			}
+
+			@Override
+			public void onPayOthers(PayInfo payInfo, PayResult payResult) {
+				ToastUtil.showToastLong(MainActivity.this, "onPayOthers, result is "+payResult.toJson());						
+			}
+
+			@Override
+			public void onPayProgress(PayInfo payInfo, PayResult payResult) {
+				ToastUtil.showToastLong(MainActivity.this, "onPayProgress, result is "+payResult.toJson());						
+			}
+		});
+
 
 #####2.3.6 接入统计接口
 
 #####自定义事件接口
-public void onEvent(Activity activity, String eventId, String content)
+public void onEvent(RoleInfo roleInfo, String eventId, String eventDesc, int eventVal, Map<String, Object> eventBody)
 
 	接口说明：
 		自定义事件，传入事件id以及事件内容
 	参数说明：
+		roleInfo:角色信息
 		eventId：事件id
-		content：事件内容
+		eventDesc：事件描述
+		eventVal:事件内容
+		eventBody:key-value事件体
 
 #####任务开始接口
 
-public void onMissionBegin(Activity activity, XGUser user,
-            RoleInfo roleInfo, GameServerInfo serverInfo, String missionName,Map<String, Object> customParams)  
+public void onMissionBegin(RoleInfo roleInfo, String missionId, String missionName, String customParams)  
 
 	接口说明：
 		任务开始接口
 	参数说明：
-		user:用户对象
 		roleInfo:对象信息
-		serverInfo:服务器信息
+		missionId：任务ID
 		missionName:任务名称
 		customParams:该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 
 #####任务执行成功接口
-public void onMissionSuccess(Activity activity, XGUser user,
-            RoleInfo roleInfo, GameServerInfo serverInfo, String missionName,Map<String, Object> customParams)
+public void onMissionSuccess(RoleInfo roleInfo, String missionId, String missionName, String customParams)
 
 	接口说明：
 		任务执行成功接口
 	参数说明：
-		user:用户对象
 		roleInfo:对象信息
-		serverInfo:服务器信息
+		missionId：任务ID
 		missionName:任务名称
 		customParams:该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 
 
 
 #####任务失败接口
-public void onMissionFail(Activity activity, XGUser user,
-            RoleInfo roleInfo, GameServerInfo serverInfo, String missionName,Map<String, Object> customParams)
+public void onMissionFail(RoleInfo roleInfo, String missionId, String missionName, String customParams)
 
 	接口说明：
 		任务失败
 	参数说明：
-		user:用户对象
 		roleInfo:对象信息
-		serverInfo:服务器信息
+		missionId：任务ID
 		missionName:任务名称
 		customParams:该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 
 
+#####充值获得的虚拟货币
+public void onVirtalCurrencyPurchase(RoleInfo roleInfo, int amount, String customParams)
+
+	接口说明：
+		充值获得的虚拟货币
+	参数说明：
+		roleInfo:对象信息
+		amount:数量
+		customParams:扩展参数
+
+	
+
+
+
+#####赠送的虚拟货币
+public void onVirtualCurrencyReward(RoleInfo roleInfo, String reason, int amount, String customParams)
+
+	接口说明
+		玩家可以在任务奖励、登录奖励、成就奖励等环节获得赠送的虚拟货币
+	参数说明：
+		roleInfo:对象信息
+		reason:获得虚拟货币的原因(登录奖励、新手礼包等)
+		amount:数量
+		customParams:扩展参数
+
+#####跟踪虚拟货币的消费
+public void onVirtalCurrencyConsume(RoleInfo roleInfo,String itemName, int amount, String customParams)
+
+	接口说明
+		建议只跟踪有价值的虚拟货币，普通游戏币的消耗不建议在此跟踪
+	参数说明：
+		roleInfo:对象信息
+		itemName:消费点(比如十连抽、购买体力等)
+		amount:数量
+		customParams:扩展参数
 
 ####2.3.6 接入扩展接口
 #####切换账号接口

@@ -9,13 +9,13 @@
 
 
 
-**[Cocos2d-X——Android](./Cocos2dx修正版.md)**
+**[Cocos2d-X——Android](./Cocos2dx.md)**
 
 
-**[Unity3d——Android](./Unity3d修正版.md)**
+**[Unity3d——Android](./Unity3d.md)**
 
 
-**[原声接口——Android](./原生android修正版.md)**
+**[原声接口——Android](./originandroid.md)**
 
 
-**[客户端接入验证](./测试渠道修正版.md)**
+**[客户端接入验证](./channeltest.md)**

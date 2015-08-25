@@ -5,7 +5,7 @@
 
 
 
-**[常见接入问题](./android客户端.md)**
+**[常见接入问题](./androidclient.md)**
 
 
 **[渠道接入须知](./Note.md)**
