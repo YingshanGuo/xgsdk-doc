@@ -216,10 +216,28 @@ Android SDK和Android Eclipse等</br>
 
 **回调方法：**
 
-#####3.1.1.1初始化失败回调
+#####3.1.1.1初始化成功回调
 
 ```
-	public void onInitFail(string json){
+	public void onInitSuccess(string initResult){
+		//游戏在此实现初始化成功回调的逻辑
+	}
+```
+
+**回调说明：**
+当游戏初始化失败时，会收到初始化失败回调,游戏在此回调中实现初始化失败后的逻辑。
+
+**参数说明：**返回的参数initResult是一个json,解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：返回的信息</li>
+	<li>channelCode：渠道的错误码</li>
+</ul>
+
+#####3.1.1.2初始化失败回调
+
+```
+	public void onInitFail(string initResult){
 		//游戏在此实现初始化失败回调的逻辑
 	}
 ```
@@ -227,7 +245,7 @@ Android SDK和Android Eclipse等</br>
 **回调说明：**
 当游戏初始化失败时，会收到初始化失败回调,游戏在此回调中实现初始化失败后的逻辑。
 
-**参数说明：**返回的参数是一个json,解析之后有如下参数：
+**参数说明：**返回的参数initResult是一个json,解析之后有如下参数：
 <ul type='disc'>
 	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg：返回的信息</li>
@@ -253,7 +271,7 @@ Android SDK和Android Eclipse等</br>
 #####3.1.2.1 登录成功回调：
 
 ```
-	public void onLoginSuccess(string json) {
+	public void onLoginSuccess(string loginResult) {
 		//游戏在此实现登录成功回调的逻辑；
 	}
 ```
@@ -261,7 +279,7 @@ Android SDK和Android Eclipse等</br>
 **回调说明：**
 登录成功之后，会收到登录成功回调，游戏在此回调中实现登录成功后的逻辑。
 
-**参数说明：**返回的参数是一个json,解析之后有如下参数：
+**参数说明：**返回的参数loginResult是一个json,解析之后有如下参数：
 <ul type='disc'>
 	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>authInfo：验证信息</li>
@@ -270,7 +288,7 @@ Android SDK和Android Eclipse等</br>
 #####3.1.2.2 登录取消回调：
 
 ```
-	public void onLoginCancel(string json){
+	public void onLoginCancel(string loginResult){
 		//游戏在此实现登录取消回调的逻辑
 	}
 ```
@@ -279,12 +297,17 @@ Android SDK和Android Eclipse等</br>
 当用户取消登录之后，会受到登录取消的回调，游戏在此回调中实现登录取消后的逻辑。
 
 **参数说明：**
-返回参数msg是登录取消的信息。
+返回参数loginResult是一个json，解析之后又如下参数：
+<ul type='disc'>
+	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：返回的信息</li>
+	<li>channelCode：渠道错误码</li>
+</ul>
 
 #####3.1.2.3 登录失败回调:
 
 ```
-	public void onPayFail(string payResult){
+	public void onLoginFail(string loginResult){
 		//游戏在此实现登录失败回调的逻辑
 	}
 ```
@@ -292,12 +315,13 @@ Android SDK和Android Eclipse等</br>
 **回调说明：**
 登录失败后，会收到登录失败的回调，游戏在此回调中实现登录失败后的逻辑。
 
-**参数说明：**返回的参数是一个json,解析之后有如下参数：
+**参数说明：**返回的参数loginResult是一个json,解析之后有如下参数：
 <ul type='disc'>
 	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg：返回的信息</li>
 	<li>channelCode：渠道错误码</li>
 </ul>
+
 
 <a name = "logout"></a>
 ####3.1.3 登出接口
@@ -317,7 +341,7 @@ Android SDK和Android Eclipse等</br>
 #####3.1.3.1 登出成功回调
 
 ```
-	public void onLogoutFinish(string json){
+	public void onLogoutFinish(string logoutResult){
 		//游戏在此实现登出成功回调的逻辑
 	}
 ```
@@ -325,7 +349,7 @@ Android SDK和Android Eclipse等</br>
 **回调说明：**
 登出成功后，会收到登出成功的回调，游戏在此回调中实现登出成功后的逻辑。
 
-**参数说明：**返回的参数是一个json,解析之后有如下参数：
+**参数说明：**返回的参数logoutResult是一个json,解析之后有如下参数：
 <ul type='disc'>
 	<li>code：返回的完成码，详情请见<a href="#errorCode">登出完成码表</a></li>
 	<li>msg：返回的信息</li>
@@ -376,21 +400,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **参数说明：**
 参数msg无意义。
 
-#####3.1.4.3 取消退出回调
 
-```
-	public void onExitCancel(string msg){
-		//游戏在此实现退出取消回调的逻辑
-	}
-```
-
-**回调说明：**
-取消退出时，会收到取消退出的回调，游戏在此回调中实现退出取消后的逻辑。
-
-**参数说明：**
-参数msg无意义。
-
-<a name = "enterGame"></a>
 
 
 <a name = "rechargeInterface"></a>
@@ -555,20 +565,23 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 支付成功后，会收到支付成功的回调，游戏在此回调中实现支付成功后的逻辑。
 
-**参数说明**返回的参数是一个json,解析之后有如下参数：
+**参数说明**返回的参数payResult是一个json,解析之后有如下参数：
 <ul type='disc'>
-	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
-	<li>msg：返回的信息</li>
-	<li>gameTradeNo：游戏的订单ID</li>
-	<li>xgTradeNo：西瓜的订单ID</li>
+	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：错误信息</li>
+	<li>xgTradeNo:西瓜创建的支付订单ID</li>
+	<li>gameTradeNo：游戏传入的订单ID</li>
+	<li>channelCode：渠道支付结果</li>
+	<li>channelMsg：渠道错误信息</li>
 </ul>
+
 
 
 
 #####3.2.1.2 支付取消回调
 
 ```
-	public void onPayCancel(string msg){
+	public void onPayCancel(string payResult){
 		//游戏在此实现支付取消后回调的逻辑
 	}
 ```
@@ -576,21 +589,23 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 支付取消后，会收到支付取消回调，游戏在此回调中实现支付取消后的逻辑。
 
-**参数说明：**返回的参数是一个json,解析之后有如下参数：
+**参数说明：**返回的参数payResult是一个json,解析之后有如下参数：
 <ul type='disc'>
-	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
-	<li>msg：返回的信息</li>
-	<li>gameTradeNo：游戏的订单ID</li>
-	<li>channelCode：渠道错误码</li>
+	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：错误信息</li>
+	<li>xgTradeNo:西瓜创建的支付订单ID</li>
+	<li>gameTradeNo：游戏传入的订单ID</li>
+	<li>channelCode：渠道支付结果</li>
 	<li>channelMsg：渠道错误信息</li>
 </ul>
+
 
 
 
 #####3.2.1.3 支付失败回调
 
 ```
-	public void onPayFail(string json){
+	public void onPayFail(string payResult){
 		//游戏在此实现支付失败后回调的逻辑
 	}
 ```
@@ -598,16 +613,58 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 支付失败后，会收到支付失败的回调，游戏在此回调中实现支付失败后的逻辑。
 
-**参数说明：**返回的参数是一个json,解析之后有如下参数：
+**参数说明：**返回的参数payResult是一个json,解析之后有如下参数：
 <ul type='disc'>
-	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
-	<li>msg：返回的信息</li>
-	<li>gameTradeNo：游戏的订单ID</li>
-	<li>channelCode：渠道错误码</li>
+	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：错误信息</li>
+	<li>xgTradeNo:西瓜创建的支付订单ID</li>
+	<li>gameTradeNo：游戏传入的订单ID</li>
+	<li>channelCode：渠道支付结果</li>
 	<li>channelMsg：渠道错误信息</li>
 </ul>
 
 
+#####3.2.1.4 支付结果未知回调
+
+```
+	public void onPayOthers(string payResult){
+		//游戏在此实现支付失败后回调的逻辑
+	}
+```
+
+**回调说明：**
+当支付结果未知的时候，会收到支付结果未知的回调，游戏在此实现支付结果未知时的逻辑。
+
+**参数说明：**返回的参数payResult是一个json，解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：错误信息</li>
+	<li>xgTradeNo:西瓜创建的支付订单ID</li>
+	<li>gameTradeNo：游戏传入的订单ID</li>
+	<li>channelCode：渠道支付结果</li>
+	<li>channelMsg：渠道错误信息</li>
+</ul>
+
+#####3.2.1.5 支付过程中回调
+
+```
+	public void onPayProgress(string payResult){
+		//游戏在此实现支付失败后回调的逻辑
+	}
+```
+
+**回调说明：**
+当支付过程仍未结束的时候，会收到支付过程中的回调，游戏在此实现支付过程中的逻辑。
+
+**参数说明：**返回的参数是一个json，解析之后有如下参数：
+<ul type='disc'>
+	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg：错误信息</li>
+	<li>xgTradeNo:西瓜创建的支付订单ID</li>
+	<li>gameTradeNo：游戏传入的订单ID</li>
+	<li>channelCode：渠道支付结果</li>
+	<li>channelMsg：渠道错误信息</li>
+</ul>
 
 
 <a name = "statisticsInterface"></a>
@@ -1232,6 +1289,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <a name = "extraInterface"></a>
 ###3.4 扩展接口
 
+<a name = "enterGame"></a>
 ####3.4.1 进入游戏
 
 ```
@@ -1645,6 +1703,9 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <td>错误码</td><td>错误信息</td>
 </tr>
 <tr>
+<td>200</td><td>成功</td>
+</tr>
+<tr>
 <td>1000</td><td>客户端初始化失败</td>
 </tr>
 <tr>
@@ -1679,6 +1740,15 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 </tr>
 <tr>
 <td>2060</td><td>渠道反馈的支付失败</td>
+</tr>
+<tr>
+<td>2070</td><td>短时间内重复支付（2秒内）</td>
+</tr>
+<tr>
+<td>2080</td><td>正在支付中</td>
+</tr>
+<tr>
+<td>2090</td><td>支付结果未知，需要服务端进一步确认</td>
 </tr>
 <tr>
 <td>9999</td><td>其它错误</td>
