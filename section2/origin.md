@@ -5,4 +5,4 @@
 文档详细的描述了接入环境、接入步骤、参考代码和接入时的注意事项，能够有效地提高接入速率。</br>
 
 ---
-[Android](./原生android修正版.md)
+[Android](./originandroid.md)
