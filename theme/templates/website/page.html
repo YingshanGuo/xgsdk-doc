@@ -33,13 +33,6 @@
                 </div>
             </div>
         </div>
-
-        {% if progress.current.prev and progress.current.prev.path %}
-        <a href="{{ basePath }}/{{ progress.current.prev.path|contentLink }}" class="navigation navigation-prev {% if not (progress.current.next and progress.current.next.path) %}navigation-unique{% endif %}" aria-label="Previous page: {{ progress.current.prev.title }}"><i class="fa fa-angle-left"></i></a>
-        {% endif %}
-        {% if progress.current.next and progress.current.next.path %}
-        <a href="{{ basePath }}/{{ progress.current.next.path|contentLink }}" class="navigation navigation-next {% if not (progress.current.prev or progress.current.prev.path) %}navigation-unique{% endif %}" aria-label="Next page: {{ progress.current.next.title }}"><i class="fa fa-angle-right"></i></a>
-        {% endif %}
     </div>
 </div>
 {% endblock %}
