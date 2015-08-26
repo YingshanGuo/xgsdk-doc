@@ -100,7 +100,7 @@ Android SDK和Android Eclipse等</br>
 
 渠道版SDK下载包包含：</br>
 1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。</br>
-2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs、SafetyValue.cs、XgsdkDemo.cs。</br>
+2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs、XgsdkDemo.cs。</br>
 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</br>
 
 
@@ -379,7 +379,8 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	{
 		//游戏在此实现直接退出游戏回调的逻辑
 	}
-```
+```  
+
 **回调说明：**
 直接退出游戏成功时，会收到直接退出的回调，游戏在此回调中实现退出游戏后的逻辑。
 
@@ -566,7 +567,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 支付成功后，会收到支付成功的回调，游戏在此回调中实现支付成功后的逻辑。
 
-**参数说明**返回的参数payResult是一个json,解析之后有如下参数：
+**参数说明：**返回的参数payResult是一个json,解析之后有如下参数：
 <ul type='disc'>
 	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg：错误信息</li>
