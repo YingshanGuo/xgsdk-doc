@@ -1106,7 +1106,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 </tr>
 </table>
 
-<a name = "onVirtalCurrencyPurchase"></a>
+<a name = "onVirtualCurrencyReward"></a>
 ####3.3.5 赠送的虚拟货币
 
 
