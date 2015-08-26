@@ -101,7 +101,6 @@ Android SDK和Android Eclipse等</br>
 渠道版SDK下载包包含：</br>
 1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。</br>
 2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs、SafetyValue.cs、XgsdkDemo.cs。</br>
-3. xgsdkchannel.apk<br/>
 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</br>
 
 
@@ -182,7 +181,7 @@ Android SDK和Android Eclipse等</br>
 
 **配置文件**  
 
-若要执行西瓜SDK的Unity3D demo，需要连接西瓜SDK提供的测试渠道，需要将sdk_config.properties配置文件以及xgsdkchannel.apk拷贝至<项目目录>\Assets\Plugins\Android\assets。  
+若要执行西瓜SDK的Unity3D demo，需要连接西瓜SDK提供的测试渠道，需要将sdk_config.properties配置文件拷贝至<项目目录>\Assets\Plugins\Android\assets。  
 其中，sdk_config.properties中的XgAppId、XgAppKey以及XgPlanId需要在西瓜portal上获取对应的参数。
 
 
