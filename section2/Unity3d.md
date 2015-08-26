@@ -144,19 +144,23 @@ Android SDK和Android Eclipse等</br>
 **配置权限**
 
 ```
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 ```
+
 <img src="img/AndroidMainFest1.png">
 
 
-**<application>标签中<activity>标签的属性android:name必须配置成com.xgsdk.client.unity3d.XGUnityActivity**
+**application标签中的android:name必须配置com.xgsdk.client.api.XGApplication**  
+**activity标签中的android:name必须配置com.xgsdk.client.unity3d.XGUnityActivity**
 
 ```
+
 	<application
 		android:name="com.xgsdk.client.api.XGApplication"
         android:allowBackup="true"
@@ -168,7 +172,6 @@ Android SDK和Android Eclipse等</br>
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -179,12 +182,13 @@ Android SDK和Android Eclipse等</br>
 
 **配置文件**  
 
-若要执行西瓜SDK的Unity3D demo，需要连接西瓜SDK提供的测试渠道，需要将sdk_config.properties配置文件以及xgsdkchannel.apk拷贝至<项目目录>\Assets\Plugins\Android\assets。
+若要执行西瓜SDK的Unity3D demo，需要连接西瓜SDK提供的测试渠道，需要将sdk_config.properties配置文件以及xgsdkchannel.apk拷贝至<项目目录>\Assets\Plugins\Android\assets。  
+其中，sdk_config.properties中的XgAppId、XgAppKey以及XgPlanId需要在西瓜portal上获取对应的参数。
 
 
 ####2.4.5 运行
 
-首先点击Main Camera，是否关联脚本，若还未关联，则将脚本添加上去。
+首先点击Main Camera，确认是否关联脚本，若还未关联，则将脚本添加上去。
 
 
 <img src="img/MainCamera.png">
@@ -225,13 +229,13 @@ Android SDK和Android Eclipse等</br>
 ```
 
 **回调说明：**
-当游戏初始化失败时，会收到初始化失败回调,游戏在此回调中实现初始化失败后的逻辑。
+当游戏初始化成功时，会收到初始化成功回调,游戏在此回调中实现初始化成功后的逻辑。
 
 **参数说明：**返回的参数initResult是一个json,解析之后有如下参数：
 <ul type='disc'>
-	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
-	<li>msg：返回的信息</li>
-	<li>channelCode：渠道的错误码</li>
+	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg(string)：返回的信息</li>
+	<li>channelCode(string)：渠道的错误码</li>
 </ul>
 
 #####3.1.1.2初始化失败回调
@@ -247,9 +251,9 @@ Android SDK和Android Eclipse等</br>
 
 **参数说明：**返回的参数initResult是一个json,解析之后有如下参数：
 <ul type='disc'>
-	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
-	<li>msg：返回的信息</li>
-	<li>channelCode：渠道的错误码</li>
+	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg(string)：返回的信息</li>
+	<li>channelCode(string)：渠道的错误码</li>
 </ul>
 
 <a name = "login"></a>
@@ -281,8 +285,8 @@ Android SDK和Android Eclipse等</br>
 
 **参数说明：**返回的参数loginResult是一个json,解析之后有如下参数：
 <ul type='disc'>
-	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
-	<li>authInfo：验证信息</li>
+	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>authInfo(string)：用户验证信息</li>
 </ul>
 
 #####3.1.2.2 登录取消回调：
@@ -299,9 +303,8 @@ Android SDK和Android Eclipse等</br>
 **参数说明：**
 返回参数loginResult是一个json，解析之后又如下参数：
 <ul type='disc'>
-	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
-	<li>msg：返回的信息</li>
-	<li>channelCode：渠道错误码</li>
+	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg(string)：返回的信息</li>
 </ul>
 
 #####3.1.2.3 登录失败回调:
@@ -317,9 +320,9 @@ Android SDK和Android Eclipse等</br>
 
 **参数说明：**返回的参数loginResult是一个json,解析之后有如下参数：
 <ul type='disc'>
-	<li>code：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
-	<li>msg：返回的信息</li>
-	<li>channelCode：渠道错误码</li>
+	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
+	<li>msg(string)：返回的信息</li>
+	<li>channelCode(string)：渠道错误码</li>
 </ul>
 
 
@@ -351,9 +354,8 @@ Android SDK和Android Eclipse等</br>
 
 **参数说明：**返回的参数logoutResult是一个json,解析之后有如下参数：
 <ul type='disc'>
-	<li>code：返回的完成码，详情请见<a href="#errorCode">登出完成码表</a></li>
-	<li>msg：返回的信息</li>
-	<li>channelCode:渠道错误码</li>
+	<li>code(int)：返回的完成码，详情请见<a href="#errorCode">登出完成码表</a></li>
+	<li>msg(string)：返回的信息</li>
 </ul>
 
 
@@ -492,7 +494,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -522,7 +524,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -674,7 +676,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ####3.3.1 任务开始
 
 ```
-	public void onMissionSuccess(RoleInfo roleInfo, String missionId, string missionName, string customParams)
+	public void onMissionBegin(RoleInfo roleInfo, string missionId, string missionName, string customParams)
 ```
 
 **接口说明：**
@@ -698,6 +700,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>roleId</td>
 	<td>string</td>
 	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -727,7 +735,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -739,13 +747,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -778,7 +786,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ####3.3.2 任务成功
 
 ```
-	public void onMissionSuccess(RoleInfo roleInfo, String missionId, string missionName, string customParams)
+	public void onMissionSuccess(RoleInfo roleInfo, string missionId, string missionName, string customParams)
 ```
 
 **接口说明：**
@@ -802,6 +810,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>roleId</td>
 	<td>string</td>
 	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -831,7 +845,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -843,13 +857,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -882,7 +896,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ####3.3.3 任务失败
 
 ```
-	public void onMissionFail(RoleInfo roleInfo, String missionId, string missionName, string customParams)
+	public void onMissionFail(RoleInfo roleInfo, string missionId, string missionName, string customParams)
 ```
 
 **接口说明：**
@@ -906,6 +920,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>roleId</td>
 	<td>string</td>
 	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -935,7 +955,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -947,13 +967,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -985,8 +1005,9 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <a name = "onVirtalCurrencyPurchase"></a>
 ####3.3.4 充值获得虚拟货币
 ```
-	public void onVirtalCurrencyPurchase(RoleInfo roleInfo, int amount, string customParams)
-```
+	public void onVirutalCurrencyPurchase(RoleInfo roleInfo, int amount, string customParams)
+```  
+
 **接口说明**
 此接口用于游戏信息统计，充值获得虚拟货币时调用。
 
@@ -1008,6 +1029,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>roleId</td>
 	<td>string</td>
 	<td>角色ID</td>
+	<td>不可为空</td>
+</tr>
+<tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1037,7 +1064,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1049,13 +1076,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1067,7 +1094,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 <tr>
 	<td>amount</td>
-	<td>string</td>
+	<td>int</td>
 	<td>虚拟币数目</td>
 	<td>不可为空</td>
 </tr>
@@ -1084,7 +1111,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 
 ```
-	public void onVirtalCurrencyPurchase(RoleInfo roleInfo, int amount, string customParams)
+	public void onVirtualCurrencyReward(RoleInfo roleInfo, int amount, string customParams)
 ```
 
 **接口说明：**
@@ -1111,6 +1138,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>不可为空</td>
 </tr>
 <tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
+	<td>不可为空</td>
+</tr>
+<tr>
 	<td>roleLevel</td>
 	<td>string</td>
 	<td>角色等级</td>
@@ -1137,7 +1170,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1149,13 +1182,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1172,7 +1205,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 </tr>
 <tr>
 	<td>amount</td>
-	<td>string</td>
+	<td>int</td>
 	<td>虚拟币数目</td>
 	<td>不可为空</td>
 </tr>
@@ -1187,7 +1220,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <a name = "onVirtalCurrencyConsume"></a>
 ####3.3.6 跟踪虚拟货币的消费
 ```
-	public void onVirtalCurrencyConsume(RoleInfo roleInfo, string itemName, int amount, string customParams)
+	public void onVirtualCurrencyConsume(RoleInfo roleInfo, string itemName, int amount, string customParams)
 ```
 
 **接口说明：**
@@ -1213,6 +1246,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>不可为空</td>
 </tr>
 <tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
+	<td>不可为空</td>
+</tr>
+<tr>
 	<td>roleLevel</td>
 	<td>string</td>
 	<td>角色等级</td>
@@ -1239,7 +1278,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1251,13 +1290,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1274,7 +1313,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 </tr>
 <tr>
 	<td>amount</td>
-	<td>string</td>
+	<td>int</td>
 	<td>虚拟币数目</td>
 	<td>不可为空</td>
 </tr>
@@ -1321,6 +1360,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>不可为空</td>
 </tr>
 <tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
+	<td>不可为空</td>
+</tr>
+<tr>
 	<td>roleLevel</td>
 	<td>string</td>
 	<td>角色等级</td>
@@ -1347,7 +1392,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1359,13 +1404,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1380,7 +1425,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ####3.4.2 创建角色
 
 ```
-		public static void onCreateRole(UserInfo userInfo)
+		public static void onCreateRole(RoleInfo roleInfo)
 ```
 
 **接口说明：**
@@ -1408,6 +1453,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>不可为空</td>
 </tr>
 <tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
+	<td>不可为空</td>
+</tr>
+<tr>
 	<td>roleLevel</td>
 	<td>string</td>
 	<td>角色等级</td>
@@ -1434,7 +1485,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1446,13 +1497,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1495,6 +1546,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>不可为空</td>
 </tr>
 <tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
+	<td>不可为空</td>
+</tr>
+<tr>
 	<td>roleLevel</td>
 	<td>string</td>
 	<td>角色等级</td>
@@ -1521,7 +1578,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1533,13 +1590,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1582,6 +1639,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>不可为空</td>
 </tr>
 <tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
+	<td>不可为空</td>
+</tr>
+<tr>
 	<td>roleLevel</td>
 	<td>string</td>
 	<td>角色等级</td>
@@ -1608,7 +1671,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>角色名字</td>
+	<td>角色名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
@@ -1620,13 +1683,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名字</td>
+	<td>区名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮派名字</td>
+	<td>帮会名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
