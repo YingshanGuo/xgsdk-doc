@@ -1,41 +1,40 @@
-#西瓜SDK（原生Android版 ）接入文档
+# 西瓜SDK（原生Android版 ）接入文档
 
 
 <div id="category" style="display:none"></div>
 
 
-##1. 文档概述
+## 1. 文档概述
 
 此文档为使用原生android引擎游戏客户端的接入文档。  
 本文介绍如何在原生引擎平台下，Android游戏客户端快速接入西瓜SDK。
 文档分成三大部分:西瓜SDK下载，配置环境，各个接口的接入说明和样例代码。逐步细述了整个接入过程；  
-同时罗列出了4种类型的接口：分别为：*用户与角色接口、充值接口、统计接口、扩展接口*，便于游戏方的接入人员可以按照需求更加快速便捷的进行接入。
+同时罗列出了4种类型的接口：分别为：* 用户与角色接口、充值接口、统计接口、扩展接口 * ，便于游戏方的接入人员可以按照需求更加快速便捷的进行接入。
 
 
 
-###1.1 SDK下载包
+### 1.1 SDK下载包
 
-<b>渠道版SDK下载包包含：<br /></b>
-	1. 西瓜SDKV2的Jar包：
- xgsdk-channel-core.jar，xgsdk-data.jar，xgsdk-api.jar<a href="#">下载链接</a><br />
- 	2. xgsdk-testchannel.zip<a href="#">下载链接</a><br />
-   注：解压文件，导入eclipse，右键项目，<br />
- 选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,并且导入原生android的游戏包
-<img src="img/native_connect_package_import.png"></img>
-	3. XGSDK 原生Android版 客户端接入文档<a href="#">下载链接</a>
+渠道版SDK下载包包含：
+1. 西瓜SDKV2的Jar包：  
+   xgsdk-channel-core.jar，xgsdk-data.jar，xgsdk-api.jar<a href="#">下载链接</a>
+2. xgsdk-testchannel.zip<a href="#">下载链接</a>  
+   注：解压文件，导入eclipse，右键项目，  
+   选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,并且导入原生android的游戏包
 
+  <img src="img/native_connect_package_import.png"></img>
 
-##2. 配置环境与快速接入简介
-
-###2.1 开发和接入所需基本环境
-
->###Android开发环境：
->>Android版本：Android2.2 以上
->
->>Android开发工具：Android SDK和Android Eclipse等
+3. XGSDK 原生Android版 客户端接入文档<a href="#">下载链接</a>
 
 
-###2.2 接入步骤简介
+## 2. 配置环境与快速接入简介
+
+### 2.1 开发和接入所需基本环境
+
+Android开发环境如下：  
+Android版本：Android2.2 以上  
+Android开发工具：Android SDK和Android Eclipse等
+### 2.2 接入步骤简介
 <ol type=“1”>
 <li><a href="#permission">配置android权限(AndroidManifest.xml文件)</a></li>
 	<li><a href="#splash">增加闪屏</a></li>
@@ -46,44 +45,46 @@
 	<li><a href="#extend">接入扩展接口</a></li>
 </ol>
 
-###2.3 快速接入
-####2.3.1. 配置AndroidManifest.xml文件<br />
+### 2.3 快速接入
+#### 2.3.1. 配置AndroidManifest.xml文件<br />
 
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+```xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.GET_TASKS" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+```
 
 
+#### 2.3.2. 增加闪屏
 
-####2.3.2. 增加闪屏
+1.游戏母包中AndroidManifest.xml增加XGSplashActivity作为启动Activity的声明，根据游戏朝向设定android:screenOrientation
 
-######1.游戏母包中AndroidManifest.xml增加XGSplashActivity作为启动Activity的声明，根据游戏朝向设定android:screenOrientation
+```xml
+<activity
+	 android:name="com.seasun.xgsdk.splash.XGSplashActivity"
+	 android:screenOrientation="portrait"
+	 android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+	 <intent-filter>
+		 <action android:name="android.intent.action.MAIN" />
+		 <category android:name="android.intent.category.LAUNCHER" />
+	 </intent-filter>
+</activity>
+```
 
-	 <activity
-		 android:name="com.seasun.xgsdk.splash.XGSplashActivity"
-		 android:screenOrientation="portrait"
-		 android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-		 <intent-filter>
-			 <action android:name="android.intent.action.MAIN" />
-			 <category android:name="android.intent.category.LAUNCHER" />
-		 </intent-filter>
-	</activity>
-
-######2.AndroidManifest.xml中将游戏原启动Activity的intent-filter修改为
+2.AndroidManifest.xml中将游戏原启动Activity的intent-filter修改为
 
 	<intent-filter>
 		 <action android:name="xg.game.MAIN" />
 		 <category android:name="android.intent.category.DEFAULT" />
 	 </intent-filter>
 
-####2.3.3 接入生命周期接口<br />
-在游戏各个Activity生命周期中调用SDK生命周期接口，样例代码如下：<br />
+#### 2.3.3 接入生命周期接口
+在游戏各个Activity生命周期中调用SDK生命周期接口，样例代码如下：
 
-
-
+```java
     @Override
     protected void onPause() {
         super.onPause();
@@ -132,19 +133,20 @@
         XGSDK.getInstance().onActivityResult(this, requestCode, resultCode,
                 data);
     }
+```
 
-
-onCreate生命周期方法比较特殊<br />
+onCreate生命周期方法比较特殊。  
 注：setUserCallBack在init之前调用，onCreate方法执行之后，三者的顺序不能改变
 
-	@Override
+```java
+@Override
     protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         XGSDK.getInstance().onCreate(this);
         XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	}
-
-XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；<br />
+```
+XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；  
 以上代码的表示的意思是实现一个匿名的UserCallBack对象，该对象中实现了登录成功、失败、取消，登出成功、失败，初始化失败接口，<a href="#usercallback">详见这里描述</a>
 
 
@@ -152,17 +154,20 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；<br />
 
 
 
-####2.3.4 接入用户和角色接口
+#### 2.3.4 接入用户和角色接口
 <a name="userAndRole" ></a>
-#####登录接口<br />
+##### 登录接口
+```java
 login(Activity activity, String customParams)
 
-	接口说明：
-		用户登录接口，传入扩展参数。
-	参数说明：
+```
+
+接口说明：  
+		用户登录接口，传入扩展参数。  
+	参数说明：  
 		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
-<a name="usercallback" ></a>
-在UserCallBack中实现登录callback接口（登录成功、失败、取消，登出成功、失败，初始化失败接口）<br />
+<a name="usercallback" ></a>  
+在UserCallBack中实现登录callback接口（登录成功、失败、取消，登出成功、失败，初始化失败接口）  
 例如登陆成功，游戏在此回调中实现登陆成功后的逻辑,其余的callback接口类似 <br />
 注：在登录成功callback中，调用xgsdk的onEnterGame接口<br />
 样例代码：
@@ -643,12 +648,12 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 			@Override
 			public void onPayOthers(PayInfo payInfo, PayResult payResult) {
-				ToastUtil.showToastLong(MainActivity.this, "onPayOthers, result is "+payResult.toJson());						
+				ToastUtil.showToastLong(MainActivity.this, "onPayOthers, result is "+payResult.toJson());
 			}
 
 			@Override
 			public void onPayProgress(PayInfo payInfo, PayResult payResult) {
-				ToastUtil.showToastLong(MainActivity.this, "onPayProgress, result is "+payResult.toJson());						
+				ToastUtil.showToastLong(MainActivity.this, "onPayProgress, result is "+payResult.toJson());
 			}
 		});
 
@@ -714,7 +719,7 @@ public void onVirtalCurrencyPurchase(RoleInfo roleInfo, int amount, String custo
 		amount:数量
 		customParams:扩展参数
 
-	
+
 
 
 
