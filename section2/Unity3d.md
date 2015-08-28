@@ -106,17 +106,19 @@ Android SDK和Android Eclipse等</br>
 
 <a name = "steps"></a>
 ###2.4 接入步骤
-####2.4.1.将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中<br/>
+#### 2.4.1将Android项目中的内容拷贝到<项目目录>\Assets\Plugins\Android下（若没有Pluguns目录或者Android目录则创建一个）
+
+<img src= "img/AndroidFile.png">
+
+####2.4.1.将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中  
 
 
 <img src="img/CsFile.png">
 
 
-
 <img src="img/jar.png">
 
-
-注意：导入的cs脚本文件名称不可修改。
+**注意：导入的cs脚本文件名称不可修改。**
 
 ####2.4.2导入文件
 
@@ -124,7 +126,6 @@ Android SDK和Android Eclipse等</br>
 
 
 <img src="img/import1.png">
-
 
 ####2.4.3配置SDK路径
 
@@ -136,9 +137,7 @@ Android SDK和Android Eclipse等</br>
 
 
 
-####2.4.4.配置AndroidMainfest.xml文件<br/>
-
-
+####2.4.4.配置AndroidMainfest.xml文件  
 
 **配置权限**
 
@@ -156,7 +155,7 @@ Android SDK和Android Eclipse等</br>
 
 
 **application标签中的android:name必须配置com.xgsdk.client.api.XGApplication**  
-**activity标签中的android:name必须配置com.xgsdk.client.unity3d.XGUnityActivity**
+**activity标签中的android:name必须配置com.xgsdk.client.api.unity3d.XGUnityActivity**
 
 ```
 
@@ -167,7 +166,7 @@ Android SDK和Android Eclipse等</br>
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
          <activity
-            android:name="com.xgsdk.client.unity3d.XGUnityActivity"
+            android:name="com.xgsdk.client.api.unity3d.XGUnityActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -179,13 +178,13 @@ Android SDK和Android Eclipse等</br>
 
 <img src="img/AndroidMainFest2.png">
 
-**配置文件**  
+####2.4.5.配置sdk_config.properties文件  
 
-若要执行西瓜SDK的Unity3D demo，需要连接西瓜SDK提供的测试渠道，需要将sdk_config.properties配置文件拷贝至<项目目录>\Assets\Plugins\Android\assets。  
+将sdk_config.properties配置文件拷贝至<项目目录>\Assets\Plugins\Android\assets。  
 其中，sdk_config.properties中的XgAppId、XgAppKey以及XgPlanId需要在西瓜portal上获取对应的参数。
 
 
-####2.4.5 运行
+####2.4.6 运行
 
 首先点击Main Camera，确认是否关联脚本，若还未关联，则将脚本添加上去。
 
@@ -215,7 +214,18 @@ Android SDK和Android Eclipse等</br>
 <a name = "init"></a>
 ####3.1.1 初始化接口
 
-西瓜SDK2.0不提供初始化接口，只提供初始化失败回调方法。
+```
+	public static void setCallback()
+```
+
+**接口说明：**
+设置UserCallBack，初始化及用户登录结果会通过此回调对象通知给游戏。  
+**注意：在Unity初始化的时候必须调用setCallback方法！**
+
+**代码样例：**
+```
+	XGSDK2.instance.setCallback ();
+```
 
 **回调方法：**
 
@@ -236,6 +246,9 @@ Android SDK和Android Eclipse等</br>
 	<li>msg(string)：返回的信息</li>
 	<li>channelCode(string)：渠道的错误码</li>
 </ul>
+
+
+
 
 #####3.1.1.2初始化失败回调
 
@@ -269,7 +282,12 @@ Android SDK和Android Eclipse等</br>
 **参数说明：**
 该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 
-**回调方法:**<br/>
+**代码样例：**
+```
+	XGSDK2.instance.login("");
+```
+
+**回调方法:**  
 
 #####3.1.2.1 登录成功回调：
 
@@ -335,7 +353,12 @@ Android SDK和Android Eclipse等</br>
 登出时调用，此接口将调用渠道的登出方法。
 
 **参数说明：**
-该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。  
+
+**代码样例：**
+```
+	XGSDK2.instance.login("");
+```
 
 **回调方法：**
 
@@ -368,7 +391,12 @@ Android SDK和Android Eclipse等</br>
 退出时调用，此接口将调用渠道的退出方法，会尝试退出游戏，并将结果通过退出回调通知游戏。
 
 **参数说明：**
-customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。  
+
+**代码样例：**
+```
+	XGSDK2.instance.login("");
+```
 
 **回调方法：**
 
@@ -403,8 +431,6 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 参数msg无意义。
 
 
-
-
 <a name = "rechargeInterface"></a>
 ###3.2 充值接口
 
@@ -417,7 +443,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **接口说明：**
 支付时调用，此接口将会发起用户充值，系统会调用对应渠道SDK充值界面。
 
-**参数说明(PayInfo成员变量)**
+**参数说明:**
 <table>
 <tr>
 	<th>输入参数</th>
@@ -551,7 +577,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>扩展参数</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.login("");
+```
 
 
 **回调方法：**
@@ -577,7 +608,10 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<li>channelMsg：渠道错误信息</li>
 </ul>
 
-
+**代码样例：**
+```
+	XGSDK2.instance.pay(payinfo);
+```
 
 
 #####3.2.1.2 支付取消回调
@@ -780,7 +814,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>扩展参数</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onMissionBegin(roleInfo,"1","test","1");
+```
 
 <a name = "missionSuccess"></a>
 ####3.3.2 任务成功
@@ -890,7 +929,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>扩展参数</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onMissionSuccess(roleInfo,"1","test","1");
+```
 
 <a name = "missionFail"></a>
 ####3.3.3 任务失败
@@ -1000,7 +1044,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>扩展参数</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onMissionFail(roleInfo,"1","test","1");
+```
 
 <a name = "onVirtalCurrencyPurchase"></a>
 ####3.3.4 充值获得虚拟货币
@@ -1104,7 +1153,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>扩展参数</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onVirtualCurrencyPurchase(roleInfo,10,"1");
+```
 
 <a name = "onVirtualCurrencyReward"></a>
 ####3.3.5 赠送的虚拟货币
@@ -1215,7 +1269,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>扩展参数</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onVirtualCurrencyReward(roleInfo,"TanXian",10,"2");
+```
 
 <a name = "onVirtalCurrencyConsume"></a>
 ####3.3.6 跟踪虚拟货币的消费
@@ -1224,7 +1283,8 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 **接口说明：**
-此接口用于游戏信息统计，跟踪虚拟货币的消费(建议只跟踪有价值的虚拟货币，普通游戏币的消耗不建议在此跟踪)。
+此接口用于游戏信息统计，跟踪虚拟货币的消费(建议只跟踪有价值的虚拟货币，普通游戏币的消耗不建议在此跟踪)。  
+
 **参数说明：**
 <table>
 <tr>
@@ -1323,7 +1383,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>扩展参数</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onVirtualCurrencyConsume(roleInfo,"1",10,"123");
+```
 
 <a name = "extraInterface"></a>
 ###3.4 扩展接口
@@ -1338,7 +1403,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **接口说明**
 此接口用于游戏信息统计，当进入游戏时调用。
 
-**参数说明（RoleInfo的成员变量）**
+**参数说明:**
 
 <table>
 <tr>
@@ -1419,7 +1484,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>性别</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onEnterGame(roleInfo);
+```
 
 <a name = "createRole"></a>
 ####3.4.2 创建角色
@@ -1512,7 +1582,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>性别</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onCreateRole(roleInfo);
+```
 
 <a name = "roleLevelUp"></a>
 ####3.4.3 角色升级
@@ -1524,7 +1599,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **接口说明：**
 此接口用于游戏信息统计，当角色升级时调用。
 
-**参数说明（RoleInfo的成员变量）**
+**参数说明:**
 
 <table>
 <tr>
@@ -1605,7 +1680,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>性别</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onRoleLevelup(roleInfo);
+```
 
 <a name = "onEvent"></a>
 ####3.4.4 自定义事件
@@ -1722,7 +1802,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>事件内容</td>
 	<td>不可为空</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.onEvent(roleInfo,"eventid","eventDesc",1,"tanxianchuji");
+```
 
 <a name = "switchAccount"></a>
 ####3.4.5 切换账号
@@ -1735,7 +1820,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 切换账号时调用，此接口将调用渠道的切换账号方法。
 
 **参数说明：**
-customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。  
+
+**代码样例：**
+```
+	XGSDK2.instance.switchAccount("switchAccount");
+```
 
 <a name = "getChannelId"></a>
 ####3.4.6 获取渠道ID
@@ -1755,7 +1845,12 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 <td>channelId</td><td>stirng</td><td>渠道ID</td>
 </tr>
-</table>
+</table>  
+
+**代码样例：**
+```
+	XGSDK2.instance.getChannelId();
+```
 
 
 
