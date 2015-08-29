@@ -7,6 +7,7 @@ This is the summary of my book.
     * [hello西瓜](section1/hello_xgsdk.md)
     * [视频教程](section1/video_tutorial.md)
     * [打包工具使用指南](section1/xg_dabao.md)
+    * [签名文件格式说明](section1/signature.md)
 
 * [客户端接入指南](section2/README.md)
     * [Cocos2d-x引擎](section2/Cocos2dx.md)

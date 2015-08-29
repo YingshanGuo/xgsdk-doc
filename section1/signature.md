@@ -9,7 +9,7 @@
 
   <img src="img/signature.png"/>
 
--  .keystore文件必须是.properties通过keytool工具生成的。
+-  .keystore是通过.properties文件中的信息生成的签名文件。
 
 ### 3.签名文件大小
 签名文件的大小不能超过10K。

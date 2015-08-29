@@ -7,3 +7,4 @@
 * [hello西瓜](./hello_xgsdk.md)
 * [视频教程](./video_tutorial.md)
 * [打包工具使用指南](./xg_dabao.md)
+* [签名文件规则说明](./signature.md)
