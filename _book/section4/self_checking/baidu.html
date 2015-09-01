@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3><font face="微软雅黑" size="3">拇指玩：</font> </h3>  
+<table width="1456" border="0" cellpadding="0" cellspacing="0" style='width:1092.00pt;border-collapse:collapse;table-layout:fixed;'>
+<col width="115" class="xl25" style='mso-width-source:userset;mso-width-alt:3680;'/>
+<col width="595" class="xl26" style='mso-width-source:userset;mso-width-alt:19040;'/>
+<col width="138" class="xl27" style='mso-width-source:userset;mso-width-alt:4416;'/>
+<col width="65" class="xl27" style='mso-width-source:userset;mso-width-alt:2080;'/>
+<col width="442" class="xl28" style='mso-width-source:userset;mso-width-alt:14144;'/>
+<col width="101" class="xl26" style='mso-width-source:userset;mso-width-alt:3232;'/>
+<col width="72" span="15537" class="xl26" style='mso-width-source:userset;mso-width-alt:2304;'/>
+<tr height="45" style='height:33.75pt;mso-height-source:userset;mso-height-alt:675;'>
+    <td class="xl29" height="45" width="1456" colspan="6" style='height:33.75pt;width:1092.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>以下测试点请自测通过后再提交，否则上线测试不予通过</td>
+</tr>
+<tr height="31" style='height:23.25pt;mso-height-source:userset;mso-height-alt:465;'>
+    <td class="xl32" height="31" style='height:23.25pt;' x:str>模块</td>
+    <td class="xl32" x:str>测试点</td>
+    <td class="xl32" x:str>常见问题</td>
+    <td class="xl32" x:str>BUG编号</td>
+    <td class="xl33" x:str>解决办法</td>
+    <td class="xl34" x:str>XGSDK说明</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl35" height="170" rowspan="4" style='height:127.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>包体信息</td>
+    <td class="xl36" x:str>1、更新游戏包体package与线上已有包体package一致。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>101</td>
+    <td class="xl28" x:str>package必须与上个版本相同，否则无法更新</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="28" style='height:21.00pt;mso-height-source:userset;mso-height-alt:420;'>
+    <td class="xl36" x:str>2、游戏包体packageName有baidu字样。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>102</td>
+    <td class="xl37" x:str>package必须包含baidu字段，如com.baidu.xxx或com.xxx.xxbaidu或com.x<span style='display:none;'>xx.BD等均可</span></td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="72" style='height:54.00pt;mso-height-source:userset;mso-height-alt:1080;'>
+    <td class="xl36" x:str>3、更新包体VersionCode和versionName比线上已有包体versionCode和versionName高。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>103</td>
+    <td class="xl28" x:str>versionCode和versionName必须必上个版本高，否则无法更新；换包时versionCode和versionName可与线上版本相同。</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>4、包体可正常解析。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>104</td>
+    <td class="xl28" x:str>可正常通过反编译或者工具解析包体查看package、versionCode、versionName</td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl38" height="140" rowspan="4" style='height:105.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>BDPlatform<br/>Type&quot; android:value</td>
+    <td class="xl36" x:str>1.3.1以前（包括1.3.1） value=1</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl28"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>2.0以后（包括2.0）<span style='mso-spacerun:yes;'>&nbsp; </span>value=0</td>
+    <td class="xl28" x:str>BDPlatformType&quot; android:value</td>
+    <td class="xl27"></td>
+    <td class="xl28"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>91SDK默认值为2</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl28"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>请更新SDK的时候参照之前的value值，这个千万不能发生变话，否则会导致角色丢失</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl28"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl41" height="452" rowspan="12" style='height:339.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>登录</td>
+    <td class="xl42" x:str>1、桌面快捷图标有百度角标(角标可放在图标四角任意角，后台提交ICON必须与包里保持一致，<br/>91也要使用百度角标)。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>105</td>
+    <td class="xl28" x:str>角标可根据游戏自身icon调整至最佳位置</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>2、游戏icon大小正常。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>106</td>
+    <td class="xl28" x:str>游戏ICON需使用SDK包中《百度移动游戏LOGO》对应分辨率LOGO</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="58" style='height:43.50pt;mso-height-source:userset;mso-height-alt:870;'>
+    <td class="xl44" x:str>3、在SDK登录界面，点击右上角X按钮或点击手机上的返回按钮，能够退出游戏或返回游戏的<br/>登录界面，并通过重新启动游戏，或点击游戏的登录按钮唤起SDK登陆界面</td>
+    <td class="xl45" x:str>关闭SDK登陆界面后无法登陆</td>
+    <td class="xl27" x:num>107</td>
+    <td class="xl28" x:str>正确处理取消登录回调else if (DkErrorCode.DK_LOGIN_CANCELED == _loginState)</td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl42" x:str>4、启动有百度移动游戏logo（3.0以上SDK自带百度logo,无需再自行添加，游戏启动必须先显示<br/>百度logo）</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>108</td>
+    <td class="xl28" x:str>同问题描述</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>5、使用百度、91、多酷任意账号可以登录游戏。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>109</td>
+    <td class="xl46" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=87&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=87&amp;extra=page%3D1</a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="44" style='height:33.00pt;mso-height-source:userset;mso-height-alt:660;'>
+    <td class="xl47" x:str>6、登录游戏首先会弹出欢迎页、其次才会显示CP自家的logo（必须先显示百度，CP可有可无）</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl46"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>7、点home键退到后台，然后再进入游戏需要有百度添加的广告页面弹出</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl46"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>8、使用91账号和多酷账号可以正常登录游戏（老游戏继承在原先SDK版本中的角色）</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl46"></td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>9、试玩账号升级成功后，能够自动登录，不用玩家重新输入账号密码（更新游戏）</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl46"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>10、如果创建试玩账号失败，试玩按钮变为用户名注册，直至游戏进程重启</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl46"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>11、进入游戏后退出，重新进入游戏可以实现自动登录。</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl46"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>12、多酷账号修改密码后，点击个人中心需要从新登陆</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl46"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="45" class="xl23" style='height:33.75pt;mso-height-source:userset;mso-height-alt:675;'>
+    <td class="xl49" height="216" rowspan="6" style='height:162.00pt;border-right:.5pt solid windowtext;border-bottom:none;' x:str>账号升级</td>
+    <td class="xl47" x:str>1、新的91账号和多酷账号登录游戏需要提示一键升级界面</td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="23" class="xl23" style='height:17.25pt;'>
+    <td class="xl47" x:str><font class="font8">2、手机带有绑定过的SIM卡会提示自动升级失败。(</font><font class="font17">此SIM卡如果已于其他百度账号绑定</font><font class="font8">)</font></td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="34" class="xl23" style='height:25.50pt;mso-height-source:userset;mso-height-alt:510;'>
+    <td class="xl47" x:str>3、手动升级需要未绑定过百度账号的邮箱或者手机号来进行升级。</td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="44" class="xl23" style='height:33.00pt;'>
+    <td class="xl47" x:str><font class="font8">4、邮箱手机号如果是绑定过的，那么手动升级会提示该邮箱或者手机号已绑定（</font><font class="font17">账号在网页可以解绑，解绑后可以重复绑定</font><font class="font8">）</font></td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" class="xl23" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>5、明绑升级失败后，可以正常进行游戏，默认暗绑成功</td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl50"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47"></td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl46"></td>
+    <td class="xl26"></td>
+</tr>
+<tr height="28" style='height:21.00pt;mso-height-source:userset;mso-height-alt:420;'>
+    <td class="xl35" height="52" rowspan="2" style='height:39.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>注册</td>
+    <td class="xl36" x:str>1、手机号一键注册可用。</td>
+    <td class="xl27" x:str>手机号无法一键注册</td>
+    <td class="xl27" x:num>4003</td>
+    <td class="xl46" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1<span style='mso-spacerun:yes;'>&nbsp;</span></a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="24" style='height:18.00pt;mso-height-source:userset;mso-height-alt:360;'>
+    <td class="xl36" x:str>2、用户名注册功能可以注册百度账户。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>111</td>
+    <td class="xl28" x:str>同问题描述</td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="28" style='height:21.00pt;mso-height-source:userset;mso-height-alt:420;'>
+    <td class="xl41" height="282" rowspan="9" style='height:211.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>充值</td>
+    <td class="xl36" x:str>1、假充值不能获得游戏币(如使用移动充值，输入任意17位账号、18位密码)。</td>
+    <td class="xl27" x:str>假充值可以到账</td>
+    <td class="xl27" x:num>5007</td>
+    <td class="xl52" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1</a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>2、所有充值方式都可以获得游戏币。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>112</td>
+    <td class="xl28" x:str>同问题描述</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>3、91豆可以兑换游戏币且提示数目正确。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>113</td>
+    <td class="xl28" x:str>同问题描述</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" class="xl24" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl53" x:str>4、酷币兑换成功后，提示正确的到账游戏币数目。</td>
+    <td class="xl27"></td>
+    <td class="xl27"></td>
+    <td class="xl28"></td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="22" style='height:16.50pt;'>
+    <td class="xl47" x:str>5、91账号和多酷账号进入游戏后，可以正常进行充值（默认暗绑）</td>
+    <td class="xl54"></td>
+    <td class="xl54"></td>
+    <td class="xl55"></td>
+    <td class="xl56" x:str>XGSDK已集成</td>
+</tr>
+<tr height="22" style='height:16.50pt;'>
+    <td class="xl47" x:str>6、91账号升级成百度账号后，没有91豆支付方式<span style='mso-spacerun:yes;'>&nbsp;&nbsp; </span>*（3.1之后可以使用）</td>
+    <td class="xl54"></td>
+    <td class="xl54"></td>
+    <td class="xl55"></td>
+    <td class="xl56" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>7、付费界面的横竖屏与游戏对应</td>
+    <td class="xl27" x:str>获得游戏币数目错误</td>
+    <td class="xl27" x:num>5013</td>
+    <td class="xl52" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1</a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl57" x:str><font class="font14"> 8、CP</font><font class="font15">提交游戏包审核之前，应当使用</font><font class="font18">RMB</font><font class="font15">在游戏中消费一笔，且</font><font class="font18">“</font><font class="font15">货币充值</font><font class="font18">”</font><font class="font15">中订单状态为</font><font class="font18">“</font><font class="font15">已发货</font><font class="font18">”</font><font class="font15">。</font></td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td x:str>按SDK服务器端文档要求返回正确的值</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl58" x:str><font class="font15">9、对游戏进行充值或消费，游戏应当收到相应道具，</font><font class="font19">且</font><font class="font20">“</font><font class="font19">后台消费清单</font><font class="font20">”</font><font class="font19">中该订单状态为</font><font class="font20">“</font><font class="font19">已发货</font><font class="font20">”</font><font class="font15">。</font></td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td x:str>按SDK服务器端文档要求返回正确的值</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl41" height="350" rowspan="10" style='height:262.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>悬浮窗</td>
+    <td class="xl36" x:str>1、登录成功后显示悬浮窗。</td>
+    <td class="xl27" x:str>登陆成功后无悬浮窗</td>
+    <td class="xl27" x:num>3001</td>
+    <td class="xl52" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1</a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>2.点击进入悬浮窗内任意界面并退出，返回游戏，游戏无黑屏、闪屏、卡死等现象。</td>
+    <td class="xl27" x:str>游戏黑屏、卡死</td>
+    <td class="xl27" x:num>6000</td>
+    <td class="xl52" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=10&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=10&amp;extra=page%3D1</a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>3、专区不能一直处于加载中状态(新接入游戏专区显示时空猎人是正确的)。</td>
+    <td class="xl27" x:str>专区处于加载中</td>
+    <td class="xl27" x:num>3002</td>
+    <td class="xl52" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1</a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>4、修改密码后需要重新登陆才可以继续进行游戏。</td>
+    <td class="xl27" x:str>修改密码后游戏崩溃</td>
+    <td class="xl27" x:num>3004</td>
+    <td class="xl52" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=488&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=488&amp;extra=page%3D1</a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>5、在账号管理项目内点击切换帐号，可以返回到登录界面。</td>
+    <td class="xl27" x:str>切换账户后不能返回到登<span style='display:none;'>陆界面</span></td>
+    <td class="xl27" x:num>3003</td>
+    <td class="xl52" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1</a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>6、Session失效后，需要重新登陆。（可通过修改密码、不同手机登录实现）</td>
+    <td class="xl27" x:str>session后无法登陆</td>
+    <td class="xl27" x:num>4004</td>
+    <td class="xl52" x:str><a href="http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1" target="_parent">http://dev.bbs.duoku.com/forum.php?mod=viewthread&amp;tid=9&amp;extra=page%3D1</a></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>7、悬浮窗里面显示贴吧</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl52"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>8、礼包里面显示ICON、xhdpi的一般都是96*96</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl52"></td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>9、消息里面暂时没有任何记录</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl52"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>10.、不能显示2个悬浮窗</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl52"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl41" height="146" rowspan="4" style='height:109.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>个人中心</td>
+    <td class="xl47" x:str>1、VIP等级、积分、余额显示正确，没有字典或者数据方面的错误</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl52"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="41" style='height:30.75pt;mso-height-source:userset;mso-height-alt:615;'>
+    <td class="xl47" x:str>2、每日抽奖、积分商城、我的存号箱、我的道具如果本机安装了星玩家、可以进入星玩家页面、如果没有安装则提示是否安装星玩家</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl52"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47" x:str>3、充值记录里会分页显示当前账号的全部历史订单</td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl52"></td>
+    <td class="xl26" x:str>XGSDK已集成</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl47"></td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl52"></td>
+    <td class="xl26"></td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl35" height="175" rowspan="5" style='height:131.25pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>游戏内容</td>
+    <td class="xl36" x:str>1、不能有其他平台外链、广告、push广告、其他游戏推广等信息。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>114</td>
+    <td class="xl28" x:str>去掉所有外链，如因技术原因无法去掉外链，可以将外链链接到百度移动游戏平台H5页面。</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>2、无重大明显BUG，如刷金币、crash等。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>115</td>
+    <td class="xl28" x:str>游戏自身问题，同问题描述</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>3、安装不报错等。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>116</td>
+    <td class="xl28" x:str>使用91助手、豌豆荚等安卓应用安装工具均可正常安装游戏。</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>4、游戏已有功能可以使用。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>117</td>
+    <td class="xl28" x:str>游戏自身问题，同问题描述</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>5、游戏功能描述与实际相符(主要是充值，如充值实际返利与描述不符)。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>118</td>
+    <td class="xl28" x:str>修改游戏中描述或将功能修改成与描述相符</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl35" height="210" rowspan="6" style='height:157.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>涉黄、涉赌</td>
+    <td class="xl36" x:str>1、游戏名字：检查名字是否符合标准，如新金瓶梅，天天爱爆衣；不得变象使用敏感或禁止文字，如：<span style='display:none;'>苍×井×空、近！！平等</span></td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>119</td>
+    <td class="xl28" x:str>去掉敏感字、词</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>2、游戏ICON和截图：检查是否过于暴露或者内容是否健康 </td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>120</td>
+    <td class="xl28" x:str>修改icon：要求无暴露、健康</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>3、游戏人物：检查游戏内人物穿着是否过于暴露，无暴乳、穿着较少女性 </td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>121</td>
+    <td class="xl28" x:str>修改暴露图片</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>4、游戏文字内容：检查是否有色情内容为噱头，吸引用户下载使用 </td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>122</td>
+    <td class="xl28" x:str>修改成健康内容</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>5、游戏内容：检查游戏实际操作，无涉黄或低俗内容，如妄撮、撕开你的衣服，刺激诱惑挑逗女性或男<span style='display:none;'>性 </span></td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>123</td>
+    <td class="xl28" x:str>同问题描述</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl36" x:str>6、APP检查内容及标准说明主要查看：游戏名字icon、截图、描述：不能涉及梭哈、炸金花、扎金花、<span style='display:none;'>诈金花、赌场 、赢三张、三张牌、港式五张、六合彩不得变象使用敏感或禁止文字。 </span></td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>124</td>
+    <td class="xl28" x:str>同问题描述</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="35" style='height:26.25pt;mso-height-source:userset;mso-height-alt:525;'>
+    <td class="xl35" height="35" style='height:26.25pt;' x:str>安全性</td>
+    <td class="xl36" x:str>1、使用任意一款手机杀毒软件不能出现提示有病毒、广告、山寨版等信息。</td>
+    <td class="xl27"></td>
+    <td class="xl27" x:num>125</td>
+    <td class="xl28" x:str>常用的有 金山、360、百度卫士、安全管家、腾讯手机管家,出现问题请联系相应的杀毒软件运营商</td>
+    <td class="xl26" x:str>游戏自检</td>
+</tr>
+<tr height="55" style='height:41.25pt;mso-height-source:userset;mso-height-alt:825;'>
+    <td class="xl25" height="55" style='height:41.25pt;' x:str>SDK版本检查</td>
+    <td class="xl59" x:str><font class="font1">接入SDK2.0.0及SDK2.0.1版本的游戏，将config_baidu.json和logcontroller.json文件放入到SD卡根目录中,安装游戏，登陆账号进入游戏，点击个人中心，弹出黑色弹窗，必须带有2014-08-15，如不带此日期一律打回(</font><font class="font3">重要注：每测一个包体都需将两文件覆盖安装。</font><font class="font1">)</font></td>
+    <td class="xl60"></td>
+    <td class="xl27"></td>
+    <td class="xl28" x:str>接入2014年8月15日发布的SDK版本</td>
+    <td class="xl26" x:str>不涉及</td>
+</tr>
+<tr height="65" style='height:48.75pt;mso-height-source:userset;mso-height-alt:975;'>
+    <td class="xl61" height="187" rowspan="3" style='height:140.25pt;border-right:none;border-bottom:.5pt solid windowtext;' x:str>备注</td>
+    <td class="xl62" x:str>登录时使用已经注册的手机号点击手机一键注册，提示创建帐号成功后使用已有帐号登录</td>
+    <td class="xl63"></td>
+    <td class="xl64"></td>
+    <td class="xl28"></td>
+    <td class="xl26"></td>
+</tr>
+<tr height="54" style='height:40.50pt;mso-height-source:userset;mso-height-alt:810;'>
+    <td class="xl66" x:str>91渠道进入游戏后修改密码，不需重新登录可继续游戏</td>
+    <td class="xl63"></td>
+    <td class="xl64"></td>
+    <td class="xl28"></td>
+    <td class="xl26"></td>
+</tr>
+<tr height="68" style='height:51.00pt;mso-height-source:userset;mso-height-alt:1020;'>
+    <td class="xl68" x:str>悬浮框不出现贴吧入口</td>
+    <td class="xl63"></td>
+    <td class="xl64"></td>
+    <td class="xl28"></td>
+    <td class="xl26"></td>
+</tr>
+<tr height="17" style='height:12.75pt;'>
+    <td class="xl69" height="17" style='height:12.75pt;'></td>
+    <td class="xl26"></td>
+    <td class="xl27" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl28"></td>
+    <td class="xl26"></td>
+</tr>
+
+</table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

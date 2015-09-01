@@ -59,7 +59,7 @@
  <tr>
 	<td>pps</td>
 	<td><a href="http://g.pps.tv/ " target="_parent" title="http://g.pps.tv/ ">渠道地址</a></td>
-	<td>豌豆荚</td>
+	<td><a href="./application/wandoujia.html" target="_blank">豌豆荚</td>
 	<td><a href="http://open.wandoujia.com/home" target="_parent">渠道地址</a></td>
 	<td>4399</td>
 	<td><a href="http://opensj.4399api.net" target="_parent">渠道地址</a></td>
