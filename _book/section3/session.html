@@ -1,0 +1,999 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>session验证 | 西瓜SDK</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.2.0">
+        <meta name="author" content="XG SDK">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../section3/pay.html" />
+    
+    
+    <link rel="prev" href="../section3/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="Fri Aug 28 2015 14:49:58 GMT+0800 (中国标准时间)">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="目录"><i class="fa fa-align-justify"></i></a>
+    
+    
+    
+    <!-- Actions Right -->
+    
+
+    
+    
+    
+    
+    
+
+
+    <!-- Title -->
+    <div class="logo"></div>
+    
+
+</div>
+
+    
+
+<div class="book-summary">
+    
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        
+                        
+                        介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="section1/index.html">
+            
+                
+                    <a href="../section1/index.html">
+                
+                        
+                        
+                            <b>1.</b>
+                        
+                        10分钟掌握西瓜SDK
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="section1/quick_start.html">
+            
+                
+                    <a href="../section1/quick_start.html">
+                
+                        
+                        
+                            <b>1.1.</b>
+                        
+                        快速入门
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="section1/hello_xgsdk.html">
+            
+                
+                    <a href="../section1/hello_xgsdk.html">
+                
+                        
+                        
+                            <b>1.2.</b>
+                        
+                        hello西瓜
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="section1/video_tutorial.html">
+            
+                
+                    <a href="../section1/video_tutorial.html">
+                
+                        
+                        
+                            <b>1.3.</b>
+                        
+                        视频教程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="section1/xg_dabao.html">
+            
+                
+                    <a href="../section1/xg_dabao.html">
+                
+                        
+                        
+                            <b>1.4.</b>
+                        
+                        打包工具使用指南
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="section2/index.html">
+            
+                
+                    <a href="../section2/index.html">
+                
+                        
+                        
+                            <b>2.</b>
+                        
+                        客户端接入指南
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="section2/Cocos2dx.html">
+            
+                
+                    <a href="../section2/Cocos2dx.html">
+                
+                        
+                        
+                            <b>2.1.</b>
+                        
+                        Cocos2d-x引擎
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="section2/Cocos2dx.html">
+            
+                
+                    <a href="../section2/Cocos2dx.html">
+                
+                        
+                        
+                            <b>2.1.1.</b>
+                        
+                        android
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="section2/Unity3d.html">
+            
+                
+                    <a href="../section2/Unity3d.html">
+                
+                        
+                        
+                            <b>2.2.</b>
+                        
+                        Unity3d引擎
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="section2/Unity3d.html">
+            
+                
+                    <a href="../section2/Unity3d.html">
+                
+                        
+                        
+                            <b>2.2.1.</b>
+                        
+                        android
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="section2/origin.html">
+            
+                
+                    <a href="../section2/origin.html">
+                
+                        
+                        
+                            <b>2.3.</b>
+                        
+                        原生接口
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="section2/originandroid.html">
+            
+                
+                    <a href="../section2/originandroid.html">
+                
+                        
+                        
+                            <b>2.3.1.</b>
+                        
+                        android
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="section2/channeltest.html">
+            
+                
+                    <a href="../section2/channeltest.html">
+                
+                        
+                        
+                            <b>2.4.</b>
+                        
+                        客户端接入验证
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="section3/index.html">
+            
+                
+                    <a href="../section3/index.html">
+                
+                        
+                        
+                            <b>3.</b>
+                        
+                        服务端接入指南
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.1" data-path="section3/session.html">
+            
+                
+                    <a href="../section3/session.html">
+                
+                        
+                        
+                            <b>3.1.</b>
+                        
+                        session验证
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="section3/pay.html">
+            
+                
+                    <a href="../section3/pay.html">
+                
+                        
+                        
+                            <b>3.2.</b>
+                        
+                        支付通知
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="section3/data.html">
+            
+                
+                    <a href="../section3/data.html">
+                
+                        
+                        
+                            <b>3.3.</b>
+                        
+                        数据上报
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="section4/index.html">
+            
+                
+                    <a href="../section4/index.html">
+                
+                        
+                        
+                            <b>4.</b>
+                        
+                        渠道规范
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="section4/Parameters.html">
+            
+                
+                    <a href="../section4/Parameters.html">
+                
+                        
+                        
+                            <b>4.1.</b>
+                        
+                        参数申请指南
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="section4/icon.html">
+            
+                
+                    <a href="../section4/icon.html">
+                
+                        
+                        
+                            <b>4.2.</b>
+                        
+                        角标规范
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="section4/anzhi.html">
+            
+                
+                    <a href="../section4/anzhi.html">
+                
+                        
+                        
+                            <b>4.3.</b>
+                        
+                        上架自检规范
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="section4/SDK.html">
+            
+                
+                    <a href="../section4/SDK.html">
+                
+                        
+                        
+                            <b>4.4.</b>
+                        
+                        渠道SDK材料
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="section5/operationindex.html">
+            
+                
+                    <a href="../section5/operationindex.html">
+                
+                        
+                        
+                            <b>5.</b>
+                        
+                        数据分析使用指南
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="section5/operationindex.html">
+            
+                
+                    <a href="../section5/operationindex.html">
+                
+                        
+                        
+                            <b>5.1.</b>
+                        
+                        运营指标
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="section6/index.html">
+            
+                
+                    <a href="../section6/index.html">
+                
+                        
+                        
+                            <b>6.</b>
+                        
+                        常见问题
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="section6/androidclient.html">
+            
+                
+                    <a href="../section6/androidclient.html">
+                
+                        
+                        
+                            <b>6.1.</b>
+                        
+                        常见接入问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="section6/Note.html">
+            
+                
+                    <a href="../section6/Note.html">
+                
+                        
+                        
+                            <b>6.2.</b>
+                        
+                        渠道接入须知
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="section6/Note11.html">
+            
+                
+                    <a href="../section6/Note11.html">
+                
+                        
+                        
+                            <b>6.3.</b>
+                        
+                        打包工具
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="section6/filesign.html">
+            
+                
+                    <a href="../section6/filesign.html">
+                
+                        
+                        
+                            <b>6.4.</b>
+                        
+                        获取文件签名
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="%E8%A5%BF%E7%93%9Csdk-session%E9%AA%8C%E8%AF%81%E6%96%87%E6%A1%A3">&#x897F;&#x74DC;SDK session&#x9A8C;&#x8BC1;&#x6587;&#x6863;</h1>
+<h2 id="1-%E6%96%87%E6%A1%A3%E6%A6%82%E8%BF%B0">1. &#x6587;&#x6863;&#x6982;&#x8FF0;</h2>
+<p>&#x6B64;&#x6587;&#x6863;&#x662F;&#x897F;&#x74DC;SDK&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x5165;&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x6587;&#x6863;&#x3002;&#x4ECB;&#x7ECD;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#x5982;&#x4F55;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x767B;&#x5F55;&#x4FE1;&#x606F;&#xFF0C;&#x6E38;&#x620F;&#x5BA2;&#x6237;&#x7AEF;&#x5728;&#x63A5;&#x6536;&#x5230;&#x897F;&#x74DC;&#x767B;&#x5F55;&#x6210;&#x529F;&#x7684;&#x56DE;&#x8C03;&#x540E;&#xFF0C;
+&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x4FE1;&#x606F;&#x53D1;&#x9001;&#x5230;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#x4F7F;&#x7528;&#x767B;&#x5F55;&#x8BA4;&#x8BC1;&#x63A5;&#x53E3;&#x5411;&#x897F;&#x74DC;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;&#x9A8C;&#x8BC1;&#x5E76;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x767B;&#x5F55;&#x4FE1;&#x606F;&#x3002;
+<strong> &#x6CE8;&#x610F;&#xFF1A;</strong> &#x767B;&#x5F55;&#x8BA4;&#x8BC1;&#x63A5;&#x53E3;&#x4E3A;&#x767B;&#x5F55;&#x6D41;&#x7A0B;&#x5FC5;&#x63A5;&#x63A5;&#x53E3;&#x3002;</p>
+<h3 id="1-1-%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84">1.1 &#x6587;&#x6863;&#x7ED3;&#x6784;</h3>
+<ol>
+    <li>
+        <a href="#doc">&#x6587;&#x6863;&#x6982;&#x8FF0;</a>
+            <ul>
+                <li><a href="#docStructure">&#x6587;&#x6863;&#x7ED3;&#x6784;</a></li>
+            </ul>
+    </li>
+    <li>
+        <a href="#configure">&#x767B;&#x5F55;&#x8BA4;&#x8BC1;&#x63A5;&#x53E3;</a>
+            <ul>
+                <li><a href="#conditions">&#x529F;&#x80FD;</a></li>
+                <li><a href="#steps">&#x8F93;&#x5165;</a></li>
+                <li><a href="#import">&#x8F93;&#x51FA;</a>
+                </li><li><a href="#import_android">&#x8BF7;&#x6C42;&#x6837;&#x4F8B;</a>
+        </li><li><a href="#import_1">&#x8FD4;&#x56DE;&#x503C;&#x6837;&#x4F8B;</a>
+            </li></ul>
+    </li>
+    <li>
+        <a href="#version">&#x6587;&#x6863;&#x7248;&#x672C;</a>
+    </li>
+</ol>
+
+
+<div id="configure"></div>
+
+<h2 id="2-%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81%E6%8E%A5%E5%8F%A3">2. &#x767B;&#x5F55;&#x8BA4;&#x8BC1;&#x63A5;&#x53E3;</h2>
+<div id="conditions"></div>
+
+<h3 id="2-1-%E5%8A%9F%E8%83%BD">2.1 &#x529F;&#x80FD;</h3>
+<table>
+<tr>
+<td>&#x53D1;&#x8D77;&#x65B9;</td><td>&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;</td>
+</tr>
+<tr>
+<td>&#x63A5;&#x6536;&#x65B9;</td><td>XGSDK&#x670D;&#x52A1;&#x7AEF;</td>
+</tr>
+<tr>
+<td>&#x63A5;&#x53E3;&#x7C7B;&#x578B;</td><td>HTTP GET</td>
+</tr>
+<tr>
+<td>&#x5B57;&#x7B26;&#x96C6;&#x7F16;&#x7801;</td><td>UTF-8</td>
+</tr>
+<tr>
+<td>&#x5B89;&#x5168;&#x673A;&#x5236;</td><td>&#x7B7E;&#x540D;</td>
+</tr>
+<tr>
+<td>&#x8BF7;&#x6C42;&#x5730;&#x5740;</td><td>http://pay.xgsdk.com:8180/account/verify-session/{xgAppId}</td>
+</tr>
+</table>
+
+<pre><code>&#x5176;&#x4E2D;xgAppId&#x662F;&#x6E38;&#x620F;&#x5728;XGSDK&#x7684;&#x552F;&#x4E00;&#x6807;&#x793A;&#xFF0C;&#x5982;&#x897F;&#x6E38;&#x4F0F;&#x9B54;&#x662F;1024appid&#x3002;
+</code></pre><p><strong>&#x529F;&#x80FD;&#x63CF;&#x8FF0;:</strong>
+&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#x5411;XGSDK&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF0C;&#x786E;&#x8BA4;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x8FC7;&#x6765;&#x7684;sessionId&#x662F;&#x6709;&#x6548;&#x7684;&#xFF0C;&#x5E76;&#x83B7;&#x53D6;&#x51C6;&#x786E;&#x7684;&#x6E20;&#x9053;&#x8D26;&#x53F7;&#x3002;</p>
+<div id="steps"></div>
+
+<h3 id="2-2-%E8%AF%B7%E6%B1%82">2.2 &#x8BF7;&#x6C42;</h3>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
+<table>
+<tr>
+<td>&#x53C2;&#x6570;</td><td>&#x662F;&#x5426;&#x5FC5;&#x9700;</td><td>&#x7C7B;&#x578B;</td><td>&#x8BF4;&#x660E;</td>
+</tr>
+<tr>
+<td>type</td><td>&#x662F;</td><td>String</td><td>&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x4E3A;verify-session</td>
+</tr>
+<tr>
+<td>authInfo</td><td>&#x662F;</td><td>String</td><td>&#x4F1A;&#x8BDD;&#x9A8C;&#x8BC1;&#x6570;&#x636E;&#xFF0C;xgsdk&#x5BA2;&#x6237;&#x7AEF;&#x8D1F;&#x8D23;&#x751F;&#x6210;&#xFF0C;&#x53CD;&#x9988;&#x7ED9;&#x6E38;&#x620F;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x6E38;&#x620F;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4EA4;&#x7ED9;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#x540E;&#xFF0C;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x5668;&#x62FF;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x5230;xgsdk&#x670D;&#x52A1;&#x5668;&#x9A8C;&#x8BC1;&#x767B;&#x5F55;&#x4F1A;&#x8BDD;&#x662F;&#x5426;&#x6709;&#x6548;
+BASE64&#x7F16;&#x7801;&#x540E;&#x7684;json&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5177;&#x4F53;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x8BF4;&#x660E;&#x8BF7;&#x53C2;&#x8003;<a href="#authInfo">authInfo&#x6570;&#x636E;&#x683C;&#x5F0F;</a></td>
+</tr>
+<tr>
+<td>ts</td><td>&#x662F;</td><td>String</td><td>&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x79D2;&#x7EA7;&#xFF0C;&#x5982;20150811085930&#x5BF9;&#x5E94;2015/8/11 08:59:30</td>
+</tr>
+<tr>
+<td>sign</td><td>&#x662F;</td><td>String</td><td>&#x7B7E;&#x540D;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x53C2;&#x89C1;&#x7B7E;&#x540D;&#x7AE0;&#x8282;&#xFF0C;&#x4F7F;&#x7528;&#x6E38;&#x620F;&#x670D;&#x52A1;&#x7AEF;&#x5BC6;&#x94A5;&#xFF0C;&#x7B7E;&#x540D;&#x53C2;&#x6570;&#x4EC5;&#x5305;&#x62EC;authInfo</td>
+</tr>
+</table>
+
+<p><a name="authInfo"></a>authInfo&#x6570;&#x636E;&#x683C;&#x5F0F;:</p>
+<table>
+<tr>
+<td>&#x53C2;&#x6570;</td><td>&#x662F;&#x5426;&#x5FC5;&#x9700;</td><td>&#x7C7B;&#x578B;</td><td>&#x8BF4;&#x660E;</td>
+</tr>
+<tr>
+<td>xgAppId</td><td>&#x662F;</td><td>String</td><td>xgsdk&#x5206;&#x914D;&#x7ED9;&#x6E38;&#x620F;&#x7684;&#x552F;&#x4E00;AppId</td>
+</tr>
+<tr>
+<td>channelId</td><td>&#x662F;</td><td>String</td><td>&#x6E20;&#x9053;Id</td>
+</tr>
+<tr>
+<td>deviceId</td><td>&#x662F;</td><td>String</td><td>&#x8BBE;&#x5907;Id</td>
+</tr>
+<tr>
+<td>ts</td><td>&#x662F;</td><td>String</td><td>&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x79D2;&#x7EA7;&#xFF0C;&#x5982;20150723150028&#x5BF9;&#x5E94;2015/7/23 15:00:28</td>
+</tr>
+<tr>
+<td>authToken</td><td>&#x5426;</td><td>String</td><td>&#x4EE5;&#x4E0B;&#x6E20;&#x9053;&#x6309;&#x8BF4;&#x660E;&#x586B;&#x5199;,&#x6CA1;&#x6709;&#x7684;&#x76F4;&#x63A5;&#x7559;&#x7A7A;  
+&#x9177;&#x6D3E;:authorization code  
+Vivo:authtoken  
+&#x91D1;&#x7ACB;:AmigoToken  
+&#x534E;&#x4E3A;:access_token  
+&#x8054;&#x60F3;:lpsust&#xFF08;Token&#xFF09;  
+OPPO:oauth_token  
+&#x62C7;&#x6307;&#x73A9;:token  
+37&#x73A9;:token  
+&#x76CA;&#x73A9;:token  
+&#x5F53;&#x4E50;:token  
+&#x9177;&#x72D7;:Token  
+&#x730E;&#x8C79;:mutk  
+PPTV:sessionid  
+PPS:sign  
+&#x5B89;&#x667A;:sid  
+&#x8C4C;&#x8C46;&#x835A;:token  
+UC:sid  
+&#x767E;&#x5EA6;:user_sessionid  
+&#x5C0F;&#x7C73;:sessionId  
+iTools:sessionId  
+&#x5FEB;&#x7528;:tokenKey  
+PP&#x52A9;&#x624B;:token_key  
+&#x540C;&#x6B65;&#x63A8;:sessionID  
+91:sessionId</td>
+</tr>
+<tr>
+<td>uId</td><td>&#x5426;</td><td>String</td><td>&#x4EE5;&#x4E0B;&#x6E20;&#x9053;&#x6309;&#x8BF4;&#x660E;&#x586B;&#x5199;,&#x6CA1;&#x6709;&#x7684;&#x76F4;&#x63A5;&#x7559;&#x7A7A;  
+Vivo:openid  
+&#x91D1;&#x7ACB;:amigoUserId  
+&#x8054;&#x60F3;:realm  
+&#x5F53;&#x4E50;:memberId  
+37&#x73A9;:Userid  
+&#x76CA;&#x73A9;:openid  
+&#x5F53;&#x4E50;:mid  
+&#x730E;&#x8C79;:uid  
+PPS:uid  
+&#x5B89;&#x667A;:uid
+&#x8C4C;&#x8C46;&#x835A;:uid  
+&#x767E;&#x5EA6;:user_id  
+&#x5C0F;&#x7C73;:Uid  
+iTools:userID  
+&#x5FEB;&#x7528;:guid  
+&#x540C;&#x6B65;&#x63A8;:userID  
+91:loginUin  
+OPPO:access_token_secret  
+</td></tr>
+<tr>
+<td>name</td><td>&#x5426;</td><td>String</td><td>&#x4EE5;&#x4E0B;&#x6E20;&#x9053;&#x6309;&#x8BF4;&#x660E;&#x586B;&#x5199;,&#x6CA1;&#x6709;&#x7684;&#x76F4;&#x63A5;&#x586B;&#x7A7A;  
+Vivo:name  
+&#x5F53;&#x4E50;:userName  
+37&#x73A9;:userName  
+&#x9177;&#x72D7;:UserName  
+PPTV:username  
+&#x767E;&#x5EA6;:user_name
+iTools:userName  
+&#x5FEB;&#x7528;:username  
+&#x730E;&#x8C79;:clientIp</td>
+</tr>
+<tr>
+<td>planId</td><td>&#x662F;</td><td>String</td><td>&#x6E38;&#x620F;&#x53D1;&#x884C;&#x8BA1;&#x5212;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>sign</td><td>&#x662F;</td><td>String</td><td>&#x7B7E;&#x540D;&#xFF0C;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;&#x53C2;&#x89C1;&#x7B7E;&#x540D;&#x7AE0;&#x8282;&#xFF0C;&#x4F7F;&#x7528;&#x6E38;&#x620F;&#x5BA2;&#x6237;&#x7AEF;&#x5BC6;&#x94A5;&#xFF0C;&#x7B7E;&#x540D;&#x53C2;&#x6570;&#x4E3A;authInfo&#x4E2D;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;</td>
+</tr>
+</table>
+
+<div id="import"></div>
+
+<h4 id="2-2-1-%E8%AF%B7%E6%B1%82%E7%A4%BA%E4%BE%8B">2.2.1 &#x8BF7;&#x6C42;&#x793A;&#x4F8B;</h4>
+<h5 id="2-2-1-1-%E6%9E%84%E5%BB%BAauthinfo%E5%80%BC">2.2.1.1 &#x6784;&#x5EFA;authInfo&#x503C;</h5>
+<h6 id="%E5%88%9D%E5%A7%8B%E5%8F%82%E6%95%B0">&#x521D;&#x59CB;&#x53C2;&#x6570;</h6>
+<p>authToken=61A28C6C94F8F4D37C6EE632DFA43<br>channelId=mi<br>deviceId=1740948824<br>name=Michael<br>planId=1<br>uId=foo2015<br>xgAppId=2001</p>
+<h6 id="%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E6%88%B3ts%E4%B8%BA%EF%BC%9A">&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;ts&#x4E3A;&#xFF1A;</h6>
+<p>20150811085930</p>
+<h6 id="%E6%B8%B8%E6%88%8F%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AF%86%E9%92%A5%EF%BC%9A">&#x6E38;&#x620F;&#x5BA2;&#x6237;&#x7AEF;&#x5BC6;&#x94A5;&#xFF1A;</h6>
+<p>16e532be7c4a401a903c07ef3ea10803</p>
+<h6 id="authinfo%E7%94%9F%E6%88%90%E7%AD%BE%E5%90%8D%E5%89%8D%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%BA%EF%BC%88%E6%8C%89key%E5%80%BC%E5%8D%87%E5%BA%8F%E6%8E%92%E5%88%97%EF%BC%89">authInfo&#x751F;&#x6210;&#x7B7E;&#x540D;&#x524D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4E3A;&#xFF08;&#x6309;Key&#x503C;&#x5347;&#x5E8F;&#x6392;&#x5217;&#xFF09;:</h6>
+<p>authToken=61A28C6C94F8F4D37C6EE632DFA43&amp;channelId=mi&amp;deviceId=1740948824&amp;name=Michael&amp;planId=1&amp;ts=20150811085930&amp;uId=foo2015&amp;xgAppId=2001</p>
+<h6 id="%E5%AF%B9authinfo%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8Chmacsha1%E7%AD%BE%E5%90%8D%E7%9A%84%E7%BB%93%E6%9E%9C%E4%B8%BA">&#x5BF9;authInfo&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;HmacSHA1&#x7B7E;&#x540D;&#x7684;&#x7ED3;&#x679C;&#x4E3A;:</h6>
+<p>9150ff12a280b1c234ab4c53e9b3c53a5536dd36</p>
+<h6 id="%E5%B0%86%E4%B8%8A%E8%BF%B0%E7%AD%BE%E5%90%8D%E5%A1%AB%E5%85%A5%E5%88%B0autoinfo%E7%9A%84sign%E5%AD%97%E6%AE%B5%EF%BC%8C%E5%A1%AB%E5%AE%8C%E7%9A%84%E7%BB%93%E6%9E%9C%E4%B8%BA">&#x5C06;&#x4E0A;&#x8FF0;&#x7B7E;&#x540D;&#x586B;&#x5165;&#x5230;autoInfo&#x7684;sign&#x5B57;&#x6BB5;&#xFF0C;&#x586B;&#x5B8C;&#x7684;&#x7ED3;&#x679C;&#x4E3A;:</h6>
+<p>{&quot;authToken&quot;:&quot;61A28C6C94F8F4D37C6EE632DFA43&quot;,&quot;channelId&quot;:&quot;mi&quot;,&quot;deviceId&quot;:&quot;1740948824&quot;,&quot;name&quot;:&quot;Michael&quot;,&quot;planId&quot;:&quot;1&quot;,&quot;sign&quot;:&quot;9150ff12a280b1c234ab4c53e9b3c53a5536dd36&quot;,&quot;ts&quot;:&quot;20150811085930&quot;,&quot;uId&quot;:&quot;foo2015&quot;,&quot;xgAppId&quot;:&quot;2001&quot;}</p>
+<h6 id="%E6%9C%80%E5%90%8E%E5%AF%B9%E5%8C%85%E5%90%AB%E7%AD%BE%E5%90%8D%E7%9A%84authinfo%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8Cbase64%E7%BC%96%E7%A0%81%EF%BC%8C%E7%BB%93%E6%9E%9C%E4%B8%BA%EF%BC%9A">&#x6700;&#x540E;&#x5BF9;&#x5305;&#x542B;&#x7B7E;&#x540D;&#x7684;authInfo&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;Base64&#x7F16;&#x7801;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</h6>
+<p>eyJhdXRoVG9rZW4iOiI2MUEyOEM2Qzk0RjhGNEQzN0M2RUU2MzJERkE0MyIsImNoYW5uZWxJZCI6Im1pIiwiZGV2aWNlSWQiOiIxNzQwOTQ4ODI0IiwibmFtZSI6Ik1pY2hhZWwiLCJwbGFuSWQiOiIxIiwic2lnbiI6IjkxNTBmZjEyYTI4MGIxYzIzNGFiNGM1M2U5YjNjNTNhNTUzNmRkMzYiLCJ0cyI6IjIwMTUwODExMDg1OTMwIiwidUlkIjoiZm9vMjAxNSIsInhnQXBwSWQiOiIyMDAxIn0=</p>
+<h5 id="2-2-1-2-%E6%9E%84%E5%BB%BA%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81url">2.2.1.2 &#x6784;&#x5EFA;&#x767B;&#x5F55;&#x9A8C;&#x8BC1;URL</h5>
+<h6 id="%E5%81%87%E5%A6%82%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%E6%88%B3ts%E4%B8%BA%EF%BC%9A">&#x5047;&#x5982;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;ts&#x4E3A;&#xFF1A;</h6>
+<p>20150811085930</p>
+<h6 id="%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AF%86%E9%92%A5%E4%B8%BA">&#x6E38;&#x620F;&#x670D;&#x52A1;&#x7AEF;&#x5BC6;&#x94A5;&#x4E3A;:</h6>
+<p>aefc5134be1543dea3217144eb71e8f8</p>
+<h6 id="%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E5%8F%82%E6%95%B0%E4%B8%BA%EF%BC%88authinfo-ts-type%EF%BC%89%EF%BC%9A">&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x53C2;&#x6570;&#x4E3A;&#xFF08;authInfo + ts + type&#xFF09;&#xFF1A;</h6>
+<p>authInfo=eyJhdXRoVG9rZW4iOiI2MUEyOEM2Qzk0RjhGNEQzN0M2RUU2MzJERkE0MyIsImNoYW5uZWxJZCI6Im1pIiwiZGV2aWNlSWQiOiIxNzQwOTQ4ODI0IiwibmFtZSI6Ik1pY2hhZWwiLCJwbGFuSWQiOiIxIiwic2lnbiI6IjkxNTBmZjEyYTI4MGIxYzIzNGFiNGM1M2U5YjNjNTNhNTUzNmRkMzYiLCJ0cyI6IjIwMTUwODExMDg1OTMwIiwidUlkIjoiZm9vMjAxNSIsInhnQXBwSWQiOiIyMDAxIn0=&amp;ts=20150811085930&amp;type=verify-session</p>
+<h6 id="%E5%AF%B9%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81%E5%8F%82%E6%95%B0%E8%BF%9B%E8%A1%8Chmacsha1%E7%AD%BE%E5%90%8D%E7%9A%84%E7%BB%93%E6%9E%9C%E4%B8%BA%EF%BC%9A">&#x5BF9;&#x767B;&#x5F55;&#x9A8C;&#x8BC1;&#x53C2;&#x6570;&#x8FDB;&#x884C;HmacSHA1&#x7B7E;&#x540D;&#x7684;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</h6>
+<p>eeea1a2d07e258932679effea36aa0d2fe47e50e</p>
+<h6 id="%E6%9C%80%E7%BB%88%E7%9A%84%E8%AF%B7%E6%B1%82url%EF%BC%9A">&#x6700;&#x7EC8;&#x7684;&#x8BF7;&#x6C42;URL&#xFF1A;</h6>
+<p><a href="http://pay.xgsdk.com:8180//account/verify-session/2001?authInfo=eyJhdXRoVG9rZW4iOiI2MUEyOEM2Qzk0RjhGNEQzN0M2RUU2MzJERkE0MyIsImNoYW5uZWxJZCI6Im1pIiwiZGV2aWNlSWQiOiIxNzQwOTQ4ODI0IiwibmFtZSI6Ik1pY2hhZWwiLCJwbGFuSWQiOiIxIiwic2lnbiI6IjkxNTBmZjEyYTI4MGIxYzIzNGFiNGM1M2U5YjNjNTNhNTUzNmRkMzYiLCJ0cyI6IjIwMTUwODExMDg1OTMwIiwidUlkIjoiZm9vMjAxNSIsInhnQXBwSWQiOiIyMDAxIn0=&amp;sign=eeea1a2d07e258932679effea36aa0d2fe47e50e&amp;ts=20150811085930&amp;type=verify-session" target="_blank">http://pay.xgsdk.com:8180//account/verify-session/2001?authInfo=eyJhdXRoVG9rZW4iOiI2MUEyOEM2Qzk0RjhGNEQzN0M2RUU2MzJERkE0MyIsImNoYW5uZWxJZCI6Im1pIiwiZGV2aWNlSWQiOiIxNzQwOTQ4ODI0IiwibmFtZSI6Ik1pY2hhZWwiLCJwbGFuSWQiOiIxIiwic2lnbiI6IjkxNTBmZjEyYTI4MGIxYzIzNGFiNGM1M2U5YjNjNTNhNTUzNmRkMzYiLCJ0cyI6IjIwMTUwODExMDg1OTMwIiwidUlkIjoiZm9vMjAxNSIsInhnQXBwSWQiOiIyMDAxIn0=&amp;sign=eeea1a2d07e258932679effea36aa0d2fe47e50e&amp;ts=20150811085930&amp;type=verify-session</a></p>
+<div id="import_1"></div>
+
+<h3 id="2-3-%E8%BF%94%E5%9B%9E">2.3 &#x8FD4;&#x56DE;</h3>
+<p>&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E3A;JSON&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5206;&#x522B;&#x6709;&#x5982;&#x4E0B;&#x5B57;&#x6BB5;&#xFF1A;</p>
+<table>
+<tr>
+<td>&#x5B57;&#x6BB5;</td><td>&#x5FC5;&#x9009;</td><td>&#x7C7B;&#x578B;</td><td>&#x8BF4;&#x660E;</td>
+</tr>
+<tr>
+<td>code</td><td>&#x662F;</td><td>&#x5B57;&#x7B26;&#x4E32;</td><td>&#x8FD4;&#x56DE;&#x7801;&#xFF0C;&#x53C2;&#x89C1;&#x9519;&#x8BEF;&#x7801;&#x7AE0;&#x8282;&#xFF08;&#x5982;&#xFF1A;&#x9A8C;&#x8BC1;&#x901A;&#x8FC7;&#x4E3A;0&#xFF09;</td>
+</tr>
+<tr>
+<td>msg</td><td>&#x662F;</td><td>&#x5B57;&#x7B26;&#x4E32;</td><td>&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x4FE1;&#x606F;&#x63D0;&#x793A;:  
+- &#x6210;&#x529F;  
+- &#x9A8C;&#x8BC1;&#x5931;&#x8D25;  
+- &#x8F93;&#x5165;&#x9519;&#x8BEF;&#xFF1A;authToken&#x4E3A;&#x7A7A;  
+- &#x8F93;&#x5165;&#x9519;&#x8BEF;&#xFF1A;uId&#x4E3A;&#x7A7A;  
+- &#x7CFB;&#x7EDF;&#x9519;&#x8BEF;&#xFF1A;&#x6E20;&#x9053;AppSecret&#x4E3A;&#x7A7A;  
+- &#x7CFB;&#x7EDF;&#x9519;&#x8BEF;&#xFF1A;&#x6E20;&#x9053;&#x65E0;&#x54CD;&#x5E94;  
+- &#x7CFB;&#x7EDF;&#x9519;&#x8BEF;&#xFF1A;&#x6E20;&#x9053;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x683C;&#x5F0F;&#x9519;&#x8BEF;  
+</td>
+</tr>
+<tr>
+<td>data</td><td>&#x662F;</td><td>JSONObject</td><td>&#x5F53;code&#x4E3A;0&#x65F6;&#x5019;&#x8BE5;&#x5B57;&#x6BB5;&#x624D;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x5426;&#x5219;&#x4E3A;&#x7A7A;</td>
+</tr>
+</table>
+
+<p>data&#x6570;&#x636E;&#xFF1A;</p>
+<table>
+<tr>
+<td>&#x53C2;&#x6570;</td><td>&#x662F;&#x5426;&#x5FC5;&#x9700;</td><td>&#x7C7B;&#x578B;</td><td>&#x8BF4;&#x660E;</td>
+</tr>
+<tr>
+<td>channelId</td><td>&#x662F;</td><td>String</td><td>&#x6E20;&#x9053;ID</td>
+</tr>
+<tr>
+<td>sessionId</td><td>&#x5426;</td><td>String</td><td>&#x9177;&#x6D3E;:authorization code  
+Vivo:authtoken  
+&#x91D1;&#x7ACB;:AmigoToken  
+&#x534E;&#x4E3A;:access_token  
+&#x8054;&#x60F3;:ST&#xFF08;Token&#xFF09;  
+OPPO:oauth_token  
+&#x62C7;&#x6307;&#x73A9;:token  
+37&#x73A9;:token  
+&#x76CA;&#x73A9;:token  
+&#x5F53;&#x4E50;:token  
+&#x9177;&#x72D7;:Token  
+&#x730E;&#x8C79;:mutk  
+PPTV:sessionid  
+PPS:sign  
+&#x5B89;&#x667A;:sid  
+&#x8C4C;&#x8C46;&#x835A;:token  
+UC:sid  
+&#x767E;&#x5EA6;:user_sessionid  
+&#x5C0F;&#x7C73;:sessionId  
+iTools:sessionId  
+&#x5FEB;&#x7528;:tokenKey  
+PP&#x52A9;&#x624B;:token_key  
+&#x540C;&#x6B65;&#x63A8;:sessionID  
+91:sessionId </td>
+</tr>
+<tr>
+<td>uId</td><td>&#x662F;</td><td>String</td><td>&#x9177;&#x6D3E;:openid  
+Vivo:openid  
+&#x91D1;&#x7ACB;:AmigoUserId  
+&#x8054;&#x60F3;:AccountID  
+OPPO:id  
+&#x62C7;&#x6307;&#x73A9;:uid  
+37&#x73A9;:Userid  
+&#x76CA;&#x73A9;:openid  
+&#x5F53;&#x4E50;:mid  
+&#x730E;&#x8C79;:uid  
+PPS:uid  
+&#x5B89;&#x667A;:uid  
+&#x8C4C;&#x8C46;&#x835A;:uid  
+UC:ucId  
+&#x767E;&#x5EA6;:user_id  
+&#x5C0F;&#x7C73;:Uid  
+iTools:userID  
+&#x5FEB;&#x7528;:guid  
+PP&#x52A9;&#x624B;:userid  
+&#x540C;&#x6B65;&#x63A8;:userID  
+91:loginUin </td>
+</tr>
+<tr>
+<td>userName</td><td>&#x5426;</td><td>String</td><td>Vivo:name  
+&#x8054;&#x60F3;:Username  
+OPPO:name  
+&#x62C7;&#x6307;&#x73A9;:username  
+37&#x73A9;:userName  
+&#x5F53;&#x4E50;:username  
+&#x9177;&#x72D7;:UserName  
+PPTV:username  
+&#x767E;&#x5EA6;:user_name  
+iTools:userName  
+&#x5FEB;&#x7528;:username  
+PP&#x52A9;&#x624B;:username  
+</td></tr>
+<tr>
+<td>nickName</td><td>&#x5426;</td><td>String</td><td>&#x9177;&#x6D3E;:nickname</td>
+</tr>
+<tr>
+<td>state</td><td>&#x5426;</td><td>String</td><td>&#x8D26;&#x53F7;&#x72B6;&#x6001;  
+-1-&#x672A;&#x6FC0;&#x6D3B;  
+0-&#x6B63;&#x5E38;  
+1-&#x6682;&#x505C;  
+2-&#x9500;&#x6237;  
+&#x534E;&#x4E3A;:userValidStatus  
+&#x8054;&#x60F3;:verfied</td>
+</tr>
+
+<tr>
+<td>deviceId</td><td>&#x5426;</td><td>String</td><td>&#x8054;&#x60F3;:DeviceID</td>
+</tr>
+<tr>
+<td>telphone</td><td>&#x5426;</td><td>String</td><td>&#x91D1;&#x7ACB;:AmigoUserTn<br>
+OPPO:mobile</td>
+</tr>
+<tr>
+<td>mail</td><td>&#x5426;</td><td>String</td><td>&#x90AE;&#x7BB1;&#x5730;&#x5740;  
+Vivo:email  
+OPPO:email  
+&#x62C7;&#x6307;&#x73A9;:mail</td>
+</tr>
+<tr>
+<td>sex</td><td>&#x5426;</td><td>String</td><td>&#x6027;&#x522B;:&#x7537;-1,&#x5973;-2,&#x672A;&#x77E5;-0  
+&#x9177;&#x6D3E;:sex  
+OPPO:sex  
+&#x62C7;&#x6307;&#x73A9;:sex  
+&#x5F53;&#x4E50;:gender</td>
+</tr>
+<tr>
+<td>brithday</td><td>&#x5426;</td><td>String</td><td>&#x8BF4;&#x660E;&#x751F;&#x65E5;&#x683C;&#x5F0F;&#xFF1A;YYYY-MM-DD  
+&#x9177;&#x6D3E;:brithday</td>
+</tr>
+<tr>
+<td>smallHeadIconUrl</td><td>&#x5426;</td><td>String</td><td>&#x5934;&#x50CF;&#x5C0F;&#x56FE;&#x6807;  
+&#x9177;&#x6D3E;:highDefUrl  
+OPPO:profilePictureUrl  
+&#x62C7;&#x6307;&#x73A9;:icon  
+&#x5F53;&#x4E50;:avatar_url</td>
+</tr>
+<tr>
+<td>bigHeadIconUrl</td><td>&#x5426;</td><td>String</td><td>&#x5934;&#x50CF;&#x5927;&#x56FE;&#x6807;  
+&#x9177;&#x6D3E;:headIconUrl</td>
+</tr>
+<tr>
+<td>constellation</td><td>&#x5426;</td><td>String</td><td>&#x661F;&#x5EA7;  
+OPPO:constellation</td>
+</tr>
+<tr>
+<td>balance</td><td>&#x5426;</td><td>String</td><td>&#x4F59;&#x989D;  
+OPPO:gameBalance</td>
+</tr>
+<tr>
+<td>level</td><td>&#x5426;</td><td>String</td><td>&#x5F53;&#x4E50;:level</td>
+</tr>
+</table>
+
+<div id="import_android"></div>
+
+
+<h6 id="%E8%BF%94%E5%9B%9E%E7%A4%BA%E4%BE%8B">&#x8FD4;&#x56DE;&#x793A;&#x4F8B;</h6>
+<pre><code>{
+    &quot;code&quot;: &quot;0&quot;,
+    &quot;msg&quot;: &quot;success&quot;,
+    &quot;data&quot;: {
+        &quot;channelId&quot;: &quot;mi&quot;,
+        &quot;sessionId&quot;: &quot;woidkljfhnav98a7fdgonqelrtnsdvaxasdfasdf&quot;,
+        &quot;uId&quot;: &quot;3099245&quot;
+    }
+}
+</code></pre><div id="version"></div>
+
+<h3 id="%E6%96%87%E6%A1%A3%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E">&#x6587;&#x6863;&#x7248;&#x672C;&#x8BF4;&#x660E;</h3>
+<table>
+<tr>
+<td>SDK&#x7248;&#x672C;</td><td>&#x6587;&#x6863;&#x7248;&#x672C;</td> <td>SDK&#x4FEE;&#x6539;&#x5185;&#x5BB9;</td> <td>&#x6587;&#x6863;&#x4FEE;&#x6539;&#x5185;&#x5BB9;</td> <td>&#x4FEE;&#x6539;&#x65E5;&#x671F;</td>  
+</tr>
+<tr>
+<td>2.0 </td><td>1.0</td> <td>&#x521D;&#x7248;</td> <td>&#x521D;&#x7248;</td> <td>2015.7.31</td>
+</tr>
+</table>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-collapsible-menu/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":"white","family":"sans","size":1}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
