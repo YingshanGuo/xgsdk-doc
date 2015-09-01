@@ -485,7 +485,7 @@ post的消息采取JSON结，内容由包头和包体组成：&#123;&#123;head&#
 ###文档版本说明
 <table>
 <tr>
-<td>SDK版本</td><td>文档版本</td> <td>DK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
+<td>SDK版本</td><td>文档版本</td> <td>SDK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
 </tr>
 <tr>
 <td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.30</td>

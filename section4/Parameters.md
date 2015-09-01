@@ -1,11 +1,11 @@
-#渠道参数申请指南
+# 渠道参数申请指南
 
-渠道参数申请指南是为了方便游戏运营可以更清晰的了解不同渠道的申请步骤。西瓜提供了每个渠道的渠道地址和详细的申请步骤，以帮助游戏运营在参数申请时更加快速便捷。</br>
+渠道参数申请指南是为了方便游戏运营可以更清晰的了解不同渠道的申请步骤。西瓜提供了每个渠道的渠道地址和详细的申请步骤，以帮助游戏运营在参数申请时更加快速便捷。  
 在渠道列表中点击某一渠道地址跳转到相应的渠道官网申请账号；点击渠道名称可查看详细的参数申请步骤。
 
 
 
-####Android渠道参数申请渠道地址：
+#### Android渠道参数申请渠道地址：
 
 <table>
  <tr>
@@ -35,8 +35,8 @@
  <tr>
 	<td>oppo</td>
 	<td><a href="http://open.oppomobile.com/" target="_parent">渠道地址</a></td>
-	<td>金立</td>
-	<td><a href="http://dev.game.gionee.com" target="_parent">渠道地址</a></td>
+	<td>当乐</td>
+	<td><a href="http://open.d.cn/download.html" target="_parent">渠道地址</a></td>
 	<td>魅族</td>
 	<td><a href="https://member.meizu.com/" target="_parent" title="https://member.meizu.com/">渠道地址</a></td>
  </tr>
@@ -131,7 +131,7 @@
 
 
 
-####iOS渠道参数申请渠道地址：
+#### iOS渠道参数申请渠道地址：
 
 <table>
  <tr>
@@ -207,29 +207,35 @@
 
 西瓜SDK平台上所需的appid、appkey、appsecret均在小米后台获取。
 
-###获取步骤如下：
+### 获取步骤如下：
 
 1. **在小米官方后台注册`小米开发者账号`（<a href="http://dev.xiaomi.com">请点击这里</a>）；**
 
  ** 登陆账号后点击管理控制台进入如下页面，点击“手机及平板应用”；**
+
     <img src='./img/img3.png'>
+
 2. ** 点击“创建应用”；**
+
     <img src='./img/img4.png'>
+
 3.** 填写完整下图中的信息，点击创建；**
-    <img src='./img/img5.png'>
+
+  <img src='./img/img5.png'>
 
 4.** 成功申请到应用所需要的appid、appkey、appsecret，如下图；**
-    <img src='./img/img6.png'>
+
+  <img src='./img/img6.png'>
 
 
 
 
 
 
-###文档版本说明
+### 文档版本说明
 <table >
 <tr>
-<td >SDK版本</td><td>文档版本</td> <td>DK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
+<td >SDK版本</td><td>文档版本</td> <td>SDK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
 </tr>
 <tr>
 <td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.30</td>
