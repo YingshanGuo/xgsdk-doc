@@ -19,7 +19,7 @@
  <tr>
 	<td>金立</td>
 	<td><a href="http://dev.game.gionee.com/" target="_parent">渠道地址</a></td>
-	<td>百度</td>
+	<td><a href="./application/aiyouxi.html" target="_blank">百度</a></td>
 	<td><a href="http://app.baidu.com" target="_parent">渠道地址</a></td>
 	<td>应用宝—联运</td>
 	<td><a href="http://open.qq.com/" target="_parent" title="http://open.qq.com/">渠道地址</a></td>
@@ -33,7 +33,7 @@
 	<td><a href="http://dev.appchina.com/" target="_parent" title="http://dev.appchina.com/">渠道地址</a></td>
  </tr>
  <tr>
-	<td>oppo</td>
+	<td><a href="./application/oppo.html" target="_blank">oppo</a></td>
 	<td><a href="http://open.oppomobile.com/" target="_parent">渠道地址</a></td>
 	<td>当乐</td>
 	<td><a href="http://open.d.cn/download.html" target="_parent">渠道地址</a></td>
@@ -59,9 +59,9 @@
  <tr>
 	<td>pps</td>
 	<td><a href="http://g.pps.tv/ " target="_parent" title="http://g.pps.tv/ ">渠道地址</a></td>
-	<td><a href="./application/wandoujia.html" target="_blank">豌豆荚</td>
+	<td><a href="./application/wandoujia.html" target="_blank">豌豆荚</a></td>
 	<td><a href="http://open.wandoujia.com/home" target="_parent">渠道地址</a></td>
-	<td>4399</td>
+	<td><a href="./application/4399.html" target="_blank">4399</a></td>
 	<td><a href="http://opensj.4399api.net" target="_parent">渠道地址</a></td>
  </tr>
  <tr>
@@ -69,7 +69,7 @@
 	<td><a href="http://game.kuwo.cn/" target="_parent" title="http://game.kuwo.cn/">渠道地址</a></td>
 	<td><a href="#xiaomi">小米</a></td>
 	<td><a href="https://account.xiaomi.com" target="_parent">渠道地址</a></td>
-	<td>UC</td>
+	<td><a href="./application/uc.html" target="_blank">UC</a></td>
 	<td><a href="http://game.open.uc.cn/" target="_parent">渠道地址</a></td>
  </tr>
  <tr>
@@ -77,13 +77,13 @@
 	<td><a href="http://open.youku.com/" target="_parent">渠道地址</a></td>
 	<td>今日头条</td>
 	<td><a href="http://toutiao.com/" target="_parent" title="http://toutiao.com/">渠道地址</a></td>
-	<td>vivo</td>
+	<td><a href="./application/vivo.html" target="_blank">vivo</a></td>
 	<td><a href="https://developer.vivo.com.cn/" target="_parent">渠道地址</a></td>
  </tr>
  <tr>
 	<td>37玩</td>
 	<td><a href="http://my.37.com/" target="_parent" title="http://my.37.com/">渠道地址</a></td>
-	<td>爱游戏</td>
+	<td><a href="./application/aiyouxi.html" target="_blank">爱游戏</a></td>
 	<td><a href="http://open.play.cn/dev/" target="_parent">渠道地址</a></td>
 	<td>安智</td>
 	<td><a href="http://dev.anzhi.com/" target="_parent">渠道地址</a></td>
@@ -97,7 +97,7 @@
 	<td><a href="http://open.letv.com" target="_parent">渠道地址</a></td>
  </tr>
  <tr>
-	<td>机锋</td>
+	<td><a href="./application/jifeng.html" target="_blank">机锋</a></td>
 	<td><a href="http://dev.gfan.com/" target="_parent" title="http://dev.gfan.com/">渠道地址</a></td>
 	<td>海马</td>
 	<td><a href="http://pay.haima.me/index.php" target="_parent">渠道地址</a></td>
