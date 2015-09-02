@@ -97,11 +97,18 @@ Android SDK和Android Eclipse等</br>
 <a name = "SDKDownload"></a>
 ###2.3 SDK下载包
 
+<a href = "packages/Unity3DSDK.zip">Unity3D SDK下载</a>
+
+SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户直接将工程导入Unity即可运行demo，Unity3DSDK文件夹则是用户进行接入时所需的接口文件和必须的jar包。  
+
+
 
 渠道版SDK下载包包含：</br>
 1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。</br>
-2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs、XgsdkDemo.cs。</br>
-其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</br>
+2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs以及xgsdk-test.apk。  
+3. 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</br>  
+
+**注意：SDK包中的xgsdk-test.apk是用于测试用户接入是否正确的测试渠道，在用户需要测试的时候使用，但是在进行打包的时候务必将xgsdk-test.apk移除**
 
 
 <a name = "steps"></a>
@@ -110,7 +117,7 @@ Android SDK和Android Eclipse等</br>
 
 <img src= "img/AndroidFile.png">
 
-####2.4.1.将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中  
+####2.4.1.将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
 
 
 <img src="img/CsFile.png">
@@ -198,7 +205,7 @@ Android SDK和Android Eclipse等</br>
 <img src="img/identifier.png">
 
 
-接下来点击Build Settings中Platform的Android，然后点击Switch Platform,再执行build and run，这样，demo就能在手机上运行了。
+接下来点击Build Settings中Platform的Android，然后点击Switch Platform,再执行build and run，这样，Unity工程就能在Android手机上运行了。
 
 
 <img src="img/Build.png">
