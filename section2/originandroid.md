@@ -6,25 +6,33 @@
 
 ## 1. 文档概述
 
-此文档为使用原生android引擎游戏客户端的接入文档。  
-本文介绍如何在原生引擎平台下，Android游戏客户端快速接入西瓜SDK。
-文档分成三大部分:西瓜SDK下载，配置环境，各个接口的接入说明和样例代码。逐步细述了整个接入过程；  
+此文档为使用原生 android 引擎游戏客户端的接入文档。  
+本文介绍如何在原生引擎平台下，Android 游戏客户端快速接入西瓜SDK。
+文档分成三大部分:西瓜 SDK 下载，配置环境，各个接口的接入说明和样例代码。逐步细述了整个接入过程；  
 同时罗列出了4种类型的接口：分别为：* 用户与角色接口、充值接口、统计接口、扩展接口 * ，便于游戏方的接入人员可以按照需求更加快速便捷的进行接入。
 
 
 
 ### 1.1 SDK下载包
 
-<b>渠道版SDK下载包包含：<br /></b>
-	1. 西瓜SDKV2的Jar包：
+<b>渠道版 SDK 下载包包含：<br /></b>
+	1. 西瓜 SDKV2 的 Jar 包：
  xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar<br />
  	2. xgsdk-test-1.0.zip  
+<<<<<<< HEAD
  	3. 西瓜sdk（原生Android版)接入文档  
  <a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a><br />
 
    注：解压文件，导入eclipse，右键项目
  选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,即可运行。  
 此工程是一个demo测试项目，游戏商可以用原生游戏jar替换xgsdk.demo.jar即可。
+=======
+ 	3. 西瓜 sdk（原生 Android 版)接入文档  
+ 	<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">下载链接</a><br />
+   注：解压文件，导入 eclipse ，右键项目
+ 选择 Properties ,在右边选项中选择 Java build path，在右边的 Libraries导入以上提供的jar,即可运行。  
+此工程是一个 demo 测试项目，游戏商可以用原生游戏 jar 替换xgsdk.demo.jar即可。
+>>>>>>> 7dd4968d307e171dad6f6e7bff5bdcff150fef05
 
   <img src="img/native_connect_package_import.png"></img>
 
@@ -34,12 +42,12 @@
 
 ### 2.1 开发和接入所需基本环境
 
-Android开发环境如下：  
-Android版本：Android2.2 以上  
-Android开发工具：Android SDK和Android Eclipse等
+Android 开发环境如下：  
+Android 版本：Android2.2 以上  
+Android 开发工具：Android SDK 和 Android Eclipse 等
 ### 2.2 接入步骤简介
 <ol type=“1”>
-<li><a href="#permission">配置android权限(AndroidManifest.xml文件)</a></li>
+<li><a href="#permission">配置 android权限 (AndroidManifest.xml文件)</a></li>
 	<li><a href="#splash">增加闪屏</a></li>
 	<li><a href="#lifecyle">接入生命周期接口</a></li>
     <li><a href="#userAndRole">接入用户和角色接口</a></li>
@@ -65,7 +73,7 @@ Android开发工具：Android SDK和Android Eclipse等
 <a id="splash"></a>
 #### 2.3.2. 增加闪屏
 
-1.游戏母包中AndroidManifest.xml增加XGSplashActivity作为启动Activity的声明，根据游戏朝向设定android:screenOrientation
+1.游戏母包中AndroidManifest.xml增加 XGSplashActivity 作为启动 Activity 的声明，根据游戏朝向设定android:screenOrientation
 
 ```xml
 <activity
@@ -79,7 +87,7 @@ Android开发工具：Android SDK和Android Eclipse等
 </activity>
 ```
 
-2.AndroidManifest.xml中将游戏原启动Activity的intent-filter修改为
+2.AndroidManifest.xml中将游戏原启动 Activity 的 intent-filter 修改为
 
 	<intent-filter>
 		 <action android:name="xg.game.MAIN" />
@@ -88,7 +96,7 @@ Android开发工具：Android SDK和Android Eclipse等
 
 <a id="lifecyle"></a>
 #### 2.3.3 接入生命周期接口
-在游戏各个Activity生命周期中调用SDK生命周期接口，样例代码如下：
+在游戏各个 Activity 生命周期中调用SDK生命周期接口，样例代码如下：
 
 ```java
     @Override
@@ -141,8 +149,8 @@ Android开发工具：Android SDK和Android Eclipse等
     }
 ```
 
-onCreate生命周期方法比较特殊。  
-注：setUserCallBack在init之前调用，onCreate方法执行之后，三者的顺序不能改变
+onCreate 生命周期方法比较特殊。  
+注： setUserCallBack 在 init 之前调用，onCreate 方法执行之后，三者的顺序不能改变
 
 ```java
 @Override
@@ -153,7 +161,7 @@ onCreate生命周期方法比较特殊。
 	}
 ```
 XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；  
-以上代码的表示的意思是实现一个匿名的UserCallBack对象，该对象中实现了登录成功、失败、取消，登出成功、失败，初始化失败接口，<a href="#usercallback">详见这里描述</a>
+以上代码的表示的意思是实现一个匿名的 UserCallBack 对象，该对象中实现了登录成功、失败、取消，登出成功、失败，初始化失败接口，<a href="#usercallback">详见这里描述</a>
 
 
 
@@ -173,9 +181,9 @@ login(Activity activity, String customParams)
 	参数说明：  
 		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 <a name="usercallback" ></a>  
-在UserCallBack中实现登录callback接口（登录成功、失败、取消，登出成功、失败，初始化失败接口）  
-例如登陆成功，游戏在此回调中实现登陆成功后的逻辑,其余的callback接口类似 <br />
-注：在登录成功callback中，调用xgsdk的onEnterGame接口<br />
+在 UserCallBack 中实现登录 callback 接口（登录成功、失败、取消，登出成功、失败，初始化失败接口）  
+例如登陆成功，游戏在此回调中实现登陆成功后的逻辑,其余的 callback 接口类似 <br />
+注：在登录成功 callback 中，调用 xgsdk 的 onEnterGame 接口<br />
 样例代码：
 
 		XGSDK.getInstance().setUserCallBack(new UserCallBack() {
@@ -226,18 +234,18 @@ login(Activity activity, String customParams)
 logout(Activity activity, String customParams)
 
 	接口说明：
-		用户登出接口，登出传入扩展参数customParams
+		用户登出接口，登出传入扩展参数 customParams
 	参数说明：
 		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
-注：登出回调接口（onLogoutFail，onLogoutSuccess）要在UserCallBack中实现
+注：登出回调接口（onLogoutFail，onLogoutSuccess）要在 UserCallBack 中实现
 #####退出接口<br />
 exit(Activity activity, ExitCallBack exitCallBack,String customParams)
 
 	接口说明：
-		用户退出接口，传入exitCallback和扩展参数customParams
+		用户退出接口，传入 exitCallback 和扩展参数 customParams
 	参数说明：
 		exitCallBack：退出回调
-		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+		customParams：该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可。
 调用案例代码：
 
 	findViewById(RUtil.getId(getApplicationContext(), "xg_exit"))
@@ -249,7 +257,7 @@ exit(Activity activity, ExitCallBack exitCallBack,String customParams)
                                 new ExitCallBack() {}，null)}}）；
 
 #####退出接口回调<br />
-在退出接口exit有exitCallBack参数，需要实现该接口的各个回调方法<br />
+在退出接口 exit 有 exitCallBack 参数，需要实现该接口的各个回调方法<br />
 三个回调方法：<br />
 onNoChannelExiter 使用游戏方退出框<br />
 onExit 直接退出<br />
@@ -289,7 +297,7 @@ onEnterGame(RoleInfo roleInfo)
 	参数说明：
 		RoleInfo:角色信息
 
-注：此接口在调用登录成功callback的时候调用<br /><p>
+注：此接口在调用登录成功 callback 的时候调用<br /><p>
 调用案例代码：
 
 	@Override
@@ -299,7 +307,7 @@ onEnterGame(RoleInfo roleInfo)
     }
 
 
-**关于RoleInfo的成员说明**
+**关于 RoleInfo 的成员说明**
 <table>
 <tr>
 	<th>输入参数</th>
@@ -383,7 +391,7 @@ onEnterGame(RoleInfo roleInfo)
 onCreateRole(RoleInfo roleInfo)
 
 	接口说明：
-		使用roleInfo来创建角色
+		使用 roleInfo 来创建角色
 	参数说明：
 		roleInfo:角色信息
 
@@ -435,7 +443,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 调用案例代码：
 
-	//payInfo初始化
+	//payInfo 初始化
 	.......
 	payment.setTotalPrice(totalPrice);
     payment.setProductUnitPrice(1);
@@ -454,7 +462,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 
 
-**关于PayInfo的成员说明**
+**关于 PayInfo 的成员说明**
 
 <table>
 <tr>
@@ -631,7 +639,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 
 #####支付回调接口
-在调用pay接口时，需要实现pay支付callback(支付的四种状态：支付成功，支付失败，支付取消,支付其他状态）
+在调用 pay 接口时，需要实现 pay 支付 callback (支付的四种状态：支付成功，支付失败，支付取消,支付其他状态）
 
 实现的案例代码
 
@@ -677,7 +685,7 @@ public void onEvent(RoleInfo roleInfo, String eventId, String eventDesc, int eve
 		eventId：事件id
 		eventDesc：事件描述
 		eventVal:事件内容
-		eventBody:key-value事件体
+		eventBody:key-value 事件体
 
 #####任务开始接口
 
@@ -756,9 +764,9 @@ public void onVirtalCurrencyConsume(RoleInfo roleInfo,String itemName, int amoun
 #####切换账号接口
 switchAccount(Activity activity, String customParams)
 	接口说明：
-		切换账号，传入扩展参数customParams
+		切换账号，传入扩展参数 customParams
 	参数说明：
-		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+		customParams：该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可。
 
 
 
@@ -767,7 +775,7 @@ switchAccount(Activity activity, String customParams)
 ###文档版本说明
 <table>
 <tr>
-<td>SDK版本</td><td>文档版本</td> <td>SDK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
+<td>SDK 版本</td><td>文档版本</td> <td>SDK 修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
 </tr>
 <tr>
 <td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.8.1</td>
