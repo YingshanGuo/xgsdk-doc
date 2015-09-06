@@ -19,6 +19,7 @@
 	1. 西瓜SDKV2的Jar包：
  xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar<br />
  	2. xgsdk-test-1.0.zip  
+ 	3. 西瓜sdk（原生Android版)接入文档
  	<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">下载链接</a><br />
    注：解压文件，导入eclipse，右键项目
  选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,即可运行。  
