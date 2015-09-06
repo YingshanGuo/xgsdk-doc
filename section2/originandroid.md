@@ -20,7 +20,8 @@
  xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar<br />
  	2. xgsdk-test-1.0.zip  
  	3. 西瓜sdk（原生Android版)接入文档  
- 	<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">下载链接</a><br />
+ <a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a><br />
+
    注：解压文件，导入eclipse，右键项目
  选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,即可运行。  
 此工程是一个demo测试项目，游戏商可以用原生游戏jar替换xgsdk.demo.jar即可。
@@ -43,7 +44,7 @@ Android开发工具：Android SDK和Android Eclipse等
 	<li><a href="#lifecyle">接入生命周期接口</a></li>
     <li><a href="#userAndRole">接入用户和角色接口</a></li>
 	<li><a href="#pay">接入充值接口</a></li>
-	
+
 	<li><a href="#statistics">接入统计接口</a></li>
 	<li><a href="#extend">接入扩展接口</a></li>
 </ol>
