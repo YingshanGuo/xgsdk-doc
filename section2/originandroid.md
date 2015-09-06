@@ -15,16 +15,17 @@
 
 ### 1.1 SDK下载包
 
-渠道版SDK下载包包含：
-1. 西瓜SDKV2的Jar包：  
-   xgsdk-channel-core.jar，xgsdk-data.jar，xgsdk-api.jar<a href="#">下载链接</a>
-2. xgsdk-testchannel.zip<a href="#">下载链接</a>  
-   注：解压文件，导入eclipse，右键项目，  
-   选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,并且导入原生android的游戏包
+<b>渠道版SDK下载包包含：<br /></b>
+	1. 西瓜SDKV2的Jar包：
+ xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar<br />
+ 	2. xgsdk-test-1.0.zip  
+ 	<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">下载链接</a><br />
+   注：解压文件，导入eclipse，右键项目
+ 选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,即可运行。  
+此工程是一个demo测试项目，游戏商可以用原生游戏jar替换xgsdk.demo.jar即可。
 
   <img src="img/native_connect_package_import.png"></img>
 
-3. XGSDK 原生Android版 客户端接入文档<a href="#">下载链接</a>
 
 
 ## 2. 配置环境与快速接入简介
