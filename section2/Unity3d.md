@@ -97,7 +97,7 @@ Android SDK和Android Eclipse等</br>
 <a name = "SDKDownload"></a>
 ###2.3 SDK下载包
 
-<a href = "packages/Unity3DSDK.zip">Unity3D SDK下载</a>
+<a href = "http://doc.xgsdk.com/files/2.0/packages/Unity3DSDK.zip">Unity3D SDK下载</a>
 
 SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户直接将工程导入Unity即可运行demo，Unity3DSDK文件夹则是用户进行接入时所需的接口文件和必须的jar包。  
 
