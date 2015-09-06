@@ -18,4 +18,6 @@
 **[原声接口——Android](./originandroid.md)**
 
 
+**[原声接口——IOS](./originios.md)**
+
 **[客户端接入验证](./channeltest.md)**

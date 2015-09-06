@@ -16,6 +16,7 @@ This is the summary of my book.
         * [android](section2/Unity3d.md)
     * [原生接口](section2/origin.md)
         * [android](section2/originandroid.md)
+        * [ios](section2/originios.md)
     * [客户端接入验证](section2/channeltest.md)
 
 * [服务端接入指南](section3/README.md)  
