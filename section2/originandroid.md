@@ -19,7 +19,7 @@
 	1. 西瓜SDKV2的Jar包：
  xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar<br />
  	2. xgsdk-test-1.0.zip  
- 	3. 西瓜sdk（原生Android版)接入文档
+ 	3. 西瓜sdk（原生Android版)接入文档  
  	<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">下载链接</a><br />
    注：解压文件，导入eclipse，右键项目
  选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,即可运行。  
@@ -40,14 +40,16 @@ Android开发工具：Android SDK和Android Eclipse等
 <ol type=“1”>
 <li><a href="#permission">配置android权限(AndroidManifest.xml文件)</a></li>
 	<li><a href="#splash">增加闪屏</a></li>
+	<li><a href="#lifecyle">接入生命周期接口</a></li>
+    <li><a href="#userAndRole">接入用户和角色接口</a></li>
 	<li><a href="#pay">接入充值接口</a></li>
- 	<li><a href="#liftcyle">接入生命周期接口</a></li>
-	<li><a href="#userAndRole">接入用户和角色接口</a></li>
+	
 	<li><a href="#statistics">接入统计接口</a></li>
 	<li><a href="#extend">接入扩展接口</a></li>
 </ol>
 
 ### 2.3 快速接入
+<a id="permission"></a>
 #### 2.3.1. 配置AndroidManifest.xml文件<br />
 
 ```xml
@@ -59,7 +61,7 @@ Android开发工具：Android SDK和Android Eclipse等
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 ```
 
-
+<a id="splash"></a>
 #### 2.3.2. 增加闪屏
 
 1.游戏母包中AndroidManifest.xml增加XGSplashActivity作为启动Activity的声明，根据游戏朝向设定android:screenOrientation
@@ -83,6 +85,7 @@ Android开发工具：Android SDK和Android Eclipse等
 		 <category android:name="android.intent.category.DEFAULT" />
 	 </intent-filter>
 
+<a id="lifecyle"></a>
 #### 2.3.3 接入生命周期接口
 在游戏各个Activity生命周期中调用SDK生命周期接口，样例代码如下：
 
@@ -154,7 +157,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 
 
-
+<a id="userAndRole"></a>
 
 #### 2.3.4 接入用户和角色接口
 <a name="userAndRole" ></a>
@@ -418,6 +421,7 @@ onRoleLevelup(RoleInfo roleInfo)
                 });
 
 
+<a id="pay"></a>
 ####2.3.5 接入充值接口（必接）
 #####支付接口
 pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
@@ -659,7 +663,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 			}
 		});
 
-
+<a id="statistics"></a>
 #####2.3.6 接入统计接口
 
 #####自定义事件接口
@@ -746,7 +750,7 @@ public void onVirtalCurrencyConsume(RoleInfo roleInfo,String itemName, int amoun
 		itemName:消费点(比如十连抽、购买体力等)
 		amount:数量
 		customParams:扩展参数
-
+<a id="extend"></a>
 ####2.3.6 接入扩展接口
 #####切换账号接口
 switchAccount(Activity activity, String customParams)
