@@ -27,7 +27,7 @@
  <tr>
 	<td>酷狗</td>
 	<td><a href="http://youxi.kugou.com/" target="_parent">渠道地址</a></td>
-	<td>华为</td>
+	<td><a href="./application/huawei.html" target="_blank">华为</a></td>
 	<td><a href="http://developer.huawei.com/" target="_parent">渠道地址</a></td>
 	<td>应用汇</td>
 	<td><a href="http://dev.appchina.com/" target="_parent" title="http://dev.appchina.com/">渠道地址</a></td>
@@ -49,7 +49,7 @@
 	<td><a href="http://appdev.coolyun.com/ylra/" target="_parent">渠道地址</a></td>
  </tr>
  <tr>
-	<td>联想</td>
+	<td><a href="./application/leshi.html" target="_blank">联想</a></td>
 	<td><a href="https://passport.lenovo.com" target="_parent" title="https://passport.lenovo.com">渠道地址</a></td>
 	<td>搜狗</td>
 	<td><a href="http://open.wan.sogou.com/" target="_parent">渠道地址</a></td>
@@ -93,7 +93,7 @@
 	<td><a href="http://dev.snail.com/" target="_parent" title="http://dev.snail.com/">渠道地址</a></td>
 	<td>豆米</td>
 	<td><a href="http://www.doumi.cn" target="_parent" title="http://www.doumi.cn">渠道地址</a></td>
-	<td>乐视商店</td>
+	<td><a href="./application/leshi.html" target="_blank">乐视商店</a></td>
 	<td><a href="http://open.letv.com" target="_parent">渠道地址</a></td>
  </tr>
  <tr>
