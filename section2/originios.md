@@ -416,8 +416,12 @@
 <td>游戏订单号</td>
 </tr>
 <tr>
-<td>xgTradeNo</td>
-<td>西瓜sdk订单号</td>
+<td>channelCode</td>
+<td>渠道结果码</td>
+</tr>
+<tr>
+<td>channelMsg</td>
+<td>渠道结果信息</td>
 </tr>
 </table>
 -(void) onPayCancelWithResultCode:(NSInteger) code resultMsg:(NSString*) msg gameTradeNO:(NSString*) gameTradeNo channelCode:(NSString*) channelCode channelMsg:(NSString*) channelMsg;
@@ -438,8 +442,12 @@
 <td>游戏订单号</td>
 </tr>
 <tr>
-<td>xgTradeNo</td>
-<td>西瓜sdk订单号</td>
+<td>channelCode</td>
+<td>渠道结果码</td>
+</tr>
+<tr>
+<td>channelMsg</td>
+<td>渠道结果信息</td>
 </tr>
 </table>
 -(void) onPayFailWithResultCode:(NSInteger) code resultMsg:(NSString*) msg gameTradeNO:(NSString*) gameTradeNo channelCode:(NSString*) channelCode channelMsg:(NSString*) channelMsg;
@@ -459,14 +467,44 @@
 <td>游戏订单号</td>
 </tr>
 <tr>
-<td>xgTradeNo</td>
-<td>西瓜sdk订单号</td>
+<td>channelCode</td>
+<td>渠道结果码</td>
+</tr>
+<tr>
+<td>channelMsg</td>
+<td>渠道结果信息</td>
 </tr>
 </table>
 
  ** 备注：此时说明支付过程尚未完成，需等待。建议游戏给玩家以提示，并限制玩家的再次购买请求。**  
 
  -(void) onPayProgressWithResultCode:(NSInteger) code resultMsg:(NSString*) msg gameTradeNO:(NSString*) gameTradeNo channelCode:(NSString*) channelCode channelMsg:(NSString*) channelMsg;
+
+
+ - 支付完成、结果未知  
+ 参数说明：<table>
+ <tr>
+ <td>code</td>
+ <td>支付失败结果码，固定为3</td>
+ </tr>
+ <tr>
+ <td>msg</td>
+ <td>消息描述</td>
+ </tr>
+ <tr>
+ <td>gameTradeNo</td>
+ <td>游戏订单号</td>
+ </tr>
+ <tr>
+ <td>channelCode</td>
+ <td>渠道结果码</td>
+ </tr>
+ <tr>
+ <td>channelMsg</td>
+ <td>渠道结果信息</td>
+ </tr>
+ </table>
+
  -(void) onPayOthersWithResultCode:(NSInteger) code resultMsg:(NSString*) msg gameTradeNO:(NSString*) gameTradeNo channelCode:(NSString*) channelCode channelMsg:(NSString*) channelMsg;
 ****
 

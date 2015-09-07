@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2.3.2" data-basepath=".." data-revision="Sun Sep 06 2015 18:15:44 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="2.3.2" data-basepath=".." data-revision="Mon Sep 07 2015 11:12:09 GMT+0800 (中国标准时间)">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="目录"><i class="fa fa-align-justify"></i></a>
@@ -984,8 +984,12 @@
 <td>&#x6E38;&#x620F;&#x8BA2;&#x5355;&#x53F7;</td>
 </tr>
 <tr>
-<td>xgTradeNo</td>
-<td>&#x897F;&#x74DC;sdk&#x8BA2;&#x5355;&#x53F7;</td>
+<td>channelCode</td>
+<td>&#x6E20;&#x9053;&#x7ED3;&#x679C;&#x7801;</td>
+</tr>
+<tr>
+<td>channelMsg</td>
+<td>&#x6E20;&#x9053;&#x7ED3;&#x679C;&#x4FE1;&#x606F;</td>
 </tr>
 </table>
 -(void) onPayCancelWithResultCode:(NSInteger) code resultMsg:(NSString<em>) msg gameTradeNO:(NSString</em>) gameTradeNo channelCode:(NSString<em>) channelCode channelMsg:(NSString</em>) channelMsg;</li>
@@ -1005,8 +1009,12 @@
 <td>&#x6E38;&#x620F;&#x8BA2;&#x5355;&#x53F7;</td>
 </tr>
 <tr>
-<td>xgTradeNo</td>
-<td>&#x897F;&#x74DC;sdk&#x8BA2;&#x5355;&#x53F7;</td>
+<td>channelCode</td>
+<td>&#x6E20;&#x9053;&#x7ED3;&#x679C;&#x7801;</td>
+</tr>
+<tr>
+<td>channelMsg</td>
+<td>&#x6E20;&#x9053;&#x7ED3;&#x679C;&#x4FE1;&#x606F;</td>
 </tr>
 </table>
 -(void) onPayFailWithResultCode:(NSInteger) code resultMsg:(NSString<em>) msg gameTradeNO:(NSString</em>) gameTradeNo channelCode:(NSString<em>) channelCode channelMsg:(NSString</em>) channelMsg;</p>
@@ -1025,13 +1033,42 @@
 <td>&#x6E38;&#x620F;&#x8BA2;&#x5355;&#x53F7;</td>
 </tr>
 <tr>
-<td>xgTradeNo</td>
-<td>&#x897F;&#x74DC;sdk&#x8BA2;&#x5355;&#x53F7;</td>
+<td>channelCode</td>
+<td>&#x6E20;&#x9053;&#x7ED3;&#x679C;&#x7801;</td>
+</tr>
+<tr>
+<td>channelMsg</td>
+<td>&#x6E20;&#x9053;&#x7ED3;&#x679C;&#x4FE1;&#x606F;</td>
 </tr>
 </table></p>
 <p><strong> &#x5907;&#x6CE8;&#xFF1A;&#x6B64;&#x65F6;&#x8BF4;&#x660E;&#x652F;&#x4ED8;&#x8FC7;&#x7A0B;&#x5C1A;&#x672A;&#x5B8C;&#x6210;&#xFF0C;&#x9700;&#x7B49;&#x5F85;&#x3002;&#x5EFA;&#x8BAE;&#x6E38;&#x620F;&#x7ED9;&#x73A9;&#x5BB6;&#x4EE5;&#x63D0;&#x793A;&#xFF0C;&#x5E76;&#x9650;&#x5236;&#x73A9;&#x5BB6;&#x7684;&#x518D;&#x6B21;&#x8D2D;&#x4E70;&#x8BF7;&#x6C42;&#x3002;</strong>  </p>
-<p>-(void) onPayProgressWithResultCode:(NSInteger) code resultMsg:(NSString<em>) msg gameTradeNO:(NSString</em>) gameTradeNo channelCode:(NSString<em>) channelCode channelMsg:(NSString</em>) channelMsg;
--(void) onPayOthersWithResultCode:(NSInteger) code resultMsg:(NSString<em>) msg gameTradeNO:(NSString</em>) gameTradeNo channelCode:(NSString<em>) channelCode channelMsg:(NSString</em>) channelMsg;</p>
+<p>-(void) onPayProgressWithResultCode:(NSInteger) code resultMsg:(NSString<em>) msg gameTradeNO:(NSString</em>) gameTradeNo channelCode:(NSString<em>) channelCode channelMsg:(NSString</em>) channelMsg;</p>
+</li>
+</ul>
+<ul>
+<li><p>&#x652F;&#x4ED8;&#x5B8C;&#x6210;&#x3001;&#x7ED3;&#x679C;&#x672A;&#x77E5;<br>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;<table>
+<tr>
+<td>code</td>
+<td>&#x652F;&#x4ED8;&#x5931;&#x8D25;&#x7ED3;&#x679C;&#x7801;&#xFF0C;&#x56FA;&#x5B9A;&#x4E3A;3</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>&#x6D88;&#x606F;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>gameTradeNo</td>
+<td>&#x6E38;&#x620F;&#x8BA2;&#x5355;&#x53F7;</td>
+</tr>
+<tr>
+<td>channelCode</td>
+<td>&#x6E20;&#x9053;&#x7ED3;&#x679C;&#x7801;</td>
+</tr>
+<tr>
+<td>channelMsg</td>
+<td>&#x6E20;&#x9053;&#x7ED3;&#x679C;&#x4FE1;&#x606F;</td>
+</tr>
+</table></p>
+<p>-(void) onPayOthersWithResultCode:(NSInteger) code resultMsg:(NSString<em>) msg gameTradeNO:(NSString</em>) gameTradeNo channelCode:(NSString<em>) channelCode channelMsg:(NSString</em>) channelMsg;</p>
 </li>
 </ul>
 <hr>
