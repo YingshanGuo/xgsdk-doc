@@ -15,24 +15,18 @@
 
 ### 1.1 SDK下载包
 
-<b>渠道版 SDK 下载包包含：<br /></b>
+**渠道版 SDK 下载包包含**：  
 	1. 西瓜 SDKV2 的 Jar 包：
- xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar<br />
+ xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar  
  	2. xgsdk-test-1.0.zip  
-<<<<<<< HEAD
  	3. 西瓜sdk（原生Android版)接入文档  
- <a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a><br />
+ <a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a>
 
    注：解压文件，导入eclipse，右键项目
  选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,即可运行。  
 此工程是一个demo测试项目，游戏商可以用原生游戏jar替换xgsdk.demo.jar即可。
-=======
- 	3. 西瓜 sdk（原生 Android 版)接入文档  
- 	<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">下载链接</a><br />
-   注：解压文件，导入 eclipse ，右键项目
- 选择 Properties ,在右边选项中选择 Java build path，在右边的 Libraries导入以上提供的jar,即可运行。  
-此工程是一个 demo 测试项目，游戏商可以用原生游戏 jar 替换xgsdk.demo.jar即可。
->>>>>>> 7dd4968d307e171dad6f6e7bff5bdcff150fef05
+
+
 
   <img src="img/native_connect_package_import.png"></img>
 
@@ -59,7 +53,7 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 
 ### 2.3 快速接入
 <a id="permission"></a>
-#### 2.3.1. 配置AndroidManifest.xml文件<br />
+#### 2.3.1. 配置AndroidManifest.xml文件
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -182,8 +176,8 @@ login(Activity activity, String customParams)
 		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 <a name="usercallback" ></a>  
 在 UserCallBack 中实现登录 callback 接口（登录成功、失败、取消，登出成功、失败，初始化失败接口）  
-例如登陆成功，游戏在此回调中实现登陆成功后的逻辑,其余的 callback 接口类似 <br />
-注：在登录成功 callback 中，调用 xgsdk 的 onEnterGame 接口<br />
+例如登陆成功，游戏在此回调中实现登陆成功后的逻辑,其余的 callback 接口类似   
+注：在登录成功 callback 中，调用 xgsdk 的 onEnterGame 接口  
 样例代码：
 
 		XGSDK.getInstance().setUserCallBack(new UserCallBack() {
@@ -230,15 +224,15 @@ login(Activity activity, String customParams)
             }
         });
 
-#####登出接口<br />
+##### 登出接口
 logout(Activity activity, String customParams)
 
 	接口说明：
 		用户登出接口，登出传入扩展参数 customParams
 	参数说明：
-		customParams：该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+		customParams：该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可。
 注：登出回调接口（onLogoutFail，onLogoutSuccess）要在 UserCallBack 中实现
-#####退出接口<br />
+##### 退出接口
 exit(Activity activity, ExitCallBack exitCallBack,String customParams)
 
 	接口说明：
@@ -256,12 +250,12 @@ exit(Activity activity, ExitCallBack exitCallBack,String customParams)
                         XGSDK.getInstance().exit(MainActivity.this,
                                 new ExitCallBack() {}，null)}}）；
 
-#####退出接口回调<br />
+##### 退出接口回调
 在退出接口 exit 有 exitCallBack 参数，需要实现该接口的各个回调方法<br />
-三个回调方法：<br />
-onNoChannelExiter 使用游戏方退出框<br />
-onExit 直接退出<br />
-onCancel 取消退出<br />
+三个回调方法：  
+onNoChannelExiter 使用游戏方退出框  
+onExit 直接退出  
+onCancel 取消退出
 
 样例代码：
 
@@ -290,14 +284,14 @@ onCancel 取消退出<br />
             }
      }
 
-#####进入游戏接口
+##### 进入游戏接口
 
 onEnterGame(RoleInfo roleInfo)
 
 	参数说明：
 		RoleInfo:角色信息
 
-注：此接口在调用登录成功 callback 的时候调用<br /><p>
+注：此接口在调用登录成功 callback 的时候调用  
 调用案例代码：
 
 	@Override
@@ -349,8 +343,8 @@ onEnterGame(RoleInfo roleInfo)
 <tr>
 	<td>serverId</td>
 	<td>string</td>
-	<td>服务器ID</td>
-	<td>服务器ID</td>
+	<td>服务器 ID </td>
+	<td>服务器 ID </td>
 </tr>
 <tr>
 	<td>serverName</td>
@@ -361,8 +355,8 @@ onEnterGame(RoleInfo roleInfo)
 <tr>
 	<td>zoneId</td>
 	<td>string</td>
-	<td>区ID</td>
-	<td>区ID</td>
+	<td>区 ID</td>
+	<td>区 ID</td>
 </tr>
 <tr>
 	<td>zoneName</td>
@@ -387,7 +381,7 @@ onEnterGame(RoleInfo roleInfo)
 
 
 
-#####创建角色接口
+##### 创建角色接口
 onCreateRole(RoleInfo roleInfo)
 
 	接口说明：
@@ -408,7 +402,7 @@ onCreateRole(RoleInfo roleInfo)
                     }
                 });
 
-#####角色等级接口
+##### 角色等级接口
 onRoleLevelup(RoleInfo roleInfo)
 
 	接口说明：
@@ -431,11 +425,11 @@ onRoleLevelup(RoleInfo roleInfo)
 
 
 <a id="pay"></a>
-####2.3.5 接入充值接口（必接）
-#####支付接口
+#### 2.3.5 接入充值接口（必接）
+##### 支付接口
 pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
-	接口说明：
+	接口说明： 
 		充值接口
 	参数说明：
 		payInfo: 支付信息对象，包含产品ID、名称和数量等
@@ -450,7 +444,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
     XGSDK.getInstance().pay(MainActivity.this, payment,
             new PayCallBack() {})
 
-####支付场景：某个初级玩家，碰到了商品打折优惠，买100个元宝（价值50元）可享受8折优惠，这样其实他是用40元买了100个元宝，那么他的支付清单是：
+#### 支付场景：某个初级玩家，碰到了商品打折优惠，买100个元宝（价值50元）可享受8折优惠，这样其实他是用40元买了100个元宝，那么他的支付清单是：
 商品id：11111
 产品名称：100个元宝
 产品描述：100个元宝
@@ -600,7 +594,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 </table>
 
 
-####常用的国际货币
+#### 常用的国际货币
 
 
 <table>
@@ -638,7 +632,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 
 
-#####支付回调接口
+##### 支付回调接口
 在调用 pay 接口时，需要实现 pay 支付 callback (支付的四种状态：支付成功，支付失败，支付取消,支付其他状态）
 
 实现的案例代码
@@ -673,95 +667,104 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 		});
 
 <a id="statistics"></a>
-#####2.3.6 接入统计接口
+##### 2.3.6 接入统计接口
 
-#####自定义事件接口
-public void onEvent(RoleInfo roleInfo, String eventId, String eventDesc, int eventVal, Map<String, Object> eventBody)
-
-	接口说明：
-		自定义事件，传入事件id以及事件内容
-	参数说明：
-		roleInfo:角色信息
-		eventId：事件id
-		eventDesc：事件描述
-		eventVal:事件内容
-		eventBody:key-value 事件体
-
-#####任务开始接口
-
+##### 任务开始接口
 public void onMissionBegin(RoleInfo roleInfo, String missionId, String missionName, String customParams)  
 
 	接口说明：
 		任务开始接口
 	参数说明：
-		roleInfo:对象信息
+		roleInfo:角色信息
 		missionId：任务ID
 		missionName:任务名称
-		customParams:该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+		customParams:该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可。
 
-#####任务执行成功接口
+##### 任务执行成功接口
 public void onMissionSuccess(RoleInfo roleInfo, String missionId, String missionName, String customParams)
 
 	接口说明：
 		任务执行成功接口
 	参数说明：
-		roleInfo:对象信息
+		roleInfo:角色信息
 		missionId：任务ID
 		missionName:任务名称
-		customParams:该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+		customParams:该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可。
 
 
 
-#####任务失败接口
+##### 任务失败接口
 public void onMissionFail(RoleInfo roleInfo, String missionId, String missionName, String customParams)
 
 	接口说明：
 		任务失败
 	参数说明：
-		roleInfo:对象信息
+		roleInfo:角色信息
 		missionId：任务ID
 		missionName:任务名称
-		customParams:该参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
+		customParams:该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可。
 
 
-#####充值获得的虚拟货币
-public void onVirtalCurrencyPurchase(RoleInfo roleInfo, int amount, String customParams)
+##### 充值获得的虚拟货币
+public void onVirtualCurrencyPurchase(RoleInfo roleInfo, int amount, String customParams)
 
 	接口说明：
 		充值获得的虚拟货币
 	参数说明：
-		roleInfo:对象信息
+		roleInfo:角色信息
 		amount:数量
 		customParams:扩展参数
 
-
-
-
-
-#####赠送的虚拟货币
+##### 赠送的虚拟货币
 public void onVirtualCurrencyReward(RoleInfo roleInfo, String reason, int amount, String customParams)
 
 	接口说明
 		玩家可以在任务奖励、登录奖励、成就奖励等环节获得赠送的虚拟货币
 	参数说明：
-		roleInfo:对象信息
+		roleInfo:角色信息
 		reason:获得虚拟货币的原因(登录奖励、新手礼包等)
 		amount:数量
 		customParams:扩展参数
 
-#####跟踪虚拟货币的消费
-public void onVirtalCurrencyConsume(RoleInfo roleInfo,String itemName, int amount, String customParams)
+##### 跟踪虚拟货币的消费
+public void onVirtualCurrencyConsume(RoleInfo roleInfo, String itemName, int amount, String customParams)
 
 	接口说明
-		建议只跟踪有价值的虚拟货币，普通游戏币的消耗不建议在此跟踪
+		跟踪虚拟货币的消费，建议只跟踪有价值的虚拟货币，普通游戏币的消耗不建议在此跟踪
 	参数说明：
-		roleInfo:对象信息
+		roleInfo:角色信息
 		itemName:消费点(比如十连抽、购买体力等)
 		amount:数量
 		customParams:扩展参数
+
+##### Ping接口
+public void setPingServer(String host)
+
+	接口说明
+		根据 Ping 命令的结果，得到指定 Host 的链接状况： 
+			* 是否 Ping 通
+			* 平均延迟时间
+			* 丢包率
+		并将 Host 名及 Ping 结果发送到数据统计服务器。
+
+	参数说明：
+		host:主机名称
+
+##### 自定义事件接口
+onEvent(RoleInfo roleInfo, String eventId, String eventCatalog, int eventVal, JSONObject eventBody)
+
+	接口说明：
+		自定义事件，传入事件 id 以及事件内容
+	参数说明：
+		roleInfo:角色信息
+		eventId：事件 id
+		eventDesc：事件描述
+		eventVal:事件发生的值，可以填如:耗时,金额
+		eventBody:用于保存事件需要传递的其他信息，没有时传空即可。
+
 <a id="extend"></a>
-####2.3.6 接入扩展接口
-#####切换账号接口
+#### 2.3.6 接入扩展接口
+##### 切换账号接口
 switchAccount(Activity activity, String customParams)
 	接口说明：
 		切换账号，传入扩展参数 customParams
