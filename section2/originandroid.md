@@ -71,7 +71,7 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 
 ```xml
 <activity
-	 android:name="com.seasun.xgsdk.splash.XGSplashActivity"
+	 android:name="com.xgsdk.client.api.splash.XGSplashActivity"
 	 android:screenOrientation="portrait"
 	 android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
 	 <intent-filter>
