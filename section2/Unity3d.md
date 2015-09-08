@@ -106,13 +106,15 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 渠道版SDK下载包包含：</br>
 1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。</br>
 2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs以及xgsdk-test.apk。  
-3. 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</br>  
+其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</br>  
 
 **注意：SDK包中的xgsdk-test.apk是用于测试用户接入是否正确的测试渠道，在用户需要测试的时候使用，但是在进行打包的时候务必将xgsdk-test.apk移除**
 
 
 <a name = "steps"></a>
 ###2.4 接入步骤
+
+
 #### 2.4.1将Android项目中的内容拷贝到<项目目录>\Assets\Plugins\Android下（若没有Pluguns目录或者Android目录则创建一个）
 
 <img src= "img/AndroidFile.png">
@@ -142,7 +144,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 
 
-
+>注：如果游戏的主activity继承了UnityPlayerActivity，那么游戏的主activity需要继承XGUnityActivity，我们的XGUnityActivity类已经继承了UnityPlayerActivity，并且实现了android的生命周期方法；如果游戏的主activity继承了UnityPlayerNativeActivity，则游戏需要改为继承我们的XGUnityNativeActivity。
 
 ####2.4.4.配置AndroidMainfest.xml文件  
 
@@ -189,6 +191,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 将sdk_config.properties配置文件拷贝至<项目目录>\Assets\Plugins\Android\assets。  
 其中，sdk_config.properties中的XgAppId、XgAppKey以及XgPlanId需要在西瓜portal上获取对应的参数。
+
 
 
 ####2.4.6 运行
