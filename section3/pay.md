@@ -6,7 +6,7 @@
 
 此文档是西瓜SDK支付通知接口接入文档。包括如下2个接口：  
  1. 支付通知接口
- 2. 充值验证接口
+ 2. 二次查询验证订单接口
 
 西瓜订单服务器在订单状态改变时,会主动调用支付通知接口通知游戏服务器订单信息。
 游戏服务器在接受到通知请求时,应同时调用充值验证接口向西瓜订单服务器查询订单信息是否正确。
@@ -35,7 +35,7 @@
 			</ul>
 	</li>
 	<li>
-		<a href="#adjust">充值验证接口</a>
+		<a href="#adjust">二次查询验证订单</a>
 			<ul type="disc">
 				<li><a href="#copyJar">功能</a></li>
 				<li><a href="#copyInterface">输入</a></li>
@@ -45,15 +45,12 @@
 			</ul>
 	</li>
 	<li>
-		<a href="#ready">错误码</a>
-	</li>
-	<li>
 		<a href="#version">文档版本</a>
 	</li>
 </ol>
 
 
-<div id="SDKDownload"></div>
+<div id="configure"></div>
 
 ## 2. 支付通知接口（通知游戏支付结果）
 
@@ -81,12 +78,12 @@
 <td>请求地址</td><td>游戏方提供URL，XGSDK服务器主动调用</td>
 </tr>
 <tr>
-<td>功能描述</td><td>当接收到渠道的支付结果通知后，XGSDK服务端会对订单支付信息进行确认。确认通过后，将订单支付结果信息推送到游戏服务器提供的支付订单通知URL。</td>
+<td>功能描述</td><td>当接收到渠道的支付结果回调信息后，XGSDK服务端会对订单支付信息进行确认，完成后，XGSDK服务端会将订单支付结果信息推送到游戏服务器提供的支付订单回调地址。</td>
 </table>
 
-<div id="copyInterface"></div>
+<div id="steps"></div>
 
-### 2.2 请求
+### 2.2 输入
 
 **参数说明：**
 
@@ -98,51 +95,13 @@
 <td>type</td><td>是</td><td>String</td><td>接口类型，固定为notify-game</td>
 </tr>
 <tr>
-<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150811085930对应2015/8/11 08:59:30</td>
-</tr>
-<tr>
-<td>gameTradeNo</td><td>是</td><td>String</td><td>游戏端订单号</td>
-</tr>
-<tr>
-<td>orderId</td><td>是</td><td>String</td><td>订单号</td>
-</tr>
-<tr>
-<td>sdkUid</td><td>是</td><td>String</td><td>玩家唯一标识，游戏服务器请用此字段作为对玩家的唯一标识</td>
-</tr>
-<tr>
-<td>payStatus</td><td>是</td><td>String</td><td>订单支付状态：  
-1 代表支付成功  
-2 代表支付失败</td>
-</tr>
-<tr>
-<td>payTime</td><td>是</td><td>String</td><td>支付时间 yyyyMMddHHmmss</td>
-</tr>
-<tr>
-<td>failedDesc</td><td>否</td><td>String</td><td>如果成功支付，则为空串</td>
-</tr>
-<tr>
 <td>xgAppId</td><td>是</td><td>String</td><td>XGSDK分配的游戏编号</td>
 </tr>
 <tr>
-<td>channelId</td><td>是</td><td>String</td><td>渠道在XGSDK的唯一标识</td>
+<td>channelId</td><td>是</td><td>String</td><td>运营渠道编号</td>
 </tr>
 <tr>
-<td>appGoodsId</td><td>否</td><td>String</td><td>游戏内的商品ID</td>
-</tr>
-<tr>
-<td>appGoodsName</td><td>否</td><td>String</td><td>游戏内的商品名称</td>
-</tr>
-<tr>
-<td>appGoodsDesc</td><td>否</td><td>String</td><td>商品描述</td>
-</tr>
-<tr>
-<td>appGoodsAmount</td><td>否</td><td>String</td><td>购买的商品的数量</td>
-</tr>
-<tr>
-<td>originalPrice</td><td>否</td><td>String</td><td>购买的商品的原价，单位：分，1元=100分</td>
-</tr>
-<tr>
-<td>totalPrice</td><td>是</td><td>String</td><td>支付金额，单位：分，1元=100分</td>
+<td>uid</td><td>是</td><td>String</td><td>渠道的用户编号</td>
 </tr>
 <tr>
 <td>zoneId</td><td>否</td><td>String</td><td>游戏区编号</td>
@@ -151,162 +110,78 @@
 <td>serverId</td><td>否</td><td>String</td><td>游戏服编号</td>
 </tr>
 <tr>
-<td>roleId</td><td>否</td><td>String</td><td>角色编号</td>
+<td>roleId</td><td>是</td><td>String</td><td>角色编号</td>
 </tr>
 <tr>
-<td>roleName</td><td>否</td><td>String</td><td>角色昵称</td>
+<td>roleName</td><td>否</td><td>String</td><td>角色名称</td>
 </tr>
 <tr>
-<td>currencyName</td><td>否</td><td>String</td><td>货币单位，如人民币为CNY</td>
+<td>roleLevel</td><td>否</td><td>String</td><td>角色等级</td>
 </tr>
 <tr>
-<td>custom</td><td>否</td><td>String</td><td>游戏方自定义字段，在请求新订单的时候传到服务器，有的话就原样返回</td>
+<td>roleVipLevel</td><td>否</td><td>String</td><td>角色VIP等级</td>
 </tr>
 <tr>
-<td>channelTradeNo</td><td>否</td><td>String</td><td>渠道订单号</td>
+<td>currencyName</td><td>否</td><td>String</td><td>支付货币名称</td>
 </tr>
 <tr>
-<td>giftValue</td><td>否</td><td>String</td><td>使用礼品卡的金额</td>
+<td>productId</td><td>是</td><td>String</td><td>商品编号</td>
 </tr>
 <tr>
-<td>deviceId</td><td>否</td><td>String</td><td>设备id</td>
+<td>productName</td><td>否</td><td>String</td><td>商品名称</td>
 </tr>
 <tr>
-<td>deviceBrand</td><td>否</td><td>String</td><td>设备提供商： 小米、华为、三星、苹果</td>
+<td>productDesc</td><td>否</td><td>String</td><td>商品描述</td>
 </tr>
 <tr>
-<td>deviceModel</td><td>否</td><td>String</td><td>设备型号：小米note、华为meta7 iphone 6 plus等</td>
+<td>productQuantity</td><td>否</td><td>String</td><td>商品数量</td>
+</tr>
+<tr>
+<td>productUnitPrice</td><td>否</td><td>String</td><td>商品单价(单位分)</td>
+</tr>
+<tr>
+<td>totalAmount</td><td>是</td><td>String</td><td>总面额(单位分)</td>
+</tr>
+<tr>
+<td>paidAmount</td><td>是</td><td>String</td><td>总支付金额(单位分)</td>
+</tr>
+<tr>
+<td>customInfo</td><td>否</td><td>String</td><td>游戏方自定义字段，支付成功后回调的时候，透传原样返回</td>
+</tr>
+<tr>
+<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028  
+对应2015/7/23 15:00:28</td>
+</tr>
+<tr>
+<td>gameTradeNo</td><td>否</td><td>String</td><td>游戏侧订单号</td>
 </tr>
 <tr>
 <td>sign</td><td>是</td><td>String</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥</td>
+</tr>
+<tr>
+<td>tradeNo</td><td>是</td><td>String</td><td>Xgsdk分配的订单号</td>
+</tr>
+<tr>
+<td>paidTime</td><td>是</td><td>String</td><td>支付时间 yyyyMMddHHmmss</td>
+</tr>
+<tr>
+<td>payStatus</td><td>是</td><td>String</td><td>订单支付状态  
+1 支付成功  
+2 支付失败</td>
 </tr>
 </table>
 
 <div id="import"></div>
 
-#### 2.2.1 请求样例
-
-**请求参数：**
-
-<table>
-<tr>
-<td>appGoodsAmount</td><td>1</td>
-</tr>
-<tr>
-<td>appGoodsId</td><td>product1</td>
-</tr>
-<tr>
-<td>appGoodsName</td><td>60元宝</td>
-</tr>
-<tr>
-<td>appGoodsDesc</td><td>元宝</td>
-</tr>
-<tr>
-<td>channelId</td><td>mi</td>
-</tr>
-<tr>
-<td>channelTradeNo</td><td>21143936345994521949</td>
-</tr>
-<tr>
-<td>currencyName</td><td>CNY</td>
-</tr>
-<tr>
-<td>custom</td><td>222323417123491234</td>
-</tr>
-<tr>
-<td>deviceBrand</td><td>Xiaomi</td>
-</tr>
-<tr>
-<td>deviceId</td><td>imei_869630010064289</td>
-</tr>
-<tr>
-<td>deviceModel</td><td>MI2</td>
-</tr>
-<tr>
-<td>failedDesc</td><td></td>
-</tr>
-<tr>
-<td>gameTradeNo</td><td>99887766</td>
-</tr>
-<tr>
-<td>giftValue</td><td>300</td>
-</tr>
-<tr>
-<td>orderId</td><td>2984456</td>
-</tr>
-<tr>
-<td>originalPrice</td><td>2000</td>
-</tr>
-<tr>
-<td>payStatus</td><td>1（代表支付成功）</td>
-</tr>
-<tr>
-<td>payTime</td><td>20150811085928</td>
-</tr>
-<tr>
-<td>roleId</td><td>224455</td>
-</tr>
-<tr>
-<td>roleName</td><td>魔域苍龙</td>
-</tr>
-<tr>
-<td>sdkUid</td><td>30854</td>
-</tr>
-<tr>
-<td>serverId</td><td>1</td>
-</tr>
-<tr>
-<td>totalPrice</td><td>1800</td>
-</tr>
-<tr>
-<td>ts</td><td>20150811085930</td>
-</tr>
-<tr>
-<td>type</td><td>notify-game</td>
-</tr>
-<tr>
-<td>xgAppId</td><td>2001</td>
-</tr>
-<tr>
-<td>zoneId</td><td>101</td>
-</tr>
-</table>
-
-**当前时间戳ts:** 20150811085930
-
-**游戏服务端密钥:** aefc5134be1543dea3217144eb71e8f8
-
-**则请求签名源串为（按Key值升序排列）:**
-
-appGoodsAmount=1&appGoodsId=product1&appGoodsName=60元宝&appGoodsDesc=元宝&channelId=mi&channelTradeNo=21143936345994521949&currencyName=CNY&custom=222323417123491234&deviceBrand=Xiaomi&deviceId=imei_869630010064289&deviceModel=MI2&failedDesc=&gameTradeNo=99887766&giftValue=300&orderId=2984456&originalPrice=2000&payStatus=1&payTime=20150811085928&roleId=224455&roleName=魔域苍龙&sdkUid=30854&serverId=1&totalPrice=1800&ts=20150811085930&type=notify-game&xgAppId=2001&zoneId=101
-
-**对上面的请求签名源串进行HmacSHA1签名的结果为：**
-
-  a139d226c48b79c1c9f9a41d8c3e48a88ef6420b
-
-**请求样例：**  
-	http://172.63.55.62:18888/moon/pay-notify  
-    POST body: {"appGoodsAmount":"1","appGoodsDesc":"元宝","appGoodsId":"product1","appGoodsName":"60元宝","channelId":"mi","channelTradeNo":"21143936345994521949","currencyName":"CNY","custom":"222323417123491234","deviceBrand":"Xiaomi","deviceId":"imei_869630010064289","deviceModel":"MI2","failedDesc":"","gameTradeNo":"99887766","giftValue":"300","orderId":"2984456","originalPrice":"2000","payStatus":"1","payTime":"20150811085928","roleId":"224455","roleName":"魔域苍龙","sdkUid":"30854","serverId":"1","sign":"a139d226c48b79c1c9f9a41d8c3e48a88ef6420b","totalPrice":"1800","ts":"20150811085930","type":"notify-game","xgAppId":"2001","zoneId":"101"}
-
-<div id="import_1"></div>
-
-### 2.3 返回
-
-游戏服务器收到XGSDK的订单通知后，需要返回一个确认信息给XGSDK。否则XGSDK会没隔一段时间通知游戏服务器一次，知道收到游戏服务器的确认为止。
-
-确认结果为JSON格式的字符串，分别有如下几个字段：
+### 2.3 输出
+**返回结果为JSON格式的字符串，分别有如下几个字段：**
 
 <table>
 <tr>
 <td>参数</td><td>说明</td>
 </tr>
 <tr>
-<td>code</td><td>返回码：  
-0 - 成功  
-1 - 通知失败  
-2 - 重复通知  
-其它 - 无效订单
-</td>
+<td>code</td><td>返回码，参见错误码章节</td>
 </tr>
 <tr>
 <td>msg</td><td>接口调用信息提示</td>
@@ -315,67 +190,86 @@ appGoodsAmount=1&appGoodsId=product1&appGoodsName=60元宝&appGoodsDesc=元宝&c
 
 <div id="import_android"></div>
 
+### 2.4 请求样例
+**请求参数:**  
+type=notify-game  
+xgAppId=1024appid  
+channelId=mi  
+uid=30854  
+serverId=1  
+roleId=224455  
+productId=productId1  
+productName=productName1  
+productDesc=productDesc1  
+productQuantity=1  
+totalAmount=9800  
+paidAmount=9800  
+customInfo=2323423413412351251245  
+gameTradeNo=99887766  
+tradeNo=2984456  
+paidTime=20150723145928  
+payStatus=1  
+
+**当前时间戳ts:** 20150723150028  
+
+**游戏服务端密钥:** 654321
+
+**则请求签名源串为：**
+channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=notify-game&uid=30854&xgAppId=1024appid
+
+**请求签名为：**  
+afb3496f05333fbfa184f8e8af39eb7f198e37a7
+
+**请求样例：**  
+http://172.63.55.62:18888/moon/pay?channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=notify-game&uid=30854&xgAppId=1024appid&sign=afb3496f05333fbfa184f8e8af39eb7f198e37a7
 
 
-#### 2.3.1 返回值样例
+<div id="import_1"></div>
 
-	{
+### 2.5 返回值样例
+
+```
+{
     "code": "0",
     "msg": "success"
-	}
+}
+```
+
 
 <div id="adjust"></div>
 
-## 3 充值验证接口（二次查询验证订单）
+## 3. 二次查询验证订单
 
 <div id="copyJar"></div>
 
 ### 3.1 功能
+**发起方：** 游戏服务器  
+**接收方：** XGSDK服务端  
+**接口类型：** HTTP POST  
+**字符集编码：** UTF-8  
+**安全机制：** 签名  
+**请求地址：**  
+http://p2.xgsdk.com/pay/verify-order/{xgAppId}  
+其中xgAppId是XGSDK分配的游戏编号，如西游伏魔是1024appid。  
+**功能描述：** 用于游戏服务器验证收到的订单通知是否有效。
 
-<table>
-<tr>
-<td>发起方</td><td>游戏服务器</td>
-</tr>
-<tr>
-<td>接收方</td><td>XGSDK服务端</td>
-</tr>
-<tr>
-<td>接口类型</td><td>HTTP GET</td>
-</tr>
-<tr>
-<td>字符集编码</td><td>UTF-8</td>
-</tr>
-<tr>
-<td>安全机制</td><td>签名</td>
-</tr>
-<tr>
-<td>请求地址</td><td>http://pay.xgsdk.com:8180/pay/verify-order/{xgAppId}</td>
-</tr>
-</table>
-
-**其中xgAppid是游戏在XGSDK的唯一标示，如西游伏魔是1024appid。**
-
-**功能描述:**
-用于游戏服务器验证收到的订单通知是否有效。
 
 <div id="copyInterface"></div>
 
-### 3.2 请求
-
+### 3.2 输入
 **参数说明：**
-
 <table>
 <tr>
-<td >参数名称</td><td >必选</td><td>类型</td><td>说明</td>
+<td>参数名称</td><td>必选</td><td>类型</td><td>说明</td>
 </tr>
 <tr>
 <td>type</td><td>是</td><td>String</td><td>接口类型，固定为verify-order</td>
 </tr>
 <tr>
-<td>orderId</td><td>是</td><td>String</td><td>订单编号</td>
+<td>tradeNo</td><td>是</td><td>String</td><td>订单编号</td>
 </tr>
 <tr>
-<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150811085930对应2015/8/11 08:59:30</td>
+<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028对应2015/7/23 15:00:28</td>
 </tr>
 <tr>
 <td>sign</td><td>是</td><td>String</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥</td>
@@ -384,30 +278,8 @@ appGoodsAmount=1&appGoodsId=product1&appGoodsName=60元宝&appGoodsDesc=元宝&c
 
 <div id="adjustActivity"></div>
 
-#### 3.2.1 请求样例
-
-**请求参数orderId：** 2984456
-
-**当前时间戳ts：** 20150811085930
-
-**游戏服务端密钥：** aefc5134be1543dea3217144eb71e8f8
-
-**则请求签名源串为（按Key值升序排列）:**
-orderId=2984456&ts=20150811085930&type=verify-order
-
-**对上面的请求签名源串进行HmacSHA1签名的结果为：**
-03d44abdfec6c58e7261644b09b5791a045f4d25
-
-**最终请求样例：**
-
-http://pay.xgsdk.com:8180/pay/verify-order/1024appid?orderId=2984456&sign=03d44abdfec6c58e7261644b09b5791a045f4d25&ts=20150723150028&type=verify_order
-
-<div id="androidMk1"></div>
-
-### 3.3 返回
-
+### 3.3 输出
 **返回结果为JSON格式的字符串，分别有如下几个字段：**
-
 <table>
 <tr>
 <td>字段</td><td>说明</td>
@@ -423,55 +295,23 @@ http://pay.xgsdk.com:8180/pay/verify-order/1024appid?orderId=2984456&sign=03d44a
 </tr>
 </table>
 
-**data字段具体说明：**
-
+**data字段具体说明：**  
+参数说明：
 <table>
 <tr>
-<td>返回字段</td><td>必选</td><td>类型</td><td>说明</td>
+<td>参数名称</td><td>必选</td><td>类型</td><td>说明</td>
 </tr>
 <tr>
-<td>gameTradeNo</td><td>否</td><td>String</td><td>游戏侧订单号</td>
-</tr>
-<tr>
-<td>orderId</td><td>是</td><td>String</td><td>订单号</td>
-</tr>
-<tr>
-<td>sdkUid</td><td>是</td><td>String</td><td>用户唯一标识，游戏服务器请用此字段作为对玩家的唯一标识</td>
-</tr>
-<tr>
-<td>payStatus</td><td>是</td><td>String</td><td>订单支付状态  
-1 支付成功  
-2 支付失败
-</tr>
-<tr>
-<td>payTime</td><td>是</td><td>String</td><td>支付时间 yyyyMMddHHmmss</td>
-</tr>
-<tr>
-<td>failedDesc</td><td>否</td><td>String</td><td>如果成功支付，则为空串</td>
+<td>type</td><td>是</td><td>String</td><td>接口类型，固定为verify-order</td>
 </tr>
 <tr>
 <td>xgAppId</td><td>是</td><td>String</td><td>XGSDK分配的游戏编号</td>
 </tr>
 <tr>
-<td>channelId</td><td>是</td><td>String</td><td>渠道在XGSDK的唯一标识</td>
+<td>channelId</td><td>是</td><td>String</td><td>运营渠道编号</td>
 </tr>
 <tr>
-<td>appGoodsId</td><td>否</td><td>String</td><td>游戏内的商品ID</td>
-</tr>
-<tr>
-<td>appGoodsName</td><td>否</td><td>String</td><td>游戏内的商品名称</td>
-</tr>
-<tr>
-<td>appGoodsDesc</td><td>否</td><td>String</td><td>商品描述</td>
-</tr>
-<tr>
-<td>appGoodsAmount</td><td>否</td><td>String</td><td>购买的商品的数量</td>
-</tr>
-<tr>
-<td>totalPrice</td><td>是</td><td>String</td><td>支付金额：单位：分，1元=100分</td>
-</tr>
-<tr>
-<td>originalPrice</td><td>否</td><td>String</td><td>购买的商品的原价，单位：分，1元=100分</td>
+<td>uid</td><td>是</td><td>String</td><td>渠道的用户编号</td>
 </tr>
 <tr>
 <td>zoneId</td><td>否</td><td>String</td><td>游戏区编号</td>
@@ -480,127 +320,118 @@ http://pay.xgsdk.com:8180/pay/verify-order/1024appid?orderId=2984456&sign=03d44a
 <td>serverId</td><td>否</td><td>String</td><td>游戏服编号</td>
 </tr>
 <tr>
-<td>roleId</td><td>否</td><td>String</td><td>角色编号</td>
+<td>roleId</td><td>是</td><td>String</td><td>角色编号</td>
 </tr>
 <tr>
-<td>roleName</td><td>否</td><td>String</td><td>角色昵称</td>
+<td>roleName</td><td>否</td><td>String</td><td>角色名称</td>
 </tr>
 <tr>
-<td>currencyName</td><td>否</td><td>String</td><td>货币单位，如人民币为CNY</td>
+<td>roleLevel</td><td>否</td><td>String</td><td>角色等级</td>
 </tr>
 <tr>
-<td>custom</td><td>否</td><td>String</td><td>游戏方自定义字段，在请求新订单的时候传到服务器，有的话就原样返回</td>
+<td>roleVipLevel</td><td>否</td><td>String</td><td>角色VIP等级</td>
 </tr>
 <tr>
-<td>deviceId</td><td>否</td><td>String</td><td>设备id</td>
+<td>currencyName</td><td>否</td><td>String</td><td>支付货币名称</td>
 </tr>
 <tr>
-<td>deviceBrand</td><td>否</td><td>String</td><td>设备提供商： 小米、华为、三星、苹果</td>
+<td>productId</td><td>是</td><td>String</td><td>商品编号</td>
 </tr>
 <tr>
-<td>deviceModel</td><td>否</td><td>String</td><td>设备型号：小米note、华为meta7 iphone 6 plus等</td>
+<td>productName</td><td>否</td><td>String</td><td>商品名称</td>
+</tr>
+<tr>
+<td>productDesc</td><td>否</td><td>String</td><td>商品描述</td>
+</tr>
+<tr>
+<td>productQuantity</td><td>否</td><td>String</td><td>商品数量</td>
+</tr>
+<tr>
+<td>productUnitPrice</td><td>否</td><td>String</td><td>商品单价(单位分)</td>
+</tr>
+<tr>
+<td>totalAmount</td><td>是</td><td>String</td><td>总面额(单位分)</td>
+</tr>
+<tr>
+<td>paidAmount</td><td>是</td><td>String</td><td>总支付金额(单位分)</td>
+</tr>
+<tr>
+<td>customInfo</td><td>否</td><td>String</td><td>游戏方自定义字段，支付成功后回调的时候，透传原样返回</td>
+</tr>
+<tr>
+<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028  
+对应2015/7/23 15:00:28</td>
+</tr>
+<tr>
+<td>gameTradeNo</td><td>否</td><td>String</td><td>游戏侧订单号</td>
+</tr>
+<tr>
+<td>sign</td><td>是</td><td>String</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥</td>
+</tr>
+<tr>
+<td>tradeNo</td><td>是</td><td>String</td><td>Xgsdk分配的订单号</td>
+</tr>
+<tr>
+<td>paidTime</td><td>是</td><td>String</td><td>支付时间 yyyyMMddHHmmss</td>
+</tr>
+<tr>
+<td>payStatus</td><td>是</td><td>String</td><td>订单支付状态  
+1 支付成功  
+2 支付失败</td>
 </tr>
 </table>
+
 
 <div id="androidMk"></div>
 
-#### 3.3.1 返回值样例
+### 3.4 请求样例
+**请求参数:**  
+**tradeNo:** 2984456  
+**当前时间戳ts:** 20150723150028  
+**游戏服务端密钥:** 123456  
+**则请求签名源串为：**  tradeNo=2984456&ts=20150723150028&type=verify-order  
+**请求签名为：**
+86e396a999e9673731be6609c4dc7bca8945ada6
+**请求样例：**  
+http://p2.xgsdk.com/pay/verify-order/1024appid?tradeNo=2984456&sign=86e396a999e9673731be6609c4dc7bca8945ada6&ts=20150723150028&type=verify-order
 
-	{
-	    "code": "0",
-	    "msg": "success",
-	    "data": {
-	        "appGoodsAmount": "1",
-			"appGoodsDesc": "元宝",
-	        "appGoodsId": "product1",
-	        "appGoodsName": "60元宝",
-	        "channelId": "mi",
-	        "currencyName": "CNY",
-	        "custom": "222323417123491234",
-            "deviceBrand": "Xiaomi",
-			"deviceId": "imei_869630010064289",
-			"deviceModel": "MI2",
-	        "gameTradeNo": "99887766",
-	        "orderId": "2984456",
-	        "originalPrice": "2000",
-			"payStatus": "1",//（代表支付成功）
-	        "payTime": "20150811085928",
-	        "roleId": "224455",
-	        "roleName": "魔域苍龙",
-	        "sdkUid": "30854",
-	        "serverId": "1",
-	        "totalPrice": "1800",
-			"xgAppid": "1024appid",
-			"zoneId": "101"
-	    }
+### 3.5 返回值样例
+**响应签名源串为：**
+channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=verify-order&uid=30854&xgAppId=1024appid
 
-	}
+**响应验签密钥为游戏服务端验签密钥：** 654321
 
+**响应签名为：**
+b990455f7f184c632f7fe1a8369d620392f5cdc8
 
-<div id="ready"></div>
-
-## 3. 错误码
-
-<table>
-<tr>
-<td>错误码</td><td>备注</td>
-</tr>
-<tr>
-<td>0</td><td>成功</td>
-</tr>
-<tr>
-<td>-1</td><td>签名失败</td>
-</tr>
-<tr>
-<td>1</td><td>请求重发</td>
-</tr>
-<tr>
-<td>2</td><td>重复订单</td>
-</tr>
-<tr>
-<td>-2</td><td>xgAppid不存在</td>
-</tr>
-<tr>
-<td>-3</td><td>channelId不存在</td>
-</tr>
-<tr>
-<td>-4</td><td>区服不存在</td>
-</tr>
-<tr>
-<td>-5</td><td>账号不存在</td>
-</tr>
-<tr>
-<td>-6</td><td>订单号不存在</td>
-</tr>
-<tr>
-<td>-99</td><td>系统错误</td>
-</tr>
-<tr>
-<td>-100</td><td>获取登录验证参数失败</td>
-</tr>
-<tr>
-<td>-101</td><td>获取渠道参数失败</td>
-</tr>
-<tr>
-<td>-102</td><td>连接渠道登陆验证接口失败</td>
-</tr>
-<tr>
-<td>-103</td><td>渠道登陆验证结果失败</td>
-</tr>
-<tr>
-<td>-200</td><td>商品不存在</td>
-</tr>
-<tr>
-<td>-201</td><td>商品不一致</td>
-</tr>
-<tr>
-<td>-202</td><td>金额不一致</td>
-</tr>
-<tr>
-<td>-203</td><td>渠道验证订单失败</td>
-</tr>
-</table>
-
+**最终返回为：**
+```
+{
+    "code": "0",
+    "msg": "success",
+    "data": {
+    "channelId": "mi",
+    "customInfo": "2323423413412351251245",
+    "gameTradeNo": "99887766",
+    "paidAmount": "9800",
+    "paidTime": "20150723150128",
+    "payStatus": "1",
+    "productDesc": "productDesc1",
+    "productId": "productId1",
+    "productName": "productName1",
+    "productQuantity": "1",
+    "roleId": "224455",
+    "serverId": "1",
+    "totalAmount": "9800",
+    "tradeNo": "2984456",
+    "ts": "20150723150028",
+    "type": "verify-order",
+    "uid": "30854",
+    "xgAppId": "1024appid",
+    "sign": "b990455f7f184c632f7fe1a8369d620392f5cdc8"
+}
+}
+```
 ---
 
 <div id="version"></div>
