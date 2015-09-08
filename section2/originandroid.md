@@ -366,6 +366,12 @@ onEnterGame(RoleInfo roleInfo)
 	<td>角色ID</td>
 </tr>
 <tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>角色类型</td>
+	<td>角色类型</td>
+</tr>
+<tr>
 	<td>roleName</td>
 	<td>string</td>
 	<td>角色名称</td>
@@ -687,6 +693,12 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 	<td>String</td>
 	<td>支付回调地址，如果为空，则后台配置的回调地址</td>
 	<td>支付回调地址，如果为空，则后台配置的回调地址</td>
+</tr>
+<tr>
+	<td>additionalParams</td>
+	<td>String</td>
+	<td>扩展参数</td>
+	<td>扩展参数</td>
 </tr>
 </table>
 
