@@ -40,7 +40,7 @@
 						<li><a href = "#login">登录接口</a></li>
 						<li><a href = "#logout">登出接口</a></li>
 						<li><a href = "#exit">退出接口</a></li>
-						
+
 					</ul>
 				</li>
 				<li><a href = "#rechargeInterface">充值接口</a>
@@ -101,38 +101,25 @@ Android SDK和Android Eclipse等
 
 SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户直接将工程导入Unity即可运行demo，Unity3DSDK文件夹则是用户进行接入时所需的接口文件和必须的jar包。  
 
-
-
 渠道版SDK下载包包含：  
 1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。  
 2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs以及xgsdk-test.apk。  
-<<<<<<< HEAD
 3. 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。
-=======
-其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</br>  
->>>>>>> f5d91c701a870a29d4f64555b6cfe60c49e65c33
+
 
 **注意：SDK包中的xgsdk-test.apk是用于测试用户接入是否正确的测试渠道，在用户需要测试的时候使用，但是在进行打包的时候务必将xgsdk-test.apk移除**
 
 
 <a name = "steps"></a>
-<<<<<<< HEAD
+
 ### 2.4 接入步骤
 2.4.1 将Android项目中的内容拷贝到<项目目录>\Assets\Plugins\Android下（若没有Plugins目录或者Android目录则创建一个）
-=======
-###2.4 接入步骤
-
-
-#### 2.4.1将Android项目中的内容拷贝到<项目目录>\Assets\Plugins\Android下（若没有Pluguns目录或者Android目录则创建一个）
->>>>>>> f5d91c701a870a29d4f64555b6cfe60c49e65c33
 
 <img src= "img/AndroidFile.png">
 
 2.4.2 将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
 
-
 <img src="img/CsFile.png">
-
 
 <img src="img/jar.png">
 
@@ -141,7 +128,6 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 2.4.3 导入文件
 
 打开Unity,点击File->Open Project->Open Other... ， 打开文件所在的目录，将工程导入。
-
 
 <img src="img/import1.png">
 
@@ -152,8 +138,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 <img src = "img/Preferences.png">
 
 
-
->注：如果游戏的主activity继承了UnityPlayerActivity，那么游戏的主activity需要继承XGUnityActivity，我们的XGUnityActivity类已经继承了UnityPlayerActivity，并且实现了android的生命周期方法；如果游戏的主activity继承了UnityPlayerNativeActivity，则游戏需要改为继承我们的XGUnityNativeActivity。
+**注：如果游戏的主activity继承了UnityPlayerActivity，那么游戏的主activity需要继承XGUnityActivity，我们的XGUnityActivity类已经继承了UnityPlayerActivity，并且实现了android的生命周期方法；如果游戏的主activity继承了UnityPlayerNativeActivity，则游戏需要改为继承我们的XGUnityNativeActivity。**
 
 2.4.5 配置AndroidMainfest.xml文件  
 
@@ -202,30 +187,19 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 其中，sdk_config.properties中的XgAppId、XgAppKey以及XgPlanId需要在西瓜portal上获取对应的参数。
 
 
-<<<<<<< HEAD
 2.4.7 运行
-=======
-
-####2.4.6 运行
->>>>>>> f5d91c701a870a29d4f64555b6cfe60c49e65c33
 
 首先点击Main Camera，确认是否关联脚本，若还未关联，则将脚本添加上去。
 
-
 <img src="img/MainCamera.png">
-
 
 然后点击File->Build Setting->Player Settings，在Other Settings中，配置Bundle Identifier，设置Company Name和Product Name。
 
-
 <img src="img/identifier.png">
-
 
 接下来点击Build Settings中Platform的Android，然后点击Switch Platform,再执行build and run，这样，Unity工程就能在Android手机上运行了。
 
-
 <img src="img/Build.png">
-
 
 
 <a name = "SDKIn"></a>
