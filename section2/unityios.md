@@ -95,11 +95,11 @@ src：接入依赖的源码
 
 ### 2.3 接入步骤
 **2.3.1 将iOS目录中的内容拷贝到<项目目录>\Assets\Plugins\iOS下（若没有Plugins目录或者iOS目录则创建一个）；**
-<img src= "img/iOS1.png">
+<img src= "img/ios1.png">
 
 **2.3.2 将src目录中的cs脚本文件全部拷贝至<项目目录>\Assets中；**
 
-<img src= "img/iOS2.jpg">
+<img src= "img/ios2.jpg">
 
 **src文件功能说明：**  
 
@@ -120,7 +120,7 @@ src：接入依赖的源码
 - 然后点击File->Build Setting->Player Settings，在Other Settings中，配置Bundle Identifier，设置Company Name和Product Name；  
 - 接下来点击Build Settings中Platform的iOS，然后点击Switch Platform,再执行build and run，这样，Unity工程就能在iPhone手机上运行了。
 
-<img src= "img/iOS3.jpg">
+<img src= "img/ios3.jpg">
 
 ## 3.接口接入（iOS 与 Android 接口一致）
 
