@@ -32,6 +32,7 @@
 				<li><a href="#import">输出</a>
 				<li><a href="#import_android">请求样例</a>
 				<li><a href="#import_1">返回值样例</a>
+        <li><a href="#import_2">错误码</a>
 			</ul>
 	</li>
 	<li>
@@ -42,6 +43,7 @@
 				<li><a href="#adjustActivity">输出</a>
 				<li><a href="#androidMk">请求样例</a>
       	<li><a href="#androidMk1">返回值样例</a>
+        <li><a href="#androidMk2">错误码</a>
 			</ul>
 	</li>
 	<li>
@@ -181,7 +183,7 @@
 <td>参数</td><td>说明</td>
 </tr>
 <tr>
-<td>code</td><td>返回码，参见错误码章节</td>
+<td>code</td><td>返回码，参见<a href="#import_2">错误码</a>章节</td>
 </tr>
 <tr>
 <td>msg</td><td>接口调用信息提示</td>
@@ -218,11 +220,12 @@ payStatus=1
 channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=notify-game&uid=30854&xgAppId=1024appid
 
 **请求签名为：**  
-afb3496f05333fbfa184f8e8af39eb7f198e37a7
+afb3496f05333fbfa184f8e8af39eb7f198e37a7  
 
 **请求样例：**  
-http://172.63.55.62:18888/moon/pay?channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=notify-game&uid=30854&xgAppId=1024appid&sign=afb3496f05333fbfa184f8e8af39eb7f198e37a7
-
+http://172.63.55.62:18888/moon/pay  
+postBody:  
+{"channelId":"mi","customInfo":"2323423413412351251245","gameTradeNo":"99887766","paidAmount":"9800","paidTime":"20150723150128","payStatus":"1","productDesc":"productDesc1","productId":"productId1","productName":"productName1","productQuantity":"1","roleId":"224455","serverId":"1","totalAmount":"9800","tradeNo":"2984456","ts":"20150723150028","type":"notify-game","uid":"30854","xgAppId":"1024appid","sign":"afb3496f05333fbfa184f8e8af39eb7f198e37a7"}
 
 <div id="import_1"></div>
 
@@ -235,6 +238,113 @@ http://172.63.55.62:18888/moon/pay?channelId=mi&customInfo=232342341341235125124
 }
 ```
 
+<div id="import_2"></div>
+
+### 2.6 错误码
+<table>
+<tr>
+<td>错误码</td> <td>备注</td>
+</tr>
+<tr>
+<td>0</td> <td>成功</td>
+</tr>
+<tr>
+<td>-1</td> <td>签名失败</td>
+</tr>
+<tr>
+<td>1</td> <td>请求重发，表示游戏服前置机收到xg服务器通知，但是由于游戏服务器正在升级，不能处理响应，请求延后重新发送</td>
+</tr>
+<tr>
+<td>2</td> <td>重复订单，表示游戏服务器之前已收到了同样订单的通知，为避免因网络等原因导致道具或者游戏代币重复到账，建议游戏做订单排重
+</td>
+</tr>
+<tr>
+<td>-2</td> <td>xgAppId不存在</td>
+</tr>
+<tr>
+<td>-3</td> <td>channelId不存在</td>
+</tr>
+<tr>
+<td>-4</td> <td>区服不存在</td>
+</tr>
+<tr>
+<td>-5</td> <td>账号不存在</td>
+</tr>
+<tr>
+<td>-6</td> <td>订单号不存在</td>
+</tr>
+<tr>
+<td>-7</td> <td>渠道号和XG编号与订单中创建时的参数不一致
+</td>
+</tr>
+<tr>
+<td>-8</td> <td>发布计划编号不存在</td>
+</tr>
+<tr>
+<td>-98</td> <td>请求参数疑似被篡改</td>
+</tr>
+<tr>
+<td>-99</td> <td>XG系统内部服务器错误</td>
+</tr>
+<tr>
+<td>-100</td> <td>获取登录验证参数失败</td>
+</tr>
+<tr>
+<td>-101</td> <td>获取渠道参数失败</td>
+</tr>
+<tr>
+<td>-102</td> <td>连接渠道登陆验证接口失败</td>
+</tr>
+<tr>
+<td>-103</td> <td>渠道登陆验证结果失败</td>
+</tr>
+<tr>
+<td>-200</td> <td>商品不存在
+</td>
+</tr>
+<tr>
+<td>-201</td> <td>商品不一致</td>
+</tr>
+<tr>
+<td>-202</td> <td>金额不一致</td>
+</tr>
+<tr>
+<td>-203</td> <td>渠道验证订单失败</td>
+</tr>
+<tr>
+<td>-204</td> <td>支付通知中的渠道分配游戏编号与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-205</td> <td>支付通知中的渠道分配用户编号与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-206</td> <td>支付通知中的订单支付时间与订单创建时相差超过一天</td>
+</tr>
+<tr>
+<td>-207</td> <td>支付通知中的渠道分配商品编号与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-208</td> <td>支付通知中的渠道分配商品名称与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-209</td> <td>支付通知中的渠道分配商品数量与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-210</td> <td>支付通知中的渠道分配支付金额与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-212</td> <td>解析支付通知中的渠道参数失败</td>
+</tr>
+<tr>
+<td>-301</td> <td>查询渠道订单超时</td>
+</tr>
+<tr>
+<td>-302</td> <td>查询渠道订单失败</td>
+</tr>
+<tr>
+<td>-401</td> <td>创建渠道订单失败</td>
+</tr>
+</table>
 
 <div id="adjust"></div>
 
@@ -285,7 +395,7 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 <td>字段</td><td>说明</td>
 </tr>
 <tr>
-<td>code</td><td>返回码，参见错误码章节</td>
+<td>code</td><td>返回码，参见<a href="#androidMk2">错误码</a>章节</td>
 </tr>
 <tr>
 <td>msg</td><td>接口调用信息提示</td>
@@ -391,9 +501,11 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 **游戏服务端密钥:** 123456  
 **则请求签名源串为：**  tradeNo=2984456&ts=20150723150028&type=verify-order  
 **请求签名为：**
-86e396a999e9673731be6609c4dc7bca8945ada6
+86e396a999e9673731be6609c4dc7bca8945ada6  
 **请求样例：**  
 http://p2.xgsdk.com/pay/verify-order/1024appid?tradeNo=2984456&sign=86e396a999e9673731be6609c4dc7bca8945ada6&ts=20150723150028&type=verify-order
+
+<div id="androidMk1"></div>
 
 ### 3.5 返回值样例
 **响应签名源串为：**
@@ -432,6 +544,117 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 }
 }
 ```
+
+
+<div id="androidMk2"></div>
+
+### 3.6 错误码
+<table>
+<tr>
+<td>错误码</td> <td>备注</td>
+</tr>
+<tr>
+<td>0</td> <td>成功</td>
+</tr>
+<tr>
+<td>-1</td> <td>签名失败</td>
+</tr>
+<tr>
+<td>1</td> <td>请求重发，表示游戏服前置机收到xg服务器通知，但是由于游戏服务器正在升级，不能处理响应，请求延后重新发送</td>
+</tr>
+<tr>
+<td>2</td> <td>重复订单，表示游戏服务器之前已收到了同样订单的通知，为避免因网络等原因导致道具或者游戏代币重复到账，建议游戏做订单排重
+</td>
+</tr>
+<tr>
+<td>-2</td> <td>xgAppId不存在</td>
+</tr>
+<tr>
+<td>-3</td> <td>channelId不存在</td>
+</tr>
+<tr>
+<td>-4</td> <td>区服不存在</td>
+</tr>
+<tr>
+<td>-5</td> <td>账号不存在</td>
+</tr>
+<tr>
+<td>-6</td> <td>订单号不存在</td>
+</tr>
+<tr>
+<td>-7</td> <td>渠道号和XG编号与订单中创建时的参数不一致
+</td>
+</tr>
+<tr>
+<td>-8</td> <td>发布计划编号不存在</td>
+</tr>
+<tr>
+<td>-98</td> <td>请求参数疑似被篡改</td>
+</tr>
+<tr>
+<td>-99</td> <td>XG系统内部服务器错误</td>
+</tr>
+<tr>
+<td>-100</td> <td>获取登录验证参数失败</td>
+</tr>
+<tr>
+<td>-101</td> <td>获取渠道参数失败</td>
+</tr>
+<tr>
+<td>-102</td> <td>连接渠道登陆验证接口失败</td>
+</tr>
+<tr>
+<td>-103</td> <td>渠道登陆验证结果失败</td>
+</tr>
+<tr>
+<td>-200</td> <td>商品不存在
+</td>
+</tr>
+<tr>
+<td>-201</td> <td>商品不一致</td>
+</tr>
+<tr>
+<td>-202</td> <td>金额不一致</td>
+</tr>
+<tr>
+<td>-203</td> <td>渠道验证订单失败</td>
+</tr>
+<tr>
+<td>-204</td> <td>支付通知中的渠道分配游戏编号与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-205</td> <td>支付通知中的渠道分配用户编号与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-206</td> <td>支付通知中的订单支付时间与订单创建时相差超过一天</td>
+</tr>
+<tr>
+<td>-207</td> <td>支付通知中的渠道分配商品编号与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-208</td> <td>支付通知中的渠道分配商品名称与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-209</td> <td>支付通知中的渠道分配商品数量与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-210</td> <td>支付通知中的渠道分配支付金额与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-212</td> <td>解析支付通知中的渠道参数失败</td>
+</tr>
+<tr>
+<td>-301</td> <td>查询渠道订单超时</td>
+</tr>
+<tr>
+<td>-302</td> <td>查询渠道订单失败</td>
+</tr>
+<tr>
+<td>-401</td> <td>创建渠道订单失败</td>
+</tr>
+
+</table>
+
 ---
 
 <div id="version"></div>

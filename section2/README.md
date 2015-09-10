@@ -15,9 +15,12 @@
 **[Unity3d——Android](./Unity3d.md)**
 
 
-**[原声接口——Android](./originandroid.md)**
+**[Unity3d——IOS](./unityios.md)**
 
 
-**[原声接口——IOS](./originios.md)**
+**[原生接口——Android](./originandroid.md)**
+
+
+**[原生接口——IOS](./originios.md)**
 
 **[客户端接入验证](./channeltest.md)**

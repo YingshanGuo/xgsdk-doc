@@ -1,18 +1,18 @@
-#西瓜SDK（Unity3d Android版）接入文档
+# 西瓜SDK（Unity3d Android版）接入文档
 
 
 
 
 
 <a name = "docSummary"></a>
-##1、文档概述
-此文档为Unity3d引擎Android游戏客户端接入文档。</br>
+## 1. 文档概述
+此文档为Unity3d引擎Android游戏客户端接入文档。  
 本文介绍如何在Unity3d引擎平台下，Android游戏客户端快速接入西瓜SDK。
 文档分成三大部分:接入环境下载/搭建，西瓜SDK接口说明以及参考代码。逐步细述了整个接入过程；同时罗列出了4种类型的接口，
 分别为：用户相关接口、充值接口、统计接口、扩展接口，便于游戏方的接入人员可以按照需求更加快速便捷的进行接入。
 
 <a name = "docStructure"></a>
-###1.1 文档结构
+### 1.1 文档结构
 
 
 <ol type = '1'>
@@ -76,26 +76,26 @@
 
 
 <a name = "configure"></a>
-##2、环境搭建
+## 2. 环境搭建
 <a name = "environment"></a>
-###2.1 开发环境
+### 2.1 开发环境
 
 
-开发环境： </br>
-JDK版本：JDK6以上 </br>
-Android版本：Android4.0.3以上</br>
+开发环境：
+JDK版本：JDK6以上
+Android版本：Android4.0.3以上  
 
 <a name = "tools"></a>
-###2.2开发工具
-开发工具：</br>
-Unity4.6.2f1</br>
-Android SDK和Android Eclipse等</br>
+### 2.2开发工具
+开发工具：  
+Unity4.6.2f1  
+Android SDK和Android Eclipse等  
 
 
 
 
 <a name = "SDKDownload"></a>
-###2.3 SDK下载包
+### 2.3 SDK下载包
 
 <a href = "http://doc.xgsdk.com/files/2.0/packages/Unity3DSDK.zip">Unity3D SDK下载</a>
 
@@ -103,21 +103,21 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 
 
-渠道版SDK下载包包含：</br>
-1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。</br>
+渠道版SDK下载包包含：  
+1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。  
 2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs以及xgsdk-test.apk。  
-3. 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。</br>  
+3. 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。
 
 **注意：SDK包中的xgsdk-test.apk是用于测试用户接入是否正确的测试渠道，在用户需要测试的时候使用，但是在进行打包的时候务必将xgsdk-test.apk移除**
 
 
 <a name = "steps"></a>
-###2.4 接入步骤
-#### 2.4.1将Android项目中的内容拷贝到<项目目录>\Assets\Plugins\Android下（若没有Pluguns目录或者Android目录则创建一个）
+### 2.4 接入步骤
+2.4.1 将Android项目中的内容拷贝到<项目目录>\Assets\Plugins\Android下（若没有Plugins目录或者Android目录则创建一个）
 
 <img src= "img/AndroidFile.png">
 
-####2.4.1.将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
+2.4.2 将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
 
 
 <img src="img/CsFile.png">
@@ -127,14 +127,14 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **注意：导入的cs脚本文件名称不可修改。**
 
-####2.4.2导入文件
+2.4.3 导入文件
 
 打开Unity,点击File->Open Project->Open Other... ， 打开文件所在的目录，将工程导入。
 
 
 <img src="img/import1.png">
 
-####2.4.3配置SDK路径
+2.4.4 配置SDK路径
 
 点击Edit->Preferences，打开Unity Preferences窗口,点击External Tools，在Android SDK Location配置自己的Android SDK路径
 
@@ -144,7 +144,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 
 
-####2.4.4.配置AndroidMainfest.xml文件  
+2.4.5 配置AndroidMainfest.xml文件  
 
 **配置权限**
 
@@ -185,13 +185,13 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 <img src="img/AndroidMainFest2.png">
 
-####2.4.5.配置sdk_config.properties文件  
+2.4.6 配置sdk_config.properties文件  
 
 将sdk_config.properties配置文件拷贝至<项目目录>\Assets\Plugins\Android\assets。  
 其中，sdk_config.properties中的XgAppId、XgAppKey以及XgPlanId需要在西瓜portal上获取对应的参数。
 
 
-####2.4.6 运行
+2.4.7 运行
 
 首先点击Main Camera，确认是否关联脚本，若还未关联，则将脚本添加上去。
 
@@ -213,13 +213,13 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 
 <a name = "SDKIn"></a>
-##3、接口接入
+## 3、接口接入
 
 <a name = "user&roleInterface"></a>
-###3.1 用户及角色相关接口
+### 3.1 用户及角色相关接口
 
 <a name = "init"></a>
-####3.1.1 初始化接口
+#### 3.1.1 初始化接口
 
 ```
 	public static void setCallback()
@@ -236,7 +236,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **回调方法：**
 
-#####3.1.1.1初始化成功回调
+- 初始化成功回调
 
 ```
 	public void onInitSuccess(string initResult){
@@ -247,17 +247,17 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 **回调说明：**
 当游戏初始化成功时，会收到初始化成功回调,游戏在此回调中实现初始化成功后的逻辑。
 
-**参数说明：**返回的参数initResult是一个json,解析之后有如下参数：
-<ul type='disc'>
+**参数说明：** 返回的参数initResult是一个json,解析之后有如下参数：
+<ol type='disc'>
 	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg(string)：返回的信息</li>
 	<li>channelCode(string)：渠道的错误码</li>
-</ul>
+</ol>
 
 
 
 
-#####3.1.1.2初始化失败回调
+- 初始化失败回调
 
 ```
 	public void onInitFail(string initResult){
@@ -268,15 +268,15 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 **回调说明：**
 当游戏初始化失败时，会收到初始化失败回调,游戏在此回调中实现初始化失败后的逻辑。
 
-**参数说明：**返回的参数initResult是一个json,解析之后有如下参数：
-<ul type='disc'>
+**参数说明：** 返回的参数initResult是一个json,解析之后有如下参数：
+<ol type='disc'>
 	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg(string)：返回的信息</li>
 	<li>channelCode(string)：渠道的错误码</li>
-</ul>
+</ol>
 
 <a name = "login"></a>
-####3.1.2 登录接口
+#### 3.1.2 登录接口
 
 ```
 	public static void login(string customParams)
@@ -296,7 +296,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **回调方法:**  
 
-#####3.1.2.1 登录成功回调：
+- 登录成功回调：
 
 ```
 	public void onLoginSuccess(string loginResult) {
@@ -307,13 +307,13 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 **回调说明：**
 登录成功之后，会收到登录成功回调，游戏在此回调中实现登录成功后的逻辑。
 
-**参数说明：**返回的参数loginResult是一个json,解析之后有如下参数：
-<ul type='disc'>
+**参数说明：** 返回的参数loginResult是一个json,解析之后有如下参数：
+<ol type='disc'>
 	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>authInfo(string)：用户验证信息</li>
-</ul>
+</ol>
 
-#####3.1.2.2 登录取消回调：
+- 登录取消回调：
 
 ```
 	public void onLoginCancel(string loginResult){
@@ -326,12 +326,12 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **参数说明：**
 返回参数loginResult是一个json，解析之后又如下参数：
-<ul type='disc'>
+<ol type='disc'>
 	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg(string)：返回的信息</li>
-</ul>
+</ol>
 
-#####3.1.2.3 登录失败回调:
+- 登录失败回调:
 
 ```
 	public void onLoginFail(string loginResult){
@@ -342,16 +342,16 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 **回调说明：**
 登录失败后，会收到登录失败的回调，游戏在此回调中实现登录失败后的逻辑。
 
-**参数说明：**返回的参数loginResult是一个json,解析之后有如下参数：
-<ul type='disc'>
+**参数说明：** 返回的参数loginResult是一个json,解析之后有如下参数：
+<ol type='disc'>
 	<li>code(int)：返回的错误码，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg(string)：返回的信息</li>
 	<li>channelCode(string)：渠道错误码</li>
-</ul>
+</ol>
 
 
 <a name = "logout"></a>
-####3.1.3 登出接口
+#### 3.1.3 登出接口
 ```
        public static void logout(string customParams)
 ```
@@ -370,7 +370,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 **回调方法：**
 
 
-#####3.1.3.1 登出成功回调
+- 登出成功回调
 
 ```
 	public void onLogoutFinish(string logoutResult){
@@ -381,15 +381,15 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 **回调说明：**
 登出成功后，会收到登出成功的回调，游戏在此回调中实现登出成功后的逻辑。
 
-**参数说明：**返回的参数logoutResult是一个json,解析之后有如下参数：
-<ul type='disc'>
+**参数说明：** 返回的参数logoutResult是一个json,解析之后有如下参数：
+<ol type='disc'>
 	<li>code(int)：返回的完成码，详情请见<a href="#errorCode">登出完成码表</a></li>
 	<li>msg(string)：返回的信息</li>
-</ul>
+</ol>
 
 
 <a name = "exit"></a>
-####3.1.4 退出接口
+#### 3.1.4 退出接口
 ```
 		public static void exit(string customParams)
 ```
@@ -407,7 +407,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 **回调方法：**
 
-#####3.1.4.1 直接退出回调
+- 直接退出回调
 
 ```
 	public void doExit(string msg)
@@ -422,7 +422,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **参数说明：**
 参数msg无意义。
 
-#####3.1.4.2 使用游戏方退出回调
+-  使用游戏方退出回调
 
 ```
 	public void onNoChannelExiter(string msg)
@@ -439,10 +439,10 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 
 <a name = "rechargeInterface"></a>
-###3.2 充值接口
+### 3.2 充值接口
 
 <a name = "pay"></a>
-####3.2.1 支付接口
+#### 3.2.1 支付接口
 ```
 		public static void pay(PayInfo payInfo)
 ```
@@ -594,7 +594,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 **回调方法：**
 
-#####3.2.1.1 支付成功回调
+- 支付成功回调
 
 ```
 	public void onPaySuccess(string payResult){
@@ -605,7 +605,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 支付成功后，会收到支付成功的回调，游戏在此回调中实现支付成功后的逻辑。
 
-**参数说明：**返回的参数payResult是一个json,解析之后有如下参数：
+**参数说明：** 返回的参数payResult是一个json,解析之后有如下参数：
 <ul type='disc'>
 	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg：错误信息</li>
@@ -621,7 +621,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 
-#####3.2.1.2 支付取消回调
+- 支付取消回调
 
 ```
 	public void onPayCancel(string payResult){
@@ -632,20 +632,20 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 支付取消后，会收到支付取消回调，游戏在此回调中实现支付取消后的逻辑。
 
-**参数说明：**返回的参数payResult是一个json,解析之后有如下参数：
-<ul type='disc'>
+**参数说明：** 返回的参数payResult是一个json,解析之后有如下参数：
+<ol type='disc'>
 	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg：错误信息</li>
 	<li>xgTradeNo:西瓜创建的支付订单ID</li>
 	<li>gameTradeNo：游戏传入的订单ID</li>
 	<li>channelCode：渠道支付结果</li>
 	<li>channelMsg：渠道错误信息</li>
-</ul>
+</ol>
 
 
 
 
-#####3.2.1.3 支付失败回调
+- 支付失败回调
 
 ```
 	public void onPayFail(string payResult){
@@ -656,18 +656,18 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 支付失败后，会收到支付失败的回调，游戏在此回调中实现支付失败后的逻辑。
 
-**参数说明：**返回的参数payResult是一个json,解析之后有如下参数：
-<ul type='disc'>
+**参数说明：** 返回的参数payResult是一个json,解析之后有如下参数：
+<ol type='disc'>
 	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg：错误信息</li>
 	<li>xgTradeNo:西瓜创建的支付订单ID</li>
 	<li>gameTradeNo：游戏传入的订单ID</li>
 	<li>channelCode：渠道支付结果</li>
 	<li>channelMsg：渠道错误信息</li>
-</ul>
+</ol>
 
 
-#####3.2.1.4 支付结果未知回调
+- 支付结果未知回调
 
 ```
 	public void onPayOthers(string payResult){
@@ -678,17 +678,17 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 当支付结果未知的时候，会收到支付结果未知的回调，游戏在此实现支付结果未知时的逻辑。
 
-**参数说明：**返回的参数payResult是一个json，解析之后有如下参数：
-<ul type='disc'>
+**参数说明：** 返回的参数payResult是一个json，解析之后有如下参数：
+<ol type='disc'>
 	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg：错误信息</li>
 	<li>xgTradeNo:西瓜创建的支付订单ID</li>
 	<li>gameTradeNo：游戏传入的订单ID</li>
 	<li>channelCode：渠道支付结果</li>
 	<li>channelMsg：渠道错误信息</li>
-</ul>
+</ol>
 
-#####3.2.1.5 支付过程中回调
+- 支付过程中回调
 
 ```
 	public void onPayProgress(string payResult){
@@ -699,22 +699,22 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **回调说明：**
 当支付过程仍未结束的时候，会收到支付过程中的回调，游戏在此实现支付过程中的逻辑。
 
-**参数说明：**返回的参数是一个json，解析之后有如下参数：
-<ul type='disc'>
+**参数说明：** 返回的参数是一个json，解析之后有如下参数：
+<ol type='disc'>
 	<li>code：返回的支付结果，详情请见<a href="#errorCode">错误码表</a></li>
 	<li>msg：错误信息</li>
 	<li>xgTradeNo:西瓜创建的支付订单ID</li>
 	<li>gameTradeNo：游戏传入的订单ID</li>
 	<li>channelCode：渠道支付结果</li>
 	<li>channelMsg：渠道错误信息</li>
-</ul>
+</ol>
 
 
 <a name = "statisticsInterface"></a>
-###3.3 统计相关接口
+### 3.3 统计相关接口
 
 <a name = "missionBegin"></a>
-####3.3.1 任务开始
+#### 3.3.1 任务开始
 
 ```
 	public void onMissionBegin(RoleInfo roleInfo, string missionId, string missionName, string customParams)
@@ -829,7 +829,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "missionSuccess"></a>
-####3.3.2 任务成功
+#### 3.3.2 任务成功
 
 ```
 	public void onMissionSuccess(RoleInfo roleInfo, string missionId, string missionName, string customParams)
@@ -944,7 +944,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "missionFail"></a>
-####3.3.3 任务失败
+#### 3.3.3 任务失败
 
 ```
 	public void onMissionFail(RoleInfo roleInfo, string missionId, string missionName, string customParams)
@@ -1059,7 +1059,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "onVirtalCurrencyPurchase"></a>
-####3.3.4 充值获得虚拟货币
+#### 3.3.4 充值获得虚拟货币
 ```
 	public void onVirutalCurrencyPurchase(RoleInfo roleInfo, int amount, string customParams)
 ```  
@@ -1284,7 +1284,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "onVirtalCurrencyConsume"></a>
-####3.3.6 跟踪虚拟货币的消费
+#### 3.3.6 跟踪虚拟货币的消费
 ```
 	public void onVirtualCurrencyConsume(RoleInfo roleInfo, string itemName, int amount, string customParams)
 ```
@@ -1398,10 +1398,10 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "extraInterface"></a>
-###3.4 扩展接口
+### 3.4 扩展接口
 
 <a name = "enterGame"></a>
-####3.4.1 进入游戏
+#### 3.4.1 进入游戏
 
 ```
 	public static void onEnterGame(RoleInfo roleInfo)
@@ -1499,7 +1499,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "createRole"></a>
-####3.4.2 创建角色
+#### 3.4.2 创建角色
 
 ```
 		public static void onCreateRole(RoleInfo roleInfo)
@@ -1597,7 +1597,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "roleLevelUp"></a>
-####3.4.3 角色升级
+#### 3.4.3 角色升级
 
 ```
 		public static void onRoleLevelup(RoleInfo roleInfo)
@@ -1695,7 +1695,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "onEvent"></a>
-####3.4.4 自定义事件
+#### 3.4.4 自定义事件
 
 ```
 		public static void onEvent(RoleInfo roleInfo, string eventId, string eventDesc, int eventVal, string eventBody)
@@ -1817,7 +1817,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "switchAccount"></a>
-####3.4.5 切换账号
+#### 3.4.5 切换账号
 
 ```
 		public static void switchAccount(string customParams)
@@ -1835,7 +1835,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "getChannelId"></a>
-####3.4.6 获取渠道ID
+#### 3.4.6 获取渠道ID
 
 ```
 		public static string getChannelId()
@@ -1862,7 +1862,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 
 <a name = "errorCode"></a>
-##4.错误码
+## 4.错误码
 <table>
 <tr>
 <td>错误码</td><td>错误信息</td>
@@ -1923,10 +1923,10 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 ****
 
-###文档版本说明
+### 文档版本说明
 <table>
 <tr>
-<td>SDK版本</td><td>文档版本</td> <td>DK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
+<td>SDK版本</td><td>文档版本</td> <td>SDK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
 </tr>
 <tr>
 <td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.29</td>
