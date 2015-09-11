@@ -354,7 +354,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **代码样例：**
 ```
-	XGSDK2.instance.login("");
+	XGSDK2.instance.logout("");
 ```
 
 **回调方法：**
@@ -392,7 +392,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 **代码样例：**
 ```
-	XGSDK2.instance.login("");
+	XGSDK2.instance.exit("");
 ```
 
 **回调方法：**
@@ -578,7 +578,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 **代码样例：**
 ```
-	XGSDK2.instance.login("");
+	XGSDK2.instance.pay(payinfo);
 ```
 
 
@@ -605,10 +605,6 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<li>channelMsg：渠道错误信息</li>
 </ul>
 
-**代码样例：**
-```
-	XGSDK2.instance.pay(payinfo);
-```
 
 
 - 支付取消回调
