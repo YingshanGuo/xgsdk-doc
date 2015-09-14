@@ -1,9 +1,5 @@
 # 西瓜SDK（Unity3d Android版）接入文档
 
-
-
-
-
 <a name = "docSummary"></a>
 ## 1. 文档概述
 此文档为Unity3d引擎Android游戏客户端接入文档。  
@@ -107,7 +103,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 3. 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。
 
 
-**注意：SDK包中的xgsdk-test.apk是用于测试用户接入是否正确的测试渠道，在用户需要测试的时候使用，但是在进行打包的时候务必将xgsdk-test.apk移除**
+**注意：SDK包中的xgsdk-test.apk是用于测试用户接入是否正确的测试渠道，在用户需要测试的时候使用，但是在进行打包的时候务必将xgsdk-test.apk移除。**
 
 
 <a name = "steps"></a>
@@ -115,13 +111,13 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 ### 2.4 接入步骤
 2.4.1 将Android项目中的内容拷贝到<项目目录>\Assets\Plugins\Android下（若没有Plugins目录或者Android目录则创建一个）
 
-<img src= "img/AndroidFile.png">
+<img src= "img/AndroidFile.png">  
 
 2.4.2 将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
 
-<img src="img/CsFile.png">
+<img src="img/CsFile.png">   
 
-<img src="img/jar.png">
+<img src="img/jar.png">   
 
 **注意：导入的cs脚本文件名称不可修改。**
 
@@ -129,13 +125,13 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 打开Unity,点击File->Open Project->Open Other... ， 打开文件所在的目录，将工程导入。
 
-<img src="img/import1.png">
+<img src="img/import1.png">   
 
 2.4.4 配置SDK路径
 
 点击Edit->Preferences，打开Unity Preferences窗口,点击External Tools，在Android SDK Location配置自己的Android SDK路径
 
-<img src = "img/Preferences.png">
+<img src = "img/Preferences.png">  
 
 
 **注：如果游戏的主activity继承了UnityPlayerActivity，那么游戏的主activity需要继承XGUnityActivity，我们的XGUnityActivity类已经继承了UnityPlayerActivity，并且实现了android的生命周期方法；如果游戏的主activity继承了UnityPlayerNativeActivity，则游戏需要改为继承我们的XGUnityNativeActivity。**
@@ -154,7 +150,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 ```
 
-<img src="img/AndroidMainFest1.png">
+<img src="img/AndroidMainFest1.png">  
 
 
 **application标签中的android:name必须配置com.xgsdk.client.api.XGApplication**  
@@ -179,7 +175,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
     </application>
 ```
 
-<img src="img/AndroidMainFest2.png">
+<img src="img/AndroidMainFest2.png">  
 
 2.4.6 配置sdk_config.properties文件  
 
@@ -191,15 +187,15 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 首先点击Main Camera，确认是否关联脚本，若还未关联，则将脚本添加上去。
 
-<img src="img/MainCamera.png">
+<img src="img/MainCamera.png">  
 
 然后点击File->Build Setting->Player Settings，在Other Settings中，配置Bundle Identifier，设置Company Name和Product Name。
 
-<img src="img/identifier.png">
+<img src="img/identifier.png">  
 
 接下来点击Build Settings中Platform的Android，然后点击Switch Platform,再执行build and run，这样，Unity工程就能在Android手机上运行了。
 
-<img src="img/Build.png">
+<img src="img/Build.png">  
 
 
 <a name = "SDKIn"></a>
