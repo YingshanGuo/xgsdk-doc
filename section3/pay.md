@@ -33,6 +33,8 @@
 				<li><a href="#import_android">请求样例</a>
 				<li><a href="#import_1">返回值样例</a>
         <li><a href="#import_2">错误码</a>
+        <li><a href="#import_4">签名和验签</a>
+        <li><a href="#import_3">游戏逻辑处理建议</a>
 			</ul>
 	</li>
 	<li>
@@ -345,6 +347,42 @@ postBody:
 <td>-401</td> <td>创建渠道订单失败</td>
 </tr>
 </table>
+
+
+<div id="import_4"></div>
+
+### 2.7 签名和验签
+
+**签名算法采用HmacSHA1**
+
+1. 传入参数key按字母排序；
+2. 按key1=value1&key2=value2&...来拼接签名源串，将值为空的参数和sign签名字段去掉，不加入签名源串，key和value不进行任何编码（如不进行URLEncoder）；
+3. 然后对最后生成的字符串进行HmacSHA1计算，得到签名串。
+
+**签名示例：**
+- **传入参数：**
+productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&appId=xyfm&channelId=xiaomi&customInfo=9091e0cc37364fd54307cb076a64a5206b52a83bc8086ce27583df220191d245d27a1b93e68389fb65c0e6bd5a075f566663&tradeNo=100265&paidAmount=1&payStatus=1&payTime=2014-12-4 20:40:15&uid=25613430&sign=a7dc0c91632d473a7bdba944b4d43222d97293ac&totalAmount=1
+
+- **签名密钥appSecret：** 2498b561-2338-4af5-a561-c2f88aed5753
+
+- **签名源串：**
+productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&appId=xyfm&channelId=xiaomi&customInfo=9091e0cc37364fd54307cb076a64a5206b52a83bc8086ce27583df220191d245d27a1b93e68389fb65c0e6bd5a075f566663&tradeNo=100265&paidAmount=1&payStatus=1&payTime=2014-12-4 20:40:15&uid=25613430&totalAmount=12498b561-2338-4af5-a561-c2f88aed5753
+
+- **最后的签名串为：**
+ a7dc0c91632d473a7bdba944b4d43222d97293ac
+
+<div id="import_3"></div>
+
+### 2.8 游戏逻辑处理建议
+1. 如果有游戏升级不能响应，则需返回String ERR_RESEND = "1"；
+2. 先要进行验证签名，不通过则需返回String ERR_SIGN = "-1"；
+3. 如果游戏保留了游戏订单但找不到对应订单时，则需返回String ERR_ORDERID_NOTEXIST = "-6"；
+4. 做订单排重，如果重复则需返回String ERR_REPEAT = "2"；
+5. 如果游戏保留了游戏订单，最好能够验证XG订单消息和游戏订单消息的一致性，如productId、productQuantity、paidAmount、uid、roleId，保证人、财、物是否一致，避免有人在网络截获包，同时密钥泄露时，冒充发送通知，这时需返回String ERR_EXCEPTION = "-98"；
+6. 发送验证请求到xg的sdkserver服务器，验证订单，如果订单不存在或者需再次验证订单一致性时，需返回String ERR_EXCEPTION = "-98"；
+7. 如果系统发生内部异常，则需返回String ERR_SYSTEM = "-99"。  
+
+若以上7步都正常，则返回String SUCCESS = "0"。
 
 <div id="adjust"></div>
 
