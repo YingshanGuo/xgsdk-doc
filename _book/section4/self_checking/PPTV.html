@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PPTV</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3><font face="微软雅黑" >PPTV：</font> </h3>
+<table width="825" border="0" cellpadding="0" cellspacing="0" style='width:618.75pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="90" class="xl80" style='mso-width-source:userset;mso-width-alt:2880;width:67.50pt;'/>
+   <col width="562" class="xl81" style='mso-width-source:userset;mso-width-alt:17984;width:421.50pt;'/>
+   <col width="101" class="xl82" style='mso-width-source:userset;mso-width-alt:3232;width:75.75pt;'/>
+   <col width="72" style='width:54.00pt;'/>
+   <tr height="45" style='height:33.75pt;mso-height-source:userset;'>
+    <td class="xl83" height="45" width="652" colspan="2" style='height:33.75pt;width:489.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>以下测试点请自测通过后再提交，否则上线测试不予通过</td>
+    <td class="xl82" width="101" style='width:75.75pt;'/>
+    <td width="72" style='width:54.00pt;'/>
+   </tr>
+   <tr height="31" style='height:23.25pt;mso-height-source:userset;'>
+    <td class="xl85" height="31" x:autofilter="all" x:autofilterrange="$A$2:$C$15" style='height:23.25pt;' x:str>模块</td>
+    <td class="xl86" x:autofilter="all" x:str>测试点</td>
+    <td class="xl87" x:autofilter="all" x:str>XGSDK说明</td>
+    <td/>
+   </tr>
+   <tr height="37.33" style='height:28.00pt;mso-height-source:userset;'>
+    <td class="xl88" height="37.33" style='height:28.00pt;' x:str>游戏icon</td>
+    <td class="xl90" x:str>PPTV联运的每款手游需使用带有PPTV角标的游戏图标，示例如下。相关素材详见ICON+LOGO.zip。角标位置固定为右下角，尺寸大小不允许修改，如有特殊情况，请联系我方手游运营。</br><img src="./img/1.png"></td>
+
+
+    <td class="xl84" x:str>游戏自检</td>
+    <td/>
+   </tr>
+   <tr height="66.67" style='height:50.00pt;mso-height-source:userset;'>
+    <td class="xl88" height="66.67" style='height:50.00pt;' x:str>游戏LOGO页</td>
+    <td class="xl90" x:str>部分手游在游戏启动过程中，会使用带工作室或厂商名称的图片作为载入页面使用。若存在此页面，请在该图中加入“PPTV游戏”标识，可与贵方工作室的logo放在同一页面，也可以分开展示，示例如下（以下仅为范例，请根据游戏实际情况添加我方“PPTV游戏”logo）。相关素材详见ICON+LOGO.zip。</br><img src="./img/2.png"> </td>
+    <td class="xl84" x:str>游戏自检</td>
+    <td/>
+   </tr>
+   <tr height="53.33" style='height:40.00pt;mso-height-source:userset;'>
+    <td class="xl88" height="53.33" style='height:40.00pt;' x:str>SDK启动背景图片</td>
+    <td class="xl90" x:str>截取游戏的开始界面1张（暂支持PNG），竖版尺寸为720*1280；横版尺寸为1280*720；文件大小不规定，K数越小越清晰效果会越好；并命名为pptv_game_login.png放在工程res/drawable-hdpi目录下，即可。</br><img src="./img/3.png"></td>
+    <td class="xl84" x:str>游戏自检</td>
+    <td/>
+   </tr>
+   <tr height="45" class="xl79" style='height:33.75pt;mso-height-source:userset;'>
+    <td class="xl95" height="45" style='height:33.75pt;' x:str>包名</td>
+    <td class="xl89" x:str>游戏包的package name需带有PPTV标识，例：com.xxxx.pptv或com.xxxx.xxxx_pptv</td>
+    <td class="xl84" x:str>游戏自检</td>
+    <td class="xl91"/>
+   </tr>
+   <tr height="65.33" style='height:49.00pt;mso-height-source:userset;'>
+    <td class="xl88" height="65.33" style='height:49.00pt;' x:str>友盟统计</td>
+    <td class="xl90" x:str>我方使用友盟对我方SDK进行统计（仅统计SDK相关数据），故请游戏接入时接入友盟统计，友盟app key会由我方手游运营提供。如游戏本身已接入友盟统计，可联系我方手游运营。</td>
+    <td class="xl84" x:str>XGSDK已集成</td>
+    <td/>
+   </tr>
+   <tr height="88" style='height:66.00pt;mso-height-source:userset;'>
+    <td class="xl88" height="88" style='height:66.00pt;' x:str>SDK登录</td>
+    <td class="xl90" x:str>目前游戏在打开游戏后，有2种调用SDK登录界面的方式：<br/>1、进入游戏后自动调用<br/>2、需要玩家选完区服，点击“开始游戏”按钮后调用<br/>无论使用哪一种调用方式，确保玩家在登录界面按安卓系统的返回按钮，弹出是否退出游戏的提示并选择“否”后，仍然能正常调出SDK登录界面</td>
+    <td class="xl84" x:str>XGSDK已集成</td>
+    <td/>
+   </tr>
+   <tr height="37.33" style='height:28.00pt;mso-height-source:userset;'>
+    <td class="xl88" height="37.33" style='height:28.00pt;' x:str>充值</td>
+    <td class="xl90" x:str>在提交测试前，可对游戏进行实际充值，以测试充值是否在游戏内能实际到账。如不具备测试条件，在提交测试时务必告知我方手游运营，将由我方安排测试。</td>
+    <td class="xl84" x:str>XGSDK已集成</td>
+    <td/>
+   </tr>
+   <tr height="65.33" style='height:49.00pt;mso-height-source:userset;'>
+    <td class="xl88" height="65.33" style='height:49.00pt;' x:str>渠道及签名</td>
+    <td class="xl89" x:str>提交游戏包时，仅需提供269渠道的游戏包给到我方。为推广需要，我方会自行打子渠道包（仅修改CID、CCID和友盟channel_ID），并对游戏包进行签名。请勿在游戏内将渠道号写死，具体写渠道号方式可参考手游集成SDK快速指南。</br><img src="./img/4.png"></td>
+    <td class="xl84" x:str>XGSDK已集成</td>
+    <td/>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl88" height="164" rowspan="5" style='height:123.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>SDK 集成问题</td>
+    <td class="xl90" x:str>1.如出现SDK调用接口报错,先检查jar包及资源文件是否已添加,以及AndroidManifest.xml是否已按要求填写;</td>
+    <td class="xl84" x:str>XGSDK已集成</td>
+    <td/>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl90" x:str>2.升级SDK版本建议把老版本资源删除后拷贝新版中的资源,如遇新版SDK集成后调用接口出错,先检查打包程序(使用ant打包)是否已对新版SDK做好调整;</td>
+    <td class="xl84" x:str>XGSDK已集成</td>
+    <td/>
+   </tr>
+   <tr height="24" style='height:18.00pt;mso-height-source:userset;'>
+    <td class="xl90" x:str>3.如遇不能启动支付宝界面,检查so文件是否已加入工程,再检查支付参数是否填写;</td>
+    <td class="xl84" x:str>XGSDK已集成</td>
+    <td/>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl90" x:str>4.若出现启动欢迎页时ViewPager报错,可替换android-support-v4.jar后清理工程再编译测试;</td>
+    <td class="xl84" x:str>XGSDK已集成</td>
+    <td/>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl90" x:str>5.在调用初始化函数init时,cid,ccid都填空,即”” ;</td>
+    <td class="xl84" x:str>XGSDK已集成</td>
+    <td/>
+   </tr>
+   <tr height="18" style='height:13.50pt;mso-height-source:userset;'>
+    <td class="xl94" height="18" style='height:13.50pt;'/>
+    <td class="xl93"/>
+    <td class="xl92"/>
+    <td/>
+   </tr>
+  </table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -3,7 +3,7 @@
 
 |** <a href="#1">uc</a> **| ** <a href="#2">安智</a> **     |** <a href="#3">4399</a> ** |** <a href="#4">滴滴</a>  **| ** <a href="#5">酷狗</a>** | ** <a href="#6">当乐</a> **|**  <a href="#7">酷派</a>  **   |**  <a href="#8">华为</a>  **    |** <a href="#9">小米</a> ** |** <a href="#10" >酷我</a> **|** <a href="#11">联想</a>**
 | :-------------: | :------------- :|:----:|:---:|:----:|:----:|:--:|:--:|:--:|:--:|:--:|
- |** <a href="#12">拇指玩</a> ** | ** <a href="#13">爱游戏</a>** | ** <a href="#14">应用宝</a> ** |** <a href="#15">vivo</a> ** |** <a href="#16">金立</a> ** | ** <a href="#17">魅族</a> ** |** <a href="#18">pps</a> ** |<a href="#19"></a> |<a href="#20"></a> |<a href="#21"></a>|<a href="#21"></a>
+ |** <a href="#12">拇指玩</a> ** | ** <a href="#13">爱游戏</a>** | ** <a href="#14">应用宝</a> ** |** <a href="#15">vivo</a> ** |** <a href="#16">金立</a> ** | ** <a href="#17">魅族</a> ** |** <a href="#18">pps</a> ** |** <a href="#19">OPPO</a> ** |<a href="#20"></a> |<a href="#21"></a>|<a href="#21"></a>
 
 
 
@@ -213,3 +213,30 @@ portal参数debug为true时，充值一律为1元，上线前必须改为false�
 #### <p id="8">华为</p>
 
 1.在给渠道提交渠道包之前，需要提前提供给渠道资料进行审核，避免影响游戏上架时间。
+
+---
+
+
+#### <p id="19">OPPO</p>
+
+1.Oppo从1.7.3开始提供了自己的安全支付客户端，游戏每次充值打开Oppo支付客户端的时候总是为竖屏。如果游戏是横屏，那么支付成功后返回游戏时（横屏），游戏会发生一个横竖屏切换，此时如果重新创建Activity的话，原来注册的支付回调就不会调用到。  
+
+为了避免支付成功后游戏的横竖屏切换，需要在游戏充值的Activity添加下面的配置(AndroidManifest.xml)：
+
+```
+android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+```
+实例：  
+```
+<activity
+    android:name="com.xgsdk.client.testdemo.MainActivity"
+    android:launchMode="singleTop"
+    android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+    android:screenOrientation="landscape"
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+    <intent-filter>
+        <action android:name="xg.game.MAIN" />
+        <category android:name="android.intent.category.DEFAULT" />
+    </intent-filter>
+</activity>
+```

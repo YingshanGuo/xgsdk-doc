@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3><font face="微软雅黑" >木蚂蚁：</font> </h3>
+<table width="1248" border="0" cellpadding="0" cellspacing="0" style='width:936.00pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="72" class="xl65" style='width:54.00pt;'/>
+   <col width="100" class="xl65" style='mso-width-source:userset;mso-width-alt:3200;width:75.00pt;'/>
+   <col width="288" class="xl65" style='mso-width-source:userset;mso-width-alt:9216;width:216.00pt;'/>
+   <col width="272" class="xl107" style='mso-width-source:userset;mso-width-alt:8704;width:204.00pt;'/>
+   <col width="194" class="xl66" style='mso-width-source:userset;mso-width-alt:6208;width:145.50pt;'/>
+   <col width="125" class="xl67" style='mso-width-source:userset;mso-width-alt:4000;width:93.75pt;'/>
+   <col width="197" class="xl68" style='mso-width-source:userset;mso-width-alt:6304;width:147.75pt;'/>
+   <tr height="19" class="xl104" style='height:14.25pt;mso-height-source:userset;'>
+    <td class="xl106" height="19" width="1248" colspan="7" style='height:14.25pt;width:936.00pt;border-right:none;border-bottom:none;' x:str>木蚂蚁版本号：3.1</td>
+   </tr>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl69" height="19" style='height:14.25pt;' x:str>分类</td>
+    <td class="xl69" x:str>编号</td>
+    <td class="xl69" x:str>测试点说明</td>
+    <td class="xl69" x:str>测试问题摘要</td>
+    <td class="xl69" x:str>备注</td>
+    <td class="xl70" x:str>XGSDK说明</td>
+    <td class="xl70" x:str>XGSDK备注</td>
+   </tr>
+   <tr height="38" class="xl63" style='height:28.50pt;mso-height-source:userset;'>
+    <td class="xl71" height="76" rowspan="2" style='height:57.00pt;border-right:.5pt solid windowtext;border-bottom:none;' x:str>退包检查</td>
+    <td class="xl72" x:num>1</td>
+    <td class="xl72" x:str>检查assets目录下是否有PaymentPay.apk，PaymentUserInfo.apk两个文件</td>
+    <td class="xl72" x:str>缺一不可</td>
+    <td class="xl72"/>
+    <td class="xl73" x:str>游戏自检</td>
+    <td class="xl73" x:str>木蚂蚁版本号：3.1</td>
+   </tr>
+   <tr height="38" class="xl63" style='height:28.50pt;'>
+    <td class="xl72" x:num>2</td>
+    <td class="xl75" x:str>检查libs目录下的armeabi-v7a文件夹中是否有libapkpatch.so文件</td>
+    <td class="xl72" x:str>不可缺</td>
+    <td class="xl72"/>
+    <td class="xl73" x:str>游戏自检</td>
+    <td class="xl73"/>
+   </tr>
+   <tr height="57" class="xl63" style='height:42.75pt;'>
+    <td class="xl76" height="95" rowspan="2" style='height:71.25pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>包名、图标检查启动项检查</td>
+    <td class="xl77" x:num>1</td>
+    <td class="xl78" x:str>首先确认游戏包名是否含有”mumayi”,”mmy”等木<span style='display:none;'>蚂蚁专属标识</span></td>
+    <td class="xl110" x:str>在当前游戏联运的包名命名规则中，为了保证同一游戏的不同渠道的联运包部混淆，一般都会在游戏包名后面加上联运的渠道的单独的标示来区分</td>
+    <td class="xl72"/>
+    <td class="xl73" x:str>游戏自检</td>
+    <td class="xl73"/>
+   </tr>
+   <tr height="38" class="xl63" style='height:28.50pt;mso-height-source:userset;'>
+    <td class="xl80" x:num>2</td>
+    <td class="xl79" x:str>检查游安装戏到手机中后，查看游戏icon（图标）是否<span style='display:none;'>含有木蚂蚁角标</span></td>
+    <td class="xl109" x:str>角标可在游戏icon四个角任一角</td>
+    <td class="xl80"/>
+    <td class="xl73" x:str>游戏自检</td>
+    <td class="xl73"/>
+   </tr>
+   <tr height="76" class="xl64" style='height:57.00pt;'>
+    <td class="xl81" height="561" rowspan="5" style='height:420.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>SDK接入检查</td>
+    <td class="xl82" x:num>1</td>
+    <td class="xl83" x:str>检查登录页面是否是木蚂蚁登陆页面。使用payup账号是否可以正常登陆</td>
+    <td class="xl84" x:str>Payup账号的说明：<br/>此账号为专用测试账号，用来测试游戏的登陆<br/>账号名：payup<br/>密码：abc123</td>
+    <td class="xl85"/>
+    <td class="xl82" x:str>XGSDK已集成</td>
+    <td class="xl86" x:str>渠道原因<font class="font1"><br/>1.取消登录，登录界面无法退出。<br/></font></td>
+   </tr>
+   <tr height="76" class="xl64" style='height:57.00pt;'>
+    <td class="xl82" x:num>2</td>
+    <td class="xl88" x:str>登陆游戏后，游戏中是否有木蚂蚁悬浮窗。</td>
+    <td class="xl88" x:str>如果有木蚂蚁悬浮窗，木蚂蚁悬浮窗必备2个功能：<br/>个人中心：个人中心的功能说明<br/>切换账号：切换账号的功能说明</td>
+    <td class="xl82"/>
+    <td class="xl82" x:str>XGSDK已集成</td>
+    <td class="xl89"/>
+   </tr>
+   <tr height="57" class="xl64" style='height:42.75pt;'>
+    <td class="xl82" x:num>3</td>
+    <td class="xl83" x:str>点击悬浮窗，选择“切换账号”，退回登陆页面点击“我也注册”，“常见问题”，“忘记密码”，能正常加载相对应的页面即可。</td>
+    <td class="xl88"/>
+    <td class="xl82" x:str>正常页面请见自测文档附录</td>
+    <td class="xl82" x:str>XGSDK已集成</td>
+    <td class="xl82"/>
+   </tr>
+   <tr height="80" style='height:60.00pt;mso-height-source:userset;'>
+    <td class="xl82" x:num>4</td>
+    <td class="xl83" x:str>点击登陆页面中“体验试玩”（一键注册），看是否可以一键注册随机账号，并成功登陆游戏。</td>
+    <td class="xl88"/>
+    <td class="xl82" x:str>正常页面请见自测文档附录</td>
+    <td class="xl82" x:str>XGSDK已集成</td>
+    <td class="xl90" x:str>渠道原因<font class="font1"><br/>1.用试玩账号登录，没有绑定提示；2.用试玩账号进行充值，没有绑定提示。</font></td>
+   </tr>
+   <tr height="272" style='height:204.00pt;mso-height-source:userset;'>
+    <td class="xl92" x:num>5</td>
+    <td class="xl93" x:str>使用一键注册的账号成功登陆游戏后，点击悬浮窗，选择“切换账号”退回登陆页面，检查是否可以记住账号及密码。</td>
+    <td class="xl88"/>
+    <td class="xl82" x:str>正常页面请见自测文档附录</td>
+    <td class="xl82" x:str>XGSDK已集成</td>
+    <td class="xl94" x:str>渠道原因<font class="font1"><br/>1.vivo手机成功注册2个账号，返回登入页面，点击账号下拉框删除账号，删除账号后显示框无法回收。<br/>2.登录账号列表里面相同账号会重复保存。<br/>3.vivo手机成功登入2个账，点击切换账号，账号下拉列表没有显示之前登入的账户信息。<br/>4.vivo手机成功登入2个账号，点击切换账号，选择一个账号进行登入，再次点击切换帐号，账号下拉列表存在登入的帐号，但不显示出帐号信息。<br/></font></td>
+   </tr>
+   <tr height="90.80" style='height:68.10pt;mso-height-source:userset;'>
+    <td class="xl95" height="375.80" rowspan="7" style='height:281.85pt;border-right:none;border-bottom:.5pt solid windowtext;' x:str>充值和支付检查</td>
+    <td class="xl82" x:num>1</td>
+    <td class="xl96" x:str>选择payup账号进行登陆，如游戏有新手教程，走完新<span style='display:none;'>手教程后，选择游戏充值功能。</span></td>
+    <td class="xl108"/>
+    <td class="xl82"/>
+    <td class="xl82" x:str>游戏自检</td>
+    <td class="xl82"/>
+   </tr>
+   <tr height="38" style='height:28.50pt;mso-height-source:userset;'>
+    <td class="xl82" x:num>2</td>
+    <td class="xl97" x:str>点击充值后是否加载支付页面</td>
+    <td class="xl88" x:str>如可以正常加载支付页面，支付后是否显示支付成功，订单在Portal上是否能够查询到</td>
+    <td class="xl82"/>
+    <td class="xl82" x:str>XGSDK已集成</td>
+    <td class="xl82"/>
+   </tr>
+   <tr height="57" style='height:42.75pt;'>
+    <td class="xl82" x:num>3</td>
+    <td class="xl79" x:str>如可以正常加载支付页面，检查支付页面是否可以竖屏<span style='display:none;'>，是否有蚂蚁币支付选项。游戏名称是否有误，需支付的金额与物品名称，是否与游戏中所选相同。</span></td>
+    <td class="xl88"/>
+    <td class="xl82"/>
+    <td class="xl82" x:str>游戏自检</td>
+    <td class="xl82"/>
+   </tr>
+   <tr height="38" style='height:28.50pt;'>
+    <td class="xl82" x:num>4</td>
+    <td class="xl98" x:str>确认所购买项无误后点击“立即付款”创建订单，创建订单后返回游戏中</td>
+    <td class="xl88"/>
+    <td class="xl82"/>
+    <td class="xl82" x:str>XGSDK已集成</td>
+    <td class="xl82"/>
+   </tr>
+   <tr height="57" style='height:42.75pt;mso-height-source:userset;'>
+    <td class="xl82" x:num>5</td>
+    <td class="xl79" x:str>如有微信支付选项，再次选择游戏中其他物品进行充值<span style='display:none;'>。确认所购买项无误后点击“立即付款”创建订单，创建订单后返回游戏中。</span></td>
+    <td class="xl88"/>
+    <td class="xl92" x:str>部分SDK版本无此选项</td>
+    <td class="xl82" x:str>游戏自检</td>
+    <td class="xl82"/>
+   </tr>
+   <tr height="57" style='height:42.75pt;'>
+    <td class="xl99" x:num>6</td>
+    <td class="xl78" x:str>再次选择游戏中其他物品进行充值，选择银行卡充值选<span style='display:none;'>项，确认所购买项无误后点击“立即付款”创建订单，创建订单后返回游戏中。</span></td>
+    <td class="xl107"/>
+    <td class="xl88" x:str>新版SDK没有选择银行选项，直接点“立即支付”即可</td>
+    <td class="xl100" x:str>游戏自检</td>
+    <td class="xl82"/>
+   </tr>
+   <tr height="38" style='height:28.50pt;'>
+    <td class="xl99" x:num>7</td>
+    <td class="xl102" x:str>请在开发者管理后台中根据下单时间看订单回调记录，<span style='display:none;'>检查支付金额是否与在游戏中所选相同</span></td>
+    <td class="xl88"/>
+    <td class="xl103" x:str>开发者管理平台网址：dev.mumayi.com</td>
+    <td class="xl100" x:str>游戏自检</td>
+    <td class="xl82"/>
+   </tr>
+  </table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

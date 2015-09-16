@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="6.2" data-basepath=".." data-revision="Mon Sep 14 2015 14:30:37 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="6.2" data-basepath=".." data-revision="Wed Sep 16 2015 20:00:52 GMT+0800 (中国标准时间)">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="目录"><i class="fa fa-align-justify"></i></a>
@@ -660,7 +660,7 @@
 <td style="text-align:center"><strong> <a href="#16">&#x91D1;&#x7ACB;</a> </strong></td>
 <td style="text-align:center"><strong> <a href="#17">&#x9B45;&#x65CF;</a> </strong></td>
 <td style="text-align:center"><strong> <a href="#18">pps</a> </strong></td>
-<td style="text-align:center"><a href="#19"></a></td>
+<td style="text-align:center"><strong> <a href="#19">OPPO</a> </strong></td>
 <td style="text-align:center"><a href="#20"></a></td>
 <td style="text-align:center"><a href="#21"></a></td>
 <td style="text-align:center"><a href="#21"></a></td>
@@ -735,7 +735,24 @@ portal&#x53C2;&#x6570;debug&#x4E3A;true&#x65F6;&#xFF0C;&#x5145;&#x503C;&#x4E00;&
 <hr>
 <h4 id="-p-id-8-%E5%8D%8E%E4%B8%BA-p"><p id="8">&#x534E;&#x4E3A;</p></h4>
 <p>1.&#x5728;&#x7ED9;&#x6E20;&#x9053;&#x63D0;&#x4EA4;&#x6E20;&#x9053;&#x5305;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x524D;&#x63D0;&#x4F9B;&#x7ED9;&#x6E20;&#x9053;&#x8D44;&#x6599;&#x8FDB;&#x884C;&#x5BA1;&#x6838;&#xFF0C;&#x907F;&#x514D;&#x5F71;&#x54CD;&#x6E38;&#x620F;&#x4E0A;&#x67B6;&#x65F6;&#x95F4;&#x3002;</p>
-
+<hr>
+<h4 id="-p-id-19-oppo-p"><p id="19">OPPO</p></h4>
+<p>1.Oppo&#x4ECE;1.7.3&#x5F00;&#x59CB;&#x63D0;&#x4F9B;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x5B89;&#x5168;&#x652F;&#x4ED8;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x6E38;&#x620F;&#x6BCF;&#x6B21;&#x5145;&#x503C;&#x6253;&#x5F00;Oppo&#x652F;&#x4ED8;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x65F6;&#x5019;&#x603B;&#x662F;&#x4E3A;&#x7AD6;&#x5C4F;&#x3002;&#x5982;&#x679C;&#x6E38;&#x620F;&#x662F;&#x6A2A;&#x5C4F;&#xFF0C;&#x90A3;&#x4E48;&#x652F;&#x4ED8;&#x6210;&#x529F;&#x540E;&#x8FD4;&#x56DE;&#x6E38;&#x620F;&#x65F6;&#xFF08;&#x6A2A;&#x5C4F;&#xFF09;&#xFF0C;&#x6E38;&#x620F;&#x4F1A;&#x53D1;&#x751F;&#x4E00;&#x4E2A;&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#xFF0C;&#x6B64;&#x65F6;&#x5982;&#x679C;&#x91CD;&#x65B0;&#x521B;&#x5EFA;Activity&#x7684;&#x8BDD;&#xFF0C;&#x539F;&#x6765;&#x6CE8;&#x518C;&#x7684;&#x652F;&#x4ED8;&#x56DE;&#x8C03;&#x5C31;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;&#x5230;&#x3002;  </p>
+<p>&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x652F;&#x4ED8;&#x6210;&#x529F;&#x540E;&#x6E38;&#x620F;&#x7684;&#x6A2A;&#x7AD6;&#x5C4F;&#x5207;&#x6362;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x6E38;&#x620F;&#x5145;&#x503C;&#x7684;Activity&#x6DFB;&#x52A0;&#x4E0B;&#x9762;&#x7684;&#x914D;&#x7F6E;(AndroidManifest.xml)&#xFF1A;</p>
+<pre><code>android:configChanges=&quot;orientation|keyboard|keyboardHidden|screenSize&quot;
+</code></pre><p>&#x5B9E;&#x4F8B;&#xFF1A;  </p>
+<pre><code>&lt;activity
+    android:name=&quot;com.xgsdk.client.testdemo.MainActivity&quot;
+    android:launchMode=&quot;singleTop&quot;
+    android:configChanges=&quot;orientation|keyboard|keyboardHidden|screenSize&quot;
+    android:screenOrientation=&quot;landscape&quot;
+    android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot; &gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name=&quot;xg.game.MAIN&quot; /&gt;
+        &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;
+</code></pre>
                     
                     </section>
                 

@@ -121,7 +121,7 @@
 				dangle
 			</td>
 			<td>
-			<a href="#heading7">点击查看</a>
+			<a href="./self_checking/dangle.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/dangle/1.1.1/安卓平台SDK4.0.3测试点用例.xls">下载链接</a>
@@ -167,7 +167,7 @@
 				wandoujia
 			</td>
 			<td>
-			<a href="#heading9">点击查看</a>
+			<a href="./self_checking/wandoujia.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/wandoujia/1.1/%c7%fe%b5%c0%d7%d4%bc%ec%b9%e6%b7%b6-%cd%e3%b6%b9%bc%d4.xls">下载链接</a>
@@ -182,7 +182,7 @@
 				huawei
 			</td>
 			<td>
-			<a href="#heading10">点击查看</a>
+			<a href="./self_checking/huawei.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/huawei/1.1/%e5%8d%8e%e4%b8%ba%e6%b8%b8%e6%88%8f%e4%b8%ad%e5%bf%83SDK%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b--%e5%9f%ba%e6%9c%ac%e5%8a%9f%e8%83%bd.xlsx">下载链接</a>
@@ -212,7 +212,7 @@
 				4399
 			</td>
 			<td>
-			<a href="#heading12">点击查看</a>
+			<a href="./self_checking/4399.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/4399/1.1/4399checklist_20150506.zip">下载链接</a>
@@ -227,7 +227,7 @@
 				amigo
 			</td>
 			<td>
-			<a href="#heading13">点击查看</a>
+			<a href="./self_checking/jinli.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/jingli/1.1.1/jinglichecklist.xls">下载链接</a>
@@ -242,7 +242,7 @@
 				kugou
 			</td>
 			<td>
-			<a href="#heading14">点击查看</a>
+			<a href="./self_checking/kugou.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/kugou/1.1/酷狗游戏充值SDK上线前用例.xlsx">下载链接</a>
@@ -257,10 +257,10 @@
 				oppo
 			</td>
 			<td>
-			<a href="#heading15">点击查看</a>
+			<a href="./self_checking/oppo.html" target="_blank">点击查看</a>
 						</td>
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/oppo/1.1/OppoChecklist.xlsx">下载链接</a>
+				<a href="./self_checking/OppoChecklist.1.7.3.xlsx" target="_parent">下载链接</a>
 			</td>
 
 </tr>
@@ -272,7 +272,7 @@
 				pptv
 			</td>
 			<td>
-			<a href="#heading16">点击查看</a>
+			<a href="./self_checking/PPTV.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/pptv/1.1/PptvChecklist.xlsx">下载链接</a>
@@ -302,7 +302,7 @@
 				lenovo
 			</td>
 			<td>
-			<a href="#heading18">点击查看</a>
+			<a href="./self_checking/lenovo.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/lenovo/1.1/LenovChecklist-v2.3.xlsx">下载链接</a>
@@ -317,7 +317,7 @@
 				yiwan
 			</td>
 			<td>
-			<a href="#heading19">点击查看</a>
+			<a href="./self_checking/yiwan.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/yiwan/1.1.1/YiwanCheckTools.zip">下载链接</a>
@@ -362,7 +362,7 @@
 				tudou
 			</td>
 			<td>
-			<a href="#heading22">点击查看</a>
+			<<a href="./self_checking/youku.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/tudou/1.1/优酷CP集成测试用例.xlsx">下载链接</a>
@@ -422,7 +422,7 @@
 				meizu
 			</td>
 			<td>
-			<a href="#heading26">点击查看</a>
+			<a href="./self_checking/meizu.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/meizu/1.1/MeizuChecklist.xlsx">下载链接</a>
@@ -437,7 +437,7 @@
 				coolpad
 			</td>
 			<td>
-			<a href="#heading27">点击查看</a>
+			<a href="./self_checking/kupai.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/coolpad/1.1/酷派测试用例--基本功能.xlsx">下载链接</a>
@@ -512,7 +512,7 @@
 				woniu
 			</td>
 			<td>
-			<a href="#heading31">点击查看</a>
+			<a href="./self_checking/woniu.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/woniu/1.1/蜗牛自测文档.xlsx" target="_blank">下载链接</a>
@@ -542,7 +542,7 @@
 				sina
 			</td>
 			<td>
-			<a href="#heading32">点击查看</a>
+			<a href="./self_checking/xinlang.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/sina/1.1.1/联运接入测试.xlsx">下载链接</a>
@@ -557,7 +557,7 @@
 				leshi
 			</td>
 			<td>
-			<a href="#heading33">点击查看</a>
+		<a href="./self_checking/leshi.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/leshi/1.1/乐视SDK测试用例 .xlsx">下载链接</a>
@@ -572,7 +572,7 @@
 				lhh
 			</td>
 			<td>
-			<a href="#heading34">点击查看</a>
+			<a href="./self_checking/lehaihai.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/lhh/1.1/%E4%B9%90%E5%97%A8%E5%97%A8SDK%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.xls">下载链接</a>
@@ -611,13 +611,13 @@
 </tr>
 <tr>
 <td>
-				海马;
+				海马
 			</td>
 <td>
 				haima;
 			</td>
 			<td>
-			<a href="#heading36">点击查看</a>
+			<a href="./self_checking/haima.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a href="http://doc.xgsdk.com/files/channels/haima/1.1/海马测试用例.xlsx">下载链接</a>
@@ -649,7 +649,7 @@
 				youlong
 			</td>
 			<td>
-			<a href="#heading37">点击查看</a>
+			<a href="./self_checking/youlong.html" target="_blank">点击查看</a>
 						</td>
 <td>
 				<a target="_blank" href="http://doc.xgsdk.com/files/channels/youlong/1.3/SDK测试结果要求文档 - 试用版本.xls">下载链接</a>

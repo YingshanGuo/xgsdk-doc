@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3><font face="微软雅黑" >豌豆荚：</font> </h3> 
+<table width="1190" border="0" cellpadding="0" cellspacing="0" style='width:892.50pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="72" class="xl65" style='mso-width-source:userset;mso-width-alt:2633;width:54.00pt;'/>
+   <col width="120" span="2" class="xl65" style='width:90.00pt;'/>
+   <col width="756" class="xl65" style='mso-width-source:userset;mso-width-alt:27648;width:567.00pt;'/>
+   <col width="122" class="xl65" style='mso-width-source:userset;mso-width-alt:4461;width:91.50pt;'/>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" height="28" width="72" dir="LTR" style='height:21.00pt;width:54.00pt;' x:str>类别I</td>
+    <td class="xl67" width="120" dir="LTR" style='width:90.00pt;' x:str>类别II</td>
+    <td class="xl67" width="120" dir="LTR" style='width:90.00pt;' x:str>类别III</td>
+    <td class="xl67" width="756" dir="LTR" style='width:567.00pt;' x:str>项目</td>
+    <td class="xl67" width="122" dir="LTR" style='width:91.50pt;' x:str>XGSDK<font class="font1">说明</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" height="28" dir="LTR" style='height:21.00pt;' x:str>通用</td>
+    <td class="xl67" dir="LTR" x:str>命名</td>
+    <td class="xl67" dir="LTR"/>
+    <td class="xl67" dir="LTR" x:str>包名以.wdj结尾</td>
+    <td class="xl72" x:str>游戏自检</td>
+   </tr>
+   <tr height="52" style='height:39.00pt;mso-height-source:userset;'>
+    <td class="xl67" height="52" dir="LTR" style='height:39.00pt;'/>
+    <td class="xl67" dir="LTR" x:str>版本</td>
+    <td class="xl67" dir="LTR"/>
+    <td class="xl67" dir="LTR" x:str>SDK 版本号（点击豌豆荚收银台右上方「遇到问题」，下拉至页面最下即可看到当前SDK版本<span style='display:none;'>号）与此页面上的版本号一致：http://developer.wandoujia.com/games/dev-docs/</span></td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl71" height="380" rowspan="12" dir="LTR" style='height:285.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>登录/注册</td>
+    <td class="xl68" rowspan="7" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>无账号注册</td>
+    <td class="xl68" rowspan="4" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>注册<font class="font3"><br/></font><font class="font3">（正确）</font></td>
+    <td class="xl67" dir="LTR" x:str>确认进入注册页面时，点击“同意最终用户条款”可以进入条款界面。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认可以正常注册豌豆荚账号。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认以邮箱注册成功后，会自动以新注册邮箱账号进行登录。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认自动登录后，弹出豌豆荚欢迎公告（昵称+欢迎提示）。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="52" style='height:39.00pt;mso-height-source:userset;'>
+    <td class="xl68" rowspan="2" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>注册<font class="font3"><br/></font><font class="font3">（错误）</font></td>
+    <td class="xl67" dir="LTR" x:str>确认输入错误邮箱地址（不合法地址）可以弹出提示：注册失败：无效的用户名，请输入邮箱或<span style='display:none;'>手机号。</span></td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认输入密码小于6位时会提示用户密码长度最小为6（8）位。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl70" dir="LTR" x:str>放弃注册</td>
+    <td class="xl67" dir="LTR" x:str>确认注册页面点击手机back键后，会退出注册界面，返回游戏主界面。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl68" rowspan="5" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>登录</td>
+    <td class="xl68" rowspan="2" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>账号正确</td>
+    <td class="xl67" dir="LTR" x:str>确认输入正确的邮箱账号/手机账号时，可以正确登录到豌豆荚账号。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认登录页面中，点击“忘记密码？”，可以正确跳转至找回密码提示页面，且内容显示正确。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl68" rowspan="2" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>账号错误</td>
+    <td class="xl67" dir="LTR" x:str>确认当输入的用户名或密码错误时，会提示用户名或密码错误，且不能登录成功。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认在登录失败对话框内，点击重新输入，可以重新输入密码并成功登录。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="48" style='height:36.00pt;mso-height-source:userset;'>
+    <td class="xl68" dir="LTR" x:str>放弃登录</td>
+    <td class="xl67" dir="LTR" x:str>确认按返回键，可以正常取消登录。（有的游戏会返回到主页，有的则会直接退出到手机桌面）</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl68" height="598.67" rowspan="19" dir="LTR" style='height:449.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>豌豆荚收银台</td>
+    <td class="xl68" rowspan="7" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>界面显示</td>
+    <td class="xl68" rowspan="4" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>豌豆荚收银台</td>
+    <td class="xl67" dir="LTR" x:str>确认游戏中进行充值，可以正确进入豌豆荚收银台。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认游戏内，购买物品的货币名称均显示为豌豆币。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认收银台内默认支付金额为用户选择的支付金额。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认余额会显示在豌豆荚余额支付卡片内，以绿色字体高亮显示。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl68" rowspan="3" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>放弃支付</td>
+    <td class="xl67" dir="LTR" x:str>确认豌豆荚账户支付页面，按返回键弹出：支付尚未完成，确定放弃？的提示。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认放弃支付提示框点击取消，可以返回支付确认界面，订单信息不发生改变。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认放弃支付提示框点击确定，可以正确放弃支付，返回游戏。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl68" rowspan="6" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>账号余额支付</td>
+    <td class="xl68" rowspan="3" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>余额充足</td>
+    <td class="xl67" dir="LTR" x:str>确认当账号余额大于支付金额时，进入余额支付页面。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认余额支付页面，输入正确登录密码，点击“确认支付”按钮弹出正在支付提示信息。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认支付完成后，确认账号中余额被正确扣除。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="50.67" style='height:38.00pt;mso-height-source:userset;'>
+    <td class="xl68" dir="LTR" x:str>密码错误</td>
+    <td class="xl67" dir="LTR" x:str>确认余额支付页面，输入错误登录密码，点击确认支付后，提示用户密码错误，且不会进行支付<span style='display:none;'>操作。</span></td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl68" rowspan="2" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>支付断网</td>
+    <td class="xl67" dir="LTR" x:str>确认进行支付操作时，网络连接中断，会提示用户网络中断。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认进行支付操作，网络中断没有支付成功时，不会扣除用户余额。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl68" rowspan="6" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>支付宝支付</td>
+    <td class="xl68" rowspan="4" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>支付宝支付成功</td>
+    <td class="xl67" dir="LTR" x:str>确认以支付宝方式进行支付，可以成功调起支付宝插件。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认以支付宝方式成功进行支付后，会跳转至支付成功页面。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="48" style='height:36.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认支付成功页面中，显示支付成功提示与所支付的金额，且游戏名称、账户、商品名称、显示<span style='display:none;'>正确。</span></td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认点击“返回”按钮后，可正确返回当前游戏，游戏中充值的道具或金额可以立即到账。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="52" style='height:39.00pt;mso-height-source:userset;'>
+    <td class="xl68" rowspan="2" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>支付宝支付失败</td>
+    <td class="xl67" dir="LTR" x:str>确认当以支付宝进行支付时，在支付宝中取消操作，可以正确返回订单确认页面，且订单内容显<span style='display:none;'>示正确。</span></td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认当取消支付宝支付操作后，可以再次使用支付宝进行支付，订单不会被作废。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl68" height="112" rowspan="4" dir="LTR" style='height:84.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>反馈</td>
+    <td class="xl69" rowspan="4" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;'/>
+    <td class="xl68" rowspan="3" dir="LTR" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>正确反馈</td>
+    <td class="xl67" dir="LTR" x:str>确认输入正确且完整信息时可以提交反馈信息。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>提交反馈后，有反馈成功提示。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl67" dir="LTR" x:str>确认可以选择支付订单项进行反馈，也可以选择其他问题项进行反馈。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+   <tr height="28" style='height:21.00pt;mso-height-source:userset;'>
+    <td class="xl68" dir="LTR" x:str>错误反馈</td>
+    <td class="xl67" dir="LTR" x:str>确认当输入不完整信息时，会提示用户输入，不能发送反馈信息。</td>
+    <td class="xl66" x:str>XGSDK<font class="font2">已集成</font></td>
+   </tr>
+  </table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

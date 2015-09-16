@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3><font face="微软雅黑" >华为：</font> </h3>
+<table width="1343.47" border="0" cellpadding="0" cellspacing="0" style='width:1007.60pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="390" class="xl23" style='mso-width-source:userset;mso-width-alt:12480;width:292.50pt;'/>
+   <col width="353" class="xl23" style='mso-width-source:userset;mso-width-alt:11296;width:264.75pt;'/>
+   <col width="455" class="xl23" style='mso-width-source:userset;mso-width-alt:14560;width:341.25pt;'/>
+   <col width="145.47" class="xl23" style='mso-width-source:userset;mso-width-alt:4654;width:109.10pt;'/>
+   <tr height="33.33" class="xl28" style='height:25.00pt;mso-height-source:userset;'>
+    <td class="xl29" height="33.33" width="390" style='height:25.00pt;width:292.50pt;' x:str>测试用例_预置条件</td>
+    <td class="xl29" width="353" style='width:264.75pt;' x:str>测试用例_测试步骤</td>
+    <td class="xl29" width="455" style='width:341.25pt;' x:str>测试用例_预期结果</td>
+    <td class="xl29" width="145.47" style='width:109.10pt;' x:str>XG说明</td>
+   </tr>
+   <tr height="64" style='height:48.00pt;mso-height-source:userset;'>
+    <td class="xl26" height="64" style='height:48.00pt;' x:str="'1、WLAN/移动网络连接通畅&#10;2、已安装6.2以下版本游戏中心或应用市场&#10;3、已安装并登录游戏浮标">1、WLAN/移动网络连接通畅<br/>2、已安装6.2以下版本游戏中心或应用市场<br/>3、已安装并登录游戏浮标</td>
+    <td class="xl26" x:str="'1、打开浮标，点击我的-礼包-赚积分&#10;2、点击确定&#10;3、点击更新">1、打开浮标，点击我的-礼包-赚积分<br/>2、点击确定<br/>3、点击更新</td>
+    <td class="xl26" x:str="'1、弹出提示：需要下载新版本游戏中心，是否下载？&#10;2、调起游戏中心或应用市场客户端，进入游戏中心的详情页面更新&#10;3、成功下载安装">1、弹出提示：需要下载新版本游戏中心，是否下载？<br/>2、调起游戏中心或应用市场客户端，进入游戏中心的详情页面更新<br/>3、成功下载安装</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="60" style='height:45.00pt;mso-height-source:userset;'>
+    <td class="xl26" height="60" style='height:45.00pt;' x:str="'1、WLAN/移动网络连接通畅&#10;2、已安装6.2以上版本游戏中心或应用市场并登录游戏浮标">1、WLAN/移动网络连接通畅<br/>2、已安装6.2以上版本游戏中心或应用市场并登录游戏浮标</td>
+    <td class="xl26" x:str="'1、打开游戏浮标；&#10;2、点击浮标-礼包；&#10;3、点击赚积分；">1、打开游戏浮标；<br/>2、点击浮标-礼包；<br/>3、点击赚积分；</td>
+    <td class="xl26" x:str="'1、成功登录游戏浮标；&#10;2、礼包专区页面，显示“赚积分”按钮；&#10;3、进入赚积分页面">1、成功登录游戏浮标；<br/>2、礼包专区页面，显示“赚积分”按钮；<br/>3、进入赚积分页面</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="49.33" style='height:37.00pt;mso-height-source:userset;'>
+    <td class="xl26" height="49.33" style='height:37.00pt;' x:str="'1、网络连接正常&#10;2、已安装游戏中心">1、网络连接正常<br/>2、已安装游戏中心</td>
+    <td class="xl26" x:str="'1、点击游戏中心icon 进入游戏中心&#10;2、在我的-积分商城页面，点击兑换">1、点击游戏中心icon 进入游戏中心<br/>2、在我的-积分商城页面，点击兑换</td>
+    <td class="xl26" x:str="'1、进入浮标我的兑换页面查看兑换物品兑换时间是否正确">1、进入浮标我的兑换页面查看兑换物品兑换时间是否正确</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="61.33" style='height:46.00pt;mso-height-source:userset;'>
+    <td class="xl26" height="61.33" style='height:46.00pt;' x:str="'1、网络连接正常&#10;2、打开游戏浮标并登录成功   &#10;">1、网络连接正常<br/>2、打开游戏浮标并登录成功<span style='mso-spacerun:yes;'>&nbsp;&nbsp; </span><br/></td>
+    <td class="xl26" x:str>1、 登录游戏成功，弹窗显示公告信息<span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp; </span><br/>2、 点击公告信息中的链接<span style='mso-spacerun:yes;'>&nbsp; </span><br/>3、 能在新页面打开链接</td>
+    <td class="xl24"/>
+    <td class="xl24"/>
+   </tr>
+   <tr height="66.67" style='height:50.00pt;mso-height-source:userset;'>
+    <td class="xl26" height="66.67" style='height:50.00pt;' x:str="'1、网络连接正常&#10;2、打开游戏浮标并登录成功   &#10;">1、网络连接正常<br/>2、打开游戏浮标并登录成功<span style='mso-spacerun:yes;'>&nbsp;&nbsp; </span><br/></td>
+    <td class="xl26" x:str>1、 登录游戏成功，弹窗显示公告信息，按手机home键，再次进入该游戏<br/>2、 此时公告弹窗还在</td>
+    <td class="xl24"/>
+    <td class="xl24"/>
+   </tr>
+   <tr height="54" style='height:40.50pt;'>
+    <td class="xl26" height="54" style='height:40.50pt;' x:str="'1、手机上安装了游戏浮标&#10;2、已经登录了浮标&#10;3、WLAN或移动数据网络连接通畅">1、手机上安装了游戏浮标<br/>2、已经登录了浮标<br/>3、WLAN或移动数据网络连接通畅</td>
+    <td class="xl24" x:str>1、展开浮标点击我的</td>
+    <td class="xl24" x:str>1、我的页面中存在“切换账号”按钮</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="72" class="xl22" style='height:54.00pt;'>
+    <td class="xl27" height="72" style='height:54.00pt;' x:str="'1、手机上安装了带有浮标的游戏，该游戏存在更新&#10;2、本地无更新包&#10;3、手机上安装了6.1版本以上游戏中心或应用市场&#10;4、WLAN或移动数据网络连接通畅">1、手机上安装了带有浮标的游戏，该游戏存在更新<br/>2、本地无更新包<br/>3、手机上安装了6.1版本以上游戏中心或应用市场<br/>4、WLAN或移动数据网络连接通畅</td>
+    <td class="xl27" x:str="'1、登录浮标点击初始化&#10;2、点击更新">1、登录浮标点击初始化<br/>2、点击更新</td>
+    <td class="xl27" x:str="'1、弹出更新提示&#10;2、进入游戏中心或应用市场详情页进行更新">1、弹出更新提示<br/>2、进入游戏中心或应用市场详情页进行更新</td>
+    <td class="xl27" x:str>渠道已经无此按钮</td>
+   </tr>
+   <tr height="54" class="xl22" style='height:40.50pt;'>
+    <td class="xl27" height="54" style='height:40.50pt;' x:str="'1、手机上安装了带有浮标的游戏，该游戏存在更新&#10;2、手机上未安装游戏中心和应用市场&#10;3、WLAN或移动数据网络连接通畅">1、手机上安装了带有浮标的游戏，该游戏存在更新<br/>2、手机上未安装游戏中心和应用市场<br/>3、WLAN或移动数据网络连接通畅</td>
+    <td class="xl27" x:str="'1、登录浮标点击初始化&#10;2、点击更新">1、登录浮标点击初始化<br/>2、点击更新</td>
+    <td class="xl27" x:str="'2、DownloadManager进行下载， 保存路径（/data/data/应用包名/files/upgrade/upgrade.apk），下载完成后调用系统安装">2、DownloadManager进行下载， 保存路径（/data/data/应用包名/files/upgrade/upgrade.apk），下载完成后调用系统安装</td>
+    <td class="xl27" x:str>渠道已经无此按钮</td>
+   </tr>
+   <tr height="65.33" style='height:49.00pt;mso-height-source:userset;'>
+    <td class="xl26" height="65.33" style='height:49.00pt;' x:str="'1、手机上安装了游戏浮标&#10;2、手机上未安装快捷支付-华为应用市场&#10;3、WLAN或移动数据网络连接通畅">1、手机上安装了游戏浮标<br/>2、手机上未安装快捷支付-华为应用市场<br/>3、WLAN或移动数据网络连接通畅</td>
+    <td class="xl26" x:str="'1、登录浮标&#10;2、点击支付&#10;3、安装">1、登录浮标<br/>2、点击支付<br/>3、安装</td>
+    <td class="xl26" x:str="'1、弹出安装快捷支付提示&#10;2、进入下载安装快捷支付流程">1、弹出安装快捷支付提示<br/>2、进入下载安装快捷支付流程</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="72" style='height:54.00pt;'>
+    <td class="xl26" height="72" style='height:54.00pt;' x:str="'1、手机上安装了游戏浮标&#10;2、手机上安装了快捷支付-华为应用市场&#10;3、已登录了浮标&#10;4、WLAN或移动数据网络连接通畅">1、手机上安装了游戏浮标<br/>2、手机上安装了快捷支付-华为应用市场<br/>3、已登录了浮标<br/>4、WLAN或移动数据网络连接通畅</td>
+    <td class="xl24" x:str>1、点击支付</td>
+    <td class="xl24" x:str>1、直接调起快捷支付对应支付方式页面</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="54" style='height:40.50pt;'>
+    <td class="xl26" height="54" style='height:40.50pt;' x:str="'1、手机上安装了游戏浮标&#10;2、已经登录了游戏浮标&#10;3、WLAN或移动数据网络连接通畅">1、手机上安装了游戏浮标<br/>2、已经登录了游戏浮标<br/>3、WLAN或移动数据网络连接通畅</td>
+    <td class="xl26" x:str="'1、展开浮标点击我的&#10;2、点击切换账号">1、展开浮标点击我的<br/>2、点击切换账号</td>
+    <td class="xl24" x:str>1、返回到游戏首页进行切换小号流程</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="72" class="xl22" style='height:54.00pt;'>
+    <td class="xl27" height="72" style='height:54.00pt;' x:str="'1、手机上安装了游戏浮标&#10;2、手机上安装了快捷支付&#10;3、已登录了华为账号&#10;4、WLAN或移动数据网络连接通畅">1、手机上安装了游戏浮标<br/>2、手机上安装了快捷支付<br/>3、已登录了华为账号<br/>4、WLAN或移动数据网络连接通畅</td>
+    <td class="xl27" x:str="'1、点击我的--切换账号&#10;2、切换小号（即子帐号）登录浮标&#10;3、点击支付">1、点击我的--切换账号<br/>2、切换小号（即子帐号）登录浮标<br/>3、点击支付</td>
+    <td class="xl27" x:str="'1、进入到的相对应的支付页面，页面中显示账号为主账号">1、进入到的相对应的支付页面，页面中显示账号为主账号</td>
+    <td class="xl27" x:str>目前XG逻辑是，切换账号则重新登录</td>
+   </tr>
+   <tr height="65.33" style='height:49.00pt;mso-height-source:userset;'>
+    <td class="xl26" height="65.33" style='height:49.00pt;' x:str="'1、手机上安装了游戏浮标&#10;2、手机上安装了HWID(华为帐号APK)并且未登录账号&#10;3、WLAN或移动数据网络连接通畅">1、手机上安装了游戏浮标<br/>2、手机上安装了HWID(华为帐号APK)并且未登录账号<br/>3、WLAN或移动数据网络连接通畅</td>
+    <td class="xl26" x:str="'1、点击浮标初始化&#10;2、点击登录&#10;3、输入正确的账号和密码点击确定">1、点击浮标初始化<br/>2、点击登录<br/>3、输入正确的账号和密码点击确定</td>
+    <td class="xl26" x:str="'1、直接调起登录页面&#10;2、登录成功，显示浮标">1、直接调起登录页面<br/>2、登录成功，显示浮标</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="54" style='height:40.50pt;'>
+    <td class="xl26" height="54" style='height:40.50pt;' x:str="'1、手机上安装了游戏浮标&#10;2、手机上安装了HWID并且已登录账号&#10;3、WLAN或移动数据网络连接通畅">1、手机上安装了游戏浮标<br/>2、手机上安装了HWID并且已登录账号<br/>3、WLAN或移动数据网络连接通畅</td>
+    <td class="xl26" x:str="'1、点击浮标初始化&#10;2、点击登录">1、点击浮标初始化<br/>2、点击登录</td>
+    <td class="xl24" x:str>2、游戏浮标登录成功，使用登录的HWID的账号进行登录</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="72" style='height:54.00pt;'>
+    <td class="xl26" height="72" style='height:54.00pt;' x:str="'1、手机上安装了游戏浮标&#10;2、手机上未安装HWID&#10;3、未登录浮标&#10;4、WLAN或移动数据网络连接通畅">1、手机上安装了游戏浮标<br/>2、手机上未安装HWID<br/>3、未登录浮标<br/>4、WLAN或移动数据网络连接通畅</td>
+    <td class="xl24" x:str>1、登录浮标</td>
+    <td class="xl24" x:str>1、直接调起登录界面进行登录账号和密码</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="72" style='height:54.00pt;'>
+    <td class="xl26" height="72" style='height:54.00pt;' x:str="'1、手机上安装了HWID(华为帐号APK)&#10;2、手机上安装了快捷支付&#10;3、已使用账号A登了浮标进入到了快捷支付&#10;4、WLAN或移动数据网络连接通畅">1、手机上安装了HWID(华为帐号APK)<br/>2、手机上安装了快捷支付<br/>3、已使用账号A登了浮标进入到了快捷支付<br/>4、WLAN或移动数据网络连接通畅</td>
+    <td class="xl26" x:str="'1、切换HWID账号为B&#10;2、退出浮标再次登录&#10;3、点击支付">1、切换HWID账号为B<br/>2、退出浮标再次登录<br/>3、点击支付</td>
+    <td class="xl24" x:str>3、浮标登录账号还是A，支付页面的账号显示也是A</td>
+    <td class="xl24"/>
+   </tr>
+   <tr height="48" style='height:36.00pt;'>
+    <td class="xl26" height="48" style='height:36.00pt;' x:str>备注</td>
+    <td class="xl25" x:str>悬浮图标中没有“游戏中心”按钮</td>
+    <td class="xl25" x:str>（不是bug,渠道自身没有这个功能）游戏中心是单独的apk<span style='mso-spacerun:yes;'>&nbsp; </span>通过浮标--点击我的礼包-赚积分可下载安装激活游戏中心的赚积分功能<br/></td>
+    <td class="xl24"/>
+   </tr>
+  </table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

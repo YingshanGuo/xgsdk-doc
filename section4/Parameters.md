@@ -17,7 +17,7 @@
 	<td>后台地址</td>
  </tr>
  <tr>
-	<td>金立</td>
+	<td><a href="./application/jinli.html" target="_blank">金立</td>
 	<td><a href="http://dev.game.gionee.com/" target="_parent">渠道地址</a></td>
 	<td><a href="./application/aiyouxi.html" target="_blank">百度</a></td>
 	<td><a href="http://app.baidu.com" target="_parent">渠道地址</a></td>
@@ -26,7 +26,7 @@
  </tr>
  <tr>
 	<td>酷狗</td>
-	<td><a href="http://youxi.kugou.com/" target="_parent">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td><a href="./application/huawei.html" target="_blank">华为</a></td>
 	<td><a href="http://developer.huawei.com/" target="_parent">渠道地址</a></td>
 	<td>应用汇</td>
@@ -36,29 +36,29 @@
 	<td><a href="./application/oppo.html" target="_blank">oppo</a></td>
 	<td><a href="http://open.oppomobile.com/" target="_parent">渠道地址</a></td>
 	<td>当乐</td>
-	<td><a href="http://open.d.cn/download.html" target="_parent">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td>魅族</td>
 	<td><a href="https://member.meizu.com/" target="_parent" title="https://member.meizu.com/">渠道地址</a></td>
  </tr>
  <tr>
 	<td>PPTV</td>
-	<td><a href="http://g.pptv.com/  " target="_parent" title="http://g.pptv.com/  ">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td>拇指玩</td>
 	<td><a href="http://open.muzhiwan.com/" target="_parent">渠道地址</a></td>
-	<td>酷派</td>
+	<td><a href="./application/kupai.html" target="_blank">酷派</td>
 	<td><a href="http://appdev.coolyun.com/ylra/" target="_parent">渠道地址</a></td>
  </tr>
  <tr>
 	<td><a href="./application/leshi.html" target="_blank">联想</a></td>
 	<td><a href="https://passport.lenovo.com" target="_parent" title="https://passport.lenovo.com">渠道地址</a></td>
 	<td>搜狗</td>
-	<td><a href="http://open.wan.sogou.com/" target="_parent">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td>暴风</td>
-	<td><a href="http://open.mojing.cn/" target="_parent">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
  </tr>
  <tr>
 	<td>pps</td>
-	<td><a href="http://g.pps.tv/ " target="_parent" title="http://g.pps.tv/ ">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td><a href="./application/wandoujia.html" target="_blank">豌豆荚</a></td>
 	<td><a href="http://open.wandoujia.com/home" target="_parent">渠道地址</a></td>
 	<td><a href="./application/4399.html" target="_blank">4399</a></td>
@@ -66,7 +66,7 @@
  </tr>
  <tr>
 	<td>酷我游戏</td>
-	<td><a href="http://game.kuwo.cn/" target="_parent" title="http://game.kuwo.cn/">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td><a href="#xiaomi">小米</a></td>
 	<td><a href="https://account.xiaomi.com" target="_parent">渠道地址</a></td>
 	<td><a href="./application/uc.html" target="_blank">UC</a></td>
@@ -74,9 +74,9 @@
  </tr>
  <tr>
 	<td>优酷</td>
-	<td><a href="http://open.youku.com/" target="_parent">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td>今日头条</td>
-	<td><a href="http://toutiao.com/" target="_parent" title="http://toutiao.com/">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td><a href="./application/vivo.html" target="_blank">vivo</a></td>
 	<td><a href="https://developer.vivo.com.cn/" target="_parent">渠道地址</a></td>
  </tr>
@@ -99,30 +99,30 @@
  <tr>
 	<td><a href="./application/jifeng.html" target="_blank">机锋</a></td>
 	<td><a href="http://dev.gfan.com/" target="_parent" title="http://dev.gfan.com/">渠道地址</a></td>
-	<td>海马</td>
-	<td><a href="http://pay.haima.me/index.php" target="_parent">渠道地址</a></td>
-	<td>木蚂蚁</td>
+	<td><a href="./application/haima.html" target="_blank">海马</td>
+	<td>无后台，需联系渠道人员获取参数</td>
+	<td><a href="./application/mumayi.html" target="_blank">木蚂蚁</td>
 	<td><a href="http://dev.mumayi.com/" target="_parent" title="http://dev.mumayi.com/">渠道地址</a></td>
  </tr>
  <tr>
 	<td>新浪</td>
-	<td><a href="http://open.weibo.com/" target="_parent">渠道地址</a></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td>联通沃游戏</td>
 	<td><a href="http://dev.wo.com.cn/" target="_parent" title="http://dev.wo.com.cn/">渠道地址</a></td>
 	<td>滴滴</td>
-	<td></td>
+	<td>无后台，需联系渠道人员获取参数</td>
  </tr>
  <tr>
 	<td>YY多玩</td>
-	<td></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td>九城</td>
-	<td></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td>益玩</td>
-	<td></td>
+	<td>无后台，需联系渠道人员获取参数</td>
  </tr>
  <tr>
 	<td>乐嗨嗨</td>
-	<td></td>
+	<td>无后台，需联系渠道人员获取参数</td>
 	<td></td>
  </tr>
 </table>
@@ -140,7 +140,7 @@
 	<td>后台地址</td>
  </tr>
  <tr>
-	<td>快用</td>
+	<td><a href="./application/kuaiyong.html" target="_blank">快用</td>
 	<td>有</td>
 	<td><a href="http://shoulu.7659.com" target="_parent">渠道地址</a></td>
  </tr>

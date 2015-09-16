@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3><font face="微软雅黑" >4399：</font> </h3>
+<table width="1032" border="0" cellpadding="0" cellspacing="0" style='width:774.00pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="64" style='mso-width-source:userset;mso-width-alt:2048;width:48.00pt;'/>
+   <col width="546.67" class="xl75" style='mso-width-source:userset;mso-width-alt:17493;width:410.00pt;'/>
+   <col width="84" class="xl75" style='mso-width-source:userset;mso-width-alt:2688;width:63.00pt;'/>
+   <col width="337.33" class="xl74" style='mso-width-source:userset;mso-width-alt:10794;width:253.00pt;'/>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl76" height="35" width="1032" colspan="4" style='height:26.25pt;width:774.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>4399平台联运游戏测试规范-前期检查<font class="font1">（2015年05月06日更新）</font></td>
+   </tr>
+   <tr height="29" style='height:21.75pt;mso-height-source:userset;'>
+    <td class="xl77" height="29" colspan="4" style='height:21.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str><span style='mso-spacerun:yes;'>&nbsp;</span>以下任意一项未满足，均直接打回，不进入测试阶段</td>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl78" height="35" style='height:26.25pt;' x:str>序 号</td>
+    <td class="xl78" x:str>检 查 点</td>
+    <td class="xl78" x:str>检查结果</td>
+    <td class="xl78" x:str>备注说明</td>
+   </tr>
+   <tr height="52" style='height:39.00pt;mso-height-source:userset;'>
+    <td class="xl79" height="52" colspan="4" style='height:39.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str><a href="http://opensj.4399api.net/dev/downloadExchange" target="_parent">SDK接入要求<font class="font2">（最新版SDK可访问 </font><font class="font3">http://open.4399.cn/doc/doc/download/ <br/></font><font class="font2"><span style='mso-spacerun:yes;'>&nbsp;</span></font><font class="font2">下载获取，若有任何不清楚的，可联系4399运营接口人）</font></a></td>
+   </tr>
+   <tr height="81.33" style='height:61.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="81.33" style='height:61.00pt;' x:num>1</td>
+    <td class="xl82" x:str>新游戏必须接入4399<font class="font4">V2.4.0.5版本</font><font class="font5">及以上的SDK（发布日期：2015-05-06</font><font class="font5"><span style='mso-spacerun:yes;'>&nbsp; </span></font><font class="font5">）</font><font class="font5"><br/></font><font class="font6">说明：厂商游戏与4399开始联运合作时，必须接入4399SDK。</font><font class="font6"><br/></font><font class="font6">SDK内容包括 登陆注册接口、支付接口、订单查询接口，不得使用官方或第三方的登陆接口。</font><font class="font6"><br/></font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="48" style='height:36.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="48" style='height:36.00pt;' x:num>2</td>
+    <td class="xl81" x:str>接入4399平台初始化接口即默认接入更新升级接口，如果游戏方需要使用自己的更新模块，请联系4399运营接口人后台关闭自动更新开关</td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="36" style='height:27.00pt;' x:num>3</td>
+    <td class="xl84" x:str>确认提交的测试包已关闭或未调用初始化配置setDebugEnabled</td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="68" style='height:51.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="68" style='height:51.00pt;' x:num>4</td>
+    <td class="xl81" x:str>必须确保接入的Gamekey是正确的（游戏接入的Gamekey同联运后台的一致）<font class="font7"><br/></font><font class="font6">说明：Gamekey是平台中对应用的唯一标识，平台通过Gamekey来鉴别应用的身份，若接错，会影响到支付等功能</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="49" style='height:36.75pt;mso-height-source:userset;'>
+    <td class="xl80" height="49" style='height:36.75pt;' x:num>5</td>
+    <td class="xl81" x:str>不允许使用昵称、账号作为游戏角色的唯一标识<font class="font7"><br/></font><font class="font6">说明：昵称、账号可能会有重复的情况（某些特殊情况下），不能做为唯一标识</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="36" style='height:27.00pt;' x:num>6</td>
+    <td class="xl81" x:str>不能包含第三方开发平台或广告平台（商务授权的除外）</td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl86" height="36" colspan="4" style='height:27.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>游戏包要求</td>
+   </tr>
+   <tr height="39" style='height:29.25pt;mso-height-source:userset;'>
+    <td class="xl80" height="39" style='height:29.25pt;' x:num>1</td>
+    <td class="xl83" x:str>新游戏<font class="font7">必须确保提交的为最新版本（启动游戏不会弹出更新提示）</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="68" style='height:51.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="68" style='height:51.00pt;' x:num>2</td>
+    <td class="xl83" x:str>游戏游戏更新（原先已接入4399SDK上架的游戏）<font class="font5">版本号(VersionCode)必须高于原先已上架低版本的版本号，不支持同版本更新。</font><font class="font5"><br/></font><font class="font6">说明：若未高于已上架版本，会导致玩家无法更新。</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="48" style='height:36.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="48" style='height:36.00pt;' x:num>3</td>
+    <td class="xl81" x:str>版本号(VersionName)必须只包含数字和“.”（小数点），不含字母、空格或其他特殊字符。</td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="68" style='height:51.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="68" style='height:51.00pt;' x:num>4</td>
+    <td class="xl81" x:str>提测apk包必须符合命名规范：【游戏名_版本号_提交时间.apk】，且不含中文、空格等全角字符<font class="font7"><br/></font><font class="font6">说明:至少必须带有正确的游戏名、版本号即可</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl85" height="36" colspan="4" style='height:27.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>bug修改要求</td>
+   </tr>
+   <tr height="50" style='height:37.50pt;mso-height-source:userset;'>
+    <td class="xl80" height="50" style='height:37.50pt;' x:num>1</td>
+    <td class="xl82" x:str>游戏更新（原先已接入4399SDK上架的游戏）<font class="font5"><br/></font><font class="font6">需确保上一版本遗留bug均已修复，未修复的需备注说明相关情况</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="56" style='height:42.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="56" style='height:42.00pt;' x:num>2</td>
+    <td class="xl81" x:str>游戏包审核结果，反馈内容中表明必须修改的项请于当前版本修复<font class="font7"><br/></font><font class="font6">说明：若有疑问，可联系4399运营接口人 或 直接QQ群组反馈</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl85" height="36" colspan="4" style='height:27.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>材料完整性要求</td>
+   </tr>
+   <tr height="50" style='height:37.50pt;mso-height-source:userset;'>
+    <td class="xl80" height="50" style='height:37.50pt;' x:num>1</td>
+    <td class="xl83" x:str>《4399平台联运游戏上架文档》<font class="font5">需按照需求完整填写和提供每一项内容。</font><font class="font4"><br/></font><font class="font6">说明：若无法提供的内容请及时联系4399运营接口人并说明原因。</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="65.33" style='height:49.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="65.33" style='height:49.00pt;' x:num>2</td>
+    <td class="xl83" x:str>素材更新<font class="font5">（原先已接入4399SDK上架的游戏）</font><font class="font4"><br/></font><font class="font5">若新版本有更新原画、icon、截图等素材，</font><font class="font6">需周知4399运营接口人并提供新素材修改联运后台的配置</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="80" style='height:60.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="80" style='height:60.00pt;' x:num>3</td>
+    <td class="xl83" x:str>更新日志<font class="font5">（原先已接入4399SDK上架的游戏）</font><font class="font4"><br/></font><font class="font5">版本更新时需提供更新日志，且</font><font class="font6">更新日志和AndroidManifest.xml里配置的VersionName一致</font><font class="font5"><br/></font><font class="font5">说明：更新日志建议是对外公告的形式，不使用专业术语。</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="61.33" style='height:46.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="61.33" style='height:46.00pt;' x:num>4</td>
+    <td class="xl87" x:str>游戏名更换<font class="font7"><br/></font><font class="font7">原宣传图、截图、上架资料表的详细问题描述中有包含原游戏名，</font><font class="font6">需修改为新游戏名后重新提交</font></td>
+    <td class="xl88"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="48" style='height:36.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="48" style='height:36.00pt;' x:num>5</td>
+    <td class="xl89" x:str>后台提交icon图标须使用175*175的png格式，并包含<font class="font6">4399最新版的角标</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="50" style='height:37.50pt;mso-height-source:userset;'>
+    <td class="xl80" height="50" style='height:37.50pt;' x:num>6</td>
+    <td class="xl84" x:str>提供的上架材料（更新日志、截图、icon、宣传图等）不能出现赌博相关字眼，如：扎金花、炸金花、诈金花、梭哈、三张牌、赌场、赌、六合彩等等</td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl80" height="35" style='height:26.25pt;' x:num>7</td>
+    <td class="xl84" x:str>提供的上架材料（截图、icon、宣传图等）不能过于暴露</td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl85" height="36" colspan="4" style='height:27.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>游戏提测要求</td>
+   </tr>
+   <tr height="68" style='height:51.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="68" style='height:51.00pt;' x:num>1</td>
+    <td class="xl87" x:str>新游上线<font class="font5"><br/></font><font class="font5">根据上传需求把测试包上传至4399联运后台，并确认游戏信息完整</font><font class="font5"><br/></font><font class="font6">说明：上传前需周知4399运营接口人</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+   <tr height="92" style='height:69.00pt;mso-height-source:userset;'>
+    <td class="xl90" height="92" style='height:69.00pt;' x:num>2</td>
+    <td class="xl91" x:str>游戏更新（原先已接入4399SDK上架的游戏）<font class="font4"><br/></font><font class="font5">根据上传需求把测试包上传至4399联运后台，并确保上一版本遗留bug均已修复，未修复的需备注说明相关情况</font><font class="font4"><br/></font><font class="font6">说明：上传前周知4399运营接口人</font></td>
+    <td class="xl92"/>
+    <td class="xl93"/>
+   </tr>
+   <tr height="112" style='height:84.00pt;mso-height-source:userset;'>
+    <td class="xl80" height="112" style='height:84.00pt;' x:num>3</td>
+    <td class="xl87" x:str>第二次及以上提测<font class="font4"><br/></font><font class="font5">根据上传需求把测试包上传至4399联运后台，并确保上一版本遗留bug均已修复，未修复的需备注说明相关情况，最后提及需修改的材料，若反馈问题未涉及材料相关则无需提供</font><font class="font5"><br/></font><font class="font6">说明：上传前周知4399运营接口人</font></td>
+    <td class="xl81"/>
+    <td class="xl84"/>
+   </tr>
+  </table>
+<table width="1032" border="0" cellpadding="0" cellspacing="0" style='width:774.00pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="64" style='mso-width-source:userset;mso-width-alt:2048;width:48.00pt;'/>
+   <col width="546.67" class="xl24" style='mso-width-source:userset;mso-width-alt:17493;width:410.00pt;'/>
+   <col width="84" class="xl24" style='mso-width-source:userset;mso-width-alt:2688;width:63.00pt;'/>
+   <col width="337.33" class="xl23" style='mso-width-source:userset;mso-width-alt:10794;width:253.00pt;'/>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl25" height="35" width="1032" colspan="4" style='height:26.25pt;width:774.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>4399平台联运游戏测试规范-测试包检查<font class="font1">（2015年05月06日更新）</font></td>
+   </tr>
+   <tr height="29" style='height:21.75pt;mso-height-source:userset;'>
+    <td class="xl26" height="29" colspan="4" style='height:21.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>请在测试后填写测试结果，并将该文档和游戏包一起提交</td>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl27" height="35" style='height:26.25pt;' x:str>序 号</td>
+    <td class="xl27" x:str>检 查 点</td>
+    <td class="xl27" x:str>测试结果</td>
+    <td class="xl27" x:str>备注说明</td>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl31" height="35" colspan="4" style='height:26.25pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>游戏icon检查</td>
+   </tr>
+   <tr height="33" style='height:24.75pt;mso-height-source:userset;'>
+    <td class="xl28" height="33" style='height:24.75pt;' x:num>1</td>
+    <td class="xl29" x:str>游戏安装完成后，桌面上生成的icon图标<font class="font2">必须含</font><font class="font3">4399最新版角标</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl31" height="35" colspan="4" style='height:26.25pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>版本号检查</td>
+   </tr>
+   <tr height="48" style='height:36.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="48" style='height:36.00pt;' x:num>1</td>
+    <td class="xl30" x:str>游戏中各界面包含版本号显示的，必须<font class="font2">确保版本号显示正确且同AndroidManifest.xml文件显示的一致</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="48" style='height:36.00pt;mso-height-source:userset;'>
+    <td class="xl31" height="48" colspan="4" style='height:36.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>标识符检查</td>
+   </tr>
+   <tr height="62.67" style='height:47.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="62.67" style='height:47.00pt;' x:num>1</td>
+    <td class="xl33" x:str>新游戏<font class="font4">要求包名后缀为m4399</font><font class="font4"><br/></font><font class="font5">说明：如com.xxxx.gamename.m4399</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="54.67" style='height:41.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="54.67" style='height:41.00pt;' x:num>2</td>
+    <td class="xl33" x:str>更新游戏（原先已接入4399SDK上架的游戏）<font class="font4">要求游戏内版本号与其他各界面的版本保持一致</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="46" style='height:34.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="46" style='height:34.50pt;' x:num>3</td>
+    <td class="xl30" x:str>包名不能含除&quot;.&quot;、&quot;-&quot;和&quot;_&quot;外的其他标点符号</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="41" style='height:30.75pt;mso-height-source:userset;'>
+    <td class="xl31" height="41" colspan="4" style='height:30.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>初始化检查</td>
+   </tr>
+   <tr height="41" style='height:30.75pt;mso-height-source:userset;'>
+    <td class="xl28" height="41" style='height:30.75pt;' x:num>1</td>
+    <td class="xl29" x:str>启动游戏时，要求展现4399logo的闪屏</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl31" height="35" colspan="4" style='height:26.25pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>登录检查</td>
+   </tr>
+   <tr height="33" style='height:24.75pt;mso-height-source:userset;'>
+    <td class="xl28" height="33" style='height:24.75pt;' x:num>1</td>
+    <td class="xl29" x:str>必须接入SDK中的“登录”接口，或根据需要直接接入“切换用户按钮”</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="33" style='height:24.75pt;mso-height-source:userset;'>
+    <td class="xl28" height="33" style='height:24.75pt;' x:num>2</td>
+    <td class="xl29" x:str>不允许同时提供非4399账号登录的入口</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="49" style='height:36.75pt;mso-height-source:userset;'>
+    <td class="xl28" height="49" style='height:36.75pt;' x:num>3</td>
+    <td class="xl29" x:str>网络游戏，要求在游戏启动后，进入游戏前<font class="font3">必须使用4399支付SDK提供的登录接口进行登录</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="66" style='height:49.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="66" style='height:49.50pt;' x:num>4</td>
+    <td class="xl29" x:str>若当前已登录，进入SDK相关界面（如：个人中心、充值界面等）无需再次登录<font class="font4"><br/></font><font class="font5">说明：有时会出现登录后，在游戏中点击进入个人中心或充值界面，又跳转到登录界面，需再次登录</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="34" style='height:25.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="34" style='height:25.50pt;' x:num>5</td>
+    <td class="xl29" x:str>不允许提供非4399账号相关信息，如：非4399账号信息修改功能等等</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="47" style='height:35.25pt;mso-height-source:userset;'>
+    <td class="xl28" height="47" style='height:35.25pt;' x:num>6</td>
+    <td class="xl29" x:str>若当前已登录4399账号，退出游戏后，再次运行，应自动登录（除切换账号、注销账号、密码已修改等情况）</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="37" style='height:27.75pt;mso-height-source:userset;'>
+    <td class="xl32" height="37" colspan="4" style='height:27.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>悬浮窗口检查<font class="font4">（</font><font class="font3">接入该接口，提供个人中心、账号注销、游戏论坛等快捷入口</font><font class="font4">）</font></td>
+   </tr>
+   <tr height="38" style='height:28.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="38" style='height:28.50pt;' x:num>1</td>
+    <td class="xl29" x:str>点击悬浮窗口中的各快捷入口，游戏不允许出现闪退、奔溃等现象</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl32" height="35" colspan="4" style='height:26.25pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>悬浮窗口-个人中心检查<font class="font4">（</font><font class="font3">接入该接口，提供修改密码、切换帐号、设置帐号安全密码等功能</font><font class="font4">）</font></td>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl28" height="35" style='height:26.25pt;' x:num>1</td>
+    <td class="xl29" x:str>个人中心内，各功能操作不允许出现游戏闪退等现象</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="34" style='height:25.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="34" style='height:25.50pt;' x:num>2</td>
+    <td class="xl29" x:str>个人中心内，各UI界面展现不允许出现异常</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="69" style='height:51.75pt;mso-height-source:userset;'>
+    <td class="xl28" height="69" style='height:51.75pt;' x:num>3</td>
+    <td class="xl29" x:str>修改密码后，SDK会自动注销当前账户<font class="font4"><br/></font><font class="font5">说明：请确保接入全局注销接口，可根据游戏本身情况决定弹出4399登录界面，或重新游戏弹出登录界面</font></td>
+    <td class="xl29"/>
+    <td class="xl29"/>
+   </tr>
+   <tr height="87" style='height:65.25pt;mso-height-source:userset;'>
+    <td class="xl28" height="87" style='height:65.25pt;' x:num>4</td>
+    <td class="xl29" x:str>网络游戏，要求点击<font class="font4">&quot;切换账号</font><font class="font4">&quot;或</font><font class="font4">&quot;注销</font><font class="font4">&quot;按钮后，弹出4399登录界面，或重新游戏弹出登录界面</font><font class="font4"><br/></font><font class="font5">说明：常出现点击点击</font><font class="font5">&quot;切换账号</font><font class="font5">&quot;/</font><font class="font5">&quot;注销</font><font class="font5">&quot;后无反应</font><font class="font4">（</font><font class="font3">游戏方需确认是否有调用切换账号/注销的回调</font><font class="font4">）</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="54.67" style='height:41.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="54.67" style='height:41.00pt;' x:num>5</td>
+    <td class="xl29" x:str>点击<font class="font4">&quot;切换账号</font><font class="font4">&quot;或</font><font class="font4">&quot;注销</font><font class="font4">&quot;按钮后，需确保关闭游戏后，可正常登录，不会出现异常</font><font class="font4"><br/></font><font class="font5">说明：有时会出现点击</font><font class="font5">&quot;切换账号</font><font class="font5">&quot;/</font><font class="font5">&quot;注销</font><font class="font5">&quot;后，退出游戏，重新运行无法进入游戏</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="34" style='height:25.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="34" style='height:25.50pt;' x:num>6</td>
+    <td class="xl29" x:str>网络游戏，要求切换4399账号登录后，游戏内需更新显示为新登录账号的游戏数据</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="34" style='height:25.50pt;mso-height-source:userset;'>
+    <td class="xl31" height="34" colspan="4" style='height:25.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>屏幕自动旋转检查</td>
+   </tr>
+   <tr height="72" style='height:54.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="72" style='height:54.00pt;' x:num>1</td>
+    <td class="xl30" x:str>需保证游戏方向和接入的SDK相关界面方向保持一致。<font class="font4"><br/></font><font class="font5">说明：SDK支持横竖屏配置，需要在初始化时设置横竖屏，并且根据开发文档修改AndroidManifest.xml内相关Activity的配置</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="66.67" style='height:50.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="66.67" style='height:50.00pt;' x:num>2</td>
+    <td class="xl30" x:str>需保证游戏方向始终是一致的。<font class="font4"><br/></font><font class="font5">说明：经常出现在Android2.3、4.1上旋转方向保持一致，但在Android4.1、4.1上旋转方向不一致的情况。</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="36" style='height:27.00pt;' x:num>3</td>
+    <td class="xl29" x:str>若开启自动旋转屏幕功能，需保证旋转后不会出现闪退等现象</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="34" style='height:25.50pt;mso-height-source:userset;'>
+    <td class="xl32" height="34" colspan="4" style='height:25.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>充值检查<font class="font4">（</font><font class="font3">可联系4399运营接口人获取测试帐号，测试帐号中的游币只允许在对应的游戏中进行充值测试，测试帐号生成的所有订单不纳⼊入结算</font><font class="font4">）</font></td>
+   </tr>
+   <tr height="40" style='height:30.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="40" style='height:30.00pt;' x:num>1</td>
+    <td class="xl30" x:str>所有需要支付的，必须且只能接入4399支付，不能存在其他支付渠道</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="40" style='height:30.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="40" style='height:30.00pt;' x:num>2</td>
+    <td class="xl30" x:str>游戏中若有多个充值入口，必须确保每个入口均能正常打开，且能正常充值</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="40" style='height:30.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="40" style='height:30.00pt;' x:num>3</td>
+    <td class="xl30" x:str>游戏商品进行打折促销、首充赠送等活动，需在活动公告、商品列表等地方有相应的说明</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="82" style='height:61.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="82" style='height:61.50pt;' x:num>4</td>
+    <td class="xl30" x:str>从游戏的商品列表进入到4399支付界面，4399充值界面显示的名称、价格必须与游戏中显示的保持一致<font class="font4"><br/></font><font class="font5">说明：请在4399运营接口人提供的联运后台中设置游戏货币名称(如：金币、钻石等</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="47" style='height:35.25pt;mso-height-source:userset;'>
+    <td class="xl28" height="47" style='height:35.25pt;' x:num>5</td>
+    <td class="xl30" x:str>在4399支付界面，到账游戏币需与支付的金额比例一致<span style='mso-spacerun:yes;'>&nbsp;</span></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="50" style='height:37.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="50" style='height:37.50pt;' x:num>6</td>
+    <td class="xl30" x:str>玩家游币不足或是进入4399支付界面后不支付，必须保证返回游戏界面，可继续游戏，不会出现闪退或是一直处于loading状态等现象</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="50" style='height:37.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="50" style='height:37.50pt;' x:num>7</td>
+    <td class="xl30" x:str>在4399支付界面支付失败后，必须给予合理提示，且未能获得所购买的虚拟币或物品等</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="67" style='height:50.25pt;mso-height-source:userset;'>
+    <td class="xl28" height="67" style='height:50.25pt;' x:num>8</td>
+    <td class="xl30" x:str>在4399支付界面支付完成后，点击返回，能正常返回，不会出现其他不恰当的提示(如：充值失败等)<font class="font4"><br/></font><font class="font5">说明：常出现充值成功后，支付宝、财付通点击</font><font class="font5">&quot;返回商户</font><font class="font5">&quot;链接无反应</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="45" style='height:33.75pt;mso-height-source:userset;'>
+    <td class="xl28" height="45" style='height:33.75pt;' x:num>9</td>
+    <td class="xl30" x:str>在4399支付界面支付完成回到游戏中，购买的虚拟币或物品等必须在3-5分钟内到账</td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="66" style='height:49.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="66" style='height:49.50pt;' x:num>10</td>
+    <td class="xl29" x:str>在4399支付界面支付完成回到游戏中，购买的虚拟币或物品等必须能及时刷新，无需重启游戏<font class="font4"><br/></font><font class="font5">说明：若无法自动刷新，需弹框提示玩家如何操作或者添加手动刷新功能</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="66" style='height:49.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="66" style='height:49.50pt;' x:num>11</td>
+    <td class="xl30" x:str>游戏中充值订单号、消费订单号不允许重复<font class="font4"><br/></font><font class="font5">说明：有时选择充值金额进入支付界面后，直接关闭支付界面返回，再次选择充值进入进入支付界面，订单号和上一次的订单号相同.</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="76" style='height:57.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="76" style='height:57.00pt;' x:num>12</td>
+    <td class="xl29" x:str>游戏内不允许含有任何非4399充值方式及非4399充值方式介绍（如活动、公告、帮助说明或引导界面等）<font class="font4"><br/></font><font class="font5">说明：点击无响应的按钮也不允许出现（必须屏蔽相关按钮）</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="66.67" style='height:50.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="66.67" style='height:50.00pt;' x:num>13</td>
+    <td class="xl30" x:str>订单号（mark）不允许出现字母、数字、‘|’、'-'、‘_’以外的任何符号，并且需保证唯一性，不可重复。<font class="font4"><br/></font><font class="font5">说明：若重复回调相同的mark应保证不会重复发放虚拟币或物品。</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="96" style='height:72.00pt;mso-height-source:userset;'>
+    <td class="xl37" height="96" style='height:72.00pt;' x:num>14</td>
+    <td class="xl29" x:str>充值成功后，在游戏的充值服务器里可以收到充值的通知，并且充值服务器返回了成功的结果.<font class="font4"><br/></font><font class="font5">说明：说明：返回的结果必须在5秒内返回，否则4399平台该笔订单的状态可能为异常状态，4399平台将再次请求回调地址。</font></td>
+    <td class="xl29"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="37" style='height:27.75pt;mso-height-source:userset;'>
+    <td class="xl32" height="37" colspan="4" style='height:27.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>更新升级检查<font class="font4">（</font><font class="font5">提供游戏本身更新升级功能，支持强制更新和非强制更新，可通过联运后台配置</font><font class="font4">）</font></td>
+   </tr>
+   <tr height="70" style='height:52.50pt;mso-height-source:userset;'>
+    <td class="xl37" height="70" style='height:52.50pt;' x:num>1</td>
+    <td class="xl30" x:str>提测游戏包更新升级接口的模式必须是正式模式，不能为调试模式<font class="font4"><br/></font><font class="font5">说明：调试模式主要用于开发者自测使用，开启后，调用检查更新直接返回更新提示（是否强制更新根据联运后台配置而定）</font></td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="68" style='height:51.00pt;mso-height-source:userset;'>
+    <td class="xl37" height="68" style='height:51.00pt;' x:num>2</td>
+    <td class="xl30" x:str>若本次升级需要执行强制更新(即不更新则无法进入游戏)，需将更新后包提交给运营接口人进行设置<font class="font4"><br/></font><font class="font5">说明：若无联运后台访问地址，可联系4399运营接口人获取</font></td>
+    <td class="xl34"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="56" style='height:42.00pt;mso-height-source:userset;'>
+    <td class="xl37" height="56" style='height:42.00pt;' x:num>3</td>
+    <td class="xl30" x:str>如果游戏方自主接入自动更新接口时，若本次升级需要执行强制更新(即不更新则无法进入游戏)，必须保证在更新完成前，玩家无法进入游戏中</td>
+    <td class="xl34"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="64" style='height:48.00pt;mso-height-source:userset;'>
+    <td class="xl37" height="64" style='height:48.00pt;' x:num>4</td>
+    <td class="xl30" x:str>如果游戏方接入自动更新接口，检查更新失败时（如：网络错误或服务器错误），必须给予合理的处理<font class="font4"><br/></font><font class="font5">说明：尤其是强制更新下，确认是否会导致跳过强制更新直接进入游戏</font></td>
+    <td class="xl34"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="34" style='height:25.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="34" style='height:25.50pt;' x:num>5</td>
+    <td class="xl30" x:str>确保游戏内配置的版本号与所计划发布的版本号一致，每次升级需记得调整版本号</td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="37" style='height:27.75pt;mso-height-source:userset;'>
+    <td class="xl31" height="37" colspan="4" style='height:27.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>兼容性检查</td>
+   </tr>
+   <tr height="40" style='height:30.00pt;mso-height-source:userset;'>
+    <td class="xl28" height="40" style='height:30.00pt;' x:num>1</td>
+    <td class="xl30" x:str>游戏包双击安装，设备要求、固件要求必须填写，不能为空或者与实际不符</td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="79" style='height:59.25pt;mso-height-source:userset;'>
+    <td class="xl28" height="79" style='height:59.25pt;' x:num>2</td>
+    <td class="xl30" x:str>在游戏本身所标识适配的设备类型、固件版本上必须能正常运行，不会出现无法进入游戏、闪退、点击无响应等情况<font class="font4"><br/></font><font class="font5">说明：如标识兼容 2.3及以上固件，但在2.3固件上，一进入就崩溃（若不能兼容，请修改游戏相应的适配信息）</font></td>
+    <td class="xl34"/>
+    <td class="xl30"/>
+   </tr>
+   <tr height="50" style='height:37.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="50" style='height:37.50pt;' x:num>3</td>
+    <td class="xl30" x:str>在游戏本身所标识适配的设备类型、固件版本上，SDK相关界面必须能完整显示<font class="font4"><br/></font><font class="font5">说明：登录界面和充值中心顶部经常会被遮住一些</font></td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="46" style='height:34.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="46" style='height:34.50pt;' x:num>4</td>
+    <td class="xl30" x:str>游戏若装在设备上，必须确保各功能按钮可正常操作<font class="font4"><br/></font><font class="font5">说明：常出现在某设备上，顶部关闭按钮无法关闭问题</font></td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="50" style='height:37.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="50" style='height:37.50pt;' x:num>5</td>
+    <td class="xl30" x:str>游戏必须能正常运行，运行期间不存在明显或是频繁的的崩溃情况，影响用户体验<font class="font4"><br/></font><font class="font5">说明：若是个别现象，开发者认为不需要解决的，请答复说明情况</font></td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl31" height="35" colspan="4" style='height:26.25pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>客服信息、外链检查</td>
+   </tr>
+   <tr height="38" style='height:28.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="38" style='height:28.50pt;' x:num>1</td>
+    <td class="xl30" x:str>不能包含引导玩家到其他非4399渠道的相关网页、下载链接或提示（包括官网）</td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="38" style='height:28.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="38" style='height:28.50pt;' x:num>2</td>
+    <td class="xl30" x:str>不能包含引导玩家到其他游戏平台进行好评或给予奖励等相关网页、链接或提示</td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="38" style='height:28.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="38" style='height:28.50pt;' x:num>3</td>
+    <td class="xl30" x:str>不能包含引导玩家访问非4399官网、4399论坛的相关信息</td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="38" style='height:28.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="38" style='height:28.50pt;' x:num>4</td>
+    <td class="xl38" x:str><a href="mailto:%E5%BF%85%E9%A1%BB%E5%8E%BB%E6%8E%89%E5%88%86%E4%BA%AB%E4%B8%AD%E7%9A%84@%E5%AE%98%E6%96%B9%E5%BE%AE%E5%8D%9A%23%E8%AF%9D%E9%A2%98%E7%AD%89%E9%93%BE%E6%8E%A5" target="_parent">必须去掉分享中的@官方微博#话题等链接</a></td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="45" style='height:33.75pt;mso-height-source:userset;'>
+    <td class="xl28" height="45" style='height:33.75pt;' x:num>5</td>
+    <td class="xl29" x:str>游戏中不能出现facebook、twitter分享<font class="font4"><br/></font><font class="font5">说明：国内不支持facebook、twitter，影响用户体验</font></td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="38" style='height:28.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="38" style='height:28.50pt;' x:num>6</td>
+    <td class="xl30" x:str>不能包含4399渠道玩家无法参与的相关活动</td>
+    <td class="xl34"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="37" style='height:27.75pt;mso-height-source:userset;'>
+    <td class="xl31" height="37" colspan="4" style='height:27.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>其他检查</td>
+   </tr>
+   <tr height="225" style='height:168.75pt;mso-height-source:userset;'>
+    <td class="xl28" height="225" style='height:168.75pt;' x:num>1</td>
+    <td class="xl29" x:str>服务器不能处于维护阶段或是无法持续访问状态<font class="font4"><br/></font><font class="font5">说明：若游戏服务器运行的是旧版本，而提交4399的测试包必须连接最新的服务器版本才可正常测试，可参考下解决方案：</font><font class="font5"><br/></font><font class="font5">1）客户端的选择服务器界面提供一个测试服，4399测试时点击进入该测试服务器进行测试</font><font class="font5"><br/></font><font class="font5">2）服务端通过4399提供的ip地址、设备id或是用户id等判断，加入该名单中的则进入的是测试服务器</font><font class="font5"><br/></font><font class="font5">3）游戏服务端通过客户端的版本号判断，v1.0的客户端连接A服务器，v2.0的客户端连接B服务器</font><font class="font5"><br/></font><font class="font5">4）客户端代码中搞个后门代码，判断手机中游戏目录下是否有某个文件（将该文件连同测试包一起提供同步QA），读取该文件中的地址，若有 则连接该地址的测试服务器</font></td>
+    <td class="xl29"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl35" height="36" style='height:27.00pt;' x:num>2</td>
+    <td class="xl36" x:str>游戏包安装后，手机桌面的名称、联运后台的名称要求必须为简体中文</td>
+    <td class="xl36"/>
+    <td class="xl39"/>
+   </tr>
+   <tr height="66" style='height:49.50pt;mso-height-source:userset;'>
+    <td class="xl28" height="66" style='height:49.50pt;' x:num>3</td>
+    <td class="xl29" x:str>游戏中任意可以输入文本的地方，不得包含敏感词汇，必须有屏蔽敏感词的功能<br/>说明：如文化部要求必须屏蔽的敏感词（钓鱼岛、尖阁列岛等），可联系4399运营接口人获取敏感词列表</td>
+    <td class="xl29"/>
+    <td class="xl23"/>
+   </tr>
+   <tr height="51" style='height:38.25pt;mso-height-source:userset;'>
+    <td class="xl28" height="51" style='height:38.25pt;' x:num>4</td>
+    <td class="xl29" x:str>所有的游戏UI界面，均不能出现赌博相关字眼，如：扎金花、炸金花、诈金花、梭哈、三张牌、赌场、赌、六合彩等等</td>
+    <td class="xl40"/>
+    <td class="xl23"/>
+   </tr>
+  </table>
+<table width="782" border="0" cellpadding="0" cellspacing="0" style='width:586.50pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="117.33" class="xl23" style='mso-width-source:userset;mso-width-alt:3754;width:88.00pt;'/>
+   <col width="86.67" class="xl23" style='mso-width-source:userset;mso-width-alt:2773;width:65.00pt;'/>
+   <col width="578" class="xl24" style='mso-width-source:userset;mso-width-alt:18496;width:433.50pt;'/>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl29" height="35" width="782" colspan="3" style='height:26.25pt;width:586.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>4399联运游戏--SDK更新说明</td>
+   </tr>
+   <tr height="29" style='height:21.75pt;mso-height-source:userset;'>
+    <td class="xl30" height="29" colspan="3" style='height:21.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>2015年05月06日更新</td>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl25" height="35" style='height:26.25pt;' x:str>更新时间</td>
+    <td class="xl25" x:str>版本号</td>
+    <td class="xl25" x:str>更新内容</td>
+   </tr>
+   <tr height="164" style='height:123.00pt;mso-height-source:userset;'>
+    <td class="xl31" height="164" style='height:123.00pt;' x:num="42130.">2015/5</td>
+    <td class="xl26" x:str>V2.4.0.5</td>
+    <td class="xl28" x:str>更新日志：<br/>1、悬浮窗-&gt;个人中心,消息中心和投诉咨询页面的优化与完善<br/>2、悬浮窗新增“发现”入口，原“关闭”入口移到“个人中心”<br/>3、增加4399用户中心维护的提示功能，以在用户中心宕机的情况下给用户友好提示<br/>4、优化未安装游戏盒时的弹窗提示<br/>5、充值界面首页增加“历史订单”入口，以查看近期订单<br/>6、修复之前版本的一些bug<span style='mso-spacerun:yes;'>&nbsp;</span></td>
+   </tr>
+   <tr height="164" style='height:123.00pt;mso-height-source:userset;'>
+    <td class="xl31" height="164" style='height:123.00pt;' x:num="42060.">2015/2</td>
+    <td class="xl26" x:str>V2.3.0.4</td>
+    <td class="xl28" x:str>更新日志：<br/>1、增加测试模式<br/>2、去除setGameName()接口，游戏名读取服务端配置<br/>3、支付宝升级，并进一步完善充值流程，修复某些机器上“取消”充值会Crash的问题<br/>4、悬浮窗-&gt;个人中心，新增投诉入口，详情参考Demo<br/>5、悬浮窗-&gt;个人中心，新增消息推送功能，详情咨询运营相关人员<br/>6、增量更新优化，优化了更新日志的显示和检查更新失败的处理流程<br/>7、修复之前版本的一些bug<span style='mso-spacerun:yes;'>&nbsp;</span></td>
+   </tr>
+   <tr height="117.33" style='height:88.00pt;mso-height-source:userset;'>
+    <td class="xl31" height="117.33" style='height:88.00pt;' x:num="41996.">2014/12</td>
+    <td class="xl26" x:str>V2.2.0.2</td>
+    <td class="xl28" x:str>更新日志：<br/>1、移动短代策略调整<br/>2、优化悬浮窗弹窗结构，改为扇形，优化弹窗动画<br/>3、合并登出和个人中心里帐号切换接口到初始化的全局接口里<br/>4、修复先前发布版本中已知的bug<span style='mso-spacerun:yes;'>&nbsp;</span></td>
+   </tr>
+   <tr height="188" style='height:141.00pt;mso-height-source:userset;'>
+    <td class="xl31" height="188" style='height:141.00pt;' x:num="41968.">2014/11</td>
+    <td class="xl26" x:str>V2.1.1.13</td>
+    <td class="xl27" x:str>更新日志：<br/>1、增加游戏退出接口<br/>2、优化增量更新<br/>3、扩充mark字段，新增支持'|'、'-'、'_'字符<br/>4、充值接口金额改为整型<br/>5、增加4399游戏盒官网、攻略、礼包3个入口<br/>6、优化SDK初始化逻辑，加快初始化速度，修正了部分游戏启动时黑屏的bug<br/>7、更新服务器端登录二次验证地址<span style='mso-spacerun:yes;'>&nbsp;</span></td>
+   </tr>
+   <tr height="93.33" style='height:70.00pt;mso-height-source:userset;'>
+    <td class="xl31" height="93.33" style='height:70.00pt;' x:num="41936.">2014/10</td>
+    <td class="xl26" x:str>V2.1.0.4</td>
+    <td class="xl27" x:str>更新日志：<br/>1、全新的接口设计，不兼容V1.1.2及以前的旧版本<br/>2、重构UI设计<br/>3、增加4399游戏盒授权、游戏圈<span style='mso-spacerun:yes;'>&nbsp;</span></td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl31" height="36" style='height:27.00pt;'/>
+    <td class="xl23"/>
+    <td class="xl24"/>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl31" height="36" style='height:27.00pt;'/>
+    <td class="xl23"/>
+    <td class="xl24"/>
+   </tr>
+   <tr height="33" style='height:24.75pt;mso-height-source:userset;'>
+    <td class="xl31" height="33" style='height:24.75pt;'/>
+    <td class="xl23"/>
+    <td class="xl24"/>
+   </tr>
+   <tr height="33" style='height:24.75pt;mso-height-source:userset;'>
+    <td class="xl31" height="33" style='height:24.75pt;'/>
+    <td class="xl23"/>
+    <td class="xl24"/>
+   </tr>
+   <tr height="104" style='height:78.00pt;mso-height-source:userset;'>
+    <td class="xl32" height="104" colspan="3" style='height:78.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>注：若出现如下情况，请联系我们<font class="font1"><br/></font><font class="font2">1、无法通过测试反馈的bug描述重现问题</font><font class="font2"><br/></font><font class="font2">2、通过测试反馈的bug描述重现后，不存在bug中所描述的问题</font><font class="font2"><br/></font><font class="font2">2、测试反馈的bug确实存在，但不清楚如何解决</font><font class="font2"><br/></font><font class="font2">3、测试反馈的bug，分析原因后，觉的需要技术支持介入</font></td>
+   </tr>
+  </table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

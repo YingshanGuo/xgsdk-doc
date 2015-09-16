@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3><font face="微软雅黑" >当乐：</font> </h3>
+<table width="1293" border="0" cellpadding="0" cellspacing="0" style='width:969.75pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="33" class="xl181" style='mso-width-source:userset;mso-width-alt:1056;width:24.75pt;'/>
+   <col width="85" class="xl181" style='mso-width-source:userset;mso-width-alt:2720;width:63.75pt;'/>
+   <col width="72" class="xl182" style='width:54.00pt;'/>
+   <col width="266" class="xl182" style='mso-width-source:userset;mso-width-alt:8512;width:199.50pt;'/>
+   <col width="422" class="xl181" style='mso-width-source:userset;mso-width-alt:13504;width:316.50pt;'/>
+   <col width="82" class="xl181" style='mso-width-source:userset;mso-width-alt:2624;width:61.50pt;'/>
+   <col width="261" class="xl181" style='mso-width-source:userset;mso-width-alt:8352;width:195.75pt;'/>
+   <col width="0" class="xl181" style='display:none;mso-width-source:userset;mso-width-alt:0;width:0.00pt;'/>
+   <col width="72" class="xl181" style='width:54.00pt;'/>
+   <tr height="40" style='height:30.00pt;mso-height-source:userset;'>
+    <td class="xl204" height="40" width="1293" colspan="9" style='height:30.00pt;width:969.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>请在生产环境测试后，填写测试结果（填写“通过”或“不通过”）后，将该表和游戏包一起提交给当乐接口人</td>
+   </tr>
+   <tr height="33.27" style='height:24.95pt;mso-height-source:userset;'>
+    <td class="xl202" height="33.27" colspan="3" style='height:24.95pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>测试使用的当乐ID:</td>
+    <td class="xl203" x:str>（必填）</td>
+    <td class="xl202" x:str>机型、固件版本：</td>
+    <td class="xl191"/>
+    <td class="xl201" x:str>（必填）</td>
+    <td class="xl191"/>
+    <td class="xl184"/>
+   </tr>
+   <tr height="19" class="xl180" style='height:14.25pt;'>
+    <td class="xl198" height="19" style='height:14.25pt;' x:str>平台</td>
+    <td class="xl198" x:str>功能</td>
+    <td class="xl200" x:str>分类</td>
+    <td class="xl200" x:str>测试点</td>
+    <td class="xl200" x:str>期望的结果</td>
+    <td class="xl200" x:str>优先级</td>
+    <td class="xl200" x:str>论坛说明及解决方案</td>
+    <td class="xl199"/>
+    <td class="xl198" x:str>测试结果</td>
+   </tr>
+   <tr height="45.27" style='height:33.95pt;mso-height-source:userset;'>
+    <td class="xl183" height="1666.33" rowspan="43" style='height:1249.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>客户端游戏</td>
+    <td class="xl197" x:str>兼容性测试</td>
+    <td class="xl184"/>
+    <td class="xl184" x:str>在不同固件及机型下安装游戏运行</td>
+    <td class="xl184" x:str>游戏页面均可正常展现，不会出现无法进入游戏.卡死.黑屏白屏.点击无响应等情况。</td>
+    <td class="xl185" x:str>高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="45.27" style='height:33.95pt;mso-height-source:userset;'>
+    <td class="xl184" x:str>游戏icon</td>
+    <td class="xl184"/>
+    <td class="xl196" x:str>检查游戏icon</td>
+    <td class="xl184" x:str>游戏icon有当乐角标<br/></td>
+    <td class="xl185" x:str>高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="45.27" style='height:33.95pt;mso-height-source:userset;'>
+    <td class="xl184" x:str>外部链接及其它公告信息</td>
+    <td class="xl184"/>
+    <td class="xl189" x:str>检查游戏内是否存在其它与当乐渠道相冲突的信息或活动</td>
+    <td class="xl184" x:str>游戏内不允许出现非当乐渠道的登录界面、论坛、支付方式、绑定手机、邮箱、官方网址、QQ群、微博、微信等及其它与当乐相冲突的活动说明等。</td>
+    <td class="xl185" x:str>高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="45.27" style='height:33.95pt;mso-height-source:userset;'>
+    <td class="xl184" x:str>开机启动页（闪屏）</td>
+    <td class="xl184"/>
+    <td class="xl189" x:str>检查游戏运行时是否添加包含当乐LOGO的游戏启动页</td>
+    <td class="xl184" x:str>按接入文档</td>
+    <td class="xl185" x:str>高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="64" style='height:48.00pt;mso-height-source:userset;'>
+    <td class="xl186" rowspan="39" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>SDK相关功能</td>
+    <td class="xl192" rowspan="8" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>登录</td>
+    <td class="xl189" x:str>初始化及登录调用</td>
+    <td class="xl184" x:str>游戏运行后直接初始化，在初始化成功后调用登录（有公告时在登录前先显示当乐公告）<br/><font class="font1">注意：不允许在运行游戏后，需点击“登录”、“开始”等按钮，再初始化登录，会影响游戏上线后的激活转化率，请重视</font></td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="41.27" style='height:30.95pt;mso-height-source:userset;'>
+    <td class="xl189" x:str>检查屏幕方向</td>
+    <td class="xl184" x:str>横屏游戏屏幕方向：横屏；竖屏游戏屏幕方向：竖屏</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl189" x:str>检查输入正确的账号密码，可以登陆游戏；反之，无法登录游戏。</td>
+    <td class="xl184" x:str>输入正确的账号密码，可以登陆游戏；反之，无法登录游戏。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="80" style='height:60.00pt;'>
+    <td class="xl189" x:str>自动登录<br/>1.已经登录过的账号进入游戏后会自动登录，勾选某账号为默认账号时，自动登录时会登录默认账号；<br/>2.登录成功后注销。</td>
+    <td class="xl189" x:str>1.实现自动登录<br/>2.正常调出登录界面</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>三方登录：QQ、微博</td>
+    <td class="xl189" x:str>正确账号登录成功，反之，无法登录。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>手机号登录</td>
+    <td class="xl189" x:str>已注册的手机号，可通过短信验证码成功登录。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>切换账号</td>
+    <td class="xl189" x:str>登录时切换账号调出登录界面，可成功登录账号。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl196" x:str>验证sdk调用情况</td>
+    <td class="xl184" x:str>游戏只出现一个调用SDK的入口</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl195" rowspan="3" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>注册</td>
+    <td class="xl196" x:str>手机号注册</td>
+    <td class="xl184" x:str>1.输入手机号码获取验证码，输入正确的验证码之后注册成功<br/>2.进入游戏正常</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl196" x:str>邮箱注册</td>
+    <td class="xl184" x:str>1.输入邮箱地址和密码，获取验证，验证成功后自动登录成功，进入游戏正常</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>用户名注册</td>
+    <td class="xl184" x:str>1.成功注册当乐账号后进入游戏</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl195" x:str>注销</td>
+    <td class="xl189" x:str>浮框界面点击注销</td>
+    <td class="xl184" x:str>1、成功注销用户，调出登录界面。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl192" rowspan="13" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>支付</td>
+    <td class="xl189" x:str>订单金额和商品</td>
+    <td class="xl184" x:str>订单金额和商品所输入数据与用户选择一致。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="48" style='height:36.00pt;'>
+    <td class="xl194" x:str>乐豆支付：<br/>1.乐豆数&gt;=要支付的金额，1元=100乐豆。<br/>2.乐豆数&lt;要支付的金额</td>
+    <td class="xl184" x:str>1.支付成功，可以正常扣除乐豆数，获得游戏支付道具。<br/>2.乐豆不足，跳转选择的支付方式的界面，通过第三方支付方式支付不足部分的金额。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="128" style='height:96.00pt;'>
+    <td class="xl194" x:str>充值卡支付：<br/>1.使用正确的充值卡号及密码支付<br/>2.使用虚拟的假充值卡号及密码支付<span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>（如卡号：1234567890 密码：12345678）</td>
+    <td class="xl193" x:str>1.支付成功，玩家获得游戏支付道具。<br/>2.支付失败，玩家未获得游戏支付道具。<br/>注意：<br/>1、支付失败时，不允许出现提示“支付成功”的提示语句，或在支付过程中提示“支付成功”等<br/>2：订单从当乐服务器通知游戏服务器时，游戏需根据orderStatus参数的值判断是否给玩家过账虚拟货币。<br/>3：充值卡支付时还有多出金额时转换为乐豆发放给用户。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl187" x:str>请填写：<br/>支付成功的订单号：<br/>支付失败的订单号：</td>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="64" style='height:48.00pt;'>
+    <td class="xl194" x:str>支付宝钱包支付<br/></td>
+    <td class="xl193" x:str>1.检测设备装有支付宝钱包客户端将直接调用支付宝钱包快捷方式支付；<br/>2.未安装支付宝钱包客户端，将调用WAP版支付宝，输入正确的账号可支付成功，玩家获得相应游戏道具。<br/>3.支付失败，玩家不能获得游戏支付道具。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl194" x:str>支付宝支付</td>
+    <td class="xl193" x:str>1.输入正确的账号可支付成功，玩家获得相应游戏道具。<br/>2.支付失败，玩家不能获得游戏支付道具。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl194" x:str>储蓄卡支付</td>
+    <td class="xl193" x:str>1.输入正确的账号可支付成功，玩家获得相应游戏道具。<br/>2.支付失败，玩家不能获得游戏支付道具。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl194" x:str>信用卡支付</td>
+    <td class="xl193" x:str>1.输入正确的账号可支付成功，玩家获得相应游戏道具。<br/>2.支付失败，玩家不能获得游戏支付道具。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl194" x:str>财付通支付</td>
+    <td class="xl193" x:str>1.输入正确的账号可支付成功，玩家获得相应游戏道具。<br/>2.支付失败，玩家不能获得游戏支付道具。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl194" x:str>先玩后付支付</td>
+    <td class="xl193" x:str>1.输入正确的账号可支付成功，玩家获得相应游戏道具。<br/>2.支付失败，玩家不能获得游戏支付道具。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="64" style='height:48.00pt;'>
+    <td class="xl194" x:str>NFC支付</td>
+    <td class="xl194" x:str>1.设备具有NFC功能模块时，在支付界面可选择NFC支付图标，反之不显示。<br/>2.通过NFC支付可以支付成功，玩家获得相应游戏道具。<br/>3.支付失败，玩家不能获得游戏支付道具。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl194" x:str>银联卡支付</td>
+    <td class="xl193" x:str>1.输入正确的账号可支付成功，玩家获得相应游戏道具。<br/>2.支付失败，玩家不能获得游戏支付道具。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl194" x:str>支付后返回游戏，不会出现卡死，黑屏，不合理或误导玩家的提示</td>
+    <td class="xl193" x:str>1.正常返回游戏，不会导致卡死或黑屏<br/>2.不出现不合理或误导玩家的提示</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="52" style='height:39.00pt;mso-height-source:userset;'>
+    <td class="xl188" x:str><span style='mso-spacerun:yes;'>&nbsp;</span>收到支付回调通知后进行支付金额校验</td>
+    <td class="xl188" x:str>1. 回调通知的金额和商品价格是否一致，若不一致则不进行发货</td>
+    <td class="xl185" x:str><span style='mso-spacerun:yes;'>&nbsp;</span></td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="128" style='height:96.00pt;'>
+    <td class="xl192" rowspan="10" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>浮框</td>
+    <td class="xl189" x:str>点击账户</td>
+    <td class="xl184" x:str>1、正常调出账户信息页面，页面元素：消息按钮、导航栏（账户、论坛、攻略、礼包、帮助）、用户信息、我的物品（我的礼包、我的特权、我的钱包、代金卷）、账号安全（登录密码、支付密码、密保方式、账号绑定），各个界面点击进入相应界面，各功能基本能成功跑通。<br/>2、各导航栏随意切换，界面正常显示。<br/>3、用户信息展示正确，修改昵称能成功修改。<br/>4、我的物品中各功能点击正常跳转，界面正常显示，相应功能正确。<br/>5、账号安全中各界面正常跳转，界面显示正确。</td>
+    <td class="xl185" x:str>高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="48" style='height:36.00pt;'>
+    <td class="xl189" x:str>点击充值</td>
+    <td class="xl184" x:str>1、成功进入当乐钱包中心，使用各充值方式都能充值成功，包括：支付宝钱包、支付宝、财付通、信用卡、储蓄卡、充值卡、先玩后付。<br/>2、点击消息按钮成功进入消息界面。</td>
+    <td class="xl185" x:str>最高</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>点击论坛</td>
+    <td class="xl184" x:str>正常跳转，论坛页显示正确，账户与登录账户数据一致。</td>
+    <td class="xl185" x:str>中</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>点击攻略</td>
+    <td class="xl184" x:str>正常跳转，攻略界面显示正确。</td>
+    <td class="xl185" x:str>中</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>点击消息</td>
+    <td class="xl184" x:str>正常跳转，消息界面显示正确。</td>
+    <td class="xl185" x:str>中</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>点击礼包</td>
+    <td class="xl184" x:str>正常跳转，礼包界面显示正确。</td>
+    <td class="xl185" x:str>中</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl189" x:str>点击订单</td>
+    <td class="xl184" x:str>1、正常跳转，订单界面显示正确，订单显示正确。<br/>2、订单中投诉功能正常。</td>
+    <td class="xl185" x:str>中</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>点击客服</td>
+    <td class="xl184" x:str>正常跳转，客服界面显示正确。</td>
+    <td class="xl185" x:str>中</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl189" x:str>点击帮助</td>
+    <td class="xl184" x:str>1、正常跳转，帮助界面显示正确。<br/>2、各功能正常。</td>
+    <td class="xl185" x:str>中</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="32" style='height:24.00pt;'>
+    <td class="xl189" x:str>点击设置</td>
+    <td class="xl184" x:str>1、正常跳转，设置界面显示正确。<br/>2、设置浮标显示和消息接收对应功能正确。</td>
+    <td class="xl185" x:str>中</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl192" x:str>浮标</td>
+    <td class="xl189" x:str>查看小熊图标</td>
+    <td class="xl189" x:str>登录成功后游戏界面显示小熊图标。</td>
+    <td class="xl185" x:str>低</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl185" rowspan="3" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>其他</td>
+    <td class="xl189" x:str>图片广告位</td>
+    <td class="xl189" x:str>有图片广告位时，正确显示图片广告位。</td>
+    <td class="xl185" x:str>低</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>公告</td>
+    <td class="xl189" x:str>有公告时，在弹出登录框或自动登录前显示公告面板。</td>
+    <td class="xl185" x:str>低</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+   <tr height="22" style='height:16.50pt;'>
+    <td class="xl189" x:str>策略验证码</td>
+    <td class="xl189" x:str>反复请求特定接口时，策略验证码功能正常。</td>
+    <td class="xl185" x:str>低</td>
+    <td class="xl184"/>
+    <td class="xl191"/>
+    <td class="xl190" x:str>请填写</td>
+   </tr>
+  </table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

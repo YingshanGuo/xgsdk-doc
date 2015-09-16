@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3><font face="微软雅黑" >魅族：</font> </h3>
+<table width="1108" border="0" cellpadding="0" cellspacing="0" style='width:831.00pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="46" class="xl25" style='mso-width-source:userset;mso-width-alt:1472;width:34.50pt;'/>
+   <col width="294" class="xl25" style='mso-width-source:userset;mso-width-alt:9408;width:220.50pt;'/>
+   <col width="94" class="xl26" style='mso-width-source:userset;mso-width-alt:3008;width:70.50pt;'/>
+   <col width="383" class="xl25" style='mso-width-source:userset;mso-width-alt:12256;width:287.25pt;'/>
+   <col width="174" class="xl25" style='mso-width-source:userset;mso-width-alt:5568;width:130.50pt;'/>
+   <col width="117" class="xl25" style='mso-width-source:userset;mso-width-alt:3744;width:87.75pt;'/>
+   <tr height="19" style='height:14.25pt;'>
+    <td class="xl27" height="19" width="46" style='height:14.25pt;width:34.50pt;' x:str>ID</td>
+    <td class="xl27" width="294" style='width:220.50pt;' x:str>测试步骤</td>
+    <td class="xl28" width="94" style='width:70.50pt;' x:str>priority</td>
+    <td class="xl29" width="383" style='width:287.25pt;' x:str>期望结果</td>
+    <td class="xl29" width="174" style='width:130.50pt;' x:str>备注</td>
+    <td class="xl29" width="117" style='width:87.75pt;' x:str>XGSDK说明</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>1</td>
+    <td class="xl30" x:str>手机没有登入flyme时，游戏注册账号</td>
+    <td class="xl30" x:str>P1</td>
+    <td class="xl30" x:str>可以成功注册账号</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>2</td>
+    <td class="xl30" x:str>手机已经登入flyme时，游戏自动登陆</td>
+    <td class="xl30" x:str>P1</td>
+    <td class="xl30" x:str>可以自动登陆游戏</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>3</td>
+    <td class="xl30" x:str>单账户时自动登录游戏</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>可以自动登录游戏</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>4</td>
+    <td class="xl30" x:str>使用错误的用户名和密码登录游戏</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>错误的用户或密码无法登入游戏</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="26.67" class="xl24" style='height:20.00pt;mso-height-source:userset;'>
+    <td class="xl30" height="26.67" align="right" style='height:20.00pt;' x:num>5</td>
+    <td class="xl30" x:str>忘记密码时，填入正确信息修改密码</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>用户邮箱可以收到修改密码连接，可以正常修改密码</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>6</td>
+    <td class="xl30" x:str>多账户手动选择登录游戏</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>多账户可以手动选择登录游戏</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>7</td>
+    <td class="xl30" x:str>三个以上账户手动登录游戏</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>历史账户中只记录三个最近的记录</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>8</td>
+    <td class="xl30" x:str>登录成功后，后台运行游戏</td>
+    <td class="xl30" x:str>P1</td>
+    <td class="xl30" x:str>后台运行游戏正常，Gamebar可以自动隐藏</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>9</td>
+    <td class="xl30" x:str>多个游戏使用SDK登录同一个账户</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>多游戏可以使用一个账户登录游戏</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>10</td>
+    <td class="xl30" x:str>多个游戏使用SDK登录不同的账户</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>多游戏可以使用不同的账户登录游戏</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="40" class="xl24" style='height:30.00pt;mso-height-source:userset;'>
+    <td class="xl30" height="40" align="right" style='height:30.00pt;' x:num>11</td>
+    <td class="xl30" x:str>余额充足时，游戏中购买道具</td>
+    <td class="xl30" x:str>P1</td>
+    <td class="xl31" x:str>可以成功对游戏进行充值,游戏发货成功</td>
+    <td class="xl33" x:str>关注注册购买时的价格<br/>游戏是否正常发货（回调地址）</td>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="40" class="xl24" style='height:30.00pt;mso-height-source:userset;'>
+    <td class="xl30" height="40" align="right" style='height:30.00pt;' x:num>12</td>
+    <td class="xl30" x:str>手机不安装支付宝钱包，在游戏中使用支付宝支付</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>支付宝在游戏中成功支付</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="40" class="xl24" style='height:30.00pt;mso-height-source:userset;'>
+    <td class="xl30" height="40" align="right" style='height:30.00pt;' x:num>13</td>
+    <td class="xl30" x:str>手机安装支付宝钱包，在游戏中使用支付宝支付</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>支付宝在游戏中成功支付</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>14</td>
+    <td class="xl30" x:str>使用银联卡在游戏中进行支付</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>银联卡在游戏中成功支付</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>15</td>
+    <td class="xl30" x:str>使用充值卡在游戏中进行支付</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>充值卡在游戏中成功支付</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>16</td>
+    <td class="xl30" x:str>使用话费在游戏中进行支付</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>话费在游戏中成功支付</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>17</td>
+    <td class="xl30" x:str>游戏中手动切换账户登录</td>
+    <td class="xl30" x:str>P1</td>
+    <td class="xl30" x:str>可以正常切换账户，SDK工作正常</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="27" class="xl24" style='height:20.25pt;mso-height-source:userset;'>
+    <td class="xl30" height="27" align="right" style='height:20.25pt;' x:num>18</td>
+    <td class="xl30" x:str>退出游戏</td>
+    <td class="xl30" x:str>P1</td>
+    <td class="xl30" x:str>可以正常退出，Gamebar可以自动隐藏</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>XGSDK已集成</td>
+   </tr>
+   <tr height="44" class="xl24" style='height:33.00pt;mso-height-source:userset;'>
+    <td class="xl30" height="44" align="right" style='height:33.00pt;' x:num>19</td>
+    <td class="xl30" x:str>不同版本的SDK固件上运行游戏</td>
+    <td class="xl30" x:str>P2</td>
+    <td class="xl30" x:str>游戏可以正常运行</td>
+    <td class="xl30"/>
+    <td class="xl30" x:str>游戏自检</td>
+   </tr>
+   <tr height="35" style='height:26.25pt;mso-height-source:userset;'>
+    <td class="xl35" height="35" style='height:26.25pt;' x:str>备注</td>
+    <td class="xl35" x:str>进入悬浮框界面，截图按钮处点击无效</td>
+    <td class="xl34" colspan="2" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>魅族手机问题，在米4和三星上没有该按钮</td>
+    <td class="xl32"/>
+    <td class="xl32"/>
+   </tr>
+  </table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

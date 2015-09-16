@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h3><font face="微软雅黑" >蜗牛：</font> </h3>
+<h5 > 测试材料检查 </h5>
+<table width="1458" border="0" cellpadding="0" cellspacing="0" style='width:1093.50pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="119" span="2" style='mso-width-source:userset;mso-width-alt:3808;width:89.25pt;'/>
+   <col width="202" style='mso-width-source:userset;mso-width-alt:6464;width:151.50pt;'/>
+   <col width="1018" class="xl38" style='mso-width-source:userset;mso-width-alt:32576;width:763.50pt;'/>
+   <tr height="18" style='height:13.50pt;'>
+    <td class="xl25" height="18" width="119" style='height:13.50pt;width:89.25pt;' x:str>分类</td>
+    <td class="xl25" width="119" style='width:89.25pt;' x:str>平台</td>
+    <td class="xl25" width="202" style='width:151.50pt;' x:str>测试点</td>
+    <td class="xl25" width="1018" style='width:763.50pt;' x:str>测试点详细</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl31" height="396" rowspan="11" style='height:297.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>前期检查（任意一项不满足要求，程序将会被拒绝测试）</td>
+    <td class="xl35" rowspan="11" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>android&amp;ios</td>
+    <td class="xl23" x:str>接入蜗牛登陆</td>
+    <td class="xl26" x:str>网络游戏需在开始游戏前接入蜗牛登陆</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl23" x:str>接入的appid和appkey正确</td>
+    <td class="xl26" x:str>游戏接入的appid和appkey需与后台的一致</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl32" rowspan="3" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>游戏版本号需符合规范</td>
+    <td class="xl26" x:str>更新游戏的版本号需高于已上架版本</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl26" x:str>版本号需只含数字和“.”（小数点）</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl26" x:str>需不含字母、空格以及其他特殊字符</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl23" x:str>接入的sdk版本要求</td>
+    <td class="xl26" x:str>sdk版本</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl23" x:str>支付测试记录的提供</td>
+    <td class="xl26" x:str>新游需进行一次支付测试，并在上架资料表中写上用于购买的蜗牛账号或者购买记录截图</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl23" x:str>bug修改情况</td>
+    <td class="xl26" x:str>第二次以上测试，需不含3个或者以上bug未修复（bug备注中标明必须修改的必须当前版本修改，若有疑问可与QQ：198720823咨询）</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28" rowspan="3" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>提供的材料完整</td>
+    <td class="xl26" x:str>新游第一次测试:上架资料表+更新文档+3-8张截图+icon+宣传+测试包</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl26" x:str>已上架产品，更新版本第一次测试：更新日志+测试包</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl26" x:str>第二次及第二次以上测试：Bug回复报告+测试包+其他bug中提及的需要修改的材料（若bug未涉及材料相关问题，可以不用提供）</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl35" height="258" rowspan="6" style='height:193.50pt;border-right:.5pt solid windowtext;border-bottom:none;' x:str>材料提供完整性检查</td>
+    <td class="xl35" rowspan="6" style='border-right:.5pt solid windowtext;border-bottom:none;' x:str>android</td>
+    <td class="xl28" rowspan="2" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>上架资料表检查</td>
+    <td class="xl26" x:str>需完整填写每一项内容，客服电话或邮箱若没有则注明【无】</td>
+   </tr>
+   <tr height="48" style='height:36.00pt;mso-height-source:userset;'>
+    <td class="xl26" x:str>游戏中出现的客服邮箱、客服电话需同之前上架资料表中提供的与后台配置的相同<br/>若更换客服信息，需要重新提供上架资料表，并且修改后台配置的客服信息。</td>
+   </tr>
+   <tr height="51" style='height:38.25pt;mso-height-source:userset;'>
+    <td class="xl32" rowspan="2" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>更新日志检查</td>
+    <td class="xl26" x:str>更新日志需填写package字段、appid（dev后台可查看）、当前版本信息：更新时间、版本号version code，version name<br/>更新测试还需要提供之前版本的版本信息。</td>
+   </tr>
+   <tr height="45" style='height:33.75pt;mso-height-source:userset;'>
+    <td class="xl26" x:str>测试包中version code、version name需与更新日志提供的一致</td>
+   </tr>
+   <tr height="42" style='height:31.50pt;mso-height-source:userset;'>
+    <td class="xl32" rowspan="2" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>icon检查</td>
+    <td class="xl26" x:str>分辨率为512 x 512，格式为png格式，不能超过800KB</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl26" x:str>游戏更新版本若更换icon，需要一并修改后台的icon图标以及重新提供一个512*512的icon文件用于版本更新时更换</td>
+   </tr>
+   <tr height="51" style='height:38.25pt;mso-height-source:userset;'>
+    <td class="xl27" height="51" style='height:38.25pt;' x:str>其他检查</td>
+    <td class="xl27" x:str>android&amp;ios</td>
+    <td class="xl23" x:str>测试包命名规范</td>
+    <td class="xl24" x:str>游戏安装包必须按照[游戏名_版本号_提交时间]命名。<br/>如：SuperMario_v1.5_201108010810.apk，</td>
+   </tr>
+  </table>
+<p></br></p>
+<h5> 测试包检查 </h5>
+<table width="1518" border="0" cellpadding="0" cellspacing="0" style='width:1138.50pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="130" class="xl22" style='mso-width-source:userset;mso-width-alt:4160;width:97.50pt;'/>
+   <col width="116" class="xl22" style='mso-width-source:userset;mso-width-alt:3712;width:87.00pt;'/>
+   <col width="278" class="xl22" style='mso-width-source:userset;mso-width-alt:8896;width:208.50pt;'/>
+   <col width="994" class="xl22" style='mso-width-source:userset;mso-width-alt:31808;width:745.50pt;'/>
+   <tr height="31" style='height:23.25pt;mso-height-source:userset;'>
+    <td class="xl24" height="31" width="130" style='height:23.25pt;width:97.50pt;' x:str>分类</td>
+    <td class="xl24" width="116" style='width:87.00pt;' x:str>系统版本</td>
+    <td class="xl24" width="278" style='width:208.50pt;' x:str>测试点</td>
+    <td class="xl24" width="994" style='width:745.50pt;' x:str>测试点详细</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl26" height="256" rowspan="6" style='height:192.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>版本信息检查</td>
+    <td class="xl29" rowspan="6" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>android</td>
+    <td class="xl28" rowspan="2" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>版本号version code，version name</td>
+    <td class="xl27" x:str>version code 必须为整数</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>version code、version name需要不为0,需只含数字和“.”（小数点）</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28" rowspan="4" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>主包名package</td>
+    <td class="xl27" x:str>新游戏提交测试，package字段需要区别于其他渠道，带上“<font class="font1">snail</font><font class="font2">”字样,</font><font class="font1">package=&quot;com.app.snail&quot;</font></td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>更新版本时，package字段需要与已上架版本一致（区分大小写）</td>
+   </tr>
+   <tr height="76" style='height:57.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>Android版文件名命名格式：<br/>gamename_v1.0_201111171103.apk<br/>例如：超级玛丽1.5版是2011年8月1号早上8点10分打包提交的，那么文件名就是：SuperMario_v1.5_201108010810.apk</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>同一游戏的不同测试包，package字段需要有所区别</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl25" height="72" rowspan="2" style='height:54.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>图标检查</td>
+    <td class="xl29" rowspan="2" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>android</td>
+    <td class="xl28" rowspan="2" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>图标规范</td>
+    <td class="xl27" x:str>游戏的icon图标必须加入免商店logo，且角标大小需与上架资料中提供的一致</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>游戏中配置的所有icon文件以及提供的icon文件均需打上免商店logo，并且保持一致</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl25" height="573" rowspan="12" style='height:429.75pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>支付检查</td>
+    <td class="xl29" rowspan="12" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>android</td>
+    <td class="xl28" rowspan="5" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>从游戏的商品列表进入到免商店支付界面</td>
+    <td class="xl27" x:str>传入价格需保持一致</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl30" x:str>确保充值页面能正常打开，并连接到蜗牛手机充值方式的选择界面（包括：支付宝、财付通等）</td>
+   </tr>
+   <tr height="47" style='height:35.25pt;mso-height-source:userset;'>
+    <td class="xl30" x:str>在游戏内商城充值消费，道具需在1分钟内到账。若无法及时到账或到账的代币数量不正确，需要添加弹框有相关文字说明。。通知告知玩家如何操作或添加刷新按钮。<font class="font3">（请用带中文的账号测试）</font></td>
+   </tr>
+   <tr height="58" style='height:43.50pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>商品名称、数量需要根据购买项有区别，并且注明代币名称。<br/>如：名称是10个金币，数量是1；或者名称是金币，数量是10。</td>
+   </tr>
+   <tr height="96" style='height:72.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>游戏商品进行促销、额外赠送等方式，需有相应的列表提示。<br/>如：<br/>游戏商品列表写上10金币，赠送1金币，免商店支付界面写10金币（正确）<br/>游戏商品列表直接写11金币，免商店支付界面写10金币（错误）</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28" rowspan="5" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>在免商店支付界面支付完成回到游戏中</td>
+    <td class="xl27" x:str>道具需在3-5分钟内到账</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>道具到账后必须能及时刷新，无需重启游戏；若无法自动刷新，需弹框提示，告知玩家如何操作或者添加手动刷新按钮</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>到账的道具数量正确。若有充值活动导致到账的代币数量不正确，需在公告或者是商品列表中有相关文字说明</td>
+   </tr>
+   <tr height="74" style='height:55.50pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>使用代币充值的游戏，需注意：<br/>1）在牛币兑换界面修改支付的牛币数量。支付成功后，到账的代币数量需与支付的牛币比例一致；<br/>2）需注意牛币与代币的兑换比例，必须可以整除.</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>玩家牛币不足或者进入支付界面不进行购买的情况，需保证回到游戏界面，可以继续游戏，不会持续loading，不会崩溃。</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28" x:str>订单号要求</td>
+    <td class="xl27" x:str>订单号需只含有数字、字母、下划线、减号，且不能重复</td>
+   </tr>
+   <tr height="46" style='height:34.50pt;mso-height-source:userset;'>
+    <td class="xl28" x:str>不含免商店支付方式</td>
+    <td class="xl27" x:str>游戏中需不含有任何非免商店的充值方式以及非免商店充值方式的介绍（如活动、公告界面；帮助界面），即使是点击无响应的按钮（必须屏蔽相关按钮）；</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl25" height="374" rowspan="10" style='height:280.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;'/>
+    <td class="xl29" rowspan="10" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;'/>
+    <td class="xl28" rowspan="7" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>游戏界面内显示的内容、调用通讯工具或社交软件功能的默认发送内容需不含免商店引导</td>
+    <td class="xl27" x:str>需不含引导用户到其他下载地址下载非免商店渠道的客户端（包括官网）</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>需不含引导用户使用非免商店支付方式的相关信息</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>需不含引导用户到其他游戏平台进行好评，给予奖励</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>需不含引导用户访问非免商店官网、论坛的相关信息</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>需不含官网、官方论坛等类似访问官方网站按钮，即使是灰状的，无法点击的</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>需不含免商店渠道用户无法参与的分享活动</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl27" x:str>需不含微博分享按钮，点击后进入到官方微博主页</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28"/>
+    <td class="xl27" x:str>需不含任意第三方开发平台以及第三方广告平台系统（商务授权的除外）</td>
+   </tr>
+   <tr height="36" class="xl23" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28" x:str>不含免商店客服QQ</td>
+    <td class="xl27" x:str>游戏中必须保证不含免商店的对外客服QQ</td>
+   </tr>
+   <tr height="50" style='height:37.50pt;mso-height-source:userset;'>
+    <td class="xl28" x:str>客服信息一致性</td>
+    <td class="xl27" x:str>游戏中出现的客服邮箱、客服电话需同之前上架资料表中提供的以及dev后台配置的相同<br/>若更换客服信息，需要重新提供上架资料表，并且修改dev后台配置的客服信息。</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl25" height="108" rowspan="3" style='height:81.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>非中文检查</td>
+    <td class="xl29" rowspan="3" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>android</td>
+    <td class="xl28" x:str>游戏名称检查</td>
+    <td class="xl27" x:str>安装后手机桌面的名称、dev后台的名称需为简体中文</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28" x:str>按钮检查</td>
+    <td class="xl27" x:str>需保证不含大面积的按钮均为英文</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28" x:str>帮助信息检查</td>
+    <td class="xl27" x:str>帮助界面的文字，或者是帮助图片上的文字需是简体中文的</td>
+   </tr>
+   <tr height="46" style='height:34.50pt;mso-height-source:userset;'>
+    <td class="xl25" height="118" rowspan="3" style='height:88.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>其他检查</td>
+    <td class="xl29" x:str>android</td>
+    <td class="xl28" x:str>游戏安装包的固件要求必须写</td>
+    <td class="xl27" x:str>游戏安装包的固件要求需配置<br/>即需要设置AndroidManifest.xml文件中的minSdkVersion或者targetSdkVersion</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl29" rowspan="2" style='border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>androids</td>
+    <td class="xl28" x:str>敏感词屏蔽</td>
+    <td class="xl27" x:str>游戏中任意可以输入文本的地方，均需对钓鱼岛、尖阁列岛、习近平、周永康、薄熙来、习仲勋敏感词的发送进行屏蔽，详情见屏蔽字</td>
+   </tr>
+   <tr height="36" style='height:27.00pt;mso-height-source:userset;'>
+    <td class="xl28" x:str>游戏名称一致</td>
+    <td class="xl27" x:str>新游戏的游戏名称需与游戏安装后的游戏名称一致</td>
+   </tr>
+  </table>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
