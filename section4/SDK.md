@@ -319,7 +319,7 @@
 			</td>
       -->
 <td>
-				V1.3.1.3
+				V1.6.3.53
 			</td>
 <!--
 <td>
@@ -333,7 +333,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/huawei/1.1/GameBoxSDK_V1.3.1.1_2.rar">下载链接</a>
+				<a href="./self_checking/sdk/HW华为游戏中心SDK_v1.6.3.53.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -500,7 +500,7 @@
 			</td>
       -->
 <td>
-				4.2.04
+				4.3.06
 			</td>
 <!--
 <td>
@@ -514,7 +514,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/pptv/1.1.1/PPTVVasSdk_V4.2.04.150630_Release.rar">下载链接</a>
+				<a href="./self_checking/sdk/PPTVVasSdk_V4.3.06.150902_Release .rar">下载链接</a>
 			</td>
 </tr>
 <tr>

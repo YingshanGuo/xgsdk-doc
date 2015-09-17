@@ -182,10 +182,10 @@
 				huawei
 			</td>
 			<td>
-			<a href="./self_checking/huawei.html" target="_blank">点击查看</a>
+			<a href="./self_checking/huaweiChecklist1.6.3.53.html" target="_blank">点击查看</a>
 						</td>
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/huawei/1.1/%e5%8d%8e%e4%b8%ba%e6%b8%b8%e6%88%8f%e4%b8%ad%e5%bf%83SDK%e6%b5%8b%e8%af%95%e7%94%a8%e4%be%8b--%e5%9f%ba%e6%9c%ac%e5%8a%9f%e8%83%bd.xlsx">下载链接</a>
+				<a href="./self_checking/huaweiChecklist1.6.3.53.xlsx" target="_parent">下载链接</a>
 			</td>
 
 </tr>
@@ -275,7 +275,7 @@
 			<a href="./self_checking/PPTV.html" target="_blank">点击查看</a>
 						</td>
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/pptv/1.1/PptvChecklist.xlsx">下载链接</a>
+				<a href="./self_checking/checking/PPTVchecking4.3.06.docx" target="_parent">下载链接</a>
 			</td>
 
 </tr>
