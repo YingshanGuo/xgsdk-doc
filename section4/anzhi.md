@@ -245,7 +245,7 @@
 			<a href="./self_checking/kugou.html" target="_blank">点击查看</a>
 						</td>
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/kugou/1.1/酷狗游戏充值SDK上线前用例.xlsx">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/kugou/5.2.3/（5.1.0以上版本）游戏充值SDK上线前用例.xlsx">下载链接</a>
 			</td>
 
 </tr>
@@ -545,7 +545,7 @@
 			<a href="./self_checking/xinlang.html" target="_blank">点击查看</a>
 						</td>
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/sina/1.1.1/联运接入测试.xlsx">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/sina/1.2.3_123/联运接入测试表(0918).xlsx">下载链接</a>
 			</td>
 
 </tr>

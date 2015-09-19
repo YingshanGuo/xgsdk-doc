@@ -372,11 +372,13 @@ authToken=authToken&channelId=mi&deviceId=deviceId&name=name&planId=1&ts=2015072
 **最终HmacSHA1签名为：**  
 fa34381dc584f631a87a0436e49ef4d3a71ee55d
 
+<!--
 **Base64编码前的authInfo数据为：**
 {"authToken":"authToken","channelId":"mi","deviceId":"deviceId","name":"name","planId":"1","xgAppId":"1024appid","sign":"fa34381dc584f631a87a0436e49ef4d3a71ee55d","ts":"20150723150028","uid":"uid"}
 
 **Base64编码后的authInfo数据为：**
 eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=
+-->
 
 #### 2.4.2 登录验证参数结构
 **当前时间戳ts为：**  

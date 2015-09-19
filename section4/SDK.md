@@ -440,7 +440,7 @@
 			</td>
       -->
 <td>
-				5.2.0
+				5.2.3
 			</td>
 <!--
 <td>
@@ -454,7 +454,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/kugou/1.1/SDK5.1.8发布包20150609-网游.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/kugou/5.2.3/SDK5.2.3发布包20150915-网游.rar">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -1055,7 +1055,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/sina/1.1.1/新浪SDK.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/sina/1.2.3_123/新浪.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
