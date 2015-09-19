@@ -207,6 +207,26 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 <a name = "init"></a>
 #### 3.1.1 初始化接口
 
+
+**回调方法配置**
+
+```
+	public static void CreateSDKManager()
+```
+
+**接口说明:**
+配置回调方法  
+**注意：必须在Awake方法中调用**  
+
+**代码样例**
+
+	void Awake()
+	{
+		XGSDKCallback.CreateSDKManager ();
+	}
+
+**设置回调方法**
+
 ```
 	public static void setCallback()
 ```
@@ -216,9 +236,12 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 **注意：在Unity初始化的时候必须调用setCallback方法！**
 
 **代码样例：**
-```
-	XGSDK2.instance.setCallback ();
-```
+
+	
+	void Start(){  
+		XGSDK2.instance.setCallback ();  
+	}
+	
 
 **回调方法：**
 
