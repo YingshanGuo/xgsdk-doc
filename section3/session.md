@@ -85,17 +85,17 @@
 <td>type</td><td>是</td><td>String</td><td>接口类型，固定为verify-session</td>
 </tr>
 <tr>
-<td>authInfo</td><td>是</td><td>String</td><td>会话验证数据，xgsdk客户端负责生成，反馈给游戏客户端，游戏客户端提交给游戏服务器后，游戏服务器拿这个参数到xgsdk服务器验证登录会话是否有效
-BASE64编码后的json字符串。具体数据格式说明请参考<a href="#authInfo">authInfo数据格式</a></td>
+<td>authInfo</td><td>是</td><td>String</td><td>会话验证数据，xgsdk客户端负责生成，通过onLoginSuccess回调反馈给游戏客户端，游戏客户端提交给游戏服务器后，游戏服务器拿这个参数到xgsdk服务器验证登录会话是否有效</td>
 </tr>
 <tr>
-<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150811085930对应2015/8/11 08:59:30</td>
+<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028对应2015/7/23 15:00:28</td>
 </tr>
 <tr>
-<td>sign</td><td>是</td><td>String</td><td>签名字符串，签名算法参见签名章节，使用游戏服务端密钥，签名参数仅包括authInfo</td>
+<td>sign</td><td>是</td><td>String</td><td>签名，签名算法采用HMACSHA1，使用游戏服务端密钥，签名参数仅包括authInfo和ts，可参考<a href="#import_android">请求样例</a>章节</td>
 </tr>
 </table>
 
+<!--
 <a name="authInfo"></a>authInfo数据格式:
 
 <table>
@@ -182,6 +182,8 @@ iTools:userName
 </tr>
 </table>
 
+-->
+
 <div id="import"></div>
 
 
@@ -220,7 +222,8 @@ iTools:userName
 <td>deviceId</td><td>是</td><td>String</td><td>设备Id</td>
 </tr>
 <tr>
-<td>sessionId</td><td>否</td><td>String</td><td>酷派:authorization code  
+<td>sessionId</td><td>否</td><td>String</td><td>
+<!--酷派:authorization code  
 Vivo:authtoken  
 金立:AmigoToken  
 华为:access_token  
@@ -267,88 +270,67 @@ iTools:userID
 PP助手:userid  
 同步推:userID  
 91:loginUin
+-->
+会话编号
 </td>
 </tr>
 <tr>
-<td>userName</td><td>否</td><td>String</td><td>Vivo:name  
-联想:Username  
-OPPO:name  
-拇指玩:username  
-37玩:userName  
-当乐:username  
-酷狗:UserName  
-PPTV:username  
-百度:user_name  
-iTools:userName  
-快用:username  
-PP助手:username</td>
+<td>uid</td><td>是</td><td>String</td><td>用户编号</td>
 </tr>
 <tr>
-<td>nickName</td><td>否</td><td>String</td><td>酷派:nickname  
-当乐:nickname  
-UC:nickname  
-OPPO:userName  
-联想:Thirdname</td>
+<td>userName</td><td>否</td><td>String</td><td>用户名 </td>
+</tr>
+<tr>
+<td>nickName</td><td>否</td><td>String</td><td>账用户昵称</td>
 </tr>
 <tr>
 <td>state</td><td>否</td><td>String</td><td>账号状态  
 -1-未激活  
 0-正常  
 1-暂停  
-2-销户  
-华为:userValidStatus  
-联想:verfied</td>
+2-销户</td>
 </tr>
 <tr>
-<td>deviceId</td><td>否</td><td>String</td><td>联想:DeviceID</td>
+<td>deviceId</td><td>否</td><td>String</td><td>设备编号</td>
 </tr>
 <tr>
-<td>telphone</td><td>否</td><td>String</td><td>金立:AmigoUserTn  
-OPPO:mobile</td>
+<td>telphone</td><td>否</td><td>String</td><td>用户手机号</td>
 </tr>
 <tr>
-<td>mail</td><td>否</td><td>String</td><td>邮箱地址  
-Vivo:email  
-OPPO:email  
-拇指玩:mail</td>
+<td>mail</td><td>否</td><td>String</td><td>性邮箱地址</td>
 </tr>
 <tr>
-<td>sex</td><td>否</td><td>String</td><td>性别1-男2-女0-未知  
-酷派:sex  
-OPPO:sex  
-拇指玩:sex  
-当乐:gender</td>
+<td>sex</td><td>否</td><td>String</td><td>性别  
+1-男  
+2-女  
+0-未知</td>
 </tr>
 <tr>
-<td>brithday</td><td>否</td><td>String</td><td>生日格式：YYYY-MM-DD  
-酷派:brithday</td>
+<td>brithday</td><td>否</td><td>String</td><td>生日
+格式：YYY-MM-DD</td>
 </tr>
 <tr>
-<td>smallHeadIconUrl</td><td>否</td><td>String</td><td>头像小图标  
-酷派:highDefUrl  
-OPPO:profilePictureUrl  
-拇指玩:icon  
-当乐:avatar_url</td>
+<td>smallHeadIconUrl</td><td>否</td><td>String</td><td>头像小图标url</td>
 </tr>
 <tr>
-<td>bigHeadIconUrl</td><td>否</td><td>String</td><td>头像大图标  
-酷派:headIconUrl</td>
+<td>bigHeadIconUrl</td><td>否</td><td>String</td><td>头像大图标url</td>
 </tr>
 <tr>
-<td>constellation</td><td>否</td><td>String</td><td>星座  
-OPPO:constellation</td>
+<td>constellation</td><td>否</td><td>String</td><td>星座</td>
 </tr>
 <tr>
-<td>balance</td><td>否</td><td>String</td><td>余额  
-OPPO:gameBalance</td>
+<td>balance</td><td>否</td><td>String</td><td>渠道币余额</td>
 </tr>
 <tr>
-<td>level</td><td>否</td><td>String</td><td>当乐:level</td>
+<td>level</td><td>否</td><td>String</td><td>渠道用户等级</td>
 </tr>
 </table>
 
+<div id="import_android"></div>
+
 ### 2.4 请求示例
 
+<!--
 #### 2.4.1 authInfo结构
 
 **初始参数**
@@ -373,7 +355,6 @@ authToken=authToken&channelId=mi&deviceId=deviceId&name=name&planId=1&ts=2015072
 fa34381dc584f631a87a0436e49ef4d3a71ee55d
 
 
-<!--
 **Base64编码前的authInfo数据为：**
 {"authToken":"authToken","channelId":"mi","deviceId":"deviceId","name":"name","planId":"1","xgAppId":"1024appid","sign":"fa34381dc584f631a87a0436e49ef4d3a71ee55d","ts":"20150723150028","uid":"uid"}
 
@@ -381,14 +362,15 @@ fa34381dc584f631a87a0436e49ef4d3a71ee55d
 eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=
 -->
 
+**客户端上报的authInfo：**
+eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=
 
-#### 2.4.2 登录验证参数结构
-**当前时间戳ts为：**  
+**当前时间戳ts为：**
 20150723150028
 
 **游戏服务端密钥为：** 654321
 
-**登录验证参数签名前的源串：**  
+**登录验证参数签名前的源串：**
 authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=&ts=20150723150028&type=verify-session
 
 **对应HmacSHA1签名为：**  
@@ -396,6 +378,9 @@ authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjo
 
 **请求样例：**  
 http://p2.xgsdk.com/account/verify-session/1024appid?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=&sign=10b1cdc8e4259b780a4336b725137a5579f84129&ts=20150723150028&type=verify-session
+
+
+
 
 <div id="import_1"></div>
 
