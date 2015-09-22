@@ -13,7 +13,7 @@
 <td>
 				渠道名称
 			</td>
-			
+
 <td>
 				渠道ID
 			</td>
@@ -615,7 +615,7 @@
 				海马
 			</td>
 <td>
-				haima;
+				haima
 			</td>
 			<td>
 			<a href="./self_checking/haima.html" target="_blank">点击查看</a>
@@ -657,6 +657,24 @@
 			</td>
 
 </tr>
+
+<tr>
+<td>偶玩</td>
+<td>ouwan</td>
+<td>整理中</td>
+<td><a target="_blank" href="http://doc.xgsdk.com/data/wordpress_files/channels/ouwan/1.3/ouwantest150729.xls">下载链接</a>
+</td>
+</tr>
+
+<tr>
+<td>东鑫科技</td>
+<td>dongxin</td>
+<td>整理中</td>
+<td>整理中
+</td>
+</tr>
+
+
 </table>
 
 
