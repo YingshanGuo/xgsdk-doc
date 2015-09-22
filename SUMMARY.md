@@ -28,7 +28,7 @@ This is the summary of my book.
 * [渠道规范](section4/README.md)
     * [参数申请指南](section4/Parameters.md)
     * [角标闪屏规范](section4/icon.md)
-    * [上架自检规范](section4/anzhi.md)
+    * [上架自检规范](section4/check.md)
     * [渠道SDK材料](section4/SDK.md)
 
 * [数据分析使用指南](section5/operationindex.md)  
