@@ -107,7 +107,7 @@
  <tr>
 	<td>新浪</td>
 	<td>无后台，需联系渠道人员获取参数</td>
-	<td>联通沃游戏</td>
+	<td><a href="./application/liantong.html" target="_blank">联通沃游戏</a></td>
 	<td><a href="http://dev.wo.com.cn/" target="_parent" title="http://dev.wo.com.cn/">渠道地址</a></td>
 	<td>滴滴</td>
 	<td>无后台，需联系渠道人员获取参数</td>

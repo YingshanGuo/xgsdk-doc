@@ -70,7 +70,8 @@
 <td>接收方</td><td>游戏服务器</td>
 </tr>
 <tr>
-<td>接口类型</td><td>HTTP POST</td>
+<td>接口类型</td><td>HTTP POST  
+ Content-Type：application/json； charset=UTF-8</td>
 </tr>
 <tr>
 <td>字符集编码</td><td>UTF-8</td>
@@ -89,7 +90,7 @@
 
 ### 2.2 输入
 
-**参数说明：**
+**参数说明：** 参数为一个json的字符串
 
 <table>
 <tr>
@@ -359,6 +360,7 @@ postBody:
 2. 按key1=value1&key2=value2&...来拼接签名源串，将值为空的参数和sign签名字段去掉，不加入签名源串，key和value不进行任何编码（如不进行URLEncoder）；
 3. 然后对最后生成的字符串进行HmacSHA1计算，得到签名串。
 
+<!--
 **签名示例：**
 - **传入参数：**
 productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&appId=xyfm&channelId=xiaomi&customInfo=9091e0cc37364fd54307cb076a64a5206b52a83bc8086ce27583df220191d245d27a1b93e68389fb65c0e6bd5a075f566663&tradeNo=100265&paidAmount=1&payStatus=1&payTime=2014-12-4 20:40:15&uid=25613430&sign=a7dc0c91632d473a7bdba944b4d43222d97293ac&totalAmount=1
@@ -371,6 +373,7 @@ productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&
 - **最后的签名串为：**
  a7dc0c91632d473a7bdba944b4d43222d97293ac
 
+-->
 <div id="import_3"></div>
 
 ### 2.8 游戏逻辑处理建议

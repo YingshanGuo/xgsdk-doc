@@ -284,10 +284,10 @@ PP助手:userid
 <td>nickName</td><td>否</td><td>String</td><td>账用户昵称</td>
 </tr>
 <tr>
-<td>state</td><td>否</td><td>String</td><td>账号状态  
--1-未激活  
-0-正常  
-1-暂停  
+<td>state</td><td>否</td><td>String</td><td>账号状态    
+-1-未激活    
+0-正常    
+1-暂停    
 2-销户</td>
 </tr>
 <tr>
@@ -300,9 +300,9 @@ PP助手:userid
 <td>mail</td><td>否</td><td>String</td><td>性邮箱地址</td>
 </tr>
 <tr>
-<td>sex</td><td>否</td><td>String</td><td>性别  
-1-男  
-2-女  
+<td>sex</td><td>否</td><td>String</td><td>性别    
+1-男    
+2-女    
 0-未知</td>
 </tr>
 <tr>
@@ -399,6 +399,114 @@ http://p2.xgsdk.com/account/verify-session/1024appid?authInfo=eyJhdXRoVG9rZW4iOi
     }
 }
 ```
+
+### 2.6 错误码
+
+<table>
+<tr>
+<td>错误码</td> <td>备注</td>
+</tr>
+<tr>
+<td>0</td> <td>成功</td>
+</tr>
+<tr>
+<td>-1</td> <td>签名失败</td>
+</tr>
+<tr>
+<td>1</td> <td>请求重发，表示游戏服前置机收到xg服务器通知，但是由于游戏服务器正在升级，不能处理响应，请求延后重新发送</td>
+</tr>
+<tr>
+<td>2</td> <td>重复订单，表示游戏服务器之前已收到了同样订单的通知，为避免因网络等原因导致道具或者游戏代币重复到账，建议游戏做订单排重
+</td>
+</tr>
+<tr>
+<td>-2</td> <td>xgAppId不存在</td>
+</tr>
+<tr>
+<td>-3</td> <td>channelId不存在</td>
+</tr>
+<tr>
+<td>-4</td> <td>区服不存在</td>
+</tr>
+<tr>
+<td>-5</td> <td>账号不存在</td>
+</tr>
+<tr>
+<td>-6</td> <td>订单号不存在</td>
+</tr>
+<tr>
+<td>-7</td> <td>渠道号和XG编号与订单中创建时的参数不一致
+</td>
+</tr>
+<tr>
+<td>-8</td> <td>发布计划编号不存在</td>
+</tr>
+<tr>
+<td>-98</td> <td>请求参数疑似被篡改</td>
+</tr>
+<tr>
+<td>-99</td> <td>XG系统内部服务器错误</td>
+</tr>
+<tr>
+<td>-100</td> <td>获取登录验证参数失败</td>
+</tr>
+<tr>
+<td>-101</td> <td>获取渠道参数失败</td>
+</tr>
+<tr>
+<td>-102</td> <td>连接渠道登陆验证接口失败</td>
+</tr>
+<tr>
+<td>-103</td> <td>渠道登陆验证结果失败</td>
+</tr>
+<tr>
+<td>-200</td> <td>商品不存在
+</td>
+</tr>
+<tr>
+<td>-201</td> <td>商品不一致</td>
+</tr>
+<tr>
+<td>-202</td> <td>金额不一致</td>
+</tr>
+<tr>
+<td>-203</td> <td>渠道验证订单失败</td>
+</tr>
+<tr>
+<td>-204</td> <td>支付通知中的渠道分配游戏编号与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-205</td> <td>支付通知中的渠道分配用户编号与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-206</td> <td>支付通知中的订单支付时间与订单创建时相差超过一天</td>
+</tr>
+<tr>
+<td>-207</td> <td>支付通知中的渠道分配商品编号与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-208</td> <td>支付通知中的渠道分配商品名称与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-209</td> <td>支付通知中的渠道分配商品数量与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-210</td> <td>支付通知中的渠道分配支付金额与订单创建时不一致</td>
+</tr>
+<tr>
+<td>-212</td> <td>解析支付通知中的渠道参数失败</td>
+</tr>
+<tr>
+<td>-301</td> <td>查询渠道订单超时</td>
+</tr>
+<tr>
+<td>-302</td> <td>查询渠道订单失败</td>
+</tr>
+<tr>
+<td>-401</td> <td>创建渠道订单失败</td>
+</tr>
+</table>
+
 ---
 <div id="version"></div>
 ### 文档版本说明
