@@ -2,8 +2,8 @@
 
 渠道参数申请指南是为了方便游戏运营可以更清晰的了解不同渠道的申请步骤。西瓜提供了每个渠道的渠道地址和详细的申请步骤，以帮助游戏运营在参数申请时更加快速便捷。  
 在渠道列表中点击某一渠道地址跳转到相应的渠道官网申请账号；点击渠道名称可查看详细的参数申请步骤。
-
-
+如需查看渠道参数获取方式、充值回调地址配置方式、包名后缀要求，<a  href="#dudu">请点击这里！
+</a>
 
 #### Android渠道参数申请渠道地址：
 
@@ -67,7 +67,7 @@
  <tr>
 	<td>酷我游戏</td>
 	<td>无后台，需联系渠道人员获取参数</td>
-	<td><a href="#xiaomi">小米</a></td>
+	<td><a href="./application/xiaomi.html" target="_blank">小米</a></td>
 	<td><a href="https://account.xiaomi.com" target="_parent">渠道地址</a></td>
 	<td><a href="./application/uc.html" target="_blank">UC</a></td>
 	<td><a href="http://game.open.uc.cn/" target="_parent">渠道地址</a></td>
@@ -107,7 +107,7 @@
  <tr>
 	<td>新浪</td>
 	<td>无后台，需联系渠道人员获取参数</td>
-	<td>联通沃游戏</td>
+	<td><a href="./application/liantong.html" target="_blank">联通沃游戏</a></td>
 	<td><a href="http://dev.wo.com.cn/" target="_parent" title="http://dev.wo.com.cn/">渠道地址</a></td>
 	<td>滴滴</td>
 	<td>无后台，需联系渠道人员获取参数</td>
@@ -201,36 +201,238 @@
  </tr>
 </table>
 
-<a id="xiaomi"></a>
+---
 
-## 小米渠道
+<a name = "dudu"></a>
 
-西瓜SDK平台上所需的appid、appkey、appsecret均在小米后台获取。
+#### 渠道参数获取方式和充值回调地址配置方式：
+<table>
+<tr>
+ <td>渠道</td>
+ <td>参数获取方式</td>
+ <td>回调地址配置方式</td>
+ <td>包名后缀要求</td>
+</tr>
+<tr>
+<td>360</td>
+<td>后台</td>
+<td>后台</td>
+ <td>.qihoo</td>
+</tr>
+<tr>
+ <td>小米</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.mi</td>
+</tr>
+<tr>
+ <td>百度</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.baidu</td>
+</tr>
+<tr>
+ <td>oppo</td>
+ <td>后台</td>
+ <td>人工</td>
+ <td>.nearme.gamecenter</td>
+</tr>
 
-### 获取步骤如下：
+<tr>
+ <td>今日头条</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.jrtt</td>
+</tr>
+<tr>
+ <td>pps</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.pps</td>
+</tr>
+<tr>
+ <td>机锋网</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.gfan</td>
+</tr>
+<tr>
+ <td>魅族</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.mz</td>
+</tr>
+<tr>
+ <td>华为</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.huawei</td>
+</tr>
+<tr>
+ <td>酷派</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.coolpad</td>
+</tr>
+<tr>
+ <td>当乐</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.dl</td>
+</tr>
+<tr>
+ <td>乐视商店</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.leshi</td>
+</tr>
+<tr>
+ <td>乐嗨嗨</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.lhh</td>
+</tr>
+<tr>
+ <td>爱游戏</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.aiyouxi</td>
+</tr>
+<tr>
+ <td>联通wo商店</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.wogame</td>
+</tr>
+<tr>
+ <td>木蚂蚁</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.mumayi</td>
+</tr>
+<tr>
+ <td>4399</td>
+ <td>后台</td>
+ <td>人工</td>
+ <td>.m4399</td>
+</tr>
+<tr>
+ <td>金立</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.am</td>
+</tr>
+<tr>
+ <td>优酷</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.youku</td>
+</tr>
+<tr>
+ <td>安智</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.anzhi</td>
+</tr>
+<tr>
+ <td>搜狗</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.sogou</td>
+</tr>
+<tr>
+ <td>37</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.sy37</td>
+</tr>
+<tr>
+ <td>vivo</td>
+ <td>后台</td>
+ <td>人工</td>
+ <td>.vivo</td>
+</tr>
+<tr>
+ <td>九城</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.xcs</td>
+</tr>
 
-1. **在小米官方后台注册`小米开发者账号`（<a href="http://dev.xiaomi.com">请点击这里</a>）；**
+<tr>
+ <td>豌豆荚</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.wdj</td>
+</tr>
+<tr>
+ <td>海马</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.haima</td>
+</tr>
+<tr>
+ <td>UC</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.uc</td>
+</tr>
+<tr>
+ <td>新浪</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.wyx</td>
+</tr>
+<tr>
+ <td>联想</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.lenovo</td>
+</tr>
+<tr>
+ <td>拇指玩</td>
+ <td>后台</td>
+ <td>后台</td>
+ <td>.mzw</td>
+</tr>
+<tr>
+ <td>应用宝</td>
+ <td>人工</td>
+ <td>后台</td>
+ <td>   *.tencent.tmgp. *  </td>
+</tr>
+<tr>
+ <td>pptv</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.pptv</td>
+</tr>
+<tr>
+ <td>酷狗</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.kugou</td>
+</tr>
+<tr>
+ <td>滴滴</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.didi</td>
+</tr>
+<tr>
+ <td>酷我</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.kuwo</td>
+</tr>
+<tr>
+ <td>益玩</td>
+ <td>人工</td>
+ <td>人工</td>
+ <td>.ewan</td>
+</tr>
 
- ** 登陆账号后点击管理控制台进入如下页面，点击“手机及平板应用”；**
-
-    <img src='./img/img3.png'>
-
-2. ** 点击“创建应用”；**
-
-    <img src='./img/img4.png'>
-
-3.** 填写完整下图中的信息，点击创建；**
-
-  <img src='./img/img5.png'>
-
-4.** 成功申请到应用所需要的appid、appkey、appsecret，如下图；**
-
-  <img src='./img/img6.png'>
-
-
-
-
-
+</table>
 
 ### 文档版本说明
 <table >
