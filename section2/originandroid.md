@@ -145,6 +145,25 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
         XGSDK.getInstance().onActivityResult(this, requestCode, resultCode,
                 data);
     }
+
+	@Override
+	public void onBackPressed() {
+	    super.onBackPressed();
+	    XGSDK.getInstance().onBackPressed(this);
+	    
+	}
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	    super.onConfigurationChanged(newConfig);
+	    XGSDK.getInstance().onConfigurationChanged(this, newConfig);
+	}
+	
+    @Override
+	public void onSaveInstanceState(Bundle outState,
+	        PersistableBundle outPersistentState) {
+	    super.onSaveInstanceState(outState, outPersistentState);
+	    XGSDK.getInstance().onSaveInstanceState(this, outState);
+	}
 ```
 
 onCreate 生命周期方法比较特殊。  
@@ -316,8 +335,20 @@ exit(Activity activity, ExitCallBack exitCallBack,String customParams)
             }
      }
 
-
-
+##### 释放资源接口
+void releaseResource(Activity activity, String customParams);
+接口说明：用户退出游戏是释放资源接口，传入 扩展参数 customParams
+<table>
+<tr>
+<td>参数</td>
+<td>说明</td>
+</tr> 
+  <tr>
+  <td>customParams</td>
+  <td>该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可</td>
+  </tr>
+</table>
+调用案例代码：与退出接口类似
 
 ##### 进入游戏接口
 

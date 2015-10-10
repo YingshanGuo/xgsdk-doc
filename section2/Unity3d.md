@@ -446,6 +446,17 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **参数说明：**
 参数msg无意义。
 
+#### 3.1.5 释放资源接口
+```
+		public static void releaseResource(string customParams)
+```
+**接口说明：**
+用户点击退出时释放资源
+
+**参数说明：**
+customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。 
+
+
 
 <a name = "rechargeInterface"></a>
 ### 3.2 充值接口
@@ -1401,6 +1412,23 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 	XGSDK2.instance.onVirtualCurrencyConsume(roleInfo,"1",10,"123");
 ```
+
+#### 3.3.7 网络连接状况检测接口
+```
+		public static void setPingServer(string host)
+```
+**接口说明：**
+ 网络连接状况检测。XGSDK可以帮助游戏从客户端收集到指定服务器的网络连接状况，为网络部署方案优化提供建议
+
+**参数说明：**
+需要检测的主机域名或IP地址，XGSDK会在后台任务中完成网络状况的检测，不阻塞当前调用线程 
+
+**代码样例：**
+```
+	XGSDK2.instance.setPingServer("xxx.com");
+```
+
+
 
 <a name = "extraInterface"></a>
 ### 3.4 扩展接口
