@@ -11,30 +11,21 @@
 文档分成三大部分:西瓜 SDK 下载，配置环境，各个接口的接入说明和样例代码。逐步细述了整个接入过程；  
 同时罗列出了4种类型的接口：分别为：**用户与角色接口、充值接口、统计接口、扩展接口** ，便于游戏方的接入人员可以按照需求更加快速便捷的进行接入。
 
-
-
 ### 1.1 SDK下载包
 
 **渠道版 SDK 下载包包含：**
 1. 西瓜 SDKV2 的 Jar 包：
- xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar
+   xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar
 2. xgsdk-test-1.0.zip  
 3. 西瓜sdk（原生Android版)接入文档
-<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a>
-
-注：解压文件，导入eclipse，右键项目
- 选择Properties,在右边选项中选择Java build path，在右边的Libraries导入以上提供的jar,即可运行。  
-**此工程是一个demo测试项目，游戏商可以用原生游戏jar替换xgsdk.demo.jar即可。**
-
-
- 注：解压文件，导入 eclipse ，右键项目
- 选择 Properties ,在右边选项中选择 Java build path，在右边的 Libraries导入以上提供的jar,即可运行。  
-此工程是一个 demo 测试项目，游戏商可以用原生游戏 jar 替换xgsdk.demo.jar即可。
-
-
-  <img src="img/native_connect_package_import.png"></img>
-
-
+<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a> </br>
+4.demo运行方法 </br>
+下载原生SKD后，得到native-android-demo.zip,解压此文件，
+得到xgsdk-api.jar、xgsdk-demo.jar二个jar文件以及
+xgsdk-test-1.0.zip工程文件包。
+解压文件xgsdk-test-1.0.zip,导入eclipse,复制xgsdk-demo.jar到工程的libs文件夹下，即可运行。  
+  
+**此工程是一个demo测试项目，游戏商可以用原生游戏jar替换xgsdk-demo.jar即可。**
 
 ## 2. 配置环境与快速接入简介
 
@@ -45,19 +36,23 @@ Android 版本：Android2.2 以上
 Android 开发工具：Android SDK 和 Android Eclipse 等
 ### 2.2 接入步骤简介
 <ol type=“1”>
-<li><a href="#permission">配置 android权限 (AndroidManifest.xml文件)</a></li>
+    <li><a href="#addlib">游戏工程中导入lib库</a></li>
+    <li><a href="#permission">配置 android权限 (AndroidManifest.xml文件)</a></li>
 	<li><a href="#splash">增加闪屏</a></li>
 	<li><a href="#lifecyle">接入生命周期接口</a></li>
     <li><a href="#userAndRole">接入用户和角色接口</a></li>
 	<li><a href="#pay">接入充值接口</a></li>
-
 	<li><a href="#statistics">接入统计接口</a></li>
 	<li><a href="#extend">接入扩展接口</a></li>
 </ol>
 
 ### 2.3 快速接入
+<a id="addlib"></a>
+#### 2.3.1. 游戏工程中导入lib库
+将xgsdk-api.jar库复制到游戏工程的libs文件下
+
 <a id="permission"></a>
-#### 2.3.1. 配置AndroidManifest.xml文件
+#### 2.3.2. 配置AndroidManifest.xml文件
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -69,7 +64,7 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 ```
 
 <a id="splash"></a>
-#### 2.3.2. 增加闪屏
+#### 2.3.3. 增加闪屏
 
 1.游戏母包中AndroidManifest.xml增加 XGSplashActivity 作为启动 Activity 的声明，根据游戏朝向设定android:screenOrientation
 
@@ -93,7 +88,7 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 	 </intent-filter>
 
 <a id="lifecyle"></a>
-#### 2.3.3 接入生命周期接口
+#### 2.3.4 接入生命周期接口
 在游戏各个 Activity 生命周期中调用SDK生命周期接口，样例代码如下：
 
 ```java
@@ -145,6 +140,25 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
         XGSDK.getInstance().onActivityResult(this, requestCode, resultCode,
                 data);
     }
+
+	@Override
+	protected void onBackPressed() {
+	    super.onBackPressed();
+	    XGSDK.getInstance().onBackPressed(this);
+	    
+	}
+	@Override
+	protected void onConfigurationChanged(Configuration newConfig) {
+	    super.onConfigurationChanged(newConfig);
+	    XGSDK.getInstance().onConfigurationChanged(this, newConfig);
+	}
+	
+    @Override
+	public void onSaveInstanceState(Bundle outState,
+	        PersistableBundle outPersistentState) {
+	    super.onSaveInstanceState(outState, outPersistentState);
+	    XGSDK.getInstance().onSaveInstanceState(this, outState);
+	}
 ```
 
 onCreate 生命周期方法比较特殊。  
@@ -166,7 +180,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 <a id="userAndRole"></a>
 
-#### 2.3.4 接入用户和角色接口
+#### 2.3.5 接入用户和角色接口
 <a name="userAndRole" ></a>
 ##### 登录接口
 ```java
@@ -316,8 +330,20 @@ exit(Activity activity, ExitCallBack exitCallBack,String customParams)
             }
      }
 
-
-
+##### 释放资源接口
+void releaseResource(Activity activity, String customParams);
+接口说明：用户退出游戏时释放资源接口，传入扩展参数 customParams
+<table>
+<tr>
+<td>参数</td>
+<td>说明</td>
+</tr> 
+  <tr>
+  <td>customParams</td>
+  <td>该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可</td>
+  </tr>
+</table>
+调用案例代码：与退出接口类似
 
 ##### 进入游戏接口
 
@@ -434,7 +460,7 @@ onEnterGame(RoleInfo roleInfo)
 ##### 创建角色接口
 onCreateRole(RoleInfo roleInfo)
 
-接口说明：使用 roleInfo 来创建角色  
+接口说明：使用 role3333Info 来创建角色  
 
 <table>
 <tr>
@@ -491,7 +517,7 @@ onRoleLevelup(RoleInfo roleInfo)
 
 
 <a id="pay"></a>
-#### 2.3.5 接入充值接口（必接）
+#### 2.3.6 接入充值接口（必接）
 ##### 支付接口
 pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
@@ -776,7 +802,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 		});
 
 <a id="statistics"></a>
-##### 2.3.6 接入统计接口
+##### 2.3.7 接入统计接口
 
 ##### 自定义事件接口
 public void onEvent(RoleInfo roleInfo, String eventId, String eventDesc, int eventVal, Map<String, Object> eventBody)
@@ -980,7 +1006,7 @@ public void onVirtalCurrencyConsume(RoleInfo roleInfo,String itemName, int amoun
 
 <a id="extend"></a>
 
-#### 2.3.6 接入扩展接口
+#### 2.3.8 接入扩展接口
 ##### 切换账号接口
 switchAccount(Activity activity, String customParams)
 接口说明：切换账号，传入扩展参数 customParams  
@@ -994,6 +1020,39 @@ switchAccount(Activity activity, String customParams)
 		<td>该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可</td>
 	</tr>
 </table>
+
+### 2.4 游戏端本地(无需打包)调试方法
+1.解压xgsdk-test-1.0.zip,并导入eclipse中 </br>
+2.修改xgsdk-channel-test工程的AndroidManifest.xml文件，
+        <activity
+            android:name="com.xgsdk.client.testdemo.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="xg.game.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+       </activity>
+  
+  将com.xgsdk.client.testdemo.MainActivity改为自己游戏原启动Activity ，其他不变，例如
+       <activity
+           android:name="com.example.game.MainActivity"
+           android:launchMode="singleTop"
+           android:screenOrientation="landscape"
+           android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+           <intent-filter>
+              <action android:name="xg.game.MAIN" />
+              <category android:name="android.intent.category.DEFAULT" />
+           </intent-filter>
+      </activity>
+  
+3.修改游戏工程的project.properties文件，添加android.library=true属性
+
+4.打开xgsdk-channel-test的配置文件，将游戏工程作添加为lib依赖文件
+
+5.运行xgsdk-channel-test
 
 
 
