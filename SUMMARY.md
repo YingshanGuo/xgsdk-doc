@@ -19,6 +19,7 @@ This is the summary of my book.
         * [android](section2/originandroid.md)
         * [ios](section2/originios.md)
     * [客户端接入验证](section2/channeltest.md)
+    * [portal高级选项](section2/advancedoptions.md)
 
 * [服务端接入指南](section3/README.md)  
     * [session验证](section3/session.md)

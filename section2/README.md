@@ -24,3 +24,5 @@
 **[原生接口——IOS](./originios.md)**
 
 **[客户端接入验证](./channeltest.md)**
+
+**[portal 高级选项](./advancedoptions.md)**
