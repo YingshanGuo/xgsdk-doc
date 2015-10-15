@@ -28,7 +28,7 @@
 
 2. 依次在【高级配置】 -> 【发布计划】 -> 【渠道】，进行参数值的配置。如下图所示，我们配置一个UC渠道的JPUSH_APPKEY的值。如有多个渠道请每个渠道分别配置对应的JPUSH_APPKEY的值。
 
-	![AndroidManifest_custom_properties.png](AndroidManifest_custom_properties.png)
+	![AndroidManifest_custom_properties.png](./img/AndroidManifest_custom_properties.png)
 
 3. 使用西瓜提供的打包工具（含命令行工具）进行打包之后，最终生成的渠道包apk中的AndroidManifest.xml对应的配置将被替换成：
 
@@ -66,4 +66,4 @@
 
 3. 导航到【高级配置】 -> 【发布计划】 -> 【渠道】，点击上传按钮，选择刚刚生成的**custom_res.zip**包上传，如下图所示：
 
-	![AndroidManifest_custom_resource.png](AndroidManifest_custom_resource.png)
+	![AndroidManifest_custom_resource.png](./img/AndroidManifest_custom_resource.png)
