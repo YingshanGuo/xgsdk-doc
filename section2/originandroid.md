@@ -374,83 +374,103 @@ onEnterGame(RoleInfo roleInfo)
 **关于 RoleInfo 的成员说明**
 <table>
 <tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
+	<th>参数</th>
+	<th>参数类型</th>
+    <th>最大长度</th>
 	<th>说明</th>
-	<th>参数说明</th>
-</tr>
-<tr>
-	<td>uid</td>
-	<td>String</td>
-	<td>用户ID</td>
-	<td>用户ID</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>角色ID</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>角色类型</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>角色名称</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>String</td>
-	<td>角色等级</td>
-	<td>角色等级</td>
+	<th>必须</th>
 </tr>
 
 <tr>
-	<td>roleVipLevel</td>
-	<td>String</td>
-	<td>vip角色等级</td>
-	<td>vip角色等级</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服务器ID</td>
-	<td>服务器ID</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服务器名称</td>
-	<td>服务器名称</td>
-</tr>
-<tr>
 	<td>zoneId</td>
 	<td>string</td>
-	<td>区ID</td>
-	<td>区ID</td>
+	<td>40</td>
+	<td>游戏区ID</td>
+    <td>N</td>
 </tr>
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名称</td>
-	<td>区名称</td>
+	<td>40</td>
+	<td>游戏区名称</td>
+    <td>N</td>
 </tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>40</td>
+	<td>游戏服ID，示例：s1,s2</td>
+    <td>Y</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>40</td>
+	<td>游戏服名称，示例：风云争霸</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>40</td>
+	<td>用户ID</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>40</td>
+	<td>角色ID</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>60</td>
+	<td>角色名</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>20</td>
+	<td>角色类型，如法师，道士，战士</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleLevel</td>
+	<td>int</td>
+	<td> </td>
+	<td>角色等级</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleVipLevel</td>
+	<td>int</td>
+	<td> </td>
+	<td>角色vip等级</td>
+    <td>N</td>
+</tr>
+
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>工会名</td>
-	<td>工会名</td>
+	<td>30</td>
+	<td>公会名</td>
+    <td>N</td>
 </tr>
 <tr>
 	<td>gender</td>
 	<td>string</td>
-	<td>性别</td>
-	<td>性别</td>
+    <td>枚举值：m,f;分别代表男女</td>
+	<td>角色性别</td>
+	<td>Y</td>
 </tr>
 </table>
 
@@ -460,7 +480,7 @@ onEnterGame(RoleInfo roleInfo)
 ##### 创建角色接口
 onCreateRole(RoleInfo roleInfo)
 
-接口说明：使用 role3333Info 来创建角色  
+接口说明：使用 roleInfo 来创建角色  
 
 <table>
 <tr>
@@ -1024,19 +1044,20 @@ switchAccount(Activity activity, String customParams)
 ### 2.4 游戏端本地(无需打包)调试方法
 1.解压xgsdk-test-1.0.zip,并导入eclipse中 </br>
 2.修改xgsdk-channel-test工程的AndroidManifest.xml文件，
+
         <activity
             android:name="com.xgsdk.client.testdemo.MainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-            <intent-filter>
+                 <intent-filter>
                 <action android:name="xg.game.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
        </activity>
   
   将com.xgsdk.client.testdemo.MainActivity改为自己游戏原启动Activity ，其他不变，例如
+
        <activity
            android:name="com.example.game.MainActivity"
            android:launchMode="singleTop"
@@ -1053,8 +1074,6 @@ switchAccount(Activity activity, String customParams)
 4.打开xgsdk-channel-test的配置文件，将游戏工程作添加为lib依赖文件
 
 5.运行xgsdk-channel-test
-
-
 
 ****
 
