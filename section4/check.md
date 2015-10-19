@@ -672,7 +672,7 @@
 </tr>
 <tr>
 <td>
-				小财神
+				小财神（九城）
 			</td>
 <td>
 				xiaocaishen
@@ -792,6 +792,16 @@
 <tr>
 <td>7K7k</td>
 <td>7k7k</td>
+			<!--
+<td>整理中</td>
+-->
+<td>无
+</td>
+</tr>
+
+<tr>
+<td>猎宝</td>
+<td>LBYX</td>
 			<!--
 <td>整理中</td>
 -->
