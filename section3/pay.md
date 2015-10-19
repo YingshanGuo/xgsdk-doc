@@ -125,11 +125,11 @@
 
 <div id="configure"></div>
 
-#### 2 支付通知接口（通知游戏支付结果）
+### 2 支付通知接口（通知游戏支付结果）
 
 <div id="conditions"></div>
 
-##### 2.1 功能
+#### 2.1 功能
 
 <table>
 <tr>
@@ -157,7 +157,7 @@
 
 <div id="steps"></div>
 
-##### 2.2 输入
+#### 2.2 输入
 
 **参数说明：** 参数为一个json的字符串
 
@@ -247,7 +247,7 @@
 
 <div id="import"></div>
 
-##### 2.3 输出
+#### 2.3 输出
 **返回结果为JSON格式的字符串，分别有如下几个字段：**
 
 <table>
@@ -264,7 +264,7 @@
 
 <div id="import_android"></div>
 
-##### 2.4 请求样例
+#### 2.4 请求样例
 **请求参数:**  
 type=notify-game  
 xgAppId=1024appid  
@@ -301,7 +301,7 @@ postBody:
 
 <div id="import_1"></div>
 
-##### 2.5 返回值样例
+#### 2.5 返回值样例
 
 	{
 	    "code": "0",
@@ -311,7 +311,7 @@ postBody:
 
 <div id="import_2"></div>
 
-##### 2.6 错误码
+#### 2.6 错误码
 <table>
 <tr>
 <td nowrap>错误码</td> <td>备注</td>
@@ -420,7 +420,7 @@ postBody:
 
 <div id="import_4"></div>
 
-##### 2.7 签名和验签
+#### 2.7 签名和验签
 
 **签名算法采用HmacSHA1**
 
@@ -444,7 +444,7 @@ productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&
 -->
 <div id="import_3"></div>
 
-##### 2.8 游戏逻辑处理建议
+#### 2.8 游戏逻辑处理建议
 1. 如果有游戏升级不能响应，则需返回String ERR_RESEND = "1"；
 2. 先要进行验证签名，不通过则需返回String ERR_SIGN = "-1"；
 3. 如果游戏保留了游戏订单但找不到对应订单时，则需返回String ERR_ORDERID_NOTEXIST = "-6"；
@@ -457,11 +457,11 @@ productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&
 
 <div id="adjust"></div>
 
-#### 3. 二次查询验证订单
+### 3. 二次查询验证订单
 
 <div id="copyJar"></div>
 
-##### 3.1 功能
+#### 3.1 功能
 **发起方：** 游戏服务器  
 **接收方：** XGSDK服务端  
 **接口类型：** HTTP POST  
@@ -475,7 +475,7 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 
 <div id="copyInterface"></div>
 
-##### 3.2 输入
+#### 3.2 输入
 **参数说明：**
 <table>
 <tr>
@@ -497,7 +497,7 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 
 <div id="adjustActivity"></div>
 
-##### 3.3 输出
+#### 3.3 输出
 **返回结果为JSON格式的字符串，分别有如下几个字段：**
 <table>
 <tr>
@@ -603,7 +603,7 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 
 <div id="androidMk"></div>
 
-##### 3.4 请求样例
+#### 3.4 请求样例
 **请求参数:**  
 **tradeNo:** 2984456  
 **当前时间戳ts:** 20150723150028  
@@ -616,7 +616,7 @@ http://p2.xgsdk.com/pay/verify-order/1024appid?tradeNo=2984456&sign=86e396a999e9
 
 <div id="androidMk1"></div>
 
-##### 3.5 返回值样例
+#### 3.5 返回值样例
 **响应签名源串为：**
 channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=verify-order&uid=30854&xgAppId=1024appid
 
@@ -655,7 +655,7 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 
 <div id="androidMk2"></div>
 
-##### 3.6 错误码
+#### 3.6 错误码
 <table>
 <tr>
 <td nowrap>错误码</td> <td>备注</td>
@@ -765,7 +765,7 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 ---
 
 <div id="version"></div>
-#### 4. 文档版本说明
+### 4. 文档版本说明
 <table>
 <tr>
 <td>SDK版本</td><td>文档版本</td> <td>SDK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>
