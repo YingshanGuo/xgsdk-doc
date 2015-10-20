@@ -20,10 +20,35 @@
 ## 一. 注册登录
 
 ### 1.1 注册
+西瓜提供新用户免费注册，注册时请填写真实信息，以便找回密码和后续反馈交流
+
+<img src="specification/1.png"/>
 
 ### 1.2 登陆
+用户输入用户名和密码登陆，当忘记密码时，点击如图所示的“忘记密码”找回密码。
 
-### 1.3 忘记密码
+<img src="specification/28.png"/>
+
+找回密码时需输入注册时的邮箱号码和正确的验证码，然后发送验证邮件。再收到验证邮件之后，点击邮件中的验证链接，将跳转到重置密码页面，输入新密码即可。整个过程如下图所示。
+
+发送验证邮件
+
+<img src="specification/30.png"/>
+
+验证邮件成功发送
+
+<img src="specification/31.png"/>
+
+邮箱接收验证链接
+
+<img src="specification/29.png"/>
+
+重置密码
+<img src="specification/32.png"/>
+
+重置密码成功
+
+<img src="specification/33.png"/>
 
 ## 二. 个人信息编辑
 
