@@ -1,10 +1,8 @@
-# 10分钟掌握西瓜SDK
+# Hello 西瓜
 
-本章带你快速熟悉西瓜SDK的各个关键功能，10分钟学会西瓜SDK打包工具的使用。
+本章带你快速熟悉西瓜SDK的各个关键功能，快速学会西瓜SDK的使用。
 
-
-* [快速入门](./quick_start.md)
-* [hello西瓜](./hello_xgsdk.md)
-* [视频教程](./video_tutorial.md)
+* [快速入门](./tutorial.md)
+* [详细说明](./sepcification.md)
 * [打包工具使用指南](./xg_dabao.md)
-* [签名文件规则说明](./signature.md)
+
