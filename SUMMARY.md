@@ -24,7 +24,6 @@ This is the summary of my book.
 * [服务端接入指南](section3/README.md)  
     * [session验证](section3/session.md)
     * [支付通知](section3/pay.md)
-    * [数据上报](section3/data.md)
 
 * [渠道规范](section4/README.md)
     * [参数申请指南](section4/Parameters.md)
