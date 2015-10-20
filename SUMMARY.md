@@ -4,7 +4,7 @@ This is the summary of my book.
 
 * [西瓜SDK快速入门](section1/index.md)
     * [快速入门](section1/tutorial.md)
-    * [hello西瓜](section1/sepcification.md)
+    * [hello西瓜](section1/hello_xgsdk.md)
     * [视频教程](section1/video_tutorial.md)
     * [打包工具使用指南](section1/xg_dabao.md)
     * [签名文件格式说明](section1/signature.md)
