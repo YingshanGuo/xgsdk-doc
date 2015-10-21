@@ -50,16 +50,47 @@
 
 <img src="specification/33.png"/>
 
-### 2. 个人信息编辑
+## 二. 个人信息编辑
+<img src="image/editprobtn.png"/>
+修改个人信息： 可以修改个人的昵称，手机号码，QQ号码。
+<img src="image/editprom.png"/>
+修改密码：
+<img src="image/editpassm.png"/>
+## 三. 游戏、发布计划
 
-### 3. 游戏、发布计划
+### 3.1 游戏创建与编辑
+在所有的工作开始前，先创建游戏。
+游戏的创建：
+<img src="image/newgamebtn.png"/>
+<img src="image/newgame.png"/>
+游戏的编辑：
+<img src="image/editgame.png"/>
+<img src="image/editgamemodal.png"/>
+### 3.2 发布计划创建、编辑、克隆、锁定
+创建发布计划：
+<img src="image/newplanbtn.png"/>
+<img src="image/newplanmodal.png"/>
+如果在创建发布计划没有您要的渠道版本，请反馈给我们。
+<img src="image/channelfeedback.png"/>
 
-#### 3.1 游戏创建与编辑
+编辑发布计划：
+在编辑发布计划中您可以修改该计划的上线时间，计划名称以及渠道。
+<img src="image/editplanbtn.png"/>
+<img src="image/editplanmodal.png"/>
 
-#### 3.2 发布计划创建、编辑、克隆、锁定
 
-### 4. 开发接入SDK
-#### 4.1  点击开发接入 SDK
+克隆发布计划：
+克隆发布计划可以选定当前已有的发布计划，克隆其渠道与参数，如果您想修改克隆的渠道，可在克隆后点击计划后面的修改按钮进行修改。
+<img src="image/clonebtn.png"/>
+<img src="image/cloneplanmodal.png"/>
+
+锁定发布计划：
+如果您是管理员，就有权限进行锁定和解锁操作。锁定后参数配置不可修改，需解锁后才能修改。
+<img src="image/lockbtn.png"/>
+锁定按钮被点亮表示当前计划被锁定
+<img src="image/lockdetail.png"/>
+## 四. 开发接入SDK
+
 
 在弹出窗口选择游戏引擎类型、屏幕样式
 
