@@ -162,7 +162,6 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 ```
 
 onCreate 生命周期方法比较特殊。  
-注： setUserCallBack 在 init 之前调用，onCreate 方法执行之后，三者的顺序不能改变
 
 ```java
 @Override
