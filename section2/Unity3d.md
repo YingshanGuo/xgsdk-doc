@@ -798,7 +798,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 <tr>
 	<td>serverName</td>
 	<td>string</td>
-	<td>余额</td>
+	<td>服名称</td>
 	<td>不可为空</td>
 </tr>
 <tr>
