@@ -1,43 +1,12 @@
 # 西瓜SDK session验证文档
-
-## 1. 快速接入
-向西瓜发送验证请求：
-    
-    http://a2.xgsdk.com/account/verify-session/{xgAppId}?authInfo={客户端上传的authInfo字符串}&ts={当前时间戳}&type=verify-session
-
-    示例：
-	http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=&ts=20150723150028&type=verify-session
-
-验证成功返回结果：
-
-    {
-    	"code": "0", // 0:代表成功
-    	"msg": "success",
-	    "data": {
-			"xgAppId": "2008",
-    	    "planId": "1",
-			"channelId": "mi",
-			"deviceId": "imei_867323027683257",
-    	    "sessionId": "oVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJ"，
-    	    "uid": "mi__3099245"，
-    	    "userName": "渠道用户名"
-    	}
-    }
-
-验证失败返回结果：
-
-	{
-		"code": {错误码} // -1:签名错误，-103:渠道告知用户未登录，更多请参考文档底部的错误码表
-    }
-
-## 2. 接入详细说明
-### 1. 文档概述
+<div id="doc"></div>
+## 1. 文档概述
 
 此文档是西瓜SDK服务端接入登录验证文档。介绍游戏服务器如何验证用户登录信息，游戏客户端在接收到西瓜登录成功的回调后，
 将对应的信息发送到游戏服务器，游戏服务器使用登录认证接口向西瓜登录服务器验证并获取用户登录信息。  
 **注意：** 登录认证接口为登录流程必接接口。
 
-#### 1.1 文档结构
+### 1.1 文档结构
 <ol>
 	<li>
 		<a href="#doc">文档概述</a>
@@ -56,19 +25,15 @@
             <li><a href="#errcode">错误码</a>
 		</ul>
 	</li>
-	<li>
-		<a href="#version">文档版本</a>
-	</li>
 </ol>
-
 
 <div id="configure"></div>
 
-### 2. 登录认证接口
+## 2. 登录认证接口
 
 <div id="conditions"></div>
 
-#### 2.1 功能
+### 2.1 功能
 
 <table>
 <tr>
@@ -97,7 +62,7 @@
 
 <div id="steps"></div>
 
-#### 2.2 输入
+### 2.2 输入
 
 参数说明：
 <table>
@@ -118,7 +83,7 @@
 <div id="import"></div>
 
 
-#### 2.3 输出
+### 2.3 输出
 返回结果为JSON格式的字符串，分别有如下几个字段：
 <table>
 <tr>
@@ -167,7 +132,7 @@
 
 <div id="import_android"></div>
 
-#### 2.4 请求示例
+### 2.4 请求示例
 
 **客户端上报的authInfo：**
 eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=
@@ -179,7 +144,7 @@ eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNl
 http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=&ts=20150723150028&type=verify-session
 
 <div id="import_1"></div>
-#### 2.5 返回值样例
+### 2.5 返回值样例
 
 	{
     	"code": "0",
@@ -196,7 +161,7 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
     }
 
 <div id="errcode"></div>
-#### 2.6 错误码
+### 2.6 错误码
 
 <table>
 <tr>
@@ -231,20 +196,5 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
 </tr>
 <tr>
 <td>-103</td> <td>渠道登陆验证结果失败</td>
-</tr>
-</table>
-
----
-<div id="version"></div>
-### 文档版本说明
-<table>
-<tr>
-<td>SDK版本</td><td>文档版本</td> <td>SDK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
-</tr>
-<tr>
-	<td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.31</td>
-</tr>
-<tr>
-	<td>2.0 </td><td>1.1</td> <td>初版</td> <td>初版</td> <td>2015.10.16</td>
 </tr>
 </table>
