@@ -82,6 +82,8 @@
 如果只接入支付通知接口,当服务端密钥泄露后，有可能遭受伪造订单信息攻击。  
 **注意：** 如游戏无支付要求，则无需接入。
 
+<img src="img/recharge.png"/>
+
 <div id="category" style="display:none"></div>
 
 #### 1.1 文档结构
