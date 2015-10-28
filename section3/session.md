@@ -59,9 +59,10 @@
 </tr>
 </table>
 
-```
+
 其中xgAppId是游戏在XGSDK的唯一标示，如西游伏魔是1024。
-```
+
+a2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环境有不同的域名，具体值请参考在XGSDK Portal配置界面里的西瓜 SDK 接入参数。
 
 **功能描述:**
 游戏服务器向XGSDK服务端发送请求，确认客户端发过来的sessionId是有效的，并获取准确的渠道账号。
@@ -71,16 +72,16 @@
 参数说明：
 <table>
 <tr>
-<td>参数</td><td nowrap="nowrap">是否必需</td><td>类型</td><td>说明</td>
+<td>参数</td><td>参数类型</td><td>说明</td><td>必须</td>
 </tr>
 <tr>
-<td>type</td><td>是</td><td>String</td><td>接口类型，固定为verify-session</td>
+<td>type</td><td>String</td><td>接口类型，固定为verify-session</td><td>是</td>
 </tr>
 <tr>
-<td>authInfo</td><td>是</td><td>String</td><td>会话验证数据，xgsdk客户端负责生成，通过onLoginSuccess回调反馈给游戏客户端，游戏客户端提交给游戏服务器后，游戏服务器拿这个参数到xgsdk服务器验证登录会话是否有效</td>
+<td>authInfo</td><td>String</td><td>会话验证数据，xgsdk客户端负责生成，通过onLoginSuccess回调反馈给游戏客户端，游戏客户端提交给游戏服务器后，游戏服务器拿这个参数到xgsdk服务器验证登录会话是否有效</td><td>是</td>
 </tr>
 <tr>
-<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028对应2015/7/23 15:00:28</td>
+<td>ts</td><td>String</td><td>当前时间戳，秒级，如20150723150028对应2015/7/23 15:00:28</td><td>是</td>
 </tr>
 </table>
 
@@ -89,46 +90,46 @@
 返回结果为JSON格式的字符串，分别有如下几个字段：
 <table>
 <tr>
-<td>字段</td><td >是否必需</td><td>类型</td><td>说明</td>
+<td>字段</td><td>类型</td><td>说明</td><td>必须</td>
 </tr>
 <tr>
-<td>code</td><td>是</td><td>字符串</td><td>返回码，参见错误码章节</td>
+<td>code</td><td>String</td><td>返回码，参见错误码章节</td><td>是</td>
 </tr>
 <tr>
-<td>msg</td><td>是</td><td>字符串</td><td>接口调用信息提示</td>
+<td>msg</td><td>String</td><td>接口调用信息提示</td><td>是</td>
 </tr>
 <tr>
-<td>data</td><td>是</td><td>JSONObject</td><td>当Code为0时候该字段才有意义，否则为空</td>
+<td>data</td><td>JSONObject</td><td>当Code为0时候该字段才有意义，否则为空</td><td>是</td>
 </tr>
 </table>
 
 **data数据：**
 <table>
 <tr>
-<td>参数</td><td >是否必需</td><td>类型</td><td>说明</td>
+<td>参数</td><td>类型</td><td>说明</td><td>必须</td>
 </tr>
 <tr>
-<td>xgAppId</td><td>是</td><td>String</td><td>xgsdk分配给游戏的ID</td>
+<td>xgAppId</td><td>String</td><td>xgsdk分配给游戏的ID</td><td>是</td>
 </tr>
 <tr>
-<td>planId</td><td>是</td><td>String</td><td>发布计划编号</td>
+<td>planId</td><td>String</td><td>发布计划编号</td><td>是</td>
 </tr>
 <tr>
-<td>channelId</td><td>是</td><td>String</td><td>渠道Id</td>
+<td>channelId</td><td>String</td><td>渠道Id</td><td>是</td>
 </tr>
 <tr>
-<td>deviceId</td><td>是</td><td>String</td><td>设备Id</td>
+<td>deviceId</td><td>String</td><td>设备Id</td><td>是</td>
 </tr>
 <tr>
-<td>sessionId</td><td>否</td><td>String</td><td>
+<td>sessionId</td><td>String</td><td>
 会话编号
-</td>
+</td><td>否</td>
 </tr>
 <tr>
-<td>uid</td><td>是</td><td>String</td><td>用户编号</td>
+<td>uid</td><td>String</td><td>用户编号</td><td>是</td>
 </tr>
 <tr>
-<td>userName</td><td>否</td><td>String</td><td>用户名 </td>
+<td>userName</td><td>String</td><td>用户名 </td><td>否</td>
 </tr>
 </table>
 

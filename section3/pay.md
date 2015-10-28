@@ -2,6 +2,7 @@
 <div id="doc"></div>
 ## 1. 文档概述
 此文档是西瓜SDK支付通知接口接入文档。包括如下2个接口：  
+
  1. 支付通知接口
  2. 二次查询验证订单接口
 
@@ -86,85 +87,85 @@
 
 <table>
 <tr>
-<td>参数</td><td >必选</td><td>类型</td><td>说明</td>
+<td>参数</td><td>参数类型</td><td>最大长度</td><td>说明</td><td>必须</td>
 </tr>
 <tr>
-<td>type</td><td>是</td><td>String</td><td>接口类型，固定为notify-game</td>
+<td>type</td><td>String</td><td>32</td><td>接口类型，固定为notify-game</td><td>是</td>
 </tr>
 <tr>
-<td>xgAppId</td><td>是</td><td>String</td><td>XGSDK分配的游戏编号</td>
+<td>xgAppId</td><td>String</td><td>64</td><td>XGSDK分配的游戏编号</td><td>是</td>
 </tr>
 <tr>
-<td>channelId</td><td>是</td><td>String</td><td>运营渠道编号</td>
+<td>channelId</td><td>String</td><td>32</td><td>运营渠道编号</td><td>是</td>
 </tr>
 <tr>
-<td>uid</td><td>是</td><td>String</td><td>渠道的用户编号</td>
+<td>uid</td><td>String</td><td>128</td><td>渠道的用户编号</td><td>是</td>
 </tr>
 <tr>
-<td>zoneId</td><td>否</td><td>String</td><td>游戏区编号</td>
+<td>zoneId</td><td>String</td><td>32</td><td>游戏区编号</td><td>否</td>
 </tr>
 <tr>
-<td>serverId</td><td>否</td><td>String</td><td>游戏服编号</td>
+<td>serverId</td><td>String</td><td>32</td><td>游戏服编号</td><td>否</td>
 </tr>
 <tr>
-<td>roleId</td><td>是</td><td>String</td><td>角色编号</td>
+<td>roleId</td><td>String</td><td>32</td><td>角色编号</td><td>是</td>
 </tr>
 <tr>
-<td>roleName</td><td>否</td><td>String</td><td>角色名称</td>
+<td>roleName</td><td>String</td><td>64</td><td>角色名称</td><td>否</td>
 </tr>
 <tr>
-<td>roleLevel</td><td>否</td><td>String</td><td>角色等级</td>
+<td>roleLevel</td><td>String</td><td>32</td><td>角色等级</td><td>否</td>
 </tr>
 <tr>
-<td>roleVipLevel</td><td>否</td><td>String</td><td>角色VIP等级</td>
+<td>roleVipLevel</td><td>String</td><td>32</td><td>角色VIP等级</td><td>否</td>
 </tr>
 <tr>
-<td>currencyName</td><td>否</td><td>String</td><td>支付货币名称</td>
+<td>currencyName</td><td>String</td><td>64</td><td>支付货币名称</td><td>否</td>
 </tr>
 <tr>
-<td>productId</td><td>是</td><td>String</td><td>商品编号</td>
+<td>productId</td><td>String</td><td>64</td><td>商品编号</td><td>是</td>
 </tr>
 <tr>
-<td>productName</td><td>否</td><td>String</td><td>商品名称</td>
+<td>productName</td><td>String</td><td>64</td><td>商品名称</td><td>否</td>
 </tr>
 <tr>
-<td>productDesc</td><td>否</td><td>String</td><td>商品描述</td>
+<td>productDesc</td><td>String</td><td>128</td><td>商品描述</td><td>否</td>
 </tr>
 <tr>
-<td>productQuantity</td><td>否</td><td>String</td><td>商品数量</td>
+<td>productQuantity</td><td>int</td><td>10</td><td>商品数量</td><td>否</td>
 </tr>
 <tr>
-<td>productUnitPrice</td><td>否</td><td>String</td><td>商品单价(单位分)</td>
+<td>productUnitPrice</td><td>int</td><td>10</td><td>商品单价(单位分)</td><td>否</td>
 </tr>
 <tr>
-<td>totalAmount</td><td>是</td><td>String</td><td>总面额(单位分)</td>
+<td>totalAmount</td><td>int</td><td>10</td><td>总面额(单位分)</td><td>是</td>
 </tr>
 <tr>
-<td>paidAmount</td><td>是</td><td>String</td><td>总支付金额(单位分)</td>
+<td>paidAmount</td><td>int</td><td>10</td><td>总支付金额(单位分)</td><td>是</td>
 </tr>
 <tr>
-<td>customInfo</td><td>否</td><td>String</td><td>游戏方自定义字段，支付成功后回调的时候，透传原样返回</td>
+<td>customInfo</td><td>String</td><td>2000</td><td>游戏方自定义字段，支付成功后回调的时候，透传原样返回</td><td>否</td>
 </tr>
 <tr>
-<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028  
-对应2015/7/23 15:00:28</td>
+<td>ts</td><td>String</td><td>14</td><td>当前时间戳，秒级，如20150723150028  
+对应2015/7/23 15:00:28</td><td>是</td>
 </tr>
 <tr>
-<td>gameTradeNo</td><td>否</td><td>String</td><td>游戏侧订单号</td>
+<td>gameTradeNo</td><td>String</td><td>64</td><td>游戏侧订单号</td><td>否</td>
 </tr>
 <tr>
-<td>sign</td><td>是</td><td>String</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥</td>
+<td>sign</td><td>String</td><td>40</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥</td><td>是</td>
 </tr>
 <tr>
-<td>tradeNo</td><td>是</td><td>String</td><td>Xgsdk分配的订单号</td>
+<td>tradeNo</td><td>String</td><td>64</td><td>Xgsdk分配的订单号</td><td>是</td>
 </tr>
 <tr>
-<td>paidTime</td><td>是</td><td>String</td><td>支付时间 yyyyMMddHHmmss</td>
+<td>paidTime</td><td>String</td><td>14</td><td>支付时间 yyyyMMddHHmmss</td><td>是</td>
 </tr>
 <tr>
-<td>payStatus</td><td>是</td><td>String</td><td>订单支付状态  
+<td>payStatus</td><td>String</td><td>1</td><td>订单支付状态  
 1 支付成功  
-2 支付失败</td>
+2 支付失败</td><td>是</td>
 </tr>
 </table>
 
@@ -297,7 +298,9 @@ productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&
 -->
 <div id="pay_notify_suggestion"></div>
 
-### 2.8 游戏逻辑处理建议
+### 2.8 游戏处理注意事项
+为了避免被人网络截包篡改充值数据，需要游戏服务器收到充值通知后，按如下逻辑来实现校验充值数据，并到xgsdk服务器再次验证。
+
 1. 如果有游戏升级不能响应，则需返回String ERR_RESEND = "1"；
 2. 先要进行验证签名，不通过则需返回String ERR_SIGN = "-1"；
 3. 如果游戏保留了游戏订单但找不到对应订单时，则需返回String ERR_ORDERID_NOTEXIST = "-6"；
@@ -320,7 +323,7 @@ productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&
 **安全机制：** 签名  
 **请求地址：**  
 http://p2.xgsdk.com/pay/verify-order/{xgAppId}  
-其中xgAppId是XGSDK分配的游戏编号，如西游伏魔是1024appid。  
+其中xgAppId是XGSDK分配的游戏编号，如西游伏魔是1024appid。p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环境有不同的域名，具体值请参考在XGSDK Portal配置界面里的西瓜 SDK 接入参数。
 **功能描述：** 用于游戏服务器验证收到的订单通知是否有效。
 
 <div id="order_query_step_input"></div>
@@ -328,19 +331,19 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 **参数说明：**
 <table>
 <tr>
-<td>参数名称</td><td>必选</td><td>类型</td><td>说明</td>
+<td>参数名称</td><td>参数类型</td><td>最大长度</td><td>说明</td><td>必须</td>
 </tr>
 <tr>
-<td>type</td><td>是</td><td>String</td><td>接口类型，固定为verify-order</td>
+<td>type</td><td>String</td><td>32</td><td>接口类型，固定为verify-order</td><td>是</td>
 </tr>
 <tr>
-<td>tradeNo</td><td>是</td><td>String</td><td>订单编号</td>
+<td>tradeNo</td><td>String</td><td>32</td><td>订单编号</td><td>是</td>
 </tr>
 <tr>
-<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028对应2015/7/23 15:00:28</td>
+<td>ts</td><td>String</td><td>14</td><td>当前时间戳，秒级，如20150723150028对应2015/7/23 15:00:28</td><td>是</td>
 </tr>
 <tr>
-<td>sign</td><td>是</td><td>String</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥</td>
+<td>sign</td><td>String</td><td>40</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥</td><td>是</td>
 </tr>
 </table>
 
@@ -366,85 +369,85 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 参数说明：
 <table>
 <tr>
-<td>参数名称</td><td>必选</td><td>类型</td><td>说明</td>
+<td>参数名称</td><td>参数类型</td><td>最大长度</td><td>说明</td><td>必须</td>
 </tr>
 <tr>
-<td>type</td><td>是</td><td>String</td><td>接口类型，固定为verify-order</td>
+<td>type</td><td>String</td><td>32</td><td>接口类型，固定为verify-order</td><td>是</td>
 </tr>
 <tr>
-<td>xgAppId</td><td>是</td><td>String</td><td>XGSDK分配的游戏编号</td>
+<td>xgAppId</td><td>String</td><td>64</td><td>XGSDK分配的游戏编号</td><td>是</td>
 </tr>
 <tr>
-<td>channelId</td><td>是</td><td>String</td><td>运营渠道编号</td>
+<td>channelId</td><td>String</td><td>32</td><td>运营渠道编号</td><td>是</td>
 </tr>
 <tr>
-<td>uid</td><td>是</td><td>String</td><td>渠道的用户编号</td>
+<td>uid</td><td>String</td><td>128</td><td>渠道的用户编号</td><td>是</td>
 </tr>
 <tr>
-<td>zoneId</td><td>否</td><td>String</td><td>游戏区编号</td>
+<td>zoneId</td><td>String</td><td>32</td><td>游戏区编号</td><td>否</td>
 </tr>
 <tr>
-<td>serverId</td><td>否</td><td>String</td><td>游戏服编号</td>
+<td>serverId</td><td>String</td><td>32</td><td>游戏服编号</td><td>否</td>
 </tr>
 <tr>
-<td>roleId</td><td>是</td><td>String</td><td>角色编号</td>
+<td>roleId</td><td>String</td><td>32</td><td>角色编号</td><td>是</td>
 </tr>
 <tr>
-<td>roleName</td><td>否</td><td>String</td><td>角色名称</td>
+<td>roleName</td><td>String</td><td>64</td><td>角色名称</td><td>否</td>
 </tr>
 <tr>
-<td>roleLevel</td><td>否</td><td>String</td><td>角色等级</td>
+<td>roleLevel</td><td>String</td><td>32</td><td>角色等级</td><td>否</td>
 </tr>
 <tr>
-<td>roleVipLevel</td><td>否</td><td>String</td><td>角色VIP等级</td>
+<td>roleVipLevel</td><td>String</td><td>32</td><td>角色VIP等级</td><td>否</td>
 </tr>
 <tr>
-<td>currencyName</td><td>否</td><td>String</td><td>支付货币名称</td>
+<td>currencyName</td><td>String</td><td>64</td><td>支付货币名称</td><td>否</td>
 </tr>
 <tr>
-<td>productId</td><td>是</td><td>String</td><td>商品编号</td>
+<td>productId</td><td>String</td><td>64</td><td>商品编号</td><td>是</td>
 </tr>
 <tr>
-<td>productName</td><td>否</td><td>String</td><td>商品名称</td>
+<td>productName</td><td>String</td><td>64</td><td>商品名称</td><td>否</td>
 </tr>
 <tr>
-<td>productDesc</td><td>否</td><td>String</td><td>商品描述</td>
+<td>productDesc</td><td>String</td><td>128</td><td>商品描述</td><td>否</td>
 </tr>
 <tr>
-<td>productQuantity</td><td>否</td><td>String</td><td>商品数量</td>
+<td>productQuantity</td><td>int</td><td>10</td><td>商品数量</td><td>否</td>
 </tr>
 <tr>
-<td>productUnitPrice</td><td>否</td><td>String</td><td>商品单价(单位分)</td>
+<td>productUnitPrice</td><td>int</td><td>10</td><td>商品单价(单位分)</td><td>否</td>
 </tr>
 <tr>
-<td>totalAmount</td><td>是</td><td>String</td><td>总面额(单位分)</td>
+<td>totalAmount</td><td>int</td><td>10</td><td>总面额(单位分)</td><td>是</td>
 </tr>
 <tr>
-<td>paidAmount</td><td>是</td><td>String</td><td>总支付金额(单位分)</td>
+<td>paidAmount</td><td>int</td><td>10</td><td>总支付金额(单位分)</td><td>是</td>
 </tr>
 <tr>
-<td>customInfo</td><td>否</td><td>String</td><td>游戏方自定义字段，支付成功后回调的时候，透传原样返回</td>
+<td>customInfo</td><td>String</td><td>2000</td><td>游戏方自定义字段，支付成功后回调的时候，透传原样返回</td><td>否</td>
 </tr>
 <tr>
-<td>ts</td><td>是</td><td>String</td><td>当前时间戳，秒级，如20150723150028  
-对应2015/7/23 15:00:28</td>
+<td>ts</td><td>String</td><td>14</td><td>当前时间戳，秒级，如20150723150028  
+对应2015/7/23 15:00:28</td><td>是</td>
 </tr>
 <tr>
-<td>gameTradeNo</td><td>否</td><td>String</td><td>游戏侧订单号</td>
+<td>gameTradeNo</td><td>String</td><td>64</td><td>游戏侧订单号</td><td>否</td>
 </tr>
 <tr>
-<td>sign</td><td>是</td><td>String</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥</td>
+<td>sign</td><td>String</td><td>40</td><td>签名，签名算法参见签名章节，使用游戏服务端密钥</td><td>是</td>
 </tr>
 <tr>
-<td>tradeNo</td><td>是</td><td>String</td><td>Xgsdk分配的订单号</td>
+<td>tradeNo</td><td>String</td><td>32</td><td>Xgsdk分配的订单号</td><td>是</td>
 </tr>
 <tr>
-<td>paidTime</td><td>是</td><td>String</td><td>支付时间 yyyyMMddHHmmss</td>
+<td>paidTime</td><td>String</td><td>14</td><td>支付时间 yyyyMMddHHmmss</td><td>是</td>
 </tr>
 <tr>
-<td>payStatus</td><td>是</td><td>String</td><td>订单支付状态  
+<td>payStatus</td><td>String</td><td>1</td><td>订单支付状态  
 1 支付成功  
-2 支付失败</td>
+2 支付失败</td><td>是</td>
 </tr>
 </table>
 
