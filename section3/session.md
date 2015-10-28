@@ -6,32 +6,38 @@
 将对应的信息发送到游戏服务器，游戏服务器使用登录认证接口向西瓜登录服务器验证并获取用户登录信息。  
 **注意：** 登录认证接口为登录流程必接接口。
 
+<img src="img/session.png"/>
+
+<div id="doc_structure"/>
 ### 1.1 文档结构
 <ol>
-	<li>
-		<a href="#doc">文档概述</a>
-			<ul>
-				<li><a href="#docStructure">文档结构</a></li>
-			</ul>
-	</li>
-	<li>
-		<a href="#configure">登录认证接口</a>
-		<ul>
-			<li><a href="#conditions">功能</a></li>
-			<li><a href="#steps">输入</a></li>
-			<li><a href="#import">输出</a>
-			<li><a href="#import_android">请求示例</a>
-            <li><a href="#import_1">返回值样例</a>
-            <li><a href="#errcode">错误码</a>
-		</ul>
-	</li>
+  <li>
+    <a href="#doc">文档概述</a>
+    <ul>
+      <li><a href="#doc_structure">文档结构</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#interface_login">登录认证接口</a>
+    <ul>
+      <li><a href="#function">功能</a></li>
+      <li><a href="#step_input">输入</a></li>
+      <li><a href="#step_output">输出</a></li>
+      <li><a href="#step_sample">请求示例</a></li>
+      <li><a href="#step_sample_return">返回值样例</a></li>
+      <li><a href="#errcode">错误码</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#demo">服务端接入xgsdk样例代码</a>
+  </li>
 </ol>
 
-<div id="configure"></div>
+<div id="interface_login"></div>
 
 ## 2. 登录认证接口
 
-<div id="conditions"></div>
+<div id="function"></div>
 
 ### 2.1 功能
 
@@ -60,10 +66,8 @@
 **功能描述:**
 游戏服务器向XGSDK服务端发送请求，确认客户端发过来的sessionId是有效的，并获取准确的渠道账号。
 
-<div id="steps"></div>
-
+<div id="step_input"></div>
 ### 2.2 输入
-
 参数说明：
 <table>
 <tr>
@@ -80,9 +84,7 @@
 </tr>
 </table>
 
-<div id="import"></div>
-
-
+<div id="step_output"></div>
 ### 2.3 输出
 返回结果为JSON格式的字符串，分别有如下几个字段：
 <table>
@@ -130,10 +132,8 @@
 </tr>
 </table>
 
-<div id="import_android"></div>
-
+<div id="step_sample"></div>
 ### 2.4 请求示例
-
 **客户端上报的authInfo：**
 eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=
 
@@ -143,7 +143,7 @@ eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNl
 **请求样例：**  
 http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=&ts=20150723150028&type=verify-session
 
-<div id="import_1"></div>
+<div id="step_sample_return"></div>
 ### 2.5 返回值样例
 
 	{
@@ -162,7 +162,6 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
 
 <div id="errcode"></div>
 ### 2.6 错误码
-
 <table>
 <tr>
 <td>错误码</td> <td>备注</td>
@@ -198,3 +197,8 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
 <td>-103</td> <td>渠道登陆验证结果失败</td>
 </tr>
 </table>
+
+<div id="demo"></div>
+## 3 服务端接入xgsdk样例代码
+
+[https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip "xgsdk样例代码（Java）")
