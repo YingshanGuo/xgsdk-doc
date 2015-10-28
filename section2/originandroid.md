@@ -18,8 +18,9 @@
    xgsdk-new-source-demo.jar,xgsdk-api.jar
 2. xgsdk-test-1.0.zip  
 3. 西瓜sdk（原生Android版)接入文档
-<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo1.zip">原生SDK下载</a> </br>
-4.demo运行方法 </br>
+<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo1.zip">原生SDK下载</a>
+
+4. demo运行方法    
 下载原生SKD后，得到native-android-demo.zip,解压此文件，
 得到xgsdk-api.jar、xgsdk-demo.jar二个jar文件以及
 xgsdk-test-1.0.zip工程文件包。

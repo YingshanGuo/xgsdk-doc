@@ -15,7 +15,7 @@ This is the summary of my book.
     * [Unity3d引擎](section2/u3d.md)
         * [android](section2/Unity3d.md)
         * [ios](section2/unityios.md)
-    * [原生接口](section2/origin.md)
+    * [原生引擎](section2/origin.md)
         * [android](section2/originandroid.md)
         * [ios](section2/originios.md)
     * [客户端接入验证](section2/channeltest.md)
