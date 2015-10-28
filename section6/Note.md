@@ -1,9 +1,9 @@
 # 渠道接入须知
 
 
-|** <a href="#1">uc</a> **| ** <a href="#2">安智</a> **     |** <a href="#3">4399</a> ** |** <a href="#4">滴滴</a>  **| ** <a href="#5">酷狗</a>** | ** <a href="#6">当乐</a> **|**  <a href="#7">酷派</a>  **   |**  <a href="#8">华为</a>  **    |** <a href="#9">小米</a> ** |** <a href="#10" >酷我</a> **|** <a href="#11">联想</a>**
+|** <a href="#1">uc</a> **| ** <a href="#2">安智</a> ** |** <a href="#3">4399</a> ** |** <a href="#4">滴滴</a>  **| ** <a href="#5">酷狗</a>** | ** <a href="#6">当乐</a> **|**  <a href="#7">酷派</a>  **   |**  <a href="#8">华为</a>  **    |** <a href="#mi">小米</a> ** |** <a href="#10" >酷我</a> **|** <a href="#11">联想</a>**
 | :-------------: | :------------- :|:----:|:---:|:----:|:----:|:--:|:--:|:--:|:--:|:--:|
- |** <a href="#12">拇指玩</a> ** | ** <a href="#13">爱游戏</a>** | ** <a href="#14">应用宝</a> ** |** <a href="#15">vivo</a> ** |** <a href="#16">金立</a> ** | ** <a href="#17">魅族</a> ** |** <a href="#18">pps</a> ** |** <a href="#19">OPPO</a> ** |<a href="#20"></a> |<a href="#21"></a>|<a href="#21"></a>
+ |** <a href="#12">拇指玩</a> ** | ** <a href="#13">爱游戏</a>** | ** <a href="#14">应用宝</a> ** |** <a href="#15">vivo</a> ** |** <a href="#16">金立</a> ** | ** <a href="#17">魅族</a> ** |** <a href="#18">pps</a> ** |** <a href="#oppo">OPPO</a> ** |** <a href="#haima">海马</a> **|<a href="#21"></a>|<a href="#21"></a>
 
 
 
@@ -88,9 +88,12 @@ AndroidManifest.xml中的android:targetSdkVersion必须配19，不能配太高�
 ---
 
 
-#### <p id="9">小米</p>
-1.如何开通小米子账号功能：需要商务向小米申请开通；  
-2.小米渠道独特要求：必须配置支付参数，才能登陆。
+#### <p id="mi">小米</p>
+1. 小米渠道独特要求有哪些？        
+   1.必须配置支付参数（计费方式 和 回调URL），才能登陆。
+
+2. 如何开通小米子账号功能？    
+   需要商务向小米申请开通。
 
 
 ---
@@ -217,26 +220,36 @@ portal参数debug为true时，充值一律为1元，上线前必须改为false�
 ---
 
 
-#### <p id="19">OPPO</p>
+#### <p id="oppo">OPPO</p>
 
-1.Oppo从1.7.3开始提供了自己的安全支付客户端，游戏每次充值打开Oppo支付客户端的时候总是为竖屏。如果游戏是横屏，那么支付成功后返回游戏时（横屏），游戏会发生一个横竖屏切换，此时如果重新创建Activity的话，原来注册的支付回调就不会调用到。  
+1. Oppo从1.7.3开始提供了自己的安全支付客户端，游戏每次充值打开Oppo支付客户端的时候总是为竖屏。如果游戏是横屏，那么支付成功后返回游戏时（横屏），游戏会发生一个横竖屏切换，此时如果重新创建Activity的话，原来注册的支付回调就不会调用到。    
 
 为了避免支付成功后游戏的横竖屏切换，需要在游戏充值的Activity添加下面的配置(AndroidManifest.xml)：
 
-```
-android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
-```
+	android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+
 实例：  
-```
-<activity
-    android:name="com.xgsdk.client.testdemo.MainActivity"
-    android:launchMode="singleTop"
-    android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
-    android:screenOrientation="landscape"
-    android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-    <intent-filter>
-        <action android:name="xg.game.MAIN" />
-        <category android:name="android.intent.category.DEFAULT" />
-    </intent-filter>
-</activity>
-```
+
+	<activity
+	    android:name="com.xgsdk.client.testdemo.MainActivity"
+	    android:launchMode="singleTop"
+	    android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+	    android:screenOrientation="landscape"
+	    android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+	    <intent-filter>
+	        <action android:name="xg.game.MAIN" />
+	        <category android:name="android.intent.category.DEFAULT" />
+	    </intent-filter>
+	</activity>
+
+---
+
+### <p id="haima">海马</p>
+
+1. 海马的登录是横屏的，为了不避免发生转屏游戏Activity重新初始化，需要为游戏的每个Activity添加如下属性：
+
+AndroidManifest.xml:
+
+	android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+
+
