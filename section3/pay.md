@@ -1,78 +1,6 @@
 # 西瓜SDK 支付通知接口
-
 <div id="doc"></div>
-
-## 1. 快速接入
-西瓜SDK通知游戏服务器支付成功：
-
-	通知URL：由游戏方提供（如：http://172.63.55.62:18888/moon/pay）
-	POST Body为JSON字符串：
-	{
-	    "channelId": "mi",
-	    "customInfo": "2323423413412351251245",
-	    "gameTradeNo": "99887766",
-	    "paidAmount": "9800",
-	    "paidTime": "20150723150128",
-	    "payStatus": "1",
-	    "productDesc": "productDesc1",
-	    "productId": "productId1",
-	    "productName": "productName1",
-	    "productQuantity": "1",
-	    "roleId": "224455",
-	    "serverId": "1",
-	    "sign": "afb3496f05333fbfa184f8e8af39eb7f198e37a7",
-	    "totalAmount": "9800",
-	    "tradeNo": "a150221000012131",
-	    "ts": "20150723150028",
-	    "type": "notify-game",
-	    "uid": "mi__30854",
-	    "xgAppId": "2008"
-	}
-
-游戏服务器发放道具成功返回如下JSON字符串，否则西瓜SDK会隔一段时间重新发送：
-
-	{
-    	"code": "0",
-    	"msg": "success"
-	}
-
-游戏服务器二次验证订单状态：
-
-	http://p2.xgsdk.com/pay/verify-order/{xgAppId}
-
-	示例：
-	http://p2.xgsdk.com/pay/verify-order/2008?tradeNo=a150221000012131&sign=86e396a999e9673731be6609c4dc7bca8945ada6&ts=20150723150028&type=verify-order
-
-	签名算法：
-	HmacSHA1("tradeNo=a150221000012131&ts=20150723150028&type=verify-order", appSecretKey)
-
-返回结果：
-
-	{
-	    "channelId": "mi",
-	    "customInfo": "2323423413412351251245",
-	    "gameTradeNo": "99887766",
-	    "paidAmount": "9800",
-	    "paidTime": "20150723150128",
-	    "payStatus": "1",
-	    "productDesc": "productDesc1",
-	    "productId": "productId1",
-	    "productName": "productName1",
-	    "productQuantity": "1",
-	    "roleId": "224455",
-	    "serverId": "1",
-	    "sign": "afb3496f05333fbfa184f8e8af39eb7f198e37a7", // HmacSHA1(按字母顺序key1=value1&key2=value2&...，appSecretKey)
-	    "totalAmount": "9800",
-	    "tradeNo": "a150221000012131",
-	    "ts": "20150723150028",
-	    "type": "notify-game",
-	    "uid": "mi__30854",
-	    "xgAppId": "2008"
-	}
-
-## 2. 接入详细说明
-### 1. 文档概述
-
+## 1. 文档概述
 此文档是西瓜SDK支付通知接口接入文档。包括如下2个接口：  
  1. 支付通知接口
  2. 二次查询验证订单接口
@@ -84,55 +12,49 @@
 
 <img src="img/recharge.png"/>
 
-<div id="category" style="display:none"></div>
-
-#### 1.1 文档结构
-
+<div id="doc_structure"/>
+### 1.1 文档结构
 <ol>
-	<li>
-		<a href="#doc">文档概述</a>
-			<ul type="disc">
-				<li><a href="#docStructure">文档结构</a></li>
-			</ul>
-	</li>
-	<li>
-		<a href="#configure">支付通知接口</a>
-			<ul type="disc">
-				<li><a href="#conditions">功能</a></li>
-				<li><a href="#steps">输入</a></li>
-				<li><a href="#import">输出</a>
-				<li><a href="#import_android">请求样例</a>
-				<li><a href="#import_1">返回值样例</a>
-        		<li><a href="#import_2">错误码</a>
-        		<li><a href="#import_4">签名和验签</a>
-        		<li><a href="#import_3">游戏逻辑处理建议</a>
-			</ul>
-	</li>
-	<li>
-		<a href="#adjust">二次查询验证订单</a>
-			<ul type="disc">
-				<li><a href="#copyJar">功能</a></li>
-				<li><a href="#copyInterface">输入</a></li>
-				<li><a href="#adjustActivity">输出</a>
-				<li><a href="#androidMk">请求样例</a>
-      	        <li><a href="#androidMk1">返回值样例</a>
-                <li><a href="#androidMk2">错误码</a>
-			</ul>
-	</li>
-	<li>
-		<a href="#version">文档版本</a>
-	</li>
+  <li>
+    <a href="#doc">文档概述</a>
+    <ul type="disc">
+      <li><a href="#doc_structure">文档结构</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#interface_pay_notify">支付通知接口</a>
+    <ul type="disc">
+      <li><a href="#pay_notify_function">功能</a></li>
+      <li><a href="#pay_notify_step_input">输入</a></li>
+      <li><a href="#pay_notify_step_output">输出</a></li>
+      <li><a href="#pay_notify_step_sample">请求样例</a></li>
+      <li><a href="#pay_notify_step_sample_return">返回值样例</a></li>
+      <li><a href="#pay_notify_errcode">错误码</a></li>
+      <li><a href="#pay_notify_sign">签名和验签</a></li>
+      <li><a href="#pay_notify_suggestion">游戏逻辑处理建议</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#interface_order_query">二次查询验证订单</a>
+      <ul type="disc">
+        <li><a href="#order_query_function">功能</a></li>
+        <li><a href="#order_query_step_input">输入</a></li>
+        <li><a href="#order_query_step_output">输出</a></li>
+        <li><a href="#order_query_step_sample">请求样例</a></li>
+        <li><a href="#order_query_step_sample_return">返回值样例</a></li>
+        <li><a href="#order_query_errcode">错误码</a></li>
+      </ul>
+  </li>
+  <li>
+    <a href="#demo">服务端接入xgsdk样例代码</a>
+  </li>
 </ol>
 
+<div id="interface_pay_notify"></div>
+## 2 支付通知接口（通知游戏支付结果）
 
-<div id="configure"></div>
-
-### 2 支付通知接口（通知游戏支付结果）
-
-<div id="conditions"></div>
-
-#### 2.1 功能
-
+<div id="pay_notify_function"></div>
+### 2.1 功能
 <table>
 <tr>
 <td>发起方</td><td>XGSDK服务端</td>
@@ -157,9 +79,8 @@
 <td>功能描述</td><td>当接收到渠道的支付结果回调信息后，XGSDK服务端会对订单支付信息进行确认，完成后，XGSDK服务端会将订单支付结果信息推送到游戏服务器提供的支付订单回调地址。</td>
 </table>
 
-<div id="steps"></div>
-
-#### 2.2 输入
+<div id="pay_notify_step_input"></div>
+### 2.2 输入
 
 **参数说明：** 参数为一个json的字符串
 
@@ -247,9 +168,8 @@
 </tr>
 </table>
 
-<div id="import"></div>
-
-#### 2.3 输出
+<div id="pay_notify_step_output"></div>
+### 2.3 输出
 **返回结果为JSON格式的字符串，分别有如下几个字段：**
 
 <table>
@@ -264,9 +184,8 @@
 </tr>
 </table>
 
-<div id="import_android"></div>
-
-#### 2.4 请求样例
+<div id="pay_notify_step_sample"></div>
+### 2.4 请求样例
 **请求参数:**  
 type=notify-game  
 xgAppId=1024appid  
@@ -301,9 +220,8 @@ http://172.63.55.62:18888/moon/pay
 postBody:  
 {"channelId":"mi","customInfo":"2323423413412351251245","gameTradeNo":"99887766","paidAmount":"9800","paidTime":"20150723150128","payStatus":"1","productDesc":"productDesc1","productId":"productId1","productName":"productName1","productQuantity":"1","roleId":"224455","serverId":"1","totalAmount":"9800","tradeNo":"2984456","ts":"20150723150028","type":"notify-game","uid":"30854","xgAppId":"1024appid","sign":"afb3496f05333fbfa184f8e8af39eb7f198e37a7"}
 
-<div id="import_1"></div>
-
-#### 2.5 返回值样例
+<div id="pay_notify_step_sample_return"></div>
+### 2.5 返回值样例
 
 	{
 	    "code": "0",
@@ -311,9 +229,8 @@ postBody:
 	}
 
 
-<div id="import_2"></div>
-
-#### 2.6 错误码
+<div id="pay_notify_errcode"></div>
+### 2.6 错误码
 <table>
 <tr>
 <td nowrap>错误码</td> <td>备注</td>
@@ -355,9 +272,8 @@ postBody:
 </table>
 
 
-<div id="import_4"></div>
-
-#### 2.7 签名和验签
+<div id="pay_notify_sign"></div>
+### 2.7 签名和验签
 
 **签名算法采用HmacSHA1**
 
@@ -379,9 +295,9 @@ productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&
  a7dc0c91632d473a7bdba944b4d43222d97293ac
 
 -->
-<div id="import_3"></div>
+<div id="pay_notify_suggestion"></div>
 
-#### 2.8 游戏逻辑处理建议
+### 2.8 游戏逻辑处理建议
 1. 如果有游戏升级不能响应，则需返回String ERR_RESEND = "1"；
 2. 先要进行验证签名，不通过则需返回String ERR_SIGN = "-1"；
 3. 如果游戏保留了游戏订单但找不到对应订单时，则需返回String ERR_ORDERID_NOTEXIST = "-6"；
@@ -392,13 +308,11 @@ productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&
 
 若以上7步都正常，则返回String SUCCESS = "0"。
 
-<div id="adjust"></div>
+<div id="interface_order_query"></div>
+## 3. 二次查询验证订单
 
-### 3. 二次查询验证订单
-
-<div id="copyJar"></div>
-
-#### 3.1 功能
+<div id="order_query_function"></div>
+### 3.1 功能
 **发起方：** 游戏服务器  
 **接收方：** XGSDK服务端  
 **接口类型：** HTTP POST  
@@ -409,10 +323,8 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 其中xgAppId是XGSDK分配的游戏编号，如西游伏魔是1024appid。  
 **功能描述：** 用于游戏服务器验证收到的订单通知是否有效。
 
-
-<div id="copyInterface"></div>
-
-#### 3.2 输入
+<div id="order_query_step_input"></div>
+### 3.2 输入
 **参数说明：**
 <table>
 <tr>
@@ -432,9 +344,8 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 </tr>
 </table>
 
-<div id="adjustActivity"></div>
-
-#### 3.3 输出
+<div id="order_query_step_output"></div>
+### 3.3 输出
 **返回结果为JSON格式的字符串，分别有如下几个字段：**
 <table>
 <tr>
@@ -537,10 +448,8 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 </tr>
 </table>
 
-
-<div id="androidMk"></div>
-
-#### 3.4 请求样例
+<div id="order_query_step_sample"></div>
+### 3.4 请求样例
 **请求参数:**  
 **tradeNo:** 2984456  
 **当前时间戳ts:** 20150723150028  
@@ -551,9 +460,8 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 **请求样例：**  
 http://p2.xgsdk.com/pay/verify-order/1024appid?tradeNo=2984456&sign=86e396a999e9673731be6609c4dc7bca8945ada6&ts=20150723150028&type=verify-order
 
-<div id="androidMk1"></div>
-
-#### 3.5 返回值样例
+<div id="order_query_step_sample_return"></div>
+### 3.5 返回值样例
 **响应签名源串为：**
 channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=verify-order&uid=30854&xgAppId=1024appid
 
@@ -590,9 +498,8 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 		}
 	}
 
-<div id="androidMk2"></div>
-
-#### 3.6 错误码
+<div id="order_query_errcode"></div>
+### 3.6 错误码
 <table>
 <tr>
 <td nowrap>错误码</td> <td>备注</td>
@@ -611,8 +518,8 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 </tr>
 </table>
 
-#### 3.7 服务端接入xgsdk样例代码
+<div id="demo"></div>
+## 4 服务端接入xgsdk样例代码
 
 [https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip "xgsdk样例代码（Java）")
 
----

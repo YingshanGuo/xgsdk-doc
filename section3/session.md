@@ -1,37 +1,6 @@
 # 西瓜SDK session验证文档
-
-## 1. 快速接入
-向西瓜发送验证请求：
-    
-    http://a2.xgsdk.com/account/verify-session/{xgAppId}?authInfo={客户端上传的authInfo字符串}&ts={当前时间戳}&type=verify-session
-
-    示例：
-	http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=&ts=20150723150028&type=verify-session
-
-验证成功返回结果：
-
-    {
-    	"code": "0", // 0:代表成功
-    	"msg": "success",
-	    "data": {
-			"xgAppId": "2008",
-    	    "planId": "1",
-			"channelId": "mi",
-			"deviceId": "imei_867323027683257",
-    	    "sessionId": "oVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJ"，
-    	    "uid": "mi__3099245"，
-    	    "userName": "渠道用户名"
-    	}
-    }
-
-验证失败返回结果：
-
-	{
-		"code": {错误码} // -1:签名错误，-103:渠道告知用户未登录，更多请参考文档底部的错误码表
-    }
-
-## 2. 接入详细说明
-### 1. 文档概述
+<div id="doc"></div>
+## 1. 文档概述
 
 此文档是西瓜SDK服务端接入登录验证文档。介绍游戏服务器如何验证用户登录信息，游戏客户端在接收到西瓜登录成功的回调后，
 将对应的信息发送到游戏服务器，游戏服务器使用登录认证接口向西瓜登录服务器验证并获取用户登录信息。  
@@ -39,38 +8,38 @@
 
 <img src="img/session.png"/>
 
-#### 1.1 文档结构
+<div id="doc_structure"/>
+### 1.1 文档结构
 <ol>
-	<li>
-		<a href="#doc">文档概述</a>
-			<ul>
-				<li><a href="#docStructure">文档结构</a></li>
-			</ul>
-	</li>
-	<li>
-		<a href="#configure">登录认证接口</a>
-		<ul>
-			<li><a href="#conditions">功能</a></li>
-			<li><a href="#steps">输入</a></li>
-			<li><a href="#import">输出</a>
-			<li><a href="#import_android">请求示例</a>
-            <li><a href="#import_1">返回值样例</a>
-            <li><a href="#errcode">错误码</a>
-		</ul>
-	</li>
-	<li>
-		<a href="#version">文档版本</a>
-	</li>
+  <li>
+    <a href="#doc">文档概述</a>
+    <ul>
+      <li><a href="#doc_structure">文档结构</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#interface_login">登录认证接口</a>
+    <ul>
+      <li><a href="#function">功能</a></li>
+      <li><a href="#step_input">输入</a></li>
+      <li><a href="#step_output">输出</a></li>
+      <li><a href="#step_sample">请求示例</a></li>
+      <li><a href="#step_sample_return">返回值样例</a></li>
+      <li><a href="#errcode">错误码</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#demo">服务端接入xgsdk样例代码</a>
+  </li>
 </ol>
 
+<div id="interface_login"></div>
 
-<div id="configure"></div>
+## 2. 登录认证接口
 
-### 2. 登录认证接口
+<div id="function"></div>
 
-<div id="conditions"></div>
-
-#### 2.1 功能
+### 2.1 功能
 
 <table>
 <tr>
@@ -97,10 +66,8 @@
 **功能描述:**
 游戏服务器向XGSDK服务端发送请求，确认客户端发过来的sessionId是有效的，并获取准确的渠道账号。
 
-<div id="steps"></div>
-
-#### 2.2 输入
-
+<div id="step_input"></div>
+### 2.2 输入
 参数说明：
 <table>
 <tr>
@@ -117,10 +84,8 @@
 </tr>
 </table>
 
-<div id="import"></div>
-
-
-#### 2.3 输出
+<div id="step_output"></div>
+### 2.3 输出
 返回结果为JSON格式的字符串，分别有如下几个字段：
 <table>
 <tr>
@@ -167,10 +132,8 @@
 </tr>
 </table>
 
-<div id="import_android"></div>
-
-#### 2.4 请求示例
-
+<div id="step_sample"></div>
+### 2.4 请求示例
 **客户端上报的authInfo：**
 eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=
 
@@ -180,8 +143,8 @@ eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNl
 **请求样例：**  
 http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=&ts=20150723150028&type=verify-session
 
-<div id="import_1"></div>
-#### 2.5 返回值样例
+<div id="step_sample_return"></div>
+### 2.5 返回值样例
 
 	{
     	"code": "0",
@@ -198,8 +161,7 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
     }
 
 <div id="errcode"></div>
-#### 2.6 错误码
-
+### 2.6 错误码
 <table>
 <tr>
 <td>错误码</td> <td>备注</td>
@@ -236,8 +198,7 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
 </tr>
 </table>
 
-#### 2.7 服务端接入xgsdk样例代码
+<div id="demo"></div>
+## 3 服务端接入xgsdk样例代码
 
 [https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip "xgsdk样例代码（Java）")
-
----

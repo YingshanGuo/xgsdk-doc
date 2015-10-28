@@ -84,7 +84,7 @@ Android版本：Android4.0.3以上
 <a name = "tools"></a>
 ### 2.2开发工具
 开发工具：  
-Unity4.6.2f1  
+Unity4.6.0  
 Android SDK和Android Eclipse等  
 
 
@@ -95,7 +95,7 @@ Android SDK和Android Eclipse等
 
 <a href = "http://doc.xgsdk.com/files/2.0/packages/Unity3DSDK.zip">Unity3D SDK下载</a>
 
-SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户直接将工程导入Unity即可运行demo，Unity3DSDK文件夹则是用户进行接入时所需的接口文件和必须的jar包。  
+SDK包中有两个文件夹，xgsdk-unity3d-android-demo文件夹是一个Unity工程，用户直接将工程导入Unity即可运行demo，xgsdk-unity3d-sdk文件夹则是用户进行接入时所需的接口文件和必须的jar包。  
 
 渠道版SDK下载包包含：  
 1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。  
@@ -109,11 +109,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 <a name = "steps"></a>
 
 ### 2.4 接入步骤
-2.4.1 将Android项目中的内容拷贝到<项目目录>\Assets\Plugins\Android下（若没有Plugins目录或者Android目录则创建一个）
-
-<img src= "img/AndroidFile.png">  
-
-2.4.2 将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
+2.4.1 将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
 
 <img src="img/CsFile.png">   
 
@@ -121,13 +117,13 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **注意：导入的cs脚本文件名称不可修改。**
 
-2.4.3 导入文件
+2.4.2 导入文件
 
 打开Unity,点击File->Open Project->Open Other... ， 打开文件所在的目录，将工程导入。
 
 <img src="img/import1.png">   
 
-2.4.4 配置SDK路径
+2.4.3 配置SDK路径
 
 点击Edit->Preferences，打开Unity Preferences窗口,点击External Tools，在Android SDK Location配置自己的Android SDK路径
 
@@ -136,7 +132,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **注：如果游戏的主activity继承了UnityPlayerActivity，那么游戏的主activity需要继承XGUnityActivity，我们的XGUnityActivity类已经继承了UnityPlayerActivity，并且实现了android的生命周期方法；如果游戏的主activity继承了UnityPlayerNativeActivity，则游戏需要改为继承我们的XGUnityNativeActivity。**
 
-2.4.5 配置AndroidMainfest.xml文件  
+2.4.4 配置AndroidMainfest.xml文件  
 
 **配置权限**
 
@@ -158,7 +154,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 ```
 
-	<application
+	<application 
 		android:name="com.xgsdk.client.api.XGApplication"
         android:allowBackup="true"
         android:icon="@drawable/demo_ic_launcher"
@@ -177,13 +173,13 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 <img src="img/AndroidMainFest2.png">  
 
-2.4.6 配置sdk_config.properties文件  
+2.4.5 配置sdk_config.properties文件  
 
 将sdk_config.properties配置文件拷贝至<项目目录>\Assets\Plugins\Android\assets。  
 其中，sdk_config.properties中的XgAppId、XgAppKey以及XgPlanId需要在西瓜portal上获取对应的参数。
 
 
-2.4.7 运行
+2.4.6 运行
 
 首先点击Main Camera，确认是否关联脚本，若还未关联，则将脚本添加上去。
 
@@ -216,7 +212,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **接口说明:**
 配置回调方法  
-**注意：必须在Awake方法中调用**  
+**注意：必须在第一个场景的脚本的Awake方法中调用**  
 
 **代码样例**
 
@@ -471,140 +467,171 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 支付时调用，此接口将会发起用户充值，系统会调用对应渠道SDK充值界面。
 
 **参数说明:**
+
 <table>
 <tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
+	<th>参数</th>
+	<th>参数类型</th>
+    <th>最大长度</th>
 	<th>说明</th>
-	<th>备注</th>
+	<th>必须</th>
 </tr>
 <tr>
 	<td>uid</td>
-	<td>string</td>
+	<td>String</td>
+    <td>128</td>
 	<td>用户ID</td>
-	<td>不可为空</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>productId</td>
-	<td>string</td>
-	<td>商品ID</td>
-	<td>不可为空</td>
+	<td>String</td>
+    <td>64</td>
+	<td>产品ID</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>productName</td>
-	<td>string</td>
-	<td>商品名称</td>
-	<td>不可为空</td>
+	<td>String</td>
+    <td>64</td>
+	<td>产品名称</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>productDesc</td>
-	<td>string</td>
-	<td>商品描述</td>
-	<td>不可为空</td>
+	<td>String</td>
+    <td>128</td>
+	<td>产品描述</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>productUnit</td>
-	<td>string</td>
+	<td>String</td>
+    <td>64</td>
 	<td>商品单位</td>
-	<td>不可为空</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>productUnitPrice</td>
 	<td>int</td>
-	<td>商品单价(单位:分)</td>
-	<td>不可为空</td>
+    <td>10</td>
+	<td>产品单价,单位分</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>productQuantity</td>
 	<td>int</td>
-	<td>商品数量</td>
-	<td>不可为空</td>
+    <td>10</td>
+	<td>产品数量</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>totalAmount</td>
 	<td>int</td>
-	<td>支付价格(单位:分)</td>
-	<td>不可为空</td>
+    <td>10</td>
+	<td>产品总额,单位分</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>payAmount</td>
 	<td>int</td>
-	<td>实际支付总价格(单位:分)</td>
-	<td>不可为空</td>
+    <td>10</td>
+	<td>付费总额</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>currencyName</td>
-	<td>string</td>
-	<td>货币类别</td>
-	<td>不可为空</td>
+	<td>String</td>
+    <td>64</td>
+	<td>实际支付的国际标准货币代码,比如CNY(人民币)/USD(美元)</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>roleId</td>
-	<td>string</td>
+	<td>String</td>
+    <td>32</td>
 	<td>角色ID</td>
-	<td>不可为空</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>roleName</td>
-	<td>string</td>
+	<td>String</td>
+    <td>64</td>
 	<td>角色名称</td>
-	<td>不可为空</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>roleLevel</td>
-	<td>string</td>
+	<td>int</td>
+    <td>32</td>
 	<td>角色等级</td>
-	<td>可为空</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
+	<td>String</td>
+    <td>32</td>
+	<td>角色vip等级</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>serverId</td>
-	<td>string</td>
+	<td>String</td>
+    <td>32</td>
 	<td>服ID</td>
-	<td>不可为空</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>zoneId</td>
-	<td>string</td>
+	<td>String</td>
+    <td>32</td>
 	<td>区ID</td>
-	<td>不可为空</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>partyName</td>
-	<td>string</td>
+	<td>String</td>
+    <td>32</td>
 	<td>帮会名称</td>
-	<td>不可为空</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>virtualCurrencyBalance</td>
-	<td>string</td>
+	<td>String</td>
+    <td> </td>
 	<td>虚拟货币余额</td>
-	<td>不可为空</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>customInfo</td>
+	<td>String</td>
+    <td>2000</td>
+	<td>扩展字段，订单支付成功后，透传给游戏</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>gameTradeNo</td>
-	<td>string</td>
-	<td>游戏订单ID</td>
-	<td>不可为空</td>
+	<td>String</td>
+    <td>64</td>
+	<td>游戏订单ID，支付成功后，透传给游戏</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>gameCallbackUrl</td>
-	<td>string</td>
-	<td>游戏充值回调URL</td>
-	<td>不可为空</td>
+	<td>String</td>
+    <td>128</td>
+	<td>支付回调地址，如果为空，则后台配置的回调地址</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>additionalParams</td>
-	<td>string</td>
+	<td>String</td>
+    <td> </td>
 	<td>扩展参数</td>
-	<td>不可为空</td>
+	<td>N</td>
 </tr>
-</table>  
+</table>
+
 
 **代码样例：**
 ```
@@ -740,84 +767,116 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 此接口用于数据统计，任务开始时调用。
 
 **参数说明：**
+**关于 RoleInfo 的成员说明**
+<table>
+<tr>
+	<th>参数</th>
+	<th>参数类型</th>
+    <th>最大长度</th>
+	<th>说明</th>
+	<th>必须</th>
+</tr>
+
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>游戏区ID</td>
+    <td>N</td>
+</tr>
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏区名称</td>
+    <td>N</td>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>游戏服ID，示例：s1,s2</td>
+    <td>Y</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏服名称，示例：风云争霸</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>128</td>
+	<td>用户ID</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>角色ID</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>角色名</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>20</td>
+	<td>角色类型，如法师，道士，战士</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleLevel</td>
+	<td>int</td>
+	<td>32</td>
+	<td>角色等级</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleVipLevel</td>
+	<td>int</td>
+	<td>32</td>
+	<td>角色vip等级</td>
+    <td>N</td>
+</tr>
+
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>32</td>
+	<td>公会名</td>
+    <td>N</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+    <td>枚举值：m,f;分别代表男女</td>
+	<td>角色性别</td>
+	<td>Y</td>
+</tr>
+</table>
+
+
 <table>
 <tr>
 	<th>输入参数</th>
 	<th>数据类型</th>
 	<th>说明</th>
 	<th>可空</th>
-</tr>
-<tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
 </tr>
 <tr>
 	<td>missionId</td>
@@ -863,78 +922,6 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<th>可空</th>
 </tr>
 <tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
-</tr>
-<tr>
 	<td>missionId</td>
 	<td>string</td>
 	<td>任务ID</td>
@@ -978,78 +965,6 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<th>可空</th>
 </tr>
 <tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
-</tr>
-<tr>
 	<td>missionId</td>
 	<td>string</td>
 	<td>任务ID</td>
@@ -1086,97 +1001,22 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **参数说明：**
 <table>
 <tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
-	<th>说明</th>
-	<th>可空</th>
+<td>参数</td>
+<td>说明</td>
 </tr>
-<tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-<tr>
-	<td>amount</td>
-	<td>int</td>
-	<td>虚拟币数目</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>customParams</td>
-	<td>string</td>
-	<td>扩展参数</td>
-	<td>不可为空</td>
-</tr>
-</table>  
+	<tr>
+		<td>roleInfo</td>
+		<td>对象信息</td>
+	</tr>
+	<tr>
+		<td>amount</td>
+		<td>数量</td>
+	</tr>
+	<tr>
+		<td>customParams</td>
+		<td>扩展参数</td>
+	</tr>
+  </table>
 
 **代码样例：**
 ```
@@ -1197,102 +1037,26 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **参数说明：**
 <table>
 <tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
-	<th>说明</th>
-	<th>可空</th>
+<td>参数</td>
+<td>说明</td>
 </tr>
-<tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>reason</td>
-	<td>string</td>
-	<td>获得虚拟货币的原因(登录奖励、新手礼包等)</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>amount</td>
-	<td>int</td>
-	<td>虚拟币数目</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>customParams</td>
-	<td>string</td>
-	<td>扩展参数</td>
-	<td>不可为空</td>
-</tr>
-</table>  
+	<tr>
+		<td>roleInfo</td>
+		<td>对象信息</td>
+	</tr>
+	<tr>
+		<td>reason</td>
+		<td>获得虚拟货币的原因(登录奖励、新手礼包等)</td>
+	</tr>
+	<tr>
+		<td>amount</td>
+		<td>数量</td>
+	</tr>
+	<tr>
+		<td>customParams</td>
+		<td>扩展参数</td>
+	</tr>
+</table>
 
 **代码样例：**
 ```
@@ -1311,102 +1075,26 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **参数说明：**
 <table>
 <tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
-	<th>说明</th>
-	<th>可空</th>
+<td>参数</td>
+<td>说明</td>
 </tr>
-<tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>itemName</td>
-	<td>string</td>
-	<td>消费点(比如十连抽、购买体力等)</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>amount</td>
-	<td>int</td>
-	<td>虚拟币数目</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>customParams</td>
-	<td>string</td>
-	<td>扩展参数</td>
-	<td>不可为空</td>
-</tr>
-</table>  
+	<tr>
+		<td>roleInfo</td>
+		<td>对象信息</td>
+	</tr>
+	<tr>
+		<td>itemName</td>
+		<td>消费点(比如十连抽、购买体力等)</td>
+	</tr>
+	<tr>
+		<td>amount</td>
+		<td>数量</td>
+	</tr>
+	<tr>
+		<td>customParams</td>
+		<td>扩展参数</td>
+	</tr>
+</table>
 
 **代码样例：**
 ```
@@ -1447,84 +1135,105 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 <table>
 <tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
+	<th>参数</th>
+	<th>参数类型</th>
+    <th>最大长度</th>
 	<th>说明</th>
-	<th>可空</th>
+	<th>必须</th>
 </tr>
-<tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
+
 <tr>
 	<td>zoneId</td>
 	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
+	<td>32</td>
+	<td>游戏区ID</td>
+    <td>N</td>
 </tr>
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
+	<td>64</td>
+	<td>游戏区名称</td>
+    <td>N</td>
 </tr>
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>游戏服ID，示例：s1,s2</td>
+    <td>Y</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏服名称，示例：风云争霸</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>128</td>
+	<td>用户ID</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>角色ID</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>角色名</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>20</td>
+	<td>角色类型，如法师，道士，战士</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleLevel</td>
+	<td>int</td>
+	<td>32</td>
+	<td>角色等级</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleVipLevel</td>
+	<td>int</td>
+	<td>32</td>
+	<td>角色vip等级</td>
+    <td>N</td>
+</tr>
+
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
+	<td>32</td>
+	<td>公会名</td>
+    <td>N</td>
 </tr>
 <tr>
 	<td>gender</td>
 	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
+    <td>枚举值：m,f;分别代表男女</td>
+	<td>角色性别</td>
+	<td>Y</td>
 </tr>
-</table>  
+</table>
 
 **代码样例：**
 ```
@@ -1543,86 +1252,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 **参数说明（RoleInfo的成员变量）**
 
-<table>
-<tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
-	<th>说明</th>
-	<th>可空</th>
-</tr>
-<tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
-</tr>
-</table>  
+同上
 
 **代码样例：**
 ```
@@ -1640,87 +1270,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 此接口用于游戏信息统计，当角色升级时调用。
 
 **参数说明:**
-
-<table>
-<tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
-	<th>说明</th>
-	<th>可空</th>
-</tr>
-<tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
-</tr>
-</table>  
+同上
 
 **代码样例：**
 ```
@@ -1741,108 +1291,30 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 <table>
 <tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
-	<th>说明</th>
-	<th>可空</th>
+<td>参数</td>
+<td>说明</td>
 </tr>
 <tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>用户ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>角色ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>角色类型</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleLevel</td>
-	<td>string</td>
-	<td>角色等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleVipLevel</td>
-	<td>string</td>
-	<td>角色VIP等级</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>服ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>区ID</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>角色名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>服名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>区名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>帮会名称</td>
-	<td>不可为空</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-	<td>性别</td>
-	<td>不可为空</td>
+	<td>roleInfo</td>
+	<td>角色信息</td>
 </tr>
 <tr>
 	<td>eventId</td>
-	<td>string</td>
-	<td>事件Id</td>
-	<td>不可为空</td>
+	<td>事件id</td>
 </tr>
 <tr>
 	<td>eventDesc</td>
-	<td>string</td>
 	<td>事件描述</td>
-	<td>不可为空</td>
 </tr>
 <tr>
 	<td>eventVal</td>
-	<td>int</td>
-	<td>事件值</td>
-	<td>不可为空</td>
+	<td>事件内容</td>
 </tr>
 <tr>
 	<td>eventBody</td>
-	<td>string</td>
-	<td>事件内容</td>
-	<td>不可为空</td>
+	<td>key-value 事件体</td>
 </tr>
-</table>  
+</table>
 
 **代码样例：**
 ```
