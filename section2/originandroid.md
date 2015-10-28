@@ -21,8 +21,8 @@
 <a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a> 
 4. demo运行方法 </br>
 下载原生SDK后，得到native-android-demo.zip,解压此文件，
-得到xgsdk-api.jar、xgsdk-new-source-demo.jar两个jar文件包以及
-xgsdk-test-1.0.zip工程文件包。
+得到xgsdk-api.jar、xgsdk-new-source-demo.jar、
+xgsdk-test-1.0.zip工程文件包以及originandroid.md文档文件。
 解压文件xgsdk-test-1.0.zip,导入eclipse,复制xgsdk-new-source-demo.jar到工程的libs文件夹下，即可运行。  
   
 **以上描述项目是一个demo测试项目，如果游戏商想测试自己游戏在渠道运行状况，可以用原生游戏jar替换模拟游戏xgsdk-new-source-demo.jar即可。**
