@@ -154,7 +154,7 @@ SDK包中有两个文件夹，xgsdk-unity3d-android-demo文件夹是一个Unity�
 
 ```
 
-	<application
+	<application 
 		android:name="com.xgsdk.client.api.XGApplication"
         android:allowBackup="true"
         android:icon="@drawable/demo_ic_launcher"
