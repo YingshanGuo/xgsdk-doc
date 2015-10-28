@@ -448,7 +448,7 @@ onEnterGame(RoleInfo roleInfo)
 <tr>
 	<td>roleLevel</td>
 	<td>int</td>
-	<td> </td>
+	<td>32</td>
 	<td>角色等级</td>
     <td>Y</td>
 </tr>
@@ -456,7 +456,7 @@ onEnterGame(RoleInfo roleInfo)
 <tr>
 	<td>roleVipLevel</td>
 	<td>int</td>
-	<td> </td>
+	<td>32</td>
 	<td>角色vip等级</td>
     <td>N</td>
 </tr>
