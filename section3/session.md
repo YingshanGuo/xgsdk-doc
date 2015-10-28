@@ -37,6 +37,8 @@
 将对应的信息发送到游戏服务器，游戏服务器使用登录认证接口向西瓜登录服务器验证并获取用户登录信息。  
 **注意：** 登录认证接口为登录流程必接接口。
 
+<img src="img/session.png"/>
+
 #### 1.1 文档结构
 <ol>
 	<li>
@@ -234,17 +236,8 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
 </tr>
 </table>
 
+#### 2.7 服务端接入xgsdk样例代码
+
+[https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip "xgsdk样例代码（Java）")
+
 ---
-<div id="version"></div>
-### 文档版本说明
-<table>
-<tr>
-<td>SDK版本</td><td>文档版本</td> <td>SDK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
-</tr>
-<tr>
-	<td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.31</td>
-</tr>
-<tr>
-	<td>2.0 </td><td>1.1</td> <td>初版</td> <td>初版</td> <td>2015.10.16</td>
-</tr>
-</table>

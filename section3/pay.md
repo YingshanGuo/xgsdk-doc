@@ -82,6 +82,8 @@
 如果只接入支付通知接口,当服务端密钥泄露后，有可能遭受伪造订单信息攻击。  
 **注意：** 如游戏无支付要求，则无需接入。
 
+<img src="img/recharge.png"/>
+
 <div id="category" style="display:none"></div>
 
 #### 1.1 文档结构
@@ -609,17 +611,8 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 </tr>
 </table>
 
+#### 3.7 服务端接入xgsdk样例代码
+
+[https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip "xgsdk样例代码（Java）")
+
 ---
-<div id="version"></div>
-### 4. 文档版本说明
-<table>
-<tr>
-<td>SDK版本</td><td>文档版本</td> <td>SDK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>
-</tr>
-<tr>
-	<td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.31</td>
-</tr>
-<tr>
-	<td>2.0 </td><td>1.1</td> <td>初版</td> <td>初版</td> <td>2015.10.16</td>
-</tr>
-</table>
