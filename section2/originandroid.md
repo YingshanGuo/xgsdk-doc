@@ -15,17 +15,17 @@
 
 **渠道版 SDK 下载包包含：**
 1. 西瓜 SDKV2 的 Jar 包：
-   xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar
+   xgsdk-new-source-demo.jar,xgsdk-api.jar
 2. xgsdk-test-1.0.zip  
 3. 西瓜sdk（原生Android版)接入文档
-<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a> </br>
-4.demo运行方法 </br>
-下载原生SKD后，得到native-android-demo.zip,解压此文件，
-得到xgsdk-api.jar、xgsdk-demo.jar二个jar文件以及
+<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a> 
+4. demo运行方法 </br>
+下载原生SDK后，得到native-android-demo.zip,解压此文件，
+得到xgsdk-api.jar、xgsdk-new-source-demo.jar两个jar文件包以及
 xgsdk-test-1.0.zip工程文件包。
-解压文件xgsdk-test-1.0.zip,导入eclipse,复制xgsdk-demo.jar到工程的libs文件夹下，即可运行。  
+解压文件xgsdk-test-1.0.zip,导入eclipse,复制xgsdk-new-source-demo.jar到工程的libs文件夹下，即可运行。  
   
-**此工程是一个demo测试项目，游戏商可以用原生游戏jar替换xgsdk-demo.jar即可。**
+**以上描述项目是一个demo测试项目，如果游戏商想测试自己游戏在渠道运行状况，可以用原生游戏jar替换模拟游戏xgsdk-new-source-demo.jar即可。**
 
 ## 2. 配置环境与快速接入简介
 
@@ -92,25 +92,29 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 在游戏各个 Activity 生命周期中调用SDK生命周期接口，样例代码如下：
 
 ```java
-    @Override
-    protected void onPause() {
-        super.onPause();
-        XGSDK.getInstance().onPause(this);
-		//第一行调用父类方法，第二行调用西瓜的方法，顺序固定
-		//然后再执行贵游戏的自己的代码逻辑，下面方法类同
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        XGSDK.getInstance().onResume(this);
-    }
 
     @Override
     protected void onStart() {
         super.onStart();
         XGSDK.getInstance().onStart(this);
+        //第一行调用父类方法，第二行调用西瓜的方法，顺序固定
+		//然后再执行贵游戏的自己的代码逻辑，下面方法类同
     }
+
+     @Override
+    protected void onResume() {
+        super.onResume();
+        XGSDK.getInstance().onResume(this);
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        XGSDK.getInstance().onPause(this);
+		
+    }
+
 
     @Override
     protected void onStop() {
@@ -383,28 +387,28 @@ onEnterGame(RoleInfo roleInfo)
 <tr>
 	<td>zoneId</td>
 	<td>string</td>
-	<td>40</td>
+	<td>32</td>
 	<td>游戏区ID</td>
     <td>N</td>
 </tr>
 <tr>
 	<td>zoneName</td>
 	<td>string</td>
-	<td>40</td>
+	<td>64</td>
 	<td>游戏区名称</td>
     <td>N</td>
 </tr>
 <tr>
 	<td>serverId</td>
 	<td>string</td>
-	<td>40</td>
+	<td>32</td>
 	<td>游戏服ID，示例：s1,s2</td>
     <td>Y</td>
 </tr>
 <tr>
 	<td>serverName</td>
 	<td>string</td>
-	<td>40</td>
+	<td>64</td>
 	<td>游戏服名称，示例：风云争霸</td>
     <td>Y</td>
 </tr>
@@ -412,7 +416,7 @@ onEnterGame(RoleInfo roleInfo)
 <tr>
 	<td>uid</td>
 	<td>string</td>
-	<td>40</td>
+	<td>128</td>
 	<td>用户ID</td>
     <td>Y</td>
 </tr>
@@ -420,7 +424,7 @@ onEnterGame(RoleInfo roleInfo)
 <tr>
 	<td>roleId</td>
 	<td>string</td>
-	<td>40</td>
+	<td>32</td>
 	<td>角色ID</td>
     <td>Y</td>
 </tr>
@@ -428,7 +432,7 @@ onEnterGame(RoleInfo roleInfo)
 <tr>
 	<td>roleName</td>
 	<td>string</td>
-	<td>60</td>
+	<td>64</td>
 	<td>角色名</td>
     <td>Y</td>
 </tr>
@@ -460,7 +464,7 @@ onEnterGame(RoleInfo roleInfo)
 <tr>
 	<td>partyName</td>
 	<td>string</td>
-	<td>30</td>
+	<td>32</td>
 	<td>公会名</td>
     <td>N</td>
 </tr>
@@ -608,142 +612,165 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 <table>
 <tr>
-	<th>输入参数</th>
-	<th>数据类型</th>
+	<th>参数</th>
+	<th>参数类型</th>
+    <th>最大长度</th>
 	<th>说明</th>
-	<th>参数说明</th>
+	<th>必须</th>
 </tr>
 <tr>
 	<td>uid</td>
 	<td>String</td>
+    <td>128</td>
 	<td>用户ID</td>
-	<td>用户ID</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>productId</td>
 	<td>String</td>
+    <td>64</td>
 	<td>产品ID</td>
-	<td>产品ID</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>productName</td>
 	<td>String</td>
+    <td>64</td>
 	<td>产品名称</td>
 	<td>N</td>
 </tr>
 <tr>
 	<td>productDesc</td>
 	<td>String</td>
+    <td>128</td>
 	<td>产品描述</td>
 	<td>N</td>
 </tr>
 <tr>
 	<td>productUnit</td>
 	<td>String</td>
+    <td>64</td>
 	<td>商品单位</td>
-	<td>商品单位</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>productUnitPrice</td>
 	<td>int</td>
+    <td>10</td>
 	<td>产品单价,单位分</td>
-	<td>产品单价,单位分</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>productQuantity</td>
 	<td>int</td>
+    <td>10</td>
 	<td>产品数量</td>
-	<td>产品数量</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>totalAmount</td>
 	<td>int</td>
+    <td>10</td>
 	<td>产品总额,单位分</td>
-	<td>产品总额,单位分</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>payAmount</td>
 	<td>int</td>
+    <td>10</td>
 	<td>付费总额</td>
-	<td>付费总额</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>currencyName</td>
 	<td>String</td>
+    <td>64</td>
 	<td>实际支付的国际标准货币代码,比如CNY(人民币)/USD(美元)</td>
-	<td>实际支付的国际标准货币代码,比如CNY(人民币)/USD(美元)</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>roleId</td>
 	<td>String</td>
+    <td>32</td>
 	<td>角色ID</td>
-	<td>角色ID</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>roleName</td>
 	<td>String</td>
+    <td>64</td>
 	<td>角色名称</td>
-	<td>角色名称</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>roleLevel</td>
 	<td>int</td>
+    <td>32</td>
 	<td>角色等级</td>
-	<td>角色等级</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>roleVipLevel</td>
 	<td>String</td>
+    <td>32</td>
 	<td>角色vip等级</td>
-	<td>角色vip等级</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>serverId</td>
 	<td>String</td>
+    <td>32</td>
 	<td>服ID</td>
-	<td>服ID</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>zoneId</td>
 	<td>String</td>
+    <td>32</td>
 	<td>区ID</td>
-	<td>区ID</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>String</td>
+    <td>32</td>
 	<td>帮会名称</td>
-	<td>帮会名称</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>virtualCurrencyBalance</td>
 	<td>String</td>
+    <td> </td>
 	<td>虚拟货币余额</td>
-	<td>虚拟货币余额</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>customInfo</td>
 	<td>String</td>
+    <td>2000</td>
 	<td>扩展字段，订单支付成功后，透传给游戏</td>
-	<td>扩展字段，订单支付成功后，透传给游戏</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>gameTradeNo</td>
 	<td>String</td>
+    <td>64</td>
 	<td>游戏订单ID，支付成功后，透传给游戏</td>
-	<td>游戏订单ID，支付成功后，透传给游戏</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>gameCallbackUrl</td>
 	<td>String</td>
+    <td>128</td>
 	<td>支付回调地址，如果为空，则后台配置的回调地址</td>
-	<td>支付回调地址，如果为空，则后台配置的回调地址</td>
+	<td>N</td>
 </tr>
 <tr>
 	<td>additionalParams</td>
 	<td>String</td>
+    <td> </td>
 	<td>扩展参数</td>
-	<td>扩展参数</td>
+	<td>N</td>
 </tr>
 </table>
 
