@@ -18,13 +18,13 @@
    xgsdk-channel-core.jar，xgsdk-demo.jar,xgsdk-api.jar
 2. xgsdk-test-1.0.zip  
 3. 西瓜sdk（原生Android版)接入文档
-<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a> </br>
+<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo1.zip">原生SDK下载</a> </br>
 4.demo运行方法 </br>
 下载原生SKD后，得到native-android-demo.zip,解压此文件，
 得到xgsdk-api.jar、xgsdk-demo.jar二个jar文件以及
 xgsdk-test-1.0.zip工程文件包。
 解压文件xgsdk-test-1.0.zip,导入eclipse,复制xgsdk-demo.jar到工程的libs文件夹下，即可运行。  
-  
+
 **此工程是一个demo测试项目，游戏商可以用原生游戏jar替换xgsdk-demo.jar即可。**
 
 ## 2. 配置环境与快速接入简介
@@ -145,14 +145,14 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 	protected void onBackPressed() {
 	    super.onBackPressed();
 	    XGSDK.getInstance().onBackPressed(this);
-	    
+
 	}
 	@Override
 	protected void onConfigurationChanged(Configuration newConfig) {
 	    super.onConfigurationChanged(newConfig);
 	    XGSDK.getInstance().onConfigurationChanged(this, newConfig);
 	}
-	
+
     @Override
 	public void onSaveInstanceState(Bundle outState,
 	        PersistableBundle outPersistentState) {
@@ -336,7 +336,7 @@ void releaseResource(Activity activity, String customParams);
 <tr>
 <td>参数</td>
 <td>说明</td>
-</tr> 
+</tr>
   <tr>
   <td>customParams</td>
   <td>该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可</td>
@@ -1054,7 +1054,7 @@ switchAccount(Activity activity, String customParams)
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
        </activity>
-  
+
   将com.xgsdk.client.testdemo.MainActivity改为自己游戏原启动Activity ，其他不变，例如
 
        <activity
@@ -1067,7 +1067,7 @@ switchAccount(Activity activity, String customParams)
               <category android:name="android.intent.category.DEFAULT" />
            </intent-filter>
       </activity>
-  
+
 3.修改游戏工程的project.properties文件，添加android.library=true属性
 
 4.打开xgsdk-channel-test的配置文件，将游戏工程作添加为lib依赖文件

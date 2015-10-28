@@ -31,8 +31,8 @@ This is the summary of my book.
     * [上架自检规范](section4/check.md)
     * [渠道SDK材料](section4/SDK.md)
 
-* [数据分析使用指南](section5/operationindex.md)  
-    * [运营指标](section5/operationindex.md)
+* [数据分析使用指南](section5/dataplatform.md)  
+    * [统计指标说明](section5/operationindex.md)
 
 * [常见问题](section6/README.md)
     * [常见接入问题](section6/androidclient.md)

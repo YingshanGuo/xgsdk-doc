@@ -56,7 +56,7 @@
 
 <img src="image/10.png"/>
 
-- 上传渠道角标资源（<a href="../section4/icon.html#jiaobiao"> 查看渠道角标要求 </a>  ）
+- 上传渠道角标资源（<a href="../section4/icon.html#jiaobiao" target="_blank" > 查看渠道角标要求 </a>  ）
 
 <img src="image/lalala1.png"/>
 
