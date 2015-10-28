@@ -84,7 +84,7 @@ Android版本：Android4.0.3以上
 <a name = "tools"></a>
 ### 2.2开发工具
 开发工具：  
-Unity4.6.2f1  
+Unity4.6.0  
 Android SDK和Android Eclipse等  
 
 
@@ -95,7 +95,7 @@ Android SDK和Android Eclipse等
 
 <a href = "http://doc.xgsdk.com/files/2.0/packages/Unity3DSDK.zip">Unity3D SDK下载</a>
 
-SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户直接将工程导入Unity即可运行demo，Unity3DSDK文件夹则是用户进行接入时所需的接口文件和必须的jar包。  
+SDK包中有两个文件夹，xgsdk-unity3d-android-demo文件夹是一个Unity工程，用户直接将工程导入Unity即可运行demo，xgsdk-unity3d-sdk文件夹则是用户进行接入时所需的接口文件和必须的jar包。  
 
 渠道版SDK下载包包含：  
 1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。  
@@ -109,11 +109,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 <a name = "steps"></a>
 
 ### 2.4 接入步骤
-2.4.1 将Android项目中的内容拷贝到<项目目录>\Assets\Plugins\Android下（若没有Plugins目录或者Android目录则创建一个）
-
-<img src= "img/AndroidFile.png">  
-
-2.4.2 将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
+2.4.1 将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
 
 <img src="img/CsFile.png">   
 
@@ -121,13 +117,13 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **注意：导入的cs脚本文件名称不可修改。**
 
-2.4.3 导入文件
+2.4.2 导入文件
 
 打开Unity,点击File->Open Project->Open Other... ， 打开文件所在的目录，将工程导入。
 
 <img src="img/import1.png">   
 
-2.4.4 配置SDK路径
+2.4.3 配置SDK路径
 
 点击Edit->Preferences，打开Unity Preferences窗口,点击External Tools，在Android SDK Location配置自己的Android SDK路径
 
@@ -136,7 +132,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **注：如果游戏的主activity继承了UnityPlayerActivity，那么游戏的主activity需要继承XGUnityActivity，我们的XGUnityActivity类已经继承了UnityPlayerActivity，并且实现了android的生命周期方法；如果游戏的主activity继承了UnityPlayerNativeActivity，则游戏需要改为继承我们的XGUnityNativeActivity。**
 
-2.4.5 配置AndroidMainfest.xml文件  
+2.4.4 配置AndroidMainfest.xml文件  
 
 **配置权限**
 
@@ -177,13 +173,13 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 <img src="img/AndroidMainFest2.png">  
 
-2.4.6 配置sdk_config.properties文件  
+2.4.5 配置sdk_config.properties文件  
 
 将sdk_config.properties配置文件拷贝至<项目目录>\Assets\Plugins\Android\assets。  
 其中，sdk_config.properties中的XgAppId、XgAppKey以及XgPlanId需要在西瓜portal上获取对应的参数。
 
 
-2.4.7 运行
+2.4.6 运行
 
 首先点击Main Camera，确认是否关联脚本，若还未关联，则将脚本添加上去。
 
@@ -216,7 +212,7 @@ SDK包中有两个文件夹，Unity3DDemo文件夹是一个Unity工程，用户�
 
 **接口说明:**
 配置回调方法  
-**注意：必须在Awake方法中调用**  
+**注意：必须在第一个场景的脚本的Awake方法中调用**  
 
 **代码样例**
 
