@@ -287,7 +287,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 ###4.2 登录接口
 
 ```java
-login(Activity activity, String customParams)
+接口定义：public void login(Activity activity, String customParams)
 ```
 接口说明：用户登录接口，传入扩展参数。  
 <table>
@@ -356,7 +356,7 @@ login(Activity activity, String customParams)
 
 <a id="logout"></a>
 ###4.4 登出接口
-logout(Activity activity, String customParams)
+接口定义：public void logout(Activity activity, String customParams)
 
 接口说明：用户登出接口，登出传入扩展参数 customParams
 <table>
@@ -385,7 +385,7 @@ logout(Activity activity, String customParams)
 
 <a id="exit"></a>
 ###4.6 退出接口
-exit(Activity activity, ExitCallBack exitCallBack,String customParams)
+接口定义：public void exit(Activity activity, ExitCallBack exitCallBack,String customParams)
 
 接口说明：用户退出接口，传入 exitCallback 和扩展参数 customParams
 <table>
@@ -451,7 +451,7 @@ exit(Activity activity, ExitCallBack exitCallBack,String customParams)
 <a id="payInterface"></a>
 
 ### 4.8 释放资源接口
-void releaseResource(Activity activity, String customParams);
+接口定义：public void releaseResource(Activity activity, String customParams);
 接口说明：用户退出游戏时释放资源接口，传入扩展参数 customParams
 <table>
 <tr>
@@ -463,18 +463,20 @@ void releaseResource(Activity activity, String customParams);
   <td>该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可</td>
   </tr>
 </table>
-调用案例代码：与退出接口类似
+调用案例代码：与退出接口类似  
+
 
 
 
 
 <a id="payInterface"></a>
-## 5.充值接口
+## 5.充值接口  
 
 <a id="pay"></a>
-### 5.1 支付接口
+### 5.1 支付接口  
+  
 
-pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
+接口定义：public void pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 接口说明：充值接口  
 <table>
@@ -781,7 +783,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 <a id="onCreateRole"></a>
 ### 6.1 创建角色
-接口定义：onCreateRole(RoleInfo roleInfo)
+接口定义：public void onCreateRole(RoleInfo roleInfo)
 接口说明：使用 roleInfo 来创建角色  
 
 <table>
@@ -914,7 +916,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 <a id="onRoleLevelup"></a>
 ### 6.2 角色升级
-接口定义：onRoleLevelup(RoleInfo roleInfo)
+接口定义：public void onRoleLevelup(RoleInfo roleInfo)
 
 接口说明：角色等级接口，角色等级提升时调用
 <table>
@@ -944,7 +946,7 @@ pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 
 <a id="onEnterGame"></a>
 ### 6.3 进入游戏
-接口定义：onEnterGame(RoleInfo roleInfo)
+接口定义：public void onEnterGame(RoleInfo roleInfo)
 接口说明：进入游戏接口，进入游戏时调用
 
 <table>
