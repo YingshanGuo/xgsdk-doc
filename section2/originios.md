@@ -67,7 +67,7 @@
 参数说明：<table>
 <tr>
 <td>roleInfo</td>
-<td>值对象，参考xgsdk.h中其属性定义即可</td>
+<td>值对象，属性定义和安卓平台一致</td>
 </tr>
 </table>  -(void) onEnterGame:(XGRoleInfo*) roleInfo;
 
@@ -86,7 +86,7 @@
 参数说明：<table>
 <tr>
 <td>buyInfo</td>
-<td>值对象，参考xgsdk.h中其属性定义即可</td>
+<td>值对象，其属性定义和安卓一致</td>
 </tr>
 </table>  -(void)XGPaymentWithBuyInfo:(XGBuyInfo*)buyInfo;
 
