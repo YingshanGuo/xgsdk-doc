@@ -93,7 +93,7 @@
 <td>type</td><td>String</td><td>32</td><td>接口类型，固定为notify-game</td><td>是</td>
 </tr>
 <tr>
-<td>xgAppId</td><td>String</td><td>64</td><td>XGSDK分配的游戏编号</td><td>是</td>
+<td>xgAppId</td><td>String</td><td>64</td><td>XGSDK分配的游戏编号<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的xgAppId</a></td><td>是</td>
 </tr>
 <tr>
 <td>channelId</td><td>String</td><td>32</td><td>运营渠道编号</td><td>是</td>
@@ -208,7 +208,7 @@ payStatus=1
 
 **当前时间戳ts:** 20150723150028  
 
-**游戏服务端密钥:** 654321
+**游戏服务端密钥:** 654321<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的游戏服务端密钥XgServerKey</a>
 
 **则请求签名源串为：**
 channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=notify-game&uid=30854&xgAppId=1024appid
@@ -282,20 +282,6 @@ postBody:
 2. 按key1=value1&key2=value2&...来拼接签名源串，将值为空的参数和sign签名字段去掉，不加入签名源串，key和value不进行任何编码（如不进行URLEncoder）；
 3. 然后对最后生成的字符串进行HmacSHA1计算，得到签名串。
 
-<!--
-**签名示例：**
-- **传入参数：**
-productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&appId=xyfm&channelId=xiaomi&customInfo=9091e0cc37364fd54307cb076a64a5206b52a83bc8086ce27583df220191d245d27a1b93e68389fb65c0e6bd5a075f566663&tradeNo=100265&paidAmount=1&payStatus=1&payTime=2014-12-4 20:40:15&uid=25613430&sign=a7dc0c91632d473a7bdba944b4d43222d97293ac&totalAmount=1
-
-- **签名密钥appSecret：** 2498b561-2338-4af5-a561-c2f88aed5753
-
-- **签名源串：**
-productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&appId=xyfm&channelId=xiaomi&customInfo=9091e0cc37364fd54307cb076a64a5206b52a83bc8086ce27583df220191d245d27a1b93e68389fb65c0e6bd5a075f566663&tradeNo=100265&paidAmount=1&payStatus=1&payTime=2014-12-4 20:40:15&uid=25613430&totalAmount=12498b561-2338-4af5-a561-c2f88aed5753
-
-- **最后的签名串为：**
- a7dc0c91632d473a7bdba944b4d43222d97293ac
-
--->
 <div id="pay_notify_suggestion"></div>
 
 ### 2.8 游戏处理注意事项
@@ -322,8 +308,11 @@ productQuantity=1&productDesc=paymentDes017&productId=payment019&productName=10&
 **字符集编码：** UTF-8  
 **安全机制：** 签名  
 **请求地址：**  
-http://p2.xgsdk.com/pay/verify-order/{xgAppId}  
-其中xgAppId是XGSDK分配的游戏编号，如西游伏魔是1024appid。p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环境有不同的域名，具体值请参考在XGSDK Portal配置界面里的西瓜 SDK 接入参数。
+http://p2.xgsdk.com/pay/verify-order/{xgAppId}  <a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的xgAppId</a>
+
+其中xgAppId是XGSDK分配的游戏编号，如西游伏魔是1024appid。
+p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环境有不同的域名，具体值请参考在XGSDK Portal配置界面里的西瓜 SDK 接入参数。
+
 **功能描述：** 用于游戏服务器验证收到的订单通知是否有效。
 
 <div id="order_query_step_input"></div>
@@ -375,7 +364,7 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 <td>type</td><td>String</td><td>32</td><td>接口类型，固定为verify-order</td><td>是</td>
 </tr>
 <tr>
-<td>xgAppId</td><td>String</td><td>64</td><td>XGSDK分配的游戏编号</td><td>是</td>
+<td>xgAppId</td><td>String</td><td>64</td><td>XGSDK分配的游戏编号<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的xgAppId</a></td><td>是</td>
 </tr>
 <tr>
 <td>channelId</td><td>String</td><td>32</td><td>运营渠道编号</td><td>是</td>
@@ -453,13 +442,20 @@ http://p2.xgsdk.com/pay/verify-order/{xgAppId}
 
 <div id="order_query_step_sample"></div>
 ### 3.4 请求样例
-**请求参数:**  
-**tradeNo:** 2984456  
+**请求参数:**
+  
+**tradeNo:** 2984456
+ 
 **当前时间戳ts:** 20150723150028  
-**游戏服务端密钥:** 654321  
+
+**游戏服务端密钥: 654321**
+<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的游戏服务端密钥XgServerKey</a> 
+
 **则请求签名源串为：**  tradeNo=2984456&ts=20150723150028&type=verify-order  
+
 **请求签名为：**
 86e396a999e9673731be6609c4dc7bca8945ada6  
+
 **请求样例：**  
 http://p2.xgsdk.com/pay/verify-order/1024appid?tradeNo=2984456&sign=86e396a999e9673731be6609c4dc7bca8945ada6&ts=20150723150028&type=verify-order
 
@@ -468,7 +464,7 @@ http://p2.xgsdk.com/pay/verify-order/1024appid?tradeNo=2984456&sign=86e396a999e9
 **响应签名源串为：**
 channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=verify-order&uid=30854&xgAppId=1024appid
 
-**响应验签密钥为游戏服务端验签密钥：** 654321
+**响应验签密钥为游戏服务端验签密钥：** 654321<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的游戏服务端密钥XgServerKey</a> 
 
 **响应签名为：**
 b990455f7f184c632f7fe1a8369d620392f5cdc8

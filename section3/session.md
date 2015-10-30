@@ -60,7 +60,7 @@
 </table>
 
 
-其中xgAppId是游戏在XGSDK的唯一标示，如西游伏魔是1024。
+其中xgAppId是游戏在XGSDK的唯一标示，如西游伏魔是1024。<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的xgAppId</a>
 
 a2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环境有不同的域名，具体值请参考在XGSDK Portal配置界面里的西瓜 SDK 接入参数。
 
