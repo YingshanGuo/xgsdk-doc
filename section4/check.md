@@ -832,97 +832,7 @@
 			</td>
 
 </tr>
-<tr>
-<td>
-				快用
-			</td>
-<td>
-				ios_kuaiyong
-			</td>
-			<td>
-			<a href="#heading38">点击查看</a>
-						</td>
-<td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/kuaiyong/1.1/7659游戏中心自测文档v2.1.pdf">下载链接</a>
-			</td>
 
-</tr>
-<tr>
-<td>
-				91
-			</td>
-<td>
-				ios_91
-			</td>
-			<td>
-			<a href="#heading39">点击查看</a>
-						</td>
-<td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/ios_91/1.1/91渠道自检规范.xlsx">下载链接</a>
-			</td>
-
-</tr>
-<tr>
-<td>
-				xy
-			</td>
-<td>
-				ios_xy
-			</td>
-			<td>
-			<a href="#heading40">点击查看</a>
-						</td>
-<td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/xy/1.1/xy渠道自检规范.xlsx">下载链接</a>
-			</td>
-
-</tr>
-<tr>
-<td>
-				爱思
-			</td>
-<td>
-				ios_aisi
-			</td>
-			<td>
-			<a href="#heading41">点击查看</a>
-						</td>
-<td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/aisi/1.1/aisi渠道自检规范.xlsx">下载链接</a>
-			</td>
-
-</tr>
-<tr>
-<td>
-			海马爱贝（注：海马渠道已独立）
-			</td>
-<td>
-				ios_haima
-			</td>
-
-<td>
-				无
-			</td>
-<td>
-				无
-			</td>
-
-</tr>
-<tr>
-<td>
-				同步推
-			</td>
-<td>
-				ios_tongbutui
-			</td>
-			<td>
-			<a href="#heading42">点击查看</a>
-						</td>
-<td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/tbt/1.1/tbt渠道自检规范.xlsx">下载链接</a>
-			</td>
-
-</tr>
 <tr>
 <td>
 				金山通行证
@@ -940,21 +850,6 @@
 </tr>
 <tr>
 <td>
-				pp助手
-			</td>
-<td>
-				ios_pp
-			</td>
-			<td>
-			<a href="#heading43">点击查看</a>
-						</td>
-<td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/pp/1.1/pp渠道自检规范.xlsx">下载链接</a>
-			</td>
-
-</tr>
-<tr>
-<td>
 				itools
 			</td>
 <td>
@@ -968,56 +863,23 @@
 			</td>
 
 </tr>
-<tr>
-<td>
-				掌趣
-			</td>
-<td>
-				ios_zhangqu
-			</td>
 
-<td>
-				无
-			</td>
-<td>
-				无
-			</td>
-
-</tr>
-<tr>
-<td>
-				xoyobox
-			</td>
-<td>
-				ios_xoyobox
-			</td>
-
-<td>
-				无
-			</td>
-<td>
-				无
-			</td>
-</tr>
-<tr>
-<td>
-				海马
-			</td>
-<td>
-
-					ios_haimav3
-</td>
-
-<td>
-			无
-			</td>
-			<td>
-		无
-						</td>
-</tr>
 <tr>
 <td>
 				appStore(iOS正版渠道)
+			</td>
+<td>无
+			</td>
+
+<td>无
+			</td>
+<td>无
+			</td>
+</tr>
+
+<tr>
+<td>
+				小米ios
 			</td>
 <td>无
 			</td>

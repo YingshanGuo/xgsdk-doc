@@ -11,8 +11,6 @@
 
 - **[SDK 接入常见问题](./androidclient.md)**
 
-
-- **[打包工具相关问题](./Note11.md)**
-
-
 - **[获取文件签名相关问题](./filesign.md)**
+
+- **[ios 接入常见问题](./iosfaq.md)**

@@ -139,65 +139,23 @@
 	<td>申请指南</td>
 	<td>后台地址</td>
  </tr>
- <tr>
-	<td><a href="./application/kuaiyong.html" target="_blank">快用</td>
-	<td>有</td>
-	<td><a href="http://shoulu.7659.com" target="_parent">渠道地址</a></td>
- </tr>
- <tr>
-	<td>xy</td>
-	<td>无</td>
-	<td><a href="http://dev.xyzs.com" target="_parent">渠道地址</a></td>
- </tr>
- <tr>
-	<td>爱思</td>
-	<td>有</td>
-	<td><a href="http://dev.i4.cn" target="_parent">渠道地址</a></td>
- </tr>
- <tr>
-	<td>海马爱贝</td>
-	<td>无</td>
-	<td><a href="http://www.iapppay.com" target="_parent">渠道地址</a></td>
- </tr>
- <tr>
-	<td>同步推</td>
-	<td>无</td>
-	<td><a href="http://dev.tongbu.com/game/" target="_parent">渠道地址</a></td>
- </tr>
+
  <tr>
 	<td>金山通行证</td>
 	<td>无</td>
 	<td><a href="http://www.xgsdk.com:18080/" target="_parent">渠道地址</a></td>
  </tr>
- <tr>
-	<td>pp助手</td>
-	<td>有</td>
-	<td><a href="http://pay.25pp.com" target="_parent" title="http://pay.25pp.com">渠道地址</a></td>
- </tr>
+
  <tr>
 	<td>itools</td>
 	<td>有</td>
 	<td>渠道地址</a></td>
  </tr>
- <tr>
-	<td>海马</td>
-	<td>有</td>
-	<td><a href="http://pay.haima.me" target="_parent" title="http://pay.haima.me  ">渠道地址</a></td>
- </tr>
+
  <tr>
 	<td>AppStore</td>
 	<td>有</td>
 	<td><a href="https://itunesconnect.apple.com" target="_parent" title="https://itunesconnect.apple.com">渠道地址</a></td>
- </tr>
- <tr>
-	<td>掌趣</td>
-	<td>无</td>
-	<td></td>
- </tr>
- <tr>
-	<td>xoyobox</td>
-	<td>无</td>
-	<td></td>
  </tr>
 </table>
 
@@ -432,14 +390,4 @@
  <td>.ewan</td>
 </tr>
 
-</table>
-
-### 文档版本说明
-<table >
-<tr>
-<td >SDK版本</td><td>文档版本</td> <td>SDK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
-</tr>
-<tr>
-<td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.7.30</td>
-</tr>
 </table>
