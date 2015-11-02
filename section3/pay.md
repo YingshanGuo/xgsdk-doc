@@ -1,6 +1,7 @@
 # 西瓜SDK 支付通知接口
 <div id="doc"></div>
-## 1. 文档概述
+
+## 1 文档概述
 此文档是西瓜SDK支付通知接口接入文档。包括如下2个接口：  
 
  1. 支付通知接口
@@ -13,7 +14,8 @@
 
 <img src="img/recharge.png"/>
 
-<div id="doc_structure"/>
+<a id="doc_structure"/></a>
+
 ### 1.1 文档结构
 <ol>
   <li>
@@ -52,9 +54,11 @@
 </ol>
 
 <div id="interface_pay_notify"></div>
+
 ## 2 支付通知接口（通知游戏支付结果）
 
 <div id="pay_notify_function"></div>
+
 ### 2.1 功能
 <table>
 <tr>
@@ -81,6 +85,7 @@
 </table>
 
 <div id="pay_notify_step_input"></div>
+
 ### 2.2 输入
 
 **参数说明：** 参数为一个json的字符串
@@ -170,6 +175,7 @@
 </table>
 
 <div id="pay_notify_step_output"></div>
+
 ### 2.3 输出
 **返回结果为JSON格式的字符串，分别有如下几个字段：**
 
@@ -186,6 +192,7 @@
 </table>
 
 <div id="pay_notify_step_sample"></div>
+
 ### 2.4 请求样例
 **请求参数:**  
 type=notify-game  
@@ -222,6 +229,7 @@ postBody:
 {"channelId":"mi","customInfo":"2323423413412351251245","gameTradeNo":"99887766","paidAmount":"9800","paidTime":"20150723150128","payStatus":"1","productDesc":"productDesc1","productId":"productId1","productName":"productName1","productQuantity":"1","roleId":"224455","serverId":"1","totalAmount":"9800","tradeNo":"2984456","ts":"20150723150028","type":"notify-game","uid":"30854","xgAppId":"1024appid","sign":"afb3496f05333fbfa184f8e8af39eb7f198e37a7"}
 
 <div id="pay_notify_step_sample_return"></div>
+
 ### 2.5 返回值样例
 
 	{
@@ -231,6 +239,7 @@ postBody:
 
 
 <div id="pay_notify_errcode"></div>
+
 ### 2.6 错误码
 <table>
 <tr>
@@ -274,6 +283,7 @@ postBody:
 
 
 <div id="pay_notify_sign"></div>
+
 ### 2.7 签名和验签
 
 **签名算法采用HmacSHA1**
@@ -298,7 +308,8 @@ postBody:
 若以上7步都正常，则返回String SUCCESS = "0"。
 
 <div id="interface_order_query"></div>
-## 3. 二次查询验证订单
+
+## 3 二次查询验证订单
 
 <div id="order_query_function"></div>
 ### 3.1 功能
@@ -316,6 +327,7 @@ p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 **功能描述：** 用于游戏服务器验证收到的订单通知是否有效。
 
 <div id="order_query_step_input"></div>
+
 ### 3.2 输入
 **参数说明：**
 <table>
@@ -337,6 +349,7 @@ p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 </table>
 
 <div id="order_query_step_output"></div>
+
 ### 3.3 输出
 **返回结果为JSON格式的字符串，分别有如下几个字段：**
 <table>
@@ -441,15 +454,16 @@ p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 </table>
 
 <div id="order_query_step_sample"></div>
+
 ### 3.4 请求样例
 **请求参数:**
-  
+
 **tradeNo:** 2984456
- 
+
 **当前时间戳ts:** 20150723150028  
 
 **游戏服务端密钥: 654321**
-<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的游戏服务端密钥XgServerKey</a> 
+<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的游戏服务端密钥XgServerKey</a>
 
 **则请求签名源串为：**  tradeNo=2984456&ts=20150723150028&type=verify-order  
 
@@ -460,11 +474,12 @@ p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 http://p2.xgsdk.com/pay/verify-order/1024appid?tradeNo=2984456&sign=86e396a999e9673731be6609c4dc7bca8945ada6&ts=20150723150028&type=verify-order
 
 <div id="order_query_step_sample_return"></div>
+
 ### 3.5 返回值样例
 **响应签名源串为：**
 channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=verify-order&uid=30854&xgAppId=1024appid
 
-**响应验签密钥为游戏服务端验签密钥：** 654321<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的游戏服务端密钥XgServerKey</a> 
+**响应验签密钥为游戏服务端验签密钥：** 654321<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的游戏服务端密钥XgServerKey</a>
 
 **响应签名为：**
 b990455f7f184c632f7fe1a8369d620392f5cdc8
@@ -498,6 +513,7 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 	}
 
 <div id="order_query_errcode"></div>
+
 ### 3.6 错误码
 <table>
 <tr>
@@ -518,7 +534,7 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 </table>
 
 <div id="demo"></div>
+
 ## 4 服务端接入xgsdk样例代码
 
 点击 [Demo](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip) 可以下载服务端接入代码的样例。
-

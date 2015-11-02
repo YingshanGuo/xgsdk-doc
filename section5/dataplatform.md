@@ -6,11 +6,11 @@
 ------------------------------------
 
 运营人员要去数据平台，统一入口在Portal上，如下图所示：
-![数据平台入口](images/Portal2DataPlatform.PNG)
+![数据平台入口](./images/Portal2DataPlatform.PNG)
 
 从[1.1]处进来，来到数据平台首页
 
-![数据平台首页](images/DataPlatformIndex.PNG)
+![数据平台首页](./images/DataPlatformIndex.PNG)
 
 运营人员主要使用这个页面[1.2]，查询订阅各种统计数据。以下章节就主要说明该功能的主要内容与使用方法。
 
@@ -20,7 +20,7 @@
 
 该章节主要说明，查询统计数据页面的组成，以“应用统计-概览”页面为例：
 
-![数据平台数据查询](images/DataPlatformQuery.PNG)
+![数据平台数据查询](./images/DataPlatformQuery.PNG)
 
 如图中标出，查询统计数据页面主要分为三部分，下面逐一说明：
 
@@ -46,7 +46,7 @@
 3. 订阅统计数据
 --------------------------------------
 
-![数据平台数据订阅](images\DataPlatformSubscription.PNG)
+![数据平台数据订阅](./images/DataPlatformSubscription.PNG)
 
 订阅统计数据功能，是为了能把一些关键数据及时发送给需要关注的人而设计的。
 主要由三个子功能组成：
@@ -72,7 +72,7 @@
 ###4.1. 运营报表
 运营表表中包含运营关注的主要核心指标，是运营人员经常访问的数据，具体位置如下图：
 
-![数据平台运营报表](images\DataPlatformBusinessReport.PNG)
+![数据平台运营报表](./images/DataPlatformBusinessReport.PNG)
 
 ###4.2. 实时数据
 实时数据以外的其他统计数据查询结果都只能查询前一天及其以前的数据，实时数据可以查看当前的实时情况，运营人员经常使用，又分为4个子页面，分别为：

@@ -1,5 +1,6 @@
 # 西瓜SDK session验证文档
 <div id="doc"></div>
+
 ## 1. 文档概述
 
 此文档是西瓜SDK服务端接入登录验证文档。介绍游戏服务器如何验证用户登录信息，游戏客户端在接收到西瓜登录成功的回调后，
@@ -8,8 +9,11 @@
 
 <img src="img/session.png"/>
 
-<div id="doc_structure"/>
+
+<a id="doc_structure"/></a>
+
 ### 1.1 文档结构
+
 <ol>
   <li>
     <a href="#doc">文档概述</a>
