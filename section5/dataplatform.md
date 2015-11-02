@@ -20,7 +20,7 @@
 
 该章节主要说明，查询统计数据页面的组成，以“应用统计-概览”页面为例：
 
-![数据平台数据查询](./images/DataPlatformQuery.PNG)
+![数据平台数据查询](./images/DataPlatFormQuery.PNG)
 
 如图中标出，查询统计数据页面主要分为三部分，下面逐一说明：
 
@@ -43,7 +43,7 @@
 3. 订阅统计数据
 --------------------------------------
 
-![数据平台数据订阅](./images/DataPlatformSubscription.PNG)
+![数据平台数据订阅](./images/DataPlatFormSubscription.PNG)
 
 订阅统计数据功能，是为了能把一些关键数据及时发送给需要关注的人而设计的。
 主要由四个子功能组成：
