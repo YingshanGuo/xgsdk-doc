@@ -19,7 +19,7 @@
  <tr>
 	<td><a href="./application/jinli.html" target="_blank">金立</td>
 	<td><a href="http://dev.game.gionee.com/" target="_parent">渠道地址</a></td>
-	<td><a href="./application/aiyouxi.html" target="_blank">百度</a></td>
+	<td><a href="./application/baidu.html" target="_blank">百度</a></td>
 	<td><a href="http://app.baidu.com" target="_parent">渠道地址</a></td>
 	<td>应用宝—联运</td>
 	<td><a href="http://open.qq.com/" target="_parent" title="http://open.qq.com/">渠道地址</a></td>
@@ -147,14 +147,14 @@
  </tr>
 
  <tr>
-	<td>itools</td>
-	<td>有</td>
+	<td>小米ios</td>
+	<td>无</td>
 	<td>渠道地址</a></td>
  </tr>
 
  <tr>
 	<td>AppStore</td>
-	<td>有</td>
+	<td>无</td>
 	<td><a href="https://itunesconnect.apple.com" target="_parent" title="https://itunesconnect.apple.com">渠道地址</a></td>
  </tr>
 </table>

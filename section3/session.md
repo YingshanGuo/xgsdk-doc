@@ -6,6 +6,7 @@
 此文档是西瓜SDK服务端接入登录验证文档。介绍游戏服务器如何验证用户登录信息，游戏客户端在接收到西瓜登录成功的回调后，
 将对应的信息发送到游戏服务器，游戏服务器使用登录认证接口向西瓜登录服务器验证并获取用户登录信息。  
 **注意：** 登录认证接口为登录流程必接接口。
+<a id="liucheng"/></a>
 
 <img src="img/session.png"/>
 
@@ -76,7 +77,7 @@ a2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 参数说明：
 <table>
 <tr>
-<td>参数</td><td>参数类型</td><td>说明</td><td>必须</td>
+<td>参数</td><td>类型</td><td>说明</td><td>必须</td>
 </tr>
 <tr>
 <td>type</td><td>String</td><td>接口类型，固定为verify-session</td><td>是</td>

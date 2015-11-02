@@ -31,7 +31,7 @@ This is the summary of my book.
     * [统计指标说明](section5/operationindex.md)
 
 * [常见问题](section6/README.md)
-    * [常见接入问题](section6/androidclient.md)
-    * [渠道接入须知](section6/Note.md)
-    * [获取文件签名](section6/filesign.md)
+    * [渠道参数相关问题](section6/Note.md)
+    * [SDK 接入常见接入问题](section6/androidclient.md)
+    * [获取文件签名相关问题](section6/filesign.md)
     * [ios 接入常见问题](section6/iosfaq.md)

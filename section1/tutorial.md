@@ -23,7 +23,7 @@
 
 <img src="image/2.png"/>
 
-##### 1.3 进入首页可以看到新建游戏项目提示，点击新建新建游戏项目。然后填写游戏名称，选择游戏平台和游戏类型并上传游戏图标，点击确定
+##### 1.3 进入首页可以看到新建游戏项目提示，点击“新建游戏项目”。然后填写游戏名称，选择游戏平台和游戏类型并上传游戏图标，点击确定
 
 <img src="image/3.png"/>
 
@@ -39,11 +39,11 @@
 
 <img src="image/6.png"/>
 
-##### 1.7 点击左侧菜单栏的“开发接入SDK”，选择游戏引擎和横竖屏（这两个选项为必选项）
+##### 1.7 点击左侧菜单栏的“基础配置”，选择游戏引擎和横竖屏（这两个选项为必选项）
 
 <img src="image/7.png"/>
 
-##### 1.8 进入开发接入SDK界面后，根据游戏具体情况下载相应的XGSDK打包工具和XGSDK客户端（<a href = "http://console.xgsdk.com/download.html">点击下载</a>）
+##### 1.8 进入“基础配置”界面后，根据游戏具体情况下载相应的XGSDK打包工具和XGSDK客户端（<a href = "http://console.xgsdk.com/download.html">点击下载</a>）
 
 <img src="image/lalala.png"/>
 
@@ -76,17 +76,17 @@
 
 ### 3. 制作渠道包
 
-3.1 打开XGSDK打包工具(<a href = "http://console.xgsdk.com/download.html" target="_blank">我在这里等你下载！</a>)
+3.1 打开XGSDK打包工具(<a href = "http://console.xgsdk.com/download.html">我在这里等你下载！</a>)
 
 <img src="image/12.png"/>
 
- 3.2 登陆打包工具后，可以看到西瓜web控制台上新建的游戏和发布计划。上传游戏母包，然后选择渠道，点击“制作渠道包”
+ 3.2 登录打包工具后，可以看到西瓜web控制台上新建的游戏和发布计划。上传游戏母包，然后选择渠道，点击“制作渠道包”
 
 <img src="image/17.png"/>
 
 3.3 点击制作渠道包之后，打包工具进入渠道包制作过程，打包完成后点击“打开文件夹”获取最终渠道包
 
-<img src="image/18.png"/>
+<img src="img/packing_start.png"/>
 
 ### 4. 发布上线
 

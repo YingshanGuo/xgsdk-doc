@@ -1,7 +1,7 @@
 # 渠道SDK材料
 
 
-西瓜SDK目前支持Android和iOS两种平台，其中Android平台已支持43个渠道，iOS平台已支持13个渠道。
+西瓜SDK目前支持Android和iOS两种平台，其中Android平台已支持49个渠道，iOS平台已支持3个渠道。
 西瓜不仅仅实现了主流渠道的覆盖，而且更多的渠道也在持续加入中。  
 为了方便游戏可以更容易的了解各个渠道的不同需求，以下是对现已支持渠道的简单介绍，其中包括：
 渠道名称、渠道ID、渠道最新版本和渠道原始资料。  
@@ -1452,40 +1452,34 @@ LBYX
 			</td>
 </tr>
 
+
 <tr>
 <td>
-				itools
+				appStore(iOS正版渠道)
 			</td>
 <td>
-				ios_itools
-			</td>
-<!--
-<td>
-				1.1
-			</td>
-      -->
-<td>
-				V2.3.2
 			</td>
 <!--
 <td>
-				<a href="http://doc.xgsdk.com/guide/index.php/2015/05/21/750/">打开</a>
 			</td>
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/itools/1.1/渠道角标规范.zip">下载链接</a>
 			</td>
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/itools/1.1/itools渠道自检规范.xlsx">下载链接</a>
+				<a href="http://doc.xgsdk.com/guide/index.php/2015/06/05/1129/">打开</a>
+			</td>
+
+<td>
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/itools/1.1/原始材料.zip">下载链接</a>
+			</td>
+<td>
 			</td>
 </tr>
 
 <tr>
 <td>
-				appStore(iOS正版渠道)
+				小米ios
 			</td>
 <td>
 			</td>

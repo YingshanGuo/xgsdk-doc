@@ -20,7 +20,7 @@
 
 1.支付功能开通：无需签合同，但是需要完成以下流程(3-5步骤在讨论组进行)：  
 (1)请确认应用评测通过(即进入QA阶段)；若未通过，请联系安智商务协调处理；  
-(2)请先在开发者后台自行配置应用的支付回调地址（把回调地址填完之后，在进行第三步和第四步）；  
+(2)请先在开发者后台自行配置应用的支付回调地址（把回调地址填完之后，再进行第三步和第四步）；  
 (3)请发出游戏的appKey(appId即appKey)；  
 (4)请发出游戏接入支付SDK的版本；  
 (5)请发出游戏的名称。
@@ -76,6 +76,7 @@ AndroidManifest.xml中的android:targetSdkVersion必须配19，不能配太高�
 
 
 #### <p id="6">当乐</p>
+
 
 1.渠道特殊要求：  
 (1)要求使用渠道自己的签名文件；  
@@ -205,7 +206,7 @@ portal参数debug为true时，充值一律为1元，上线前必须改为false�
 ---
 
 
-#### <p id="17">pps</p>
+#### <p id="18">pps</p>
 
 1.pps返回键没有调出渠道退出框，直接finish？  
 需要渠道后台进行配置。
@@ -251,5 +252,3 @@ portal参数debug为true时，充值一律为1元，上线前必须改为false�
 AndroidManifest.xml:
 
 	android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
-
-

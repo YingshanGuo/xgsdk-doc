@@ -312,6 +312,7 @@ postBody:
 ## 3 二次查询验证订单
 
 <div id="order_query_function"></div>
+
 ### 3.1 功能
 **发起方：** 游戏服务器  
 **接收方：** XGSDK服务端  
