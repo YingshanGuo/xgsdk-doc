@@ -538,4 +538,4 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 
 ## 4 服务端接入xgsdk样例代码
 
-点击 [Demo](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip) 可以下载服务端接入代码的样例。
+点击 [Demo](/download.html) 可以下载服务端接入代码的样例。
