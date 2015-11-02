@@ -10,7 +10,7 @@
 
 从[1.1]处进来，来到数据平台首页
 
-![数据平台首页](images\DataPlatformIndex.PNG)
+![数据平台首页](images/DataPlatformIndex.PNG)
 
 运营人员主要使用这个页面[1.2]，查询订阅各种统计数据。以下章节就主要说明该功能的主要内容与使用方法。
 
@@ -20,7 +20,7 @@
 
 该章节主要说明，查询统计数据页面的组成，以“应用统计-概览”页面为例：
 
-![数据平台数据查询](images\DataPlatformQuery.PNG)
+![数据平台数据查询](images/DataPlatformQuery.PNG)
 
 如图中标出，查询统计数据页面主要分为三部分，下面逐一说明：
 
