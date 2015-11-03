@@ -34,8 +34,9 @@
 - 请确认“设置-iTunes账户” 正确。（若账号处于灰色状态，即不可编辑，也不可注销。说明本地网络有误，需重启设备）。
 - 设备是越狱机器。请用非越狱机测试正版支付。
 - 请检查注册iTunes中产品的信息,<a href = "http://www.cocoachina.com/special/iap.html">为什么我的产品标识符在invalidProductIdentifiers中被退返？</a>：<br>
-
 <img src="img/iap3.jpg"/>
+- 请检查税务信息是否填写完整。<br>
+<img src="img/iap4.jpg"/>
 
 ## 文档版本说明
 <table>
