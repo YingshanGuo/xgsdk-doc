@@ -538,4 +538,4 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 
 ## 4 服务端接入xgsdk样例代码
 
-点击 <a href = "http://console.xgsdk.com/download.html" target="_blank">Demo</a> 可以下载服务端接入代码的样例。
+点击 <a href = "/download.html" target="_blank">Demo</a> 可以下载服务端接入代码的样例。

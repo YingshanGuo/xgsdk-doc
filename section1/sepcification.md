@@ -427,7 +427,7 @@ JDK1.8及以上版本
 
 12.2.1 下载&安装西瓜打包工具
 
-前往<a href = "http://console.xgsdk.com/download.html" target="_blank">西瓜官网</a>，下载对应的版本安装包到本地进行安装。
+前往<a href = "/download.html" target="_blank">西瓜官网</a>，下载对应的版本安装包到本地进行安装。
 
 <img src="img/login.png"/>
 
