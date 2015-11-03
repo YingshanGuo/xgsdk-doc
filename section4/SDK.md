@@ -7,7 +7,7 @@
 渠道名称、渠道ID、渠道最新版本和渠道原始资料。  
 
 
-## Android渠道列表
+## Android渠道列表（<a href = "http://console.xgsdk.com/channellist.html" target="_blank">点击查看渠道版本列表</a>）
 
 <table >
 <tr>
