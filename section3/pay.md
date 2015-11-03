@@ -184,7 +184,7 @@
 <td>参数</td><td>说明</td>
 </tr>
 <tr>
-<td>code</td><td>返回码，参见<a href="#import_2">错误码</a>章节</td>
+<td>code</td><td>返回码，参见<a href="#pay_notify_errcode">错误码</a>章节</td>
 </tr>
 <tr>
 <td>msg</td><td>接口调用信息提示</td>
@@ -358,7 +358,7 @@ p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 <td>字段</td><td>说明</td>
 </tr>
 <tr>
-<td>code</td><td>返回码，参见<a href="#androidMk2">错误码</a>章节</td>
+<td>code</td><td>返回码，参见<a href="#order_query_errcode">错误码</a>章节</td>
 </tr>
 <tr>
 <td>msg</td><td>接口调用信息提示</td>
@@ -538,4 +538,4 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 
 ## 4 服务端接入xgsdk样例代码
 
-点击 [Demo](/download.html) 可以下载服务端接入代码的样例。
+点击 [Demo](http://console.xgsdk.com/download.html) 可以下载服务端接入代码的样例。

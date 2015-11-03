@@ -207,4 +207,5 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
 <div id="demo"></div>
 ## 3 服务端接入xgsdk样例代码
 
-点击 [Demo](/download.html) 可以下载服务端接入代码的样例。
+[https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip]
+  (https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip "xgsdk样例代码（Java）")

@@ -10,7 +10,7 @@
 
 从[1.1]处进来，来到数据平台首页
 
-![数据平台首页](./images/DataPlatformIndex.PNG)
+<img src="./images/DataPlatformIndex.png"/>
 
 运营人员主要使用这个页面[1.2]，查询订阅各种统计数据。以下章节就主要说明该功能的主要内容与使用方法。
 
@@ -41,9 +41,9 @@
 
 
 3. 订阅统计数据
---------------------------------------
 
-![数据平台数据订阅](./images/DataPlatFormSubscription.PNG)
+<img src="./images/DataPlatFormSubscription.png"/>
+
 
 订阅统计数据功能，是为了能把一些关键数据及时发送给需要关注的人而设计的。
 主要由四个子功能组成：
