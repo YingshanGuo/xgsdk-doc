@@ -242,7 +242,7 @@
 						</td>
 						-->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/4399/2.0/v2.5.0.0/4399平台联运游戏测试规范(供游戏方使用)_20150616.xlsx">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/4399/2.0/V2.4.0.6/4399平台联运游戏测试规范(供游戏方使用)_201509011.xlsx">下载链接</a>
 			</td>
 
 </tr>
