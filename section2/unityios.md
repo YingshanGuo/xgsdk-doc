@@ -94,7 +94,8 @@ src：接入依赖的源码
 
 
 ### 2.3 接入步骤
-**2.3.1 将iOS目录中的内容拷贝到<项目目录>\Assets\Plugins\iOS下（若没有Plugins目录或者iOS目录则创建一个）；**
+2.3.1 将iOS目录中的内容拷贝到<项目目录>\Assets\Plugins\iOS下（若没有Plugins目录或者iOS目录则创建一个）；<br>
+***注意：libxgCommon.a, libxgsdk_unity3d.a, libXgsdkData.a 这三个库文件会在每次unity导出xcode工程的时候自动注入到xcode工程。这三个库是xg的公共库文件，后续如果更新，请直接在此替换。  其他sdk相关的库将由xg打包工具注入，该文件夹请勿放置任何sdk相关的库。否则，由于库引用顺序的原因，导致打包工具注入的sdk库无法生效。***
 <img src= "img/ios1.png">
 
 **2.3.2 将src目录中的cs脚本文件全部拷贝至<项目目录>\Assets中；**
