@@ -1,4 +1,4 @@
-# 快速入门西瓜SDK(<a href = "/download.html" target="_blank">点击下载相关资源</a>)
+# 快速入门西瓜SDK(<a href = "http://console.xgsdk.com/download.html" target="_blank">点击下载相关资源</a>)
 ---
 #### 西瓜SDK — ONCE FOR ALL手游多渠道快速接入解决方案：
  1. 准备阶段
@@ -43,7 +43,7 @@
 
 <img src="image/7.png"/>
 
-##### 1.8 进入“基础配置”界面后，根据游戏具体情况下载相应的XGSDK打包工具和XGSDK客户端（<a href = "/download.html" target="_blank">点击下载</a>）
+##### 1.8 进入“基础配置”界面后，根据游戏具体情况下载相应的XGSDK打包工具和XGSDK客户端（<a href = "http://console.xgsdk.com/download.html" target="_blank">点击下载</a>）
 
 <img src="image/lalala.png"/>
 
@@ -76,7 +76,7 @@
 
 ### 3. 制作渠道包
 
-3.1 打开XGSDK打包工具(<a href = "/download.html" target="_blank">我在这里等你下载！</a>)
+3.1 打开XGSDK打包工具(<a href = "http://console.xgsdk.com/download.html" target="_blank">我在这里等你下载！</a>)
 
 <img src="image/12.png"/>
 

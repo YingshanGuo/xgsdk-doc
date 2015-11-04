@@ -86,7 +86,7 @@ Unity4.6.2f1
 <a name = "SDKDownload"></a>
 ### 2.2 SDK下载包
 
-<a href = "http://doc.xgsdk.com/files/2.0/packages/iOS_unity_plugin20151102.zip">iOS_Unity3D SDK下载</a>  
+<a href = "http://doc.xgsdk.com/files/2.0/packages/iOS_unity_plugin_new.zip">iOS_Unity3D SDK下载</a>  
 **SDK包中有两个文件夹iOS和src。**  
 目录说明：  
 iOS：接入依赖的iOS库  
