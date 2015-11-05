@@ -556,7 +556,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>uid</td>
 	<td>String</td>
     <td>128</td>
-	<td>用户ID</td>
+	<td>用户ID,游戏必须使用登录时西瓜服务器返回的uid</td>
 	<td>Y</td>
 </tr>
 <tr>
@@ -853,7 +853,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>uid</td>
 	<td>string</td>
 	<td>128</td>
-	<td>用户ID</td>
+	<td>用户ID,游戏必须使用登录时西瓜服务器返回的uid</td>
     <td>Y</td>
 </tr>
 
