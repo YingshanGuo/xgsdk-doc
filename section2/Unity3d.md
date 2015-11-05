@@ -1116,6 +1116,187 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	XGSDK2.instance.setPingServer("xxx.com");
 ```
 
+#### 3.3.8 跟踪玩家的支付信息
+```
+		public static void onPayFinish(PayInfo payInfo)
+```
+**接口说明：**
+跟踪玩家的支付信息，支付成功时调用此接口。
+
+**参数说明：**
+payInfo  支付信息
+<table>
+<tr>
+	<th>参数</th>
+	<th>参数类型</th>
+    <th>最大长度</th>
+	<th>说明</th>
+	<th>必须</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>String</td>
+    <td>128</td>
+	<td>用户ID</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>productId</td>
+	<td>String</td>
+    <td>64</td>
+	<td>产品ID</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>productName</td>
+	<td>String</td>
+    <td>64</td>
+	<td>产品名称</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>productDesc</td>
+	<td>String</td>
+    <td>128</td>
+	<td>产品描述</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>productUnit</td>
+	<td>String</td>
+    <td>64</td>
+	<td>商品单位</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>productUnitPrice</td>
+	<td>int</td>
+    <td>10</td>
+	<td>产品单价,单位分</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>productQuantity</td>
+	<td>int</td>
+    <td>10</td>
+	<td>产品数量</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>totalAmount</td>
+	<td>int</td>
+    <td>10</td>
+	<td>产品总额,单位分</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>payAmount</td>
+	<td>int</td>
+    <td>10</td>
+	<td>付费总额</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>currencyName</td>
+	<td>String</td>
+    <td>64</td>
+	<td>实际支付的国际标准货币代码,比如CNY(人民币)/USD(美元)</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>roleId</td>
+	<td>String</td>
+    <td>32</td>
+	<td>角色ID</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>String</td>
+    <td>64</td>
+	<td>角色名称</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>roleLevel</td>
+	<td>int</td>
+    <td>32</td>
+	<td>角色等级</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>roleVipLevel</td>
+	<td>String</td>
+    <td>32</td>
+	<td>角色vip等级</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>serverId</td>
+	<td>String</td>
+    <td>32</td>
+	<td>服ID</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>String</td>
+    <td>32</td>
+	<td>区ID</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>partyName</td>
+	<td>String</td>
+    <td>32</td>
+	<td>帮会名称</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>virtualCurrencyBalance</td>
+	<td>String</td>
+    <td> </td>
+	<td>虚拟货币余额</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>customInfo</td>
+	<td>String</td>
+    <td>2000</td>
+	<td>扩展字段，订单支付成功后，透传给游戏</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>gameTradeNo</td>
+	<td>String</td>
+    <td>64</td>
+	<td>游戏订单ID，支付成功后，透传给游戏</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>gameCallbackUrl</td>
+	<td>String</td>
+    <td>128</td>
+	<td>支付回调地址，如果为空，则后台配置的回调地址</td>
+	<td>N</td>
+</tr>
+<tr>
+	<td>additionalParams</td>
+	<td>String</td>
+    <td> </td>
+	<td>扩展参数</td>
+	<td>N</td>
+</tr>
+</table>
+
+**代码样例：**
+```
+	XGSDK2.instance.onPayFinish(payInfo);
+```
+
+
+
+
 
 
 <a name = "extraInterface"></a>
