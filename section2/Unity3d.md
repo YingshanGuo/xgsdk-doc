@@ -480,7 +480,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>uid</td>
 	<td>String</td>
     <td>128</td>
-	<td>用户ID</td>
+	<td>游戏必须使用登录时西瓜服务器返回的uid</td>
 	<td>Y</td>
 </tr>
 <tr>
@@ -810,7 +810,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>uid</td>
 	<td>string</td>
 	<td>128</td>
-	<td>用户ID</td>
+	<td>游戏必须使用登录时西瓜服务器返回的uid</td>
     <td>Y</td>
 </tr>
 
@@ -1139,7 +1139,7 @@ payInfo  支付信息
 	<td>uid</td>
 	<td>String</td>
     <td>128</td>
-	<td>用户ID</td>
+	<td>游戏必须使用登录时西瓜服务器返回的uid</td>
 	<td>Y</td>
 </tr>
 <tr>
@@ -1366,7 +1366,7 @@ payInfo  支付信息
 	<td>roleId</td>
 	<td>string</td>
 	<td>32</td>
-	<td>角色ID</td>
+	<td>游戏必须使用登录时西瓜服务器返回的uid</td>
     <td>Y</td>
 </tr>
 
