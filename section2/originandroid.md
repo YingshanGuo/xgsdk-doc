@@ -89,13 +89,13 @@
    xgsdk-new-source-demo.jar,xgsdk-api.jar
 2. 测试渠道包：xgsdk-test-1.0.zip  
 3. 西瓜sdk（原生Android版)接入文档
-<a href="http://doc.xgsdk.com/files/2.0/packages/native_android_demo.zip">原生SDK下载</a> 
+<a href = "http://console.xgsdk.com/download.html">原生SDK下载</a>
 4. demo运行方法 </br>
 下载原生SDK后，得到native-android-demo.zip,解压此文件，
 得到xgsdk-api.jar、xgsdk-new-source-demo.jar、
 xgsdk-test-1.0.zip工程文件包以及originandroid.md文档文件。
 解压文件xgsdk-test-1.0.zip,导入eclipse,复制xgsdk-new-source-demo.jar到工程的libs文件夹下，即可运行。  
-  
+
 **以上描述项目是一个demo测试项目，如果游戏商想测试自己游戏在渠道运行状况，可以用原生游戏jar替换模拟游戏xgsdk-new-source-demo.jar即可。**
 
 
@@ -126,7 +126,7 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
        </activity>
-  
+
   将com.xgsdk.client.testdemo.MainActivity改为自己游戏原启动Activity ，其他不变，例如
 
        <activity
@@ -139,7 +139,7 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
               <category android:name="android.intent.category.DEFAULT" />
            </intent-filter>
       </activity>
-  
+
 3.修改游戏工程的project.properties文件，添加android.library=true属性
 
 4.打开xgsdk-channel-test的配置文件，将游戏工程作添加为lib依赖文件
@@ -180,7 +180,7 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 	 </intent-filter>
 </activity>
 ```
-       
+
 2.AndroidManifest.xml中将游戏原启动 Activity 的 intent-filter 修改为
 
 	<intent-filter>
@@ -217,7 +217,7 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
     protected void onPause() {
         super.onPause();
         XGSDK.getInstance().onPause(this);
-		
+
     }
 
 
@@ -254,14 +254,14 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 	protected void onBackPressed() {
 	    super.onBackPressed();
 	    XGSDK.getInstance().onBackPressed(this);
-	    
+
 	}
 	@Override
 	protected void onConfigurationChanged(Configuration newConfig) {
 	    super.onConfigurationChanged(newConfig);
 	    XGSDK.getInstance().onConfigurationChanged(this, newConfig);
 	}
-	
+
     @Override
 	public void onSaveInstanceState(Bundle outState,
 	        PersistableBundle outPersistentState) {
@@ -457,7 +457,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 <tr>
 <td>参数</td>
 <td>说明</td>
-</tr> 
+</tr>
   <tr>
   <td>customParams</td>
   <td>该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可</td>
@@ -474,7 +474,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 <a id="pay"></a>
 ### 5.1 支付接口  
-  
+
 
 接口定义：public void pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
 

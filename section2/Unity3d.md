@@ -93,7 +93,7 @@ Android SDK和Android Eclipse等
 <a name = "SDKDownload"></a>
 ### 2.3 SDK下载包
 
-<a href = "http://doc.xgsdk.com/files/2.0/packages/Unity3DSDK.zip">Unity3D SDK下载</a>
+<a href = "http://console.xgsdk.com/download.html">Unity3D SDK下载</a>
 
 SDK包中有两个文件夹，xgsdk-unity3d-android-demo文件夹是一个Unity工程，用户直接将工程导入Unity即可运行demo，xgsdk-unity3d-sdk文件夹则是用户进行接入时所需的接口文件和必须的jar包。  
 
@@ -154,7 +154,7 @@ SDK包中有两个文件夹，xgsdk-unity3d-android-demo文件夹是一个Unity�
 
 ```
 
-	<application 
+	<application
 		android:name="com.xgsdk.client.api.XGApplication"
         android:allowBackup="true"
         android:icon="@drawable/demo_ic_launcher"
@@ -233,11 +233,11 @@ SDK包中有两个文件夹，xgsdk-unity3d-android-demo文件夹是一个Unity�
 
 **代码样例：**
 
-	
+
 	void Start(){  
 		XGSDK2.instance.setCallback ();  
 	}
-	
+
 
 **回调方法：**
 
@@ -450,7 +450,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 用户点击退出时释放资源
 
 **参数说明：**
-customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。 
+customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 
 
 
@@ -1109,7 +1109,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
  网络连接状况检测。XGSDK可以帮助游戏从客户端收集到指定服务器的网络连接状况，为网络部署方案优化提供建议
 
 **参数说明：**
-需要检测的主机域名或IP地址，XGSDK会在后台任务中完成网络状况的检测，不阻塞当前调用线程 
+需要检测的主机域名或IP地址，XGSDK会在后台任务中完成网络状况的检测，不阻塞当前调用线程
 
 **代码样例：**
 ```
