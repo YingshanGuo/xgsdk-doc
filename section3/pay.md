@@ -69,7 +69,7 @@
 </tr>
 <tr>
 <td>接口类型</td><td>HTTP POST  
- Content-Type：application/json； charset=UTF-8</td>
+ Content-Type: application/json;charset=UTF-8</td>
 </tr>
 <tr>
 <td nowrap>字符集编码</td><td>UTF-8</td>
@@ -92,7 +92,7 @@
 
 <table>
 <tr>
-<td>参数</td><td>参数类型</td><td>最大长度</td><td>说明</td><td>必须</td>
+<td>参数</td><td nowrap>参数类型</td><td nowrap>最大长度</td><td>说明</td><td nowrap>必须</td>
 </tr>
 <tr>
 <td>type</td><td>String</td><td>32</td><td>接口类型，固定为notify-game</td><td>是</td>
@@ -196,7 +196,7 @@
 ### 2.4 请求样例
 **请求参数:**  
 type=notify-game  
-xgAppId=1024appid  
+xgAppId=2018  
 channelId=mi  
 uid=30854  
 serverId=1  
@@ -218,15 +218,15 @@ payStatus=1
 **游戏服务端密钥:** 654321<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的游戏服务端密钥XgServerKey</a>
 
 **则请求签名源串为：**
-channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=notify-game&uid=30854&xgAppId=1024appid
+channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=notify-game&uid=30854&xgAppId=2018
 
 **请求签名为：**  
-afb3496f05333fbfa184f8e8af39eb7f198e37a7  
+554a8e31e0d5a48e0fc867234454af75fcf21820  
 
 **请求样例：**  
 http://172.63.55.62:18888/moon/pay  
 postBody:  
-{"channelId":"mi","customInfo":"2323423413412351251245","gameTradeNo":"99887766","paidAmount":"9800","paidTime":"20150723150128","payStatus":"1","productDesc":"productDesc1","productId":"productId1","productName":"productName1","productQuantity":"1","roleId":"224455","serverId":"1","totalAmount":"9800","tradeNo":"2984456","ts":"20150723150028","type":"notify-game","uid":"30854","xgAppId":"1024appid","sign":"afb3496f05333fbfa184f8e8af39eb7f198e37a7"}
+{"channelId":"mi","customInfo":"2323423413412351251245","gameTradeNo":"99887766","paidAmount":"9800","paidTime":"20150723150128","payStatus":"1","productDesc":"productDesc1","productId":"productId1","productName":"productName1","productQuantity":"1","roleId":"224455","serverId":"1","totalAmount":"9800","tradeNo":"2984456","ts":"20150723150028","type":"notify-game","uid":"30854","xgAppId":"2018","sign":"554a8e31e0d5a48e0fc867234454af75fcf21820"}
 
 <div id="pay_notify_step_sample_return"></div>
 
@@ -322,7 +322,7 @@ postBody:
 **请求地址：**  
 http://p2.xgsdk.com/pay/verify-order/{xgAppId}  <a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的xgAppId</a>
 
-其中xgAppId是XGSDK分配的游戏编号，如西游伏魔是1024appid。
+其中xgAppId是XGSDK分配的游戏编号，如剑侠情缘是2018。
 p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环境有不同的域名，具体值请参考在XGSDK Portal配置界面里的西瓜 SDK 接入参数。
 
 **功能描述：** 用于游戏服务器验证收到的订单通知是否有效。
@@ -333,7 +333,7 @@ p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 **参数说明：**
 <table>
 <tr>
-<td>参数名称</td><td>参数类型</td><td>最大长度</td><td>说明</td><td>必须</td>
+<td nowrap>参数名称</td><td nowrap>参数类型</td><td nowrap>最大长度</td><td nowrap>说明</td><td nowrap>必须</td>
 </tr>
 <tr>
 <td>type</td><td>String</td><td>32</td><td>接口类型，固定为verify-order</td><td>是</td>
@@ -372,7 +372,7 @@ p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 参数说明：
 <table>
 <tr>
-<td>参数名称</td><td>参数类型</td><td>最大长度</td><td>说明</td><td>必须</td>
+<td nowrap>参数名称</td><td nowrap>参数类型</td><td nowrap>最大长度</td><td nowrap>说明</td><td nowrap>必须</td>
 </tr>
 <tr>
 <td>type</td><td>String</td><td>32</td><td>接口类型，固定为verify-order</td><td>是</td>
@@ -472,18 +472,18 @@ p2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 86e396a999e9673731be6609c4dc7bca8945ada6  
 
 **请求样例：**  
-http://p2.xgsdk.com/pay/verify-order/1024appid?tradeNo=2984456&sign=86e396a999e9673731be6609c4dc7bca8945ada6&ts=20150723150028&type=verify-order
+http://p2.xgsdk.com/pay/verify-order/2018?tradeNo=2984456&sign=86e396a999e9673731be6609c4dc7bca8945ada6&ts=20150723150028&type=verify-order
 
 <div id="order_query_step_sample_return"></div>
 
 ### 3.5 返回值样例
 **响应签名源串为：**
-channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=verify-order&uid=30854&xgAppId=1024appid
+channelId=mi&customInfo=2323423413412351251245&gameTradeNo=99887766&paidAmount=9800&paidTime=20150723150128&payStatus=1&productDesc=productDesc1&productId=productId1&productName=productName1&productQuantity=1&roleId=224455&serverId=1&totalAmount=9800&tradeNo=2984456&ts=20150723150028&type=verify-order&uid=30854&xgAppId=2018
 
 **响应验签密钥为游戏服务端验签密钥：** 654321<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的游戏服务端密钥XgServerKey</a>
 
 **响应签名为：**
-b990455f7f184c632f7fe1a8369d620392f5cdc8
+4fd1e65c65fe12c46f0a8d2bc559c56c830cd205
 
 **最终返回为：**
 
@@ -508,8 +508,8 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 		    "ts": "20150723150028",
 		    "type": "verify-order",
 		    "uid": "30854",
-		    "xgAppId": "1024appid",
-		    "sign": "b990455f7f184c632f7fe1a8369d620392f5cdc8"
+		    "xgAppId": "2018",
+		    "sign": "4fd1e65c65fe12c46f0a8d2bc559c56c830cd205"
 		}
 	}
 
@@ -538,4 +538,4 @@ b990455f7f184c632f7fe1a8369d620392f5cdc8
 
 ## 4 服务端接入xgsdk样例代码
 
-点击 <a href = "/download.html" target="_blank">Demo</a> 可以下载服务端接入代码的样例。
+[xgsdk服务端接入样例代码（Java）](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip)

@@ -65,7 +65,7 @@
 </table>
 
 
-其中xgAppId是游戏在XGSDK的唯一标示，如西游伏魔是1024。<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的xgAppId</a>
+其中xgAppId是游戏在XGSDK的唯一标示，如剑侠情缘是2018。<a href="https://console.xgsdk.com/">去西瓜WEB控制台查看我的xgAppId</a>
 
 a2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环境有不同的域名，具体值请参考在XGSDK Portal配置界面里的西瓜 SDK 接入参数。
 
@@ -77,7 +77,7 @@ a2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 参数说明：
 <table>
 <tr>
-<td>参数</td><td>类型</td><td>说明</td><td>必须</td>
+<td>参数</td><td>类型</td><td>说明</td><td nowrap>必须</td>
 </tr>
 <tr>
 <td>type</td><td>String</td><td>接口类型，固定为verify-session</td><td>是</td>
@@ -95,7 +95,7 @@ a2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 返回结果为JSON格式的字符串，分别有如下几个字段：
 <table>
 <tr>
-<td>字段</td><td>类型</td><td>说明</td><td>必须</td>
+<td>字段</td><td>类型</td><td>说明</td><td nowrap>必须</td>
 </tr>
 <tr>
 <td>code</td><td>String</td><td>返回码，参见错误码章节</td><td>是</td>
@@ -111,7 +111,7 @@ a2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 **data数据：**
 <table>
 <tr>
-<td>参数</td><td>类型</td><td>说明</td><td>必须</td>
+<td>参数</td><td>类型</td><td>说明</td><td nowrap>必须</td>
 </tr>
 <tr>
 <td>xgAppId</td><td>String</td><td>xgsdk分配给游戏的ID</td><td>是</td>
@@ -141,13 +141,13 @@ a2.xgsdk.com是金山云上的xgsdk服务器域名，接入XGSDK不同的云环�
 <div id="step_sample"></div>
 ### 2.4 请求示例
 **客户端上报的authInfo：**
-eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=
+eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMjAxOCIsInNpZ24iOiJmYTM0MzgxZGM1ODRmNjMxYTg3YTA0MzZlNDllZjRkM2E3MWVlNTVkIiwidHMiOiIyMDE1MDcyMzE1MDAyOCIsInVpZCI6InVpZCJ9
 
 **当前时间戳ts为：**
 20150723150028
 
 **请求样例：**  
-http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMTAyNGFwcGlkIiwic2lnbiI6ImZhMzQzODFkYzU4NGY2MzFhODdhMDQzNmU0OWVmNGQzYTcxZWU1NWQiLCJ0cyI6IjIwMTUwNzIzMTUwMDI4IiwidWlkIjoidWlkIn0=&ts=20150723150028&type=verify-session
+http://a2.xgsdk.com/account/verify-session/22320043?authInfo=eyJhdXRoVG9rZW4iOiJhdXRoVG9rZW4iLCJjaGFubmVsSWQiOiJtaSIsImRldmljZUlkIjoiZGV2aWNlSWQiLCJuYW1lIjoibmFtZSIsInBsYW5JZCI6IjEiLCJ4Z0FwcElkIjoiMjAxOCIsInNpZ24iOiJmYTM0MzgxZGM1ODRmNjMxYTg3YTA0MzZlNDllZjRkM2E3MWVlNTVkIiwidHMiOiIyMDE1MDcyMzE1MDAyOCIsInVpZCI6InVpZCJ9&ts=20150723150028&type=verify-session
 
 <div id="step_sample_return"></div>
 ### 2.5 返回值样例
@@ -156,7 +156,7 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
     	"code": "0",
     	"msg": "success",
 	    "data": {
-			"xgAppId": "2008",
+			"xgAppId": "2018",
     	    "planId": "1",
 			"channelId": "mi",
 			"deviceId": "imei_867323027683257",
@@ -207,5 +207,4 @@ http://a2.xgsdk.com/account/verify-session/2008?authInfo=eyJhdXRoVG9rZW4iOiJhdXR
 <div id="demo"></div>
 ## 3 服务端接入xgsdk样例代码
 
-[https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip]
-  (https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip "xgsdk样例代码（Java）")
+[xgsdk服务端接入样例代码（Java）](https://console.xgsdk.com/download/pack_tools/gameserver-demo.zip)
