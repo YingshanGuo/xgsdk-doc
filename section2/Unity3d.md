@@ -1105,6 +1105,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 		public static void setPingServer(string host)
 ```
+
 **接口说明：**
  网络连接状况检测。XGSDK可以帮助游戏从客户端收集到指定服务器的网络连接状况，为网络部署方案优化提供建议
 
@@ -1120,6 +1121,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 		public static void onPayFinish(PayInfo payInfo)
 ```
+
 **接口说明：**
 跟踪玩家的支付信息，支付成功时调用此接口。
 
