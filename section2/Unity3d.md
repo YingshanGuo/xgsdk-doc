@@ -776,36 +776,6 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<th>说明</th>
 	<th>必须</th>
 </tr>
-
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>32</td>
-	<td>游戏区ID</td>
-    <td>N</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>游戏区名称</td>
-    <td>N</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>32</td>
-	<td>游戏服ID，示例：s1,s2</td>
-    <td>Y</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>游戏服名称，示例：风云争霸</td>
-    <td>Y</td>
-</tr>
-
 <tr>
 	<td>uid</td>
 	<td>string</td>
@@ -819,14 +789,6 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>string</td>
 	<td>32</td>
 	<td>角色ID</td>
-    <td>Y</td>
-</tr>
-
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>角色名</td>
     <td>Y</td>
 </tr>
 
@@ -855,6 +817,43 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 </tr>
 
 <tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>游戏服ID，示例：s1,s2</td>
+    <td>Y</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>游戏区ID</td>
+    <td>N</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>角色名</td>
+    <td>Y</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏服名称，示例：风云争霸</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏区名称</td>
+    <td>N</td>
+</tr>
+
+<tr>
 	<td>partyName</td>
 	<td>string</td>
 	<td>32</td>
@@ -868,6 +867,15 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>角色性别</td>
 	<td>Y</td>
 </tr>
+
+<tr>
+	<td>balance</td>
+	<td>string</td>
+    <td></td>
+	<td>角色账户余额</td>
+	<td>n</td>
+</tr>
+
 </table>
 
 
@@ -1324,41 +1332,11 @@ payInfo  支付信息
 	<th>说明</th>
 	<th>必须</th>
 </tr>
-
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>32</td>
-	<td>游戏区ID</td>
-    <td>N</td>
-</tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>游戏区名称</td>
-    <td>N</td>
-</tr>
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>32</td>
-	<td>游戏服ID，示例：s1,s2</td>
-    <td>Y</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>游戏服名称，示例：风云争霸</td>
-    <td>Y</td>
-</tr>
-
 <tr>
 	<td>uid</td>
 	<td>string</td>
 	<td>128</td>
-	<td>用户ID</td>
+	<td>游戏必须使用登录时西瓜服务器返回的uid</td>
     <td>Y</td>
 </tr>
 
@@ -1366,15 +1344,7 @@ payInfo  支付信息
 	<td>roleId</td>
 	<td>string</td>
 	<td>32</td>
-	<td>游戏必须使用登录时西瓜服务器返回的uid</td>
-    <td>Y</td>
-</tr>
-
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>角色名</td>
+	<td>角色ID</td>
     <td>Y</td>
 </tr>
 
@@ -1403,6 +1373,43 @@ payInfo  支付信息
 </tr>
 
 <tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>游戏服ID，示例：s1,s2</td>
+    <td>Y</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>游戏区ID</td>
+    <td>N</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>角色名</td>
+    <td>Y</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏服名称，示例：风云争霸</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏区名称</td>
+    <td>N</td>
+</tr>
+
+<tr>
 	<td>partyName</td>
 	<td>string</td>
 	<td>32</td>
@@ -1416,6 +1423,15 @@ payInfo  支付信息
 	<td>角色性别</td>
 	<td>Y</td>
 </tr>
+
+<tr>
+	<td>balance</td>
+	<td>string</td>
+    <td></td>
+	<td>角色账户余额</td>
+	<td>n</td>
+</tr>
+
 </table>
 
 **代码样例：**
