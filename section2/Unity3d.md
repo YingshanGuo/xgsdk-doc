@@ -149,8 +149,8 @@ SDK包中有两个文件夹，xgsdk-unity3d-android-demo文件夹是一个Unity�
 <img src="img/AndroidMainFest1.png">  
 
 
-**application标签中的android:name必须配置com.xgsdk.client.api.XGApplication**  
-**activity标签中的android:name必须配置com.xgsdk.client.api.unity3d.XGUnityActivity**
+**application标签中的android:name必须配置com.xgsdk.client.api.XGApplication或其子类**  
+**activity标签中的android:name必须配置com.xgsdk.client.api.unity3d.XGUnityActivity的子类**
 
 ```
 
