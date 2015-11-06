@@ -820,20 +820,15 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<th>必须</th>
 </tr>
 
+
 <tr>
-	<td>zoneId</td>
+	<td>uid</td>
 	<td>string</td>
-	<td>32</td>
-	<td>游戏区ID</td>
-    <td>N</td>
+	<td>128</td>
+	<td>用户ID,游戏必须使用登录时西瓜服务器返回的uid</td>
+    <td>Y</td>
 </tr>
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>游戏区名称</td>
-    <td>N</td>
-</tr>
+
 <tr>
 	<td>serverId</td>
 	<td>string</td>
@@ -850,12 +845,20 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 </tr>
 
 <tr>
-	<td>uid</td>
+	<td>zoneId</td>
 	<td>string</td>
-	<td>128</td>
-	<td>用户ID,游戏必须使用登录时西瓜服务器返回的uid</td>
-    <td>Y</td>
+	<td>32</td>
+	<td>游戏区ID,如果没有游戏区，则传入游戏服务id</td>
+    <td>N</td>
 </tr>
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏区名称，如果没有游戏区，则传入游戏服务名称</td>
+    <td>N</td>
+</tr>
+
 
 <tr>
 	<td>roleId</td>
