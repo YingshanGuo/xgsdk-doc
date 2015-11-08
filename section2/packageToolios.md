@@ -15,16 +15,16 @@
 
 通过命令行方式，配置mac机器的打包环境，步骤如下：
 - 移除旧资源
-gem sources –remove https://rubygems.org/
+gem sources –-remove https://rubygems.org/
 
-- 等有反应之后再敲入以下命令
-gem sources -a http://ruby.taobao.org/
+- 等有反应之后再敲入以下命令(注意：由于淘宝镜向，近期基于http的服务停止，若安装提示“Unable to download data from http://ruby.taobao.org/ - bad response”，则需要切换到https才行.)
+gem sources --add https://ruby.taobao.org/
 
 - <p>用以下命令查看</p>
  <code>gem sources -l</code>
 - <p>出现下面文字才表明上面的命令是成功的</p> 
 <code>\*\*\* CURRENT SOURCES \*\*\* <br>
-http://ruby.taobao.org/ </code> （注意，这里必须是 http://ruby.taobao.org才对！！！！）
+https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao.org才对！！！！）
 - <p>安装xcodeproj库</p>
 <code>sudo gem install xcodeproj</code>
 
