@@ -499,16 +499,16 @@ JDK1.8及以上版本
 
 通过命令行方式，配置mac机器的打包环境，步骤如下：
 - 移除旧资源
-gem sources –remove https://rubygems.org/
+gem sources –-remove https://rubygems.org/
 
-- 等有反应之后再敲入以下命令
-gem sources -a http://ruby.taobao.org/
+- 等有反应之后再敲入以下命令(注意：由于淘宝镜向，近期基于http的服务停止，若安装提示“Unable to download data from http://ruby.taobao.org/ - bad response”，则需要切换到https才行.)
+gem sources --add https://ruby.taobao.org/
 
 - <p>用以下命令查看</p>
  <code>gem sources -l</code>
 - <p>出现下面文字才表明上面的命令是成功的</p>
-<code>\*\*\* CURRENT SOURCES \*\*\* <br>
-http://ruby.taobao.org/ </code> （注意，这里必须是 http://ruby.taobao.org才对！！！！）
+<code>\*\*\* CURRENT SOURCES \*\*\* <br></code>
+https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao.org才对！！！！）
 - <p>安装xcodeproj库</p>
 <code>sudo gem install xcodeproj</code>
 
@@ -528,7 +528,7 @@ http://ruby.taobao.org/ </code> （注意，这里必须是 http://ruby.taobao.o
 
 - 双击command文件。
 
-- 结束。mm
+- 结束。
 
 目录结构如下图：<p>
 <img src="../section2/img/pkg1.png"/>
@@ -538,7 +538,7 @@ http://ruby.taobao.org/ </code> （注意，这里必须是 http://ruby.taobao.o
 
 ### 13.4 最终效果
 
-每个target都是在原始的target复制过来（如游戏的原来的target是ios-bi-demo），然后注入了xgsdk的资源,生成新的target（如下图中的xg_ios_jinshanApple）。因此，原来的target仍然是独立的,打包工具不会修改原来target的任何配置。
-游戏需使用新的target进行出包.
+每个target都是在原始的target复制过来（如游戏的原来的target是ios-bi-demo），然后注入了xgsdk的资源，生成新的target（如下图中的xg_ios_jinshanApple）。因此，原来的target仍然是独立的，打包工具不会修改原来target的任何配置。
+游戏需使用新的target进行出包。
 
 <img src="../section2/img/pkg3.jpg"/>
