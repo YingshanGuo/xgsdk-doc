@@ -772,7 +772,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>String</td>
     <td>2000</td>
 	<td>扩展字段，订单支付成功后，透传给游戏</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>gameTradeNo</td>
