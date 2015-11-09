@@ -36,7 +36,10 @@
 						<li><a href = "#login">登录接口</a></li>
 						<li><a href = "#logout">登出接口</a></li>
 						<li><a href = "#exit">退出接口</a></li>
-
+						<li><a href = "#releaseResource">释放资源接口</a></li>
+						<li><a href = "#enterGame">进入游戏</a></li>
+						<li><a href = "#createRole">创建角色</a></li>
+						<li><a href = "#roleLevelUp">角色升级</a></li>
 					</ul>
 				</li>
 				<li><a href = "#rechargeInterface">充值接口</a>
@@ -56,9 +59,6 @@
 				</li>
 				<li><a href = "#extraInterface">扩展接口</a>
 					<ul type = "circle">
-						<li><a href = "#enterGame">进入游戏</a></li>
-						<li><a href = "#createRole">创建角色</a></li>
-						<li><a href = "#roleLevelUp">角色升级</a></li>
 						<li><a href = "#onEvent">自定义事件</a></li>
 						<li><a href = "switchAccount">切换账号</a></li>
 						<li><a href = "getChannelId">获取渠道ID</a></li>
@@ -442,6 +442,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **参数说明：**
 参数msg无意义。
 
+<a name = "releaseResource"></a>
 #### 3.1.5 释放资源接口
 ```
 		public static void releaseResource(string customParams)
@@ -452,6 +453,170 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 **参数说明：**
 customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。
 
+
+<a name = "enterGame"></a>
+#### 3.1.6 进入游戏
+
+```
+	public static void onEnterGame(RoleInfo roleInfo)
+```
+
+**接口说明**
+此接口用于游戏信息统计，当进入游戏时调用。
+
+**参数说明:**
+
+<table>
+<tr>
+	<th>参数</th>
+	<th>参数类型</th>
+    <th>最大长度</th>
+	<th>说明</th>
+	<th>必须</th>
+</tr>
+<tr>
+	<td>uid</td>
+	<td>string</td>
+	<td>128</td>
+	<td>游戏必须使用登录时西瓜服务器返回的uid</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>角色ID</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleType</td>
+	<td>string</td>
+	<td>20</td>
+	<td>角色类型，如法师，道士，战士</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleLevel</td>
+	<td>int</td>
+	<td>32</td>
+	<td>角色等级</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>roleVipLevel</td>
+	<td>int</td>
+	<td>32</td>
+	<td>角色vip等级</td>
+    <td>N</td>
+</tr>
+
+<tr>
+	<td>serverId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>游戏服ID，示例：s1,s2</td>
+    <td>Y</td>
+</tr>
+<tr>
+	<td>zoneId</td>
+	<td>string</td>
+	<td>32</td>
+	<td>游戏区ID</td>
+    <td>N</td>
+</tr>
+<tr>
+	<td>roleName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>角色名</td>
+    <td>Y</td>
+</tr>
+<tr>
+	<td>serverName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏服名称，示例：风云争霸</td>
+    <td>Y</td>
+</tr>
+
+<tr>
+	<td>zoneName</td>
+	<td>string</td>
+	<td>64</td>
+	<td>游戏区名称</td>
+    <td>N</td>
+</tr>
+
+<tr>
+	<td>partyName</td>
+	<td>string</td>
+	<td>32</td>
+	<td>公会名</td>
+    <td>N</td>
+</tr>
+<tr>
+	<td>gender</td>
+	<td>string</td>
+    <td>枚举值：m,f;分别代表男女</td>
+	<td>角色性别</td>
+	<td>Y</td>
+</tr>
+
+<tr>
+	<td>balance</td>
+	<td>string</td>
+    <td></td>
+	<td>角色账户余额</td>
+	<td>n</td>
+</tr>
+
+</table>
+
+**代码样例：**
+```
+	XGSDK2.instance.onEnterGame(roleInfo);
+```
+
+<a name = "createRole"></a>
+#### 3.1.7 创建角色
+
+```
+		public static void onCreateRole(RoleInfo roleInfo)
+```
+
+**接口说明：**
+此接口用于游戏信息统计，当创建游戏角色时调用。
+
+**参数说明（RoleInfo的成员变量）**
+
+同上
+
+**代码样例：**
+```
+	XGSDK2.instance.onCreateRole(roleInfo);
+```
+
+<a name = "roleLevelUp"></a>
+#### 3.1.8 角色升级
+
+```
+		public static void onRoleLevelup(RoleInfo roleInfo)
+```
+
+**接口说明：**
+此接口用于游戏信息统计，当角色升级时调用。
+
+**参数说明:**
+同上
+
+**代码样例：**
+```
+	XGSDK2.instance.onRoleLevelup(roleInfo);
+```
 
 
 <a name = "rechargeInterface"></a>
@@ -1312,172 +1477,8 @@ payInfo  支付信息
 <a name = "extraInterface"></a>
 ### 3.4 扩展接口
 
-<a name = "enterGame"></a>
-#### 3.4.1 进入游戏
-
-```
-	public static void onEnterGame(RoleInfo roleInfo)
-```
-
-**接口说明**
-此接口用于游戏信息统计，当进入游戏时调用。
-
-**参数说明:**
-
-<table>
-<tr>
-	<th>参数</th>
-	<th>参数类型</th>
-    <th>最大长度</th>
-	<th>说明</th>
-	<th>必须</th>
-</tr>
-<tr>
-	<td>uid</td>
-	<td>string</td>
-	<td>128</td>
-	<td>游戏必须使用登录时西瓜服务器返回的uid</td>
-    <td>Y</td>
-</tr>
-
-<tr>
-	<td>roleId</td>
-	<td>string</td>
-	<td>32</td>
-	<td>角色ID</td>
-    <td>Y</td>
-</tr>
-
-<tr>
-	<td>roleType</td>
-	<td>string</td>
-	<td>20</td>
-	<td>角色类型，如法师，道士，战士</td>
-    <td>Y</td>
-</tr>
-
-<tr>
-	<td>roleLevel</td>
-	<td>int</td>
-	<td>32</td>
-	<td>角色等级</td>
-    <td>Y</td>
-</tr>
-
-<tr>
-	<td>roleVipLevel</td>
-	<td>int</td>
-	<td>32</td>
-	<td>角色vip等级</td>
-    <td>N</td>
-</tr>
-
-<tr>
-	<td>serverId</td>
-	<td>string</td>
-	<td>32</td>
-	<td>游戏服ID，示例：s1,s2</td>
-    <td>Y</td>
-</tr>
-<tr>
-	<td>zoneId</td>
-	<td>string</td>
-	<td>32</td>
-	<td>游戏区ID</td>
-    <td>N</td>
-</tr>
-<tr>
-	<td>roleName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>角色名</td>
-    <td>Y</td>
-</tr>
-<tr>
-	<td>serverName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>游戏服名称，示例：风云争霸</td>
-    <td>Y</td>
-</tr>
-
-<tr>
-	<td>zoneName</td>
-	<td>string</td>
-	<td>64</td>
-	<td>游戏区名称</td>
-    <td>N</td>
-</tr>
-
-<tr>
-	<td>partyName</td>
-	<td>string</td>
-	<td>32</td>
-	<td>公会名</td>
-    <td>N</td>
-</tr>
-<tr>
-	<td>gender</td>
-	<td>string</td>
-    <td>枚举值：m,f;分别代表男女</td>
-	<td>角色性别</td>
-	<td>Y</td>
-</tr>
-
-<tr>
-	<td>balance</td>
-	<td>string</td>
-    <td></td>
-	<td>角色账户余额</td>
-	<td>n</td>
-</tr>
-
-</table>
-
-**代码样例：**
-```
-	XGSDK2.instance.onEnterGame(roleInfo);
-```
-
-<a name = "createRole"></a>
-#### 3.4.2 创建角色
-
-```
-		public static void onCreateRole(RoleInfo roleInfo)
-```
-
-**接口说明：**
-此接口用于游戏信息统计，当创建游戏角色时调用。
-
-**参数说明（RoleInfo的成员变量）**
-
-同上
-
-**代码样例：**
-```
-	XGSDK2.instance.onCreateRole(roleInfo);
-```
-
-<a name = "roleLevelUp"></a>
-#### 3.4.3 角色升级
-
-```
-		public static void onRoleLevelup(RoleInfo roleInfo)
-```
-
-**接口说明：**
-此接口用于游戏信息统计，当角色升级时调用。
-
-**参数说明:**
-同上
-
-**代码样例：**
-```
-	XGSDK2.instance.onRoleLevelup(roleInfo);
-```
-
 <a name = "onEvent"></a>
-#### 3.4.4 自定义事件
+#### 3.4.1 自定义事件
 
 ```
 		public static void onEvent(RoleInfo roleInfo, string eventId, string eventDesc, int eventVal, string eventBody)
@@ -1521,7 +1522,7 @@ payInfo  支付信息
 ```
 
 <a name = "switchAccount"></a>
-#### 3.4.5 切换账号
+#### 3.4.2 切换账号
 
 ```
 		public static void switchAccount(string customParams)
@@ -1539,7 +1540,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 <a name = "getChannelId"></a>
-#### 3.4.6 获取渠道ID
+#### 3.4.3 获取渠道ID
 
 ```
 		public static string getChannelId()
