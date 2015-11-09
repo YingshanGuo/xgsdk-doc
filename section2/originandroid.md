@@ -683,7 +683,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>String</td>
     <td>2000</td>
 	<td>扩展字段，订单支付成功后，透传给游戏</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>gameTradeNo</td>
