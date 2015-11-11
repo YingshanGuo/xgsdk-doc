@@ -60,8 +60,9 @@
 				<li><a href = "#extraInterface">扩展接口</a>
 					<ul type = "circle">
 						<li><a href = "#onEvent">自定义事件</a></li>
-						<li><a href = "switchAccount">切换账号</a></li>
-						<li><a href = "getChannelId">获取渠道ID</a></li>
+						<li><a href = "#openUserCenter">用户中心</a></li>
+						<li><a href = "#switchAccount">切换账号</a></li>
+						<li><a href = "#getChannelId">获取渠道ID</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -1521,8 +1522,31 @@ payInfo  支付信息
 	XGSDK2.instance.onEvent(roleInfo,"eventid","eventDesc",1,"tanxianchuji");
 ```
 
+<a name = "openUserCenter"></a>
+#### 3.4.2 用户中心
+
+```
+		public static void openUserCenter(string customParams)
+```
+
+**接口说明：**
+打开用户中心时调用，此接口将调用渠道的用户中心方法。
+
+**参数说明：**
+customParams参数用于扩展，传输时使用json格式，接入时若不需要直接置空即可。  
+
+**代码样例：**
+```
+	XGSDK2.instance.openUserCenter("openUserCenter");
+```
+
+
+
+
+
+
 <a name = "switchAccount"></a>
-#### 3.4.2 切换账号
+#### 3.4.3 切换账号
 
 ```
 		public static void switchAccount(string customParams)
