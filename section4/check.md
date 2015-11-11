@@ -361,7 +361,7 @@
 						</td>
 						-->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/yiwan/2.0/2.1.1/益玩SuperSDK自测文档.xlsx">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/yiwan/2.0/2.1.1/益玩自测文档及APK.zip">下载链接</a>
 			</td>
 
 </tr>
