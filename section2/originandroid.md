@@ -580,7 +580,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>String</td>
     <td>128</td>
 	<td>产品描述</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>productUnit</td>
@@ -601,7 +601,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>int</td>
     <td>10</td>
 	<td>产品数量</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>totalAmount</td>
@@ -622,7 +622,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>String</td>
     <td>64</td>
 	<td>实际支付的国际标准货币代码,比如CNY(人民币)/USD(美元)</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>roleId</td>
@@ -636,14 +636,14 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>String</td>
     <td>64</td>
 	<td>角色名称</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>roleLevel</td>
 	<td>int</td>
     <td>32</td>
 	<td>角色等级</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>roleVipLevel</td>
@@ -657,28 +657,28 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>String</td>
     <td>32</td>
 	<td>服ID</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>zoneId</td>
 	<td>String</td>
     <td>32</td>
 	<td>区ID</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>partyName</td>
 	<td>String</td>
     <td>32</td>
 	<td>帮会名称</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>virtualCurrencyBalance</td>
 	<td>String</td>
     <td> </td>
 	<td>虚拟货币余额</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>customInfo</td>
@@ -692,7 +692,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>String</td>
     <td>64</td>
 	<td>游戏订单ID，支付成功后，透传给游戏</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>gameCallbackUrl</td>
