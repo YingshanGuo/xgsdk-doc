@@ -13,6 +13,7 @@
 
 
 <a id="docStructure"></a>
+
 ### 1.1 文档结构
 
 <ol type=“1”>
@@ -84,6 +85,7 @@
 
 
 <a id="SDKDownload"></a>
+
 ### 1.2 SDK下载包
 
 **渠道版 SDK 下载包包含：**
@@ -102,10 +104,12 @@ xgsdk-test-1.0.zip工程文件包以及originandroid.md文档文件。
 
 
 <a id="SDKDownload"></a>
+
 ## 2. 配置环境与快速接入简介
 
 
 <a id="conditions"></a>
+
 ### 2.1 开发和接入所需基本环境
 
 Android 开发环境如下：  
@@ -114,6 +118,7 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 
 
 <a id="DebugWay"></a>
+
 ### 2.2  游戏端本地(无需打包)调试方法
 1.解压xgsdk-test-1.0.zip,并导入eclipse中 </br>
 2.修改xgsdk-channel-test工程的AndroidManifest.xml文件，
@@ -150,12 +155,15 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 
 
 <a id="adjust"></a>
+
 ## 3.修改相应平台工程的配置信息
 <a id="copyJar"></a>
+
 ### 3.1 复制SDK的Jar包
 在游戏工程中导入lib库
 
 <a id="androidManifest"></a>
+
 ### 3.2 配置android权限
 在AndroidManifest.xml中配置android权限
 ```xml
@@ -191,10 +199,12 @@ Android 开发工具：Android SDK 和 Android Eclipse 等
 	 </intent-filter>
 
 <a id="userInterface"></a>
+
 ## 4.用户接口
 
 <a id="liftcycle"></a>
-###4.1 接入生命周期接口
+
+### 4.1 接入生命周期接口
 
 在游戏各个 Activity 生命周期中调用SDK生命周期接口，样例代码如下：
 
@@ -286,11 +296,10 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 以上代码的表示的意思是实现一个匿名的 UserCallBack 对象，该对象中实现了登录成功、失败、取消，登出成功、失败，初始化失败接口，<a href="#usercallback">详见这里描述</a>
 
 <a id="login"></a>
-###4.2 登录接口
+### 4.2 登录接口
 
-```java
-接口定义：public void login(Activity activity, String customParams)
-```
+
+接口定义：public void login(Activity activity, String customParams)  
 接口说明：用户登录接口，传入扩展参数。  
 <table>
   <tr>
@@ -306,7 +315,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 <a name="usercallback" ></a>  
 
 <a id="loginCallback"></a>
-###4.3 登录回调
+### 4.3 登录回调
 在 UserCallBack 中实现登录 callback 接口（登录成功、失败、取消，登出成功、失败，初始化失败接口）  
 例如登陆成功，游戏在此回调中实现登陆成功后的逻辑,其余的 callback 接口类似  
 注：在登录成功 callback 中，调用 xgsdk 的 onEnterGame 接口  
@@ -357,7 +366,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
         });
 
 <a id="logout"></a>
-###4.4 登出接口
+### 4.4 登出接口
 接口定义：public void logout(Activity activity, String customParams)
 
 接口说明：用户登出接口，登出传入扩展参数 customParams
@@ -373,7 +382,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 </table>
 
 <a id="logoutCallback"></a>
-###4.5 登出回调
+### 4.5 登出回调
 注：登出回调接口（onLogoutFail，onLogoutSuccess）要在 UserCallBack 中实现
 
     XGSDK.getInstance().setUserCallBack(new UserCallBack() {
@@ -386,7 +395,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 
 <a id="exit"></a>
-###4.6 退出接口
+### 4.6 退出接口
 接口定义：public void exit(Activity activity, ExitCallBack exitCallBack,String customParams)
 
 接口说明：用户退出接口，传入 exitCallback 和扩展参数 customParams
@@ -417,7 +426,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 <a id="exitCallback"></a>
 
-###4.7 退出回调
+### 4.7 退出回调
 退出接口存在三个回调方法：  
 1. onNoChannelExiter 使用游戏方退出框
 2. onExit 直接退出
@@ -453,7 +462,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 <a id="releaseResurce"></a>
 
 ### 4.8 释放资源接口
-接口定义：public void releaseResource(Activity activity, String customParams);
+接口定义：public void releaseResource(Activity activity, String customParams);  
 接口说明：用户退出游戏时释放资源接口，传入扩展参数 customParams
 <table>
 <tr>
@@ -472,9 +481,12 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 
 <a id="payInterface"></a>
+
+
 ## 5.充值接口  
 
 <a id="pay"></a>
+
 ### 5.1 支付接口  
 
 
@@ -785,7 +797,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 <a id="onCreateRole"></a>
 ### 6.1 创建角色
-接口定义：public void onCreateRole(RoleInfo roleInfo)
+接口定义：public void onCreateRole(RoleInfo roleInfo)  
 接口说明：使用 roleInfo 来创建角色  
 
 <table>
@@ -951,7 +963,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 <a id="onEnterGame"></a>
 ### 6.3 进入游戏
-接口定义：public void onEnterGame(RoleInfo roleInfo)
+接口定义：public void onEnterGame(RoleInfo roleInfo)    
 接口说明：进入游戏接口，进入游戏时调用
 
 <table>
@@ -978,8 +990,10 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 ## 7.扩展接口
 
 <a id="switchAccount"></a>
+
 ### 7.1 切换账号
-接口定义：public void switchAccount(Activity activity, String customParams)
+
+接口定义：public void switchAccount(Activity activity, String customParams)     
 接口说明：切换账号，传入扩展参数 customParams  
 <table>
 <tr>
@@ -1136,8 +1150,9 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
   </table>
 
 <a id="onVirtalCurrencyReward"></a>
+
 ### 7.7 赠送虚拟货币
-public void onVirtualCurrencyReward(RoleInfo roleInfo, String reason, int amount, String customParams)
+接口定义：public void onVirtualCurrencyReward(RoleInfo roleInfo, String reason, int amount, String customParams)  
 
 接口说明：玩家可以在任务奖励、登录奖励、成就奖励等环节获得赠送的虚拟货币  
 <table>
@@ -1190,16 +1205,4 @@ public void onVirtualCurrencyReward(RoleInfo roleInfo, String reason, int amount
 		<td>customParams</td>
 		<td>扩展参数</td>
 	</tr>
-</table>
-
-****
-
-###文档版本说明
-<table>
-<tr>
-<td>SDK 版本</td><td>文档版本</td> <td>SDK 修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
-</tr>
-<tr>
-<td>2.0 </td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.8.1</td>
-</tr>
 </table>
