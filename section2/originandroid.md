@@ -46,7 +46,9 @@
 				<li><a href="#logout">登出接口</a></li>
 				<li><a href="#logoutCallback">登出回调</a></li>
 				<li><a href="#exit">退出接口</a></li>
-				<li><a href="#exitCallback">退出回调</a></li>
+				<li><a href="#exitCallback">退出回调</a></li>       
+                <li><a href="#releaseResurce">释放资源</a></li>
+
 			</ul>
 	</li>
 	<li>
@@ -448,7 +450,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
             }
      }
 
-<a id="payInterface"></a>
+<a id="releaseResurce"></a>
 
 ### 4.8 释放资源接口
 接口定义：public void releaseResource(Activity activity, String customParams);
@@ -564,14 +566,14 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>String</td>
     <td>64</td>
 	<td>产品ID</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>productName</td>
 	<td>String</td>
     <td>64</td>
 	<td>产品名称</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>productDesc</td>
@@ -584,15 +586,15 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>productUnit</td>
 	<td>String</td>
     <td>64</td>
-	<td>商品单位</td>
-	<td>N</td>
+	<td>商品单位，例如元宝</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>productUnitPrice</td>
 	<td>int</td>
     <td>10</td>
 	<td>产品单价,单位分</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>productQuantity</td>
@@ -648,7 +650,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	<td>String</td>
     <td>32</td>
 	<td>角色vip等级</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>serverId</td>
