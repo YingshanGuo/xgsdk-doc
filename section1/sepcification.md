@@ -14,6 +14,7 @@
 <li><a href="#11">接入交流</a></li>
 <li><a href="#12">打包工具（Android版本）使用说明</a></li>
 <li><a href="#packageios">打包工具（ios版本）使用说明</a></li>
+<li><a href="#splashscreen">XG闪屏说明</a></li>
 </B></ol>
 
 <a id="1"></a>
@@ -542,3 +543,14 @@ https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao
 游戏需使用新的target进行出包。
 
 <img src="../section2/img/pkg3.jpg"/>
+
+<a id="splashscreen"></a>
+
+### 14 XG闪屏说明
+#### 14.1 西瓜闪屏机制说明
+西瓜提供了一套闪屏机制，支持渠道闪屏闪在第一屏，无需CP对不同渠道的闪屏做处理，只需勾选“XG闪屏”即可。
+如果CP有自己的闪屏机制，在 “基础配置” 中将 “XG闪屏” 选为 “否” 即可。
+
+#### 14.2 配置步骤
+在“基础配置”中点击游戏配置的“修改”即可进行选择，如图所示：
+<img src="./image/splash.png"/>

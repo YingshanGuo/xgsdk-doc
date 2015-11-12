@@ -1,7 +1,7 @@
 # 渠道SDK材料
 
 
-西瓜SDK目前支持Android和iOS两种平台，其中Android平台已支持49个渠道，iOS平台已支持3个渠道。
+西瓜SDK目前支持Android和iOS两种平台，其中Android平台已支持50个渠道，iOS平台已支持3个渠道。
 西瓜不仅仅实现了主流渠道的覆盖，而且更多的渠道也在持续加入中。  
 为了方便游戏可以更容易的了解各个渠道的不同需求，以下是对现已支持渠道的简单介绍，其中包括：
 渠道名称、渠道ID、渠道最新版本和渠道原始资料。  
@@ -1377,6 +1377,21 @@ LBYX
 </td>
 <td>
 <a target="_blank" href="http://doc.xgsdk.com/files/channels/liebao/2.0/4.0.2/猎宝sdk4.0.2.zip">下载链接</a>
+</td>
+</tr>
+
+<tr>
+	<td>
+果盘（叉叉安卓助手）
+</td>
+<td>
+guopan
+</td>
+	<td>
+2.0.1
+</td>
+<td>
+<a target="_blank" href="http://doc.xgsdk.com/files/channels/guopan/2.0/2.0.1/果盘.zip">下载链接</a>
 </td>
 </tr>
 

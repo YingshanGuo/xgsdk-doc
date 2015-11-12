@@ -81,9 +81,9 @@ AndroidManifest.xml中的android:targetSdkVersion必须配19，不能配太高�
 1.渠道特殊要求：  
 (1)要求使用渠道自己的签名文件；  
 (2)keystore文件需要从渠道的后台下载；  
-(3)密码是 downjoy_游戏的厂商id；  
+(3)密码是 downjoy _ 游戏的厂商id；  
 (4)alias是 游戏的厂商id；  
-(5)alias密码是 downjoy_游戏的厂商id。
+(5)alias密码是 downjoy _ 游戏的厂商id。
 
 
 ---
