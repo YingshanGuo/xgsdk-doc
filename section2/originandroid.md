@@ -66,6 +66,7 @@
 				<li><a href="#onCreateRole">创建角色</a></li>
 				<li><a href="#onRoleLevelup">角色升级</a></li>
 				<li><a href="#onEnterGame">进入游戏</a></li>
+                <li><a href="#onpayfinish">支付完成</a></li>
 			</ul>
 	</li>
 	<li>
@@ -985,6 +986,44 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
         Log.w(TAG, "authInfo: \n" + authInfo);
          XGSDK.getInstance().onEnterGame(mRoleInfo);
     }
+
+
+<a id="onpayfinish"></a>
+###6.4  支付完成 
+接口定义：void onPayFinish(PayInfo payInfo);
+接口说明：统计接口在支付完成时上报支付的数据,需要传入类型为PayInfo的参数(改接口只在单独接入XG统计的时候需要接入)。
+代码示例：
+```cpp
+    PayInfo payInfo;
+	payInfo.uid = "123456";
+    payInfo.productId = "payment017";
+    payInfo.productName = "大宝剑";
+    payInfo.productDesc = "倚天不出谁与争锋";
+    payInfo.productUnit = "个";
+    payInfo.productUnitPrice = 1;
+    payInfo.productQuantity = 1;
+    payInfo.totalAmount = 1;
+    payInfo.payAmount = 1;
+    payInfo.currencyName = "CNY";
+    payInfo.roleId = "1234";
+    payInfo.roleName = "yeye";
+    payInfo.roleLevel = "65";
+    payInfo.roleVipLevel = "8";
+    payInfo.serverId = "11";
+    payInfo.zoneId = "33";
+    payInfo.partyName = "丐帮";
+	payInfo.customInfo = "customInfo";
+    payInfo.virtualCurrencyBalance = "0";
+    payInfo.gameTradeNo = "12480";
+    payInfo.gameCallbackUrl = "/sdkserver/receivePayResult";
+    payInfo.additionalParams = "";
+	mXgSdk->onPayFinish(payInfo);
+```
+具体限制参考5.1的PayInfo数据说明
+
+
+
+
 
 <a id="extraInterface"></a>
 ## 7.扩展接口
