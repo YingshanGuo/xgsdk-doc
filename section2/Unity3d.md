@@ -674,7 +674,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	<td>productUnit</td>
 	<td>String</td>
     <td>64</td>
-	<td>商品单位</td>
+	<td>商品单位，例如元宝</td>
 	<td>N</td>
 </tr>
 <tr>
@@ -1341,7 +1341,7 @@ payInfo  支付信息
 	<td>productUnit</td>
 	<td>String</td>
     <td>64</td>
-	<td>商品单位</td>
+	<td>商品单位，例如元宝</td>
 	<td>N</td>
 </tr>
 <tr>
