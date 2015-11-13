@@ -500,23 +500,23 @@ JDK1.8及以上版本
 
 通过命令行方式，配置mac机器的打包环境，步骤如下：
 - 移除旧资源
-gem sources –-remove https://rubygems.org/
+ <code>gem sources –-remove https://rubygems.org/</code>
 
 - 等有反应之后再敲入以下命令(注意：由于淘宝镜向，近期基于http的服务停止，若安装提示“Unable to download data from http://ruby.taobao.org/ - bad response”，则需要切换到https才行.)
-gem sources --add https://ruby.taobao.org/
+ <code>gem sources --add https://ruby.taobao.org/</code>
 
 - <p>用以下命令查看</p>
  <code>gem sources -l</code>
 - <p>出现下面文字才表明上面的命令是成功的</p>
 <code>\*\*\* CURRENT SOURCES \*\*\* <br></code>
-https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao.org才对！！！！）
+<code>https://ruby.taobao.org/ </code> （注意，这里必须是***只有*** https://ruby.taobao.org才对！！！！）
 - <p>安装xcodeproj库</p>
 <code>sudo gem install xcodeproj</code>
 
 等待安装完成。（***注:这一步会下载大量资源，需要耐心等待***）
 
 整个执行过程如下图：<br>
-<img src="../section2/img/rubyInstall.png"/>
+<img src="../section2/img/rubyInstall.jpg"/>
 
 
 #### 13.3 命令行打包
