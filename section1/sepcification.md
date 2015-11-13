@@ -261,7 +261,7 @@
 <img src="./image/qianming.png"/>
 
 2.签名文件内容  
-   压缩文件中必须包含两个文件且必须是在根目录下，即：* .properties文件和 * .keystore文件（文件名称必须为如上所示）
+   压缩文件中必须包含两个文件且必须是在根目录下，即：* .properties文件和 * .keystore文件
    -  xgsdk.properties文件中必须包含三个属性：alias、storepass和keypass，如图所示  
 
   <img src="img/signature.png"/>
