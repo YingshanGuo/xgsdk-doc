@@ -113,9 +113,9 @@ XGSDKCallback.cs 西瓜回调接口
 ### 2.4 接入步骤
 2.4.1 将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中（在需要进行测试时将xgsdk-test.apk放入<项目目录>\Assets\Plugins\Android\assets中）
 
-<img src="img/CsFile.png">   
+<img src="img/CsFile.png">    
 
-<img src="img/jar.png">   
+<img src="img/unity-2.0.1-lib.png">   
 
 **注意：导入的cs脚本文件名称不可修改。**
 
