@@ -96,16 +96,17 @@ Android SDK和Android Eclipse等
 
 <a href = "http://console.xgsdk.com/download.html">Unity3D SDK下载</a>
 
-SDK包中有两个文件夹，xgsdk-unity3d-android-demo文件夹是一个Unity工程，用户直接将工程导入Unity即可运行demo，xgsdk-unity3d-sdk文件夹则是用户进行接入时所需的接口文件和必须的jar包。  
+解压后有两个文件夹，**libs**和**XGSDK**  
+**libs：**   
+xgsdk-api-2.0.1.jar  xgsdk-unity-2.0.1.jar(activity包）  
 
-渠道版SDK下载包包含：  
-1. 西瓜SDKV2的Jar包：xgsdk-api.jar、xgsdk-unity3d-plugin.jar。  
-2. 脚本文件：XGSDK2.cs、XGSDKCallback.cs、JsonDeserializer.cs、MiniJSON.cs、MiniJsonData.cs以及xgsdk-test.apk。  
-3. 其中XGSDK2.cs为西瓜SDK2.0版本接口，XGSDKCallback.cs为回调方法。
+**XGSDK：**   
+XGSDK2.cs 西瓜API接口    
+XGSDKCallback.cs 西瓜回调接口   
+其余的是json解析等辅助类
 
 
-**注意：SDK包中的xgsdk-test.apk是用于测试用户接入是否正确的测试渠道，在用户需要测试的时候使用，但是在进行打包的时候务必将xgsdk-test.apk移除。**
-
+	  
 
 <a name = "steps"></a>
 
