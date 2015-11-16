@@ -13,17 +13,17 @@
 
 ## 1. 配置运行环境  
 
-通过命令行方式，配置mac机器的打包环境，步骤如下：
-- 移除旧资源
-gem sources –-remove https://rubygems.org/
+<p>通过命令行方式，配置mac机器的打包环境，步骤如下：</p>
+- <p>移除旧资源</p>
+<code>gem sources –-remove https://rubygems.org/</code>
 
-- 等有反应之后再敲入以下命令(注意：由于淘宝镜向，近期基于http的服务停止，若安装提示“Unable to download data from http://ruby.taobao.org/ - bad response”，则需要切换到https才行.)
-gem sources --add https://ruby.taobao.org/
+- 等有反应之后再敲入以下命令(注意：由于淘宝镜向，近期基于http的服务停止，若安装提示“Unable to download data from http://ruby.taobao.org/ - bad response”，则需要切换到https才行.)<br>
+<code>gem sources -a https://ruby.taobao.org/</code>
 
 - <p>用以下命令查看</p>
  <code>gem sources -l</code>
 - <p>出现下面文字才表明上面的命令是成功的</p>
-<code>\*\*\* CURRENT SOURCES \*\*\* <br></code>
+<code>\*\*\* CURRENT SOURCES \*\*\* <br>
 https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao.org才对！！！！）
 - <p>安装xcodeproj库</p>
 <code>sudo gem install xcodeproj</code>
@@ -35,9 +35,9 @@ https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao
 
 
 ## 2. 命令行打包
-
-### 使用方法：
+<br>
 视频链接：<http://pan.baidu.com/s/1qWCbkNa>
+### 使用方法：
 
 - 将xgsdk提供的zip包解压，得到xg_package资源目录。将其拷贝到本机的xcode工程目录。
 
