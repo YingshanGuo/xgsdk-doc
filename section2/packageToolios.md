@@ -36,7 +36,8 @@ https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao
 
 ## 2. 命令行打包
 <br>
-视频链接：<http://pan.baidu.com/s/1qWCbkNa>
+###演示效果：###
+<img src="img/iOSpkg1.gif">
 ### 使用方法：
 
 - 将xgsdk提供的zip包解压，得到xg_package资源目录。将其拷贝到本机的xcode工程目录。
