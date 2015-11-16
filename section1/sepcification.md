@@ -68,8 +68,8 @@
 <img src="image/editprobtn.png"/>
 
 编辑个人信息： 可以对个人的昵称、手机号码、QQ号码进行更改
-
 <img src="image/editprom.png"/>
+
 
 修改密码：
 
@@ -499,21 +499,20 @@ JDK1.8及以上版本
 #### 13.2 配置运行环境  
 
 <p>通过命令行方式，配置mac机器的打包环境，步骤如下：</p>
-- 移除旧资源
+- 移除旧资源    
 <code>gem sources –-remove https://rubygems.org/</code>
 
-- 等有反应之后再敲入以下命令(注意：由于淘宝镜向，近期基于http的服务停止，若安装提示“Unable to download data from http://ruby.taobao.org/ - bad response”，则需要切换到https才行.)
-
+- 等有反应之后再敲入以下命令(注意：由于淘宝镜向，近期基于http的服务停止，若安装提示“Unable to download data from http://ruby.taobao.org/ - bad response”，则需要切换到https才行。)  
 <code>gem sources -a https://ruby.taobao.org/</code>
 
-- <p>用以下命令查看</p>
+- 用以下命令查看  
  <code>gem sources -l</code>
 
-- <p>出现下面文字才表明上面的命令是成功的</p>
+- 出现下面文字才表明上面的命令是成功的  
 <code>\*\*\* CURRENT SOURCES \*\*\* <br>
 https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao.org才对！！！！）
 
-- <p>安装xcodeproj库</p>
+- 安装xcodeproj库  
 <code>sudo gem install xcodeproj</code>
 
 等待安装完成。（**注:这一步会下载大量资源，需要耐心等待**）
