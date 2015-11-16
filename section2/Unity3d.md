@@ -55,6 +55,7 @@
 						<li><a href = "#onVirtalCurrencyPurchase">统计充值获得的虚拟货币</a></li>
 						<li><a href = "#onVirtualCurrencyReward">统计赠送的虚拟货币</a></li>
 						<li><a href = "#onVirtalCurrencyConsume">统计跟踪虚拟货币的消费</a></li>
+						<li><a href = "#setPingServer">网络连接状况检测接口</a></li>
 					</ul>
 				</li>
 				<li><a href = "#extraInterface">扩展接口</a>
@@ -1276,6 +1277,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	XGSDK2.instance.onVirtualCurrencyConsume(roleInfo,"1",10,"123");
 ```
 
+<a name="setPingServer"></a>
 #### 3.3.7 网络连接状况检测接口
 ```
 		public static void setPingServer(string host)
