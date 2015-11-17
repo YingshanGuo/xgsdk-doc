@@ -683,7 +683,7 @@
 			</td>
 			-->
 <td>
-				无
+			<a href="http://doc.xgsdk.com/files/channels/xiaocaishen/2.0/v1.0.7/自检用例.docx">下载链接</a>
 			</td>
 </tr>
 <tr>

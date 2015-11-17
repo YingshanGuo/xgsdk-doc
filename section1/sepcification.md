@@ -8,11 +8,11 @@
 <li><a href="#5">渠道参数、充值回调、角标资源</a></li>
 <li><a href="#6">项目成员管理</a></li>
 <li><a href="#7">协作日志</a></li>
-<li><a href="#8">高级配置</a></li>
+<li><a href="#advancedoptions">高级配置</a></li>
 <li><a href="#9">充值补单</a></li>
 <li><a href="#10">统计分析</a></li>
 <li><a href="#11">接入交流</a></li>
-<li><a href="#12">打包工具（Android版本）使用说明</a></li>
+<li><a href="#packageAndroid">打包工具（Android版本）使用说明</a></li>
 <li><a href="#packageios">打包工具（ios版本）使用说明</a></li>
 <li><a href="#splashscreen">XG闪屏说明</a></li>
 </B></ol>
@@ -315,7 +315,7 @@
 
 <img src="specification/22.png"/>
 
-<a id="8"></a>
+<a id="advancedoptions"></a>
 ### 8. 高级配置
 #### 8.1 使用自定义AndroidManifest参数
 
@@ -418,7 +418,7 @@
 <img src="specification/27.png"/>
 
 
-<a id="12"></a>
+<a id="packageAndroid"></a>
 ### 12. 打包工具（Android版本）使用说明
 
 #### 12.1 环境要求
