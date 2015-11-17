@@ -12,7 +12,7 @@
 <li><a href="#9">充值补单</a></li>
 <li><a href="#10">统计分析</a></li>
 <li><a href="#11">接入交流</a></li>
-<li><a href="#12">打包工具（Android版本）使用说明</a></li>
+<li><a href="#packageAndroid">打包工具（Android版本）使用说明</a></li>
 <li><a href="#packageios">打包工具（ios版本）使用说明</a></li>
 <li><a href="#splashscreen">XG闪屏说明</a></li>
 </B></ol>
@@ -418,7 +418,7 @@
 <img src="specification/27.png"/>
 
 
-<a id="12"></a>
+<a id="packageAndroid"></a>
 ### 12. 打包工具（Android版本）使用说明
 
 #### 12.1 环境要求
