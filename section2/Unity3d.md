@@ -55,7 +55,7 @@
 						<li><a href = "#onVirtalCurrencyPurchase">统计充值获得的虚拟货币</a></li>
 						<li><a href = "#onVirtualCurrencyReward">统计赠送的虚拟货币</a></li>
 						<li><a href = "#onVirtalCurrencyConsume">统计跟踪虚拟货币的消费</a></li>
-						<li><a href = "#setPingServer">网络连接状况检测接口</a></li>
+						
 					</ul>
 				</li>
 				<li><a href = "#extraInterface">扩展接口</a>
@@ -1277,24 +1277,9 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	XGSDK2.instance.onVirtualCurrencyConsume(roleInfo,"1",10,"123");
 ```
 
-<a name="setPingServer"></a>
-#### 3.3.7 网络连接状况检测接口
-```
-		public static void setPingServer(string host)
-```
 
-**接口说明：**
- 网络连接状况检测。XGSDK可以帮助游戏从客户端收集到指定服务器的网络连接状况，为网络部署方案优化提供建议
 
-**参数说明：**
-需要检测的主机域名或IP地址，XGSDK会在后台任务中完成网络状况的检测，不阻塞当前调用线程
-
-**代码样例：**
-```
-	XGSDK2.instance.setPingServer("xxx.com");
-```
-
-#### 3.3.8 跟踪玩家的支付信息
+#### 3.3.7 跟踪玩家的支付信息
 ```
 		public static void onPayFinish(PayInfo payInfo)
 ```
