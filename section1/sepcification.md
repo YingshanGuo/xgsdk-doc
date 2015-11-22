@@ -15,6 +15,8 @@
 <li><a href="#packageAndroid">打包工具（Android版本）使用说明</a></li>
 <li><a href="#packageios">打包工具（ios版本）使用说明</a></li>
 <li><a href="#splashscreen">XG闪屏说明</a></li>
+<li><a href="#commodity">商品参数配置</a></li>
+
 </B></ol>
 
 <a id="1"></a>
@@ -560,3 +562,38 @@ https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao
 #### 14.2 配置步骤
 在“基础配置”中点击游戏配置的“修改”即可进行选择，如图所示：
 <img src="./image/splash.png"/>
+
+
+<a id="commodity"></a>
+### 15 商品参数配置
+#### 15.1 商品参数配置说明
+联想、联通和酷派渠道在填写参数时需要填写渠道分配给游戏商品的商品 ID，当游戏有多种商品时就需要一个商品映射机制。
+
+#### 15.2 商品参数配置步骤
+
+- 确定游戏商品ID
+- 在渠道后台进行商品配置，渠道会为不同的商品分配不同的商品ID，如图
+
+ <img src="./image/shangpin.png"/>
+
+- 在“基础配置”中找到商品参数配置
+
+ <img src="./image/shangpin1.png"/>
+
+- 点击“修改”进行商品参数的填写，如图
+
+ <img src="./image/shangpin2.png"/>
+
+- 在“渠道参数”中选择联通渠道，点击“商品ID映射”的“配置”按钮进行配置
+
+ <img src="./image/shangpin3.png"/>
+
+- 点击“编辑”按钮，进行商品ID映射配置
+
+ <img src="./image/shangpin4.png"/>
+
+- 将在渠道后台配置获得的商品ID，填写在对应商品的“渠道商品ID”位置，如图
+
+ <img src="./image/shangpin6.png"/>
+
+- 点击“确认”即完成了商品参数配置
