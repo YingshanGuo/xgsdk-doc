@@ -46,7 +46,7 @@
 				mzw
 			</td>
 <td>
-				3.0.1
+				3.0.8
 			</td>
 <!--
 <td>
@@ -60,7 +60,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/muzhiwan/1.1/%e6%8b%87%e6%8c%87%e7%8e%a9%e7%bd%91%e6%b8%b8SDKv2.1.1.rar">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/muzhiwan/2.0/V2.1.1/v3.0.8/拇指玩网游SDK3.0.8_201511171800.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -229,7 +229,7 @@
 			</td>
       -->
 <td>
-				2.5.5_3.1.3
+				4.1.1_3.1.4
 			</td>
 <!--
 <td>
@@ -243,7 +243,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/vivo/2.0/账号2.5.4支付3.1.3/支付3.1.3账号2.5.4.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/vivo/2.0/4.1.1_3.1.4/4.1.1_3.1.4.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -259,7 +259,7 @@
 			</td>
       -->
 <td>
-				1.1.2
+				2.0.0
 			</td>
 <!--
 <td>
@@ -561,7 +561,7 @@
 			</td>
       -->
 <td>
-				2.4.2.1
+				2.4.2.3
 			</td>
 <!--
 <td>
@@ -575,7 +575,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/lenovo/2.0/V2.4.1.2_20150722/联想手机游戏SDK-V2.4.1.2_20150722.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/lenovo/2.0/2.4.2.3/联想手机游戏SDK-V2.4.2.3_20151104.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -681,7 +681,7 @@
 			</td>
       -->
 <td>
-				2.2.0
+				2.3.0
 			</td>
 <!--
 <td>
@@ -695,7 +695,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/tudou/2.0/2.2/优酷游戏_AndroidSDK_V2.2_接入文档_20150908_正式.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/tudou/2.0/2.3/优酷游戏_AndroidSDK_V2.3_接入文档_20151013_正式.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -801,7 +801,7 @@
 			</td>
       -->
 <td>
-				2.1
+				2.2.0
 			</td>
 <!--
 <td>
@@ -815,7 +815,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/meizu/2.0/v2.1.0/MeizuDocument.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/meizu/2.0/2.2.0/魅族Flyme联网手游开发SDK2.2.0.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -892,7 +892,7 @@
 			</td>
       -->
 <td>
-				v2.3_4.1.4
+				v2.3_4.1.5
 			</td>
 <!--
 <td>
@@ -906,7 +906,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/aiyouxi/2.0/v2.3.0_4.1/电信爱游戏【用户SDK】+【支付SDK】-20150804.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/aiyouxi/2.0/2.3_4.1.5/2.3-4.1.5.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -1012,7 +1012,7 @@
 			</td>
       -->
 <td>
-				v4.1
+				v4.2
 			</td>
 <!--
 <td>
@@ -1026,7 +1026,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/jifeng/2.0/V4.0/gpaySDK4.0.rar" target="_blank">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/jifeng/2.0/4.2/gpaySDK (1).rar">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -1102,7 +1102,7 @@
 			</td>
       -->
 <td>
-				1.2.0
+				5.0.0
 			</td>
 <!--
 <td>
@@ -1116,7 +1116,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/lhh/2.0/v1.2/安卓LhhSDK_v1.2.zip" target="_blank">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/lhh/2.0/5.0.0/LhhSDK_v5.0.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -1162,7 +1162,7 @@
 			</td>
       -->
 <td>
-				1.1.2
+				1.1.3
 			</td>
 <!--
 <td>
@@ -1176,7 +1176,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/xiaocaishen/2.0/v1.0.7/小财神SDK1.0.7(1)(1).zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/xiaocaishen/2.0/1.1.3/SDK1.1.31正式版.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -1253,7 +1253,7 @@
 			</td>
       -->
 <td>
-				1.5
+				1.7
 			</td>
 <!--
 <td>
@@ -1267,7 +1267,7 @@
 			</td>
       -->
 <td>
-				<a target="_blank" href="http://doc.xgsdk.com/files/channels/youlong/2.0/v1.5/游龙SDK.zip">下载链接</a>
+				<a target="_blank" href="http://doc.xgsdk.com/files/channels/youlong/2.0/1.7/对外_游龙SDK（弹窗版本）_v1.7.rar">下载链接</a>
 			</td>
 </tr>
 
@@ -1312,10 +1312,10 @@
 07073
 </td>
 	<td>
-4.1.0
+5.0.1
 </td>
 <td>
-<a target="_blank" href="http://doc.xgsdk.com/files/channels/07073/2.0/4.1.0/SDK07073sy_v4.1.0.zip">下载链接</a>
+<a target="_blank" href="http://doc.xgsdk.com/files/channels/07073/2.0/5.0.1/SDK07073sy.zip">下载链接</a>
 </td>
 </tr>
 
@@ -1358,10 +1358,10 @@ muzhiwan2
 7k7k
 </td>
 	<td>
-1.2
+1.2.1.1
 </td>
 <td>
-<a target="_blank" href="http://doc.xgsdk.com/files/channels/7k7k/2.0/1.2/7k7kSDK.rar">下载链接</a>
+<a target="_blank" href="http://doc.xgsdk.com/files/channels/7k7k/2.0/1.2.1.1/7kSDK接入包2015.10.21.rar">下载链接</a>
 </td>
 </tr>
 

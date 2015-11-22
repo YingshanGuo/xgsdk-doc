@@ -161,7 +161,7 @@
 						</td>
 						-->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/vivo/2.0/账号2.5.4支付3.1.3/vivo平台联运支付3.1.2 SDK接入自检表.xlsx">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/vivo/2.0/4.1.1_3.1.4/vivo平台联运帐户SDK V4.1.1接入自检表.xlsx">下载链接</a>
 			</td>
 
 </tr>
@@ -683,7 +683,7 @@
 			</td>
 			-->
 <td>
-			<a href="http://doc.xgsdk.com/files/channels/xiaocaishen/2.0/v1.0.7/自检用例.docx">下载链接</a>
+			<a href="http://doc.xgsdk.com/files/channels/xiaocaishen/2.0/1.1.3/小财神合作伙伴测试用例.docx">下载链接</a>
 			</td>
 </tr>
 <tr>
