@@ -465,7 +465,9 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 ### 4.8 释放资源接口
 接口定义：public void releaseResource(Activity activity, String customParams);  
 接口说明：用户退出游戏时释放资源接口，传入扩展参数 customParams
+
 <table>
+
 <tr>
 <td>参数</td>
 <td>说明</td>
@@ -474,14 +476,14 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
   <td>customParams</td>
   <td>该参数用于扩展，传输时使用 json 格式，接入时若不需要直接置空即可</td>
   </tr>
+
 </table>
-调用案例代码：与退出接口类似  
 
-
-
+调用案例代码：与退出接口类似。  
 
 
 <a id="payInterface"></a>
+
 
 
 ## 5.充值接口  
@@ -989,7 +991,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 
 <a id="onpayfinish"></a>
-###6.4  支付完成 
+###6.4  支付完成
 接口定义：void onPayFinish(PayInfo payInfo);
 接口说明：统计接口在支付完成时上报支付的数据,需要传入类型为PayInfo的参数(改接口只在单独接入XG统计的时候需要接入)。
 代码示例：
