@@ -49,14 +49,15 @@
 						<li><a href = "#exit">退出接口</a></li>
 						<li><a href = "#releaseResource">释放资源接口</a></li>
                         <li><a href = "#getChannelId">获取渠道ID</a></li>
+                        <li><a href = "#createRole">创建角色</a></li>
+						<li><a href = "#enterGame">进入游戏</a></li>
+						<li><a href = "#roleLevelUp">角色升级</a></li>
 					</ul>
 				</li>
 				
                 <li><a href = "#channelExtraInterface">渠道扩展接口</a>
 					<ul type = "circle">
-                        <li><a href = "#createRole">创建角色</a></li>
-						<li><a href = "#enterGame">进入游戏</a></li>
-						<li><a href = "#roleLevelUp">角色升级</a></li>
+                        
                         <li><a href = "#openUserCenter">用户中心</a></li>
 						<li><a href = "#switchAccount">切换账号</a></li>
 					</ul>
@@ -162,10 +163,10 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 ```
 
 
-**application标签中的android:name必须配置com.xgsdk.client.api.XGApplication或其子类**  
-**activity标签中的android:name必须配置com.xgsdk.client.api.unity3d.XGUnityActivity的子类**
+**application标签中的android:name必须配置为com.xgsdk.client.api.XGApplication或其子类**  
+**activity标签中的android:name必须配置为com.xgsdk.client.api.unity3d.XGUnityActivity的子类或者com.xgsdk.client.api.unity3d.XGUnityNativeActivity的子类**
 
-**注：如果游戏的主activity继承了UnityPlayerActivity，那么游戏的主activity需要继承XGUnityActivity，我们的XGUnityActivity类已经继承了UnityPlayerActivity，并且实现了android的生命周期方法**
+**注：如果游戏的主activity继承了UnityPlayerActivity，那么游戏的主activity需要继承XGUnityActivity，我们的XGUnityActivity类已经继承了UnityPlayerActivity，并且实现了android的生命周期方法;同理，如果游戏的主activity继承了UnityPlayerNativeActivity,那么游戏的主activity需要继承XGUnityNativeActivity。**
 
 
 ```
@@ -427,7 +428,7 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 	<td>String</td>
     <td>64</td>
 	<td>产品ID</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>productName</td>
@@ -518,14 +519,14 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 	<td>String</td>
     <td>32</td>
 	<td>服ID</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>zoneId</td>
 	<td>String</td>
     <td>32</td>
 	<td>区ID</td>
-	<td>N</td>
+	<td>Y</td>
 </tr>
 <tr>
 	<td>partyName</td>
@@ -749,7 +750,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 **接口说明：**
-获取渠道ID时使用。
+获取渠道ID时使用。渠道ID列表请点击<a href="../section4/SDK.md"               target="_blank">渠道ID列表</a>
 
 **返回值**
 <table>
@@ -767,12 +768,8 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 ```
 
 
-
-<a name = "channelExtraInterface"></a>
-### 3.2 扩展接口
-
 <a name = "createRole"></a>
-#### 3.2.1 创建角色
+#### 3.1.7 创建角色
 
 ```
 		public static void onCreateRole(RoleInfo roleInfo)
@@ -900,7 +897,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 
 <a name = "enterGame"></a>
-#### 3.2.2 进入游戏
+#### 3.1.8 进入游戏
 
 ```
 	public static void onEnterGame(RoleInfo roleInfo)
@@ -920,7 +917,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 
 <a name = "roleLevelUp"></a>
-#### 3.2.3 角色升级
+#### 3.1.9 角色升级
 
 ```
 		public static void onRoleLevelup(RoleInfo roleInfo)
@@ -937,8 +934,13 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 	XGSDK2.instance.onRoleLevelup(roleInfo);
 ```
 
+
+
+<a name = "channelExtraInterface"></a>
+### 3.2 扩展接口
+
 <a name = "openUserCenter"></a>
-#### 3.2.4 用户中心
+#### 3.2.1 用户中心
 
 ```
 		public static void openUserCenter(string customParams)
@@ -958,7 +960,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 
 <a name = "switchAccount"></a>
-#### 3.2.5 切换账号
+#### 3.2.2 切换账号
 
 ```
 		public static void switchAccount(string customParams)
