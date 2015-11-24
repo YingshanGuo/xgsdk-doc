@@ -668,11 +668,13 @@ https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao
 新浪微博需要提供**AppID**和**AppSecret**两个参数.
 
 具体操作步骤：
+
 1. 点击添加包名
-2. 输入包名，点确认
+
+2. 输入包名，点确认;
+
 3. 在右侧填写微博的参数值。
-<br/>
-<br/>
+
 <img src="./image/share_package_dimension_weibo.png"/>
 
 
