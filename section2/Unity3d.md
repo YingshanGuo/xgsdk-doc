@@ -111,7 +111,7 @@ xgsdk-api-2.0.2.jar  xgsdk-unity-2.0.2.jar(activity包）
 **XGSDK：**   
 XGSDK2.cs 西瓜API接口    
 XGSDKCallback.cs 西瓜回调接口，抽象类  
-XGSDKCallbackWrapper.cs 西瓜回调接口包装类，解析回调的字符串
+XGSDKCallbackWrapper.cs 西瓜回调接口包装类，解析回调的字符串  
 XGSDKMiniJSON.cs 西瓜专用json解析类
 
 	  
