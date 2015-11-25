@@ -685,5 +685,5 @@ https://ruby.taobao.org/ </code> （注意，这里必须是 https://ruby.taobao
 1.点击【编辑包名】可以打开编辑模式，如图：
 <img src="./image/share_package_dimension_weibo_edit.png"/>
 
-2.点击希望删除包名右边的【删除】按钮，会弹出删除确认框，点【确认】即可删除。
+2.点击包名右边的【删除】按钮，会弹出删除确认框，点【确认】即可删除对应包名及其参数配置。
 <img src="./image/share_package_dimension_weibo_delete.png"/>
