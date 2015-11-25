@@ -75,7 +75,7 @@
 						</td>  
 						-->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/baidu/2.0/v3.3.1/百度移动游戏网游自测文档.xlsx">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/baidu/2.0/百度移动游戏网游自测文档.xlsx">下载链接</a>
 			</td>
 
 
