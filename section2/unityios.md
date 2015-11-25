@@ -68,7 +68,7 @@
 				</li>
 			</ul>
 	</li>
-	<li><a href = "../section2/Unity3d.html#errorCode">错误码</a></li>
+	<li><a href = "../section2/error.md">错误码</a></li>
 </ol>
 
 
