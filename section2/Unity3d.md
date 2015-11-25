@@ -109,6 +109,8 @@ Android SDK和Android Eclipse等
 xgsdk-api-2.0.2.jar  xgsdk-unity-2.0.2.jar(activity包）  
 
 **XGSDK：**   
+PayInfo.cs 支付实体类  
+RoleInfo.cs 角色实体类  
 XGSDK2.cs 西瓜API接口    
 XGSDKCallback.cs 西瓜回调接口，抽象类  
 XGSDKCallbackWrapper.cs 西瓜回调接口包装类，解析回调的字符串  
@@ -119,8 +121,9 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 <a name = "steps"></a>
 
 ### 2.4 接入步骤
-2.4.1 将下载的jar包全部拷贝至<项目目录>\Assets\Plugins\Android\libs，将下载的cs脚本文件全部拷贝至<项目目录>\Assets中  
-
+2.4.1  放置脚本文件 
+将两个jar包(xgsdk-api-2.0.2.jar  xgsdk-unity-2.0.2.jar)全部拷贝至<项目目录>\Assets\Plugins\Android\libs下。  
+将SDK下载包中的XGSDK整个文件拷贝至<项目目录>\Assets中。  
 
 <img src="img/unity_csFile.png">    
 
