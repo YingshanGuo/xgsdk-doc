@@ -43,21 +43,21 @@
                 </li>
 				<li><a href = "#basicInterface">基础接口</a>
 					<ul type = "circle">
-						<li><a href = "#login">登录接口</a></li>
+						<li><a href = "#login">登录接口（必接）</a></li>
 						<li><a href = "#logout">登出接口</a></li>
-                        <li><a href = "#pay">支付接口</a></li>
-						<li><a href = "#exit">退出接口</a></li>
-						<li><a href = "#releaseResource">释放资源接口</a></li>
+                        <li><a href = "#pay">支付接口（必接）</a></li>
+						<li><a href = "#exit">退出接口（必接）</a></li>
+						<li><a href = "#releaseResource">释放资源接口（必接）</a></li>
                         <li><a href = "#getChannelId">获取渠道ID</a></li>
-                        <li><a href = "#createRole">创建角色</a></li>
-						<li><a href = "#enterGame">进入游戏</a></li>
-						<li><a href = "#roleLevelUp">角色升级</a></li>
+                        <li><a href = "#createRole">创建角色（必接）</a></li>
+						<li><a href = "#enterGame">进入游戏（必接）</a></li>
+						<li><a href = "#roleLevelUp">角色升级（必接）</a></li>
 					</ul>
 				</li>
-				
+
                 <li><a href = "#channelExtraInterface">渠道扩展接口</a>
 					<ul type = "circle">
-                        
+
                         <li><a href = "#openUserCenter">用户中心</a></li>
 						<li><a href = "#switchAccount">切换账号</a></li>
 					</ul>
@@ -116,12 +116,12 @@ XGSDKCallback.cs 西瓜回调接口，抽象类
 XGSDKCallbackWrapper.cs 西瓜回调接口包装类，解析回调的字符串  
 XGSDKMiniJSON.cs 西瓜专用json解析类
 
-	  
+
 
 <a name = "steps"></a>
 
 ### 2.4 接入步骤
-2.4.1  放置脚本文件 
+2.4.1  放置脚本文件
 将两个jar包(xgsdk-api-2.0.2.jar  xgsdk-unity-2.0.2.jar)全部拷贝至<项目目录>\Assets\Plugins\Android\libs下。  
 将SDK下载包中的XGSDK整个文件拷贝至<项目目录>\Assets中。  
 
@@ -179,14 +179,14 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
         android:allowBackup="true"
         android:icon="@drawable/unity_ic_launcher"
         android:label="unity-demo">
-		
+
          <activity
             android:name="com.xgsdk.client.api.unity3d.XGUnityActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <meta-data android:name="unityplayer.UnityActivity" android:value="true" /> 
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
         </activity>			
     </application>
 ```
@@ -285,7 +285,7 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 **回调说明：**
 当游戏初始化失败时，会收到初始化失败回调,游戏在此回调中实现初始化失败后的逻辑。
 
-**参数说明：** 
+**参数说明：**
 <ol type='disc'>
 	<li>code(int)：返回的错误码，详情请见<a href="../section2/error.md"               target="_blank">错误码表</a></li>
 	<li>msg(string)：返回的信息</li>
@@ -296,7 +296,7 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 <a name = "basicInterface"></a>
 ### 3.2 基础接口
 <a name = "login"></a>
-#### 3.2.1 登录接口
+#### 3.2.1 登录接口（必接）
 
 ```
 	public static void login(string customParams)
@@ -325,7 +325,7 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 **回调说明：**
 登录成功之后，会收到登录成功回调，游戏在此回调中实现登录成功后的逻辑。
 
-**参数说明：** 
+**参数说明：**
 <ol type='disc'>
 	<li>code(int)：返回的错误码，详情请见<a href="../section2/error.md"               target="_blank">错误码表</a></li>
 	<li>authInfo(string)：用户验证信息</li>
@@ -355,7 +355,7 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 **回调说明：**
 登录失败后，会收到登录失败的回调，游戏在此回调中实现登录失败后的逻辑。
 
-**参数说明：** 
+**参数说明：**
 <ol type='disc'>
 	<li>code(int)：返回的错误码，详情请见<a href="../section2/error.md"               target="_blank">错误码表</a></li>
 	<li>msg(string)：返回的信息</li>
@@ -392,7 +392,7 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 **回调说明：**
 登出成功后，会收到登出成功的回调，游戏在此回调中实现登出成功后的逻辑。
 
-**参数说明：** 
+**参数说明：**
 <ol type='disc'>
 	<li>code(int)：返回的完成码，详情请见<a href="../section2/error.md"               target="_blank">登出完成码表</a></li>
 	<li>msg(string)：返回的信息</li>
@@ -401,7 +401,7 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 
 
 <a name = "pay"></a>
-#### 3.2.3 支付接口
+#### 3.2.3 支付接口（必接）
 ```
 		public static void pay(PayInfo payInfo)
 ```
@@ -692,7 +692,7 @@ XGSDKMiniJSON.cs 西瓜专用json解析类
 
 
 <a name = "exit"></a>
-#### 3.2.3 退出接口
+#### 3.2.3 退出接口（必接）
 ```
 		public static void exit(string customParams)
 ```
@@ -735,7 +735,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 参数msg无意义。
 
 <a name = "releaseResource"></a>
-#### 3.1.5 释放资源接口
+#### 3.1.5 释放资源接口（必接）
 ```
 		public static void releaseResource(string customParams)
 ```
@@ -772,7 +772,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 
 <a name = "createRole"></a>
-#### 3.1.7 创建角色
+#### 3.1.7 创建角色（必接）
 
 ```
 		public static void onCreateRole(RoleInfo roleInfo)
@@ -900,7 +900,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 
 <a name = "enterGame"></a>
-#### 3.1.8 进入游戏
+#### 3.1.8 进入游戏（必接）
 
 ```
 	public static void onEnterGame(RoleInfo roleInfo)
@@ -920,7 +920,7 @@ customParams参数用于扩展，传输时使用json格式，接入时若不需�
 
 
 <a name = "roleLevelUp"></a>
-#### 3.1.9 角色升级
+#### 3.1.9 角色升级（必接）
 
 ```
 		public static void onRoleLevelup(RoleInfo roleInfo)

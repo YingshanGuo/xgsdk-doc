@@ -42,20 +42,19 @@
 		<a href="#userInterface">用户接口</a>
 			<ul type="disc">
 				<li><a href="#liftcycle">接入生命周期接口</a></li>
-				<li><a href="#login">登录接口</a></li>
+				<li><a href="#login">登录接口（必接）</a></li>
 				<li><a href="#loginCallback">登录回调</a></li>
 				<li><a href="#logout">登出接口</a></li>
 				<li><a href="#logoutCallback">登出回调</a></li>
-				<li><a href="#exit">退出接口</a></li>
-				<li><a href="#exitCallback">退出回调</a></li>       
-                <li><a href="#releaseResurce">释放资源</a></li>
-
+				<li><a href="#exit">退出接口（必接）</a></li>
+				<li><a href="#exitCallback">退出回调</a></li>
+        <li><a href="#releaseResurce">释放资源（必接）</a></li>
 			</ul>
 	</li>
 	<li>
 		<a href="#payInterface">充值接口</a>
 			<ul type="disc">
-				<li><a href="#pay">支付接口</a></li>
+				<li><a href="#pay">支付接口（必接）</a></li>
 				<li><a href="#payCallback">支付回调</a></li>
 			</ul>
 	</li>
@@ -63,9 +62,9 @@
 	<li>
 		<a href="#statics">统计接口</a>
 			<ul type="disc">
-				<li><a href="#onCreateRole">创建角色</a></li>
-				<li><a href="#onRoleLevelup">角色升级</a></li>
-				<li><a href="#onEnterGame">进入游戏</a></li>
+				<li><a href="#onCreateRole">创建角色（必接）</a></li>
+				<li><a href="#onRoleLevelup">角色升级（必接）</a></li>
+				<li><a href="#onEnterGame">进入游戏（必接）</a></li>
                 <li><a href="#onpayfinish">支付完成</a></li>
 			</ul>
 	</li>
@@ -297,7 +296,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 以上代码的表示的意思是实现一个匿名的 UserCallBack 对象，该对象中实现了登录成功、失败、取消，登出成功、失败，初始化失败接口，<a href="#usercallback">详见这里描述</a>
 
 <a id="login"></a>
-### 4.2 登录接口
+### 4.2 登录接口（必接）
 
 
 接口定义：public void login(Activity activity, String customParams)  
@@ -396,7 +395,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 
 <a id="exit"></a>
-### 4.6 退出接口
+### 4.6 退出接口（必接）
 接口定义：public void exit(Activity activity, ExitCallBack exitCallBack,String customParams)
 
 接口说明：用户退出接口，传入 exitCallback 和扩展参数 customParams
@@ -462,7 +461,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 <a id="releaseResurce"></a>
 
-### 4.8 释放资源接口
+### 4.8 释放资源接口（必接）
 接口定义：public void releaseResource(Activity activity, String customParams);  
 接口说明：用户退出游戏时释放资源接口，传入扩展参数 customParams
 
@@ -490,7 +489,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 <a id="pay"></a>
 
-### 5.1 支付接口  
+### 5.1 支付接口（必接）  
 
 
 接口定义：public void pay(final Activity activity, PayInfo payInfo,PayCallBack payCallBack)
@@ -799,7 +798,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 ## 6.统计接口
 
 <a id="onCreateRole"></a>
-### 6.1 创建角色
+### 6.1 创建角色（必接）
 接口定义：public void onCreateRole(RoleInfo roleInfo)  
 接口说明：使用 roleInfo 来创建角色  
 
@@ -935,7 +934,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 
 
 <a id="onRoleLevelup"></a>
-### 6.2 角色升级
+### 6.2 角色升级（必接）
 接口定义：public void onRoleLevelup(RoleInfo roleInfo)
 
 接口说明：角色等级接口，角色等级提升时调用
@@ -965,7 +964,7 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
                 });
 
 <a id="onEnterGame"></a>
-### 6.3 进入游戏
+### 6.3 进入游戏（必接）
 接口定义：public void onEnterGame(RoleInfo roleInfo)    
 接口说明：进入游戏接口，进入游戏时调用
 

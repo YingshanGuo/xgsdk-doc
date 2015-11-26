@@ -90,7 +90,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/baidu/2.0/v3.3.1/baidu.rar">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/baidu/2.0/SDK最新版.rar">下载链接</a>
 
 			</td>
 
@@ -108,7 +108,7 @@
 			</td>
       -->
 <td>
-				4.3.90
+				4.4.33
 			</td>
 <!--
 <td>
@@ -122,7 +122,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/mi/2.0/v4.3.90/小米SDKservice4.3.90.rar">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/mi/2.0/小米SDKservice最新.rar">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -259,7 +259,7 @@
 			</td>
       -->
 <td>
-				2.0.0
+				2.0.1
 			</td>
 <!--
 <td>
@@ -273,7 +273,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/jinshan/2.0/1.1.2-2_0924/KINGSOFT_SDK_ANDROID_1.1.2-2_0924.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/jinshan/2.0/KINGSOFT_SDK_ANDROID_最新版.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -289,7 +289,7 @@
 			</td>
       -->
 <td>
-				4.0.4
+				4.0.6
 			</td>
 <!--
 <td>
@@ -303,7 +303,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/wandoujia/2.0/4.0.4/豌豆荚V4.0.4.rar">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/wandoujia/2.0/wdj-game-sdk-最新版.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -681,7 +681,7 @@
 			</td>
       -->
 <td>
-				2.3.0
+				2.4.0
 			</td>
 <!--
 <td>
@@ -695,7 +695,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/tudou/2.0/2.3/优酷游戏_AndroidSDK_V2.3_接入文档_20151013_正式.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/tudou/2.0/优酷最新版.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -711,7 +711,7 @@
 			</td>
       -->
 <td>
-				2.1.1
+				2.1.2
 			</td>
 <!--
 <td>
@@ -725,7 +725,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/37wan/2.0/v2.1.1/37sdk_release_v2.1.1_20150714.rar">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/37wan/2.0/37sdk_release_最新版.rar">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -1102,7 +1102,7 @@
 			</td>
       -->
 <td>
-				5.0.0
+				5.0.1
 			</td>
 <!--
 <td>
@@ -1116,7 +1116,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/lhh/2.0/5.0.0/LhhSDK_v5.0.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/lhh/2.0/乐嗨嗨SDK_最新版.zip">下载链接</a>
 			</td>
 </tr>
 <tr>
@@ -1162,7 +1162,7 @@
 			</td>
       -->
 <td>
-				1.1.3
+				1.1.31
 			</td>
 <!--
 <td>
@@ -1176,7 +1176,7 @@
 			</td>
       -->
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/xiaocaishen/2.0/1.1.3/SDK1.1.31正式版.zip">下载链接</a>
+				<a href="http://doc.xgsdk.com/files/channels/xiaocaishen/2.0/SDK最新版.zip">下载链接</a>
 			</td>
 </tr>
 <tr>

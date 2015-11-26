@@ -821,6 +821,17 @@
 </td>
 </tr>
 
+<tr>
+<td>联通</td>
+<td>unicom</td>
+			<!--
+<td>整理中</td>
+-->
+<td>
+<a href="http://doc.xgsdk.com/files/channels/unicom/2.0/联运网游测试用例.xls">下载链接</a>
+
+</td>
+</tr>
 </table>
 
 
