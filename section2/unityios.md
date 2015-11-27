@@ -87,10 +87,10 @@ Unity4.6.2f1
 ### 2.2 SDK下载包
 
 <a href = "http://console.xgsdk.com/download.html">iOS_Unity3D SDK下载</a>  
-**SDK包中有两个文件夹iOS和src。**  
+**SDK包中有两个文件夹libs和XGSDK。**  
 目录说明：  
-iOS：接入依赖的iOS库  
-src：接入依赖的源码  
+libs/iOS：iOS接入依赖的库  
+XGSDK：接入依赖的源码  
 
 
 ### 2.3 接入步骤
@@ -104,17 +104,16 @@ src：接入依赖的源码
 
 **src文件功能说明：**  
 
-- JsonDeserializer.cs--工具类  
-- MiniJSON.cs        --工具类  
-- MiniJsonData.cs    --工具类  
-- SafetyValue.cs     --工具类  
-- XGSDK2.cs          --主动调用类  
-- XGSDKCallback.cs   --回调类  
-- XgsdkDemo.cs       --demo界面  
+- MiniJSON.cs                --工具类  
+- XGSDKCallbackWrapper.cs    --工具类   
+- XGSDK2.cs                  --主动调用类  
+- XGSDKCallback.cs           --回调类  
 
 **注意：导入的cs脚本文件名称不可修改。**  
 
-**2.3.3 参考Xgsdkdemo.CS，XGSDKCallback.cs 进行接入。**
+**2.3.3 配置回调实现类（iOS和安卓一致）。**
+**<a href="../section2/Unity3d.html#SDKIn">跳转查看接口说明</a>**
+
 
 **2.3.4 运行测试**  
 - 首先点击Main Camera，确认是否关联脚本，若还未关联，则将脚本添加上去；  
