@@ -98,11 +98,10 @@ XGSDK：接入依赖的源码
 ***注意：libxgCommon.a, libxgsdk_unity3d.a, libXgsdkData.a 这三个库文件会在每次unity导出xcode工程的时候自动注入到xcode工程。这三个库是xg的公共库文件，后续如果更新，请直接在此替换。  其他sdk相关的库将由xg打包工具注入，该文件夹请勿放置任何sdk相关的库。否则，由于库引用顺序的原因，导致打包工具注入的sdk库无法生效。***
 <img src= "img/ios1.png">
 
-**2.3.2 将src目录中的cs脚本文件全部拷贝至<项目目录>\Assets中；**
+**2.3.2 将XGSDK目录中的cs脚本文件全部拷贝至<项目目录>\Assets中；**
 
-<img src= "img/ios2.jpg">
 
-**src文件功能说明：**  
+**文件功能说明：**  
 
 - MiniJSON.cs                --工具类  
 - XGSDKCallbackWrapper.cs    --工具类   
@@ -112,7 +111,6 @@ XGSDK：接入依赖的源码
 **注意：导入的cs脚本文件名称不可修改。**  
 
 **2.3.3 配置回调实现类（iOS和安卓一致）。**
-**<a href="../section2/Unity3d.html#SDKIn">跳转查看接口说明</a>**
 
 
 **2.3.4 运行测试**  
