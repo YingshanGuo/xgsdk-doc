@@ -1,7 +1,7 @@
 # 渠道SDK材料
 
 
-西瓜SDK目前支持Android和iOS两种平台，其中Android平台已支持50个渠道，iOS平台已支持3个渠道。
+西瓜SDK目前支持Android和iOS两种平台，其中Android平台已支持52个渠道，iOS平台已支持3个渠道。
 西瓜不仅仅实现了主流渠道的覆盖，而且更多的渠道也在持续加入中。  
 为了方便游戏可以更容易的了解各个渠道的不同需求，以下是对现已支持渠道的简单介绍，其中包括：
 渠道名称、渠道ID、渠道最新版本和渠道原始资料。  
@@ -1395,6 +1395,20 @@ guopan
 </td>
 </tr>
 
+<tr>
+	<td>
+安趣
+</td>
+<td>
+anqu
+</td>
+	<td>
+2.0
+</td>
+<td>
+<a target="_blank" href="http://doc.xgsdk.com/files/channels/anqu/JPAQ_SDK最新版.zip">下载链接</a>
+</td>
+</tr>
 
 </table>
 
@@ -1437,10 +1451,10 @@ guopan
 
 <tr>
 <td>
-				金山通行证
+				金山通行证(iOS)
 			</td>
 <td>
-				jinshanIOS
+				ios_jinshan
 			</td>
 <!--
 <td>
@@ -1448,7 +1462,7 @@ guopan
 			</td>
       -->
 <td>
-				v1.1.2
+				2.0.0
 			</td>
 <!--
 <td>
@@ -1463,7 +1477,7 @@ guopan
       -->
 
 <td>
-				<a href="http://doc.xgsdk.com/files/channels/iOS/kingsoft/1.1/原始材料.zip">下载链接</a>
+<a href="http://doc.xgsdk.com/files/channels/ios_jinshan/金山通行证渠道sdk.zip">下载链接</a>
 			</td>
 </tr>
 
@@ -1472,7 +1486,7 @@ guopan
 <td>
 				appStore(iOS正版渠道)
 			</td>
-<td>
+<td>ios_xgAppstore
 			</td>
 <!--
 <td>
@@ -1496,7 +1510,7 @@ guopan
 <td>
 				小米ios
 			</td>
-<td>
+<td>ios_xiaomiApple
 			</td>
 <!--
 <td>
@@ -1515,4 +1529,18 @@ guopan
 <td>
 			</td>
 </tr>
+<tr>
+<td>金山正版</td>
+<td>ios_jinshanApple</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>xoyobox</td>
+<td>ios_xoyoApple</td>
+<td></td>
+<td><a href="http://doc.xgsdk.com/files/channels/ios_xoyaobox/xoyoApple-sdk最新版.zip">下载链接</a></td>
+</tr>
+
 </table>
