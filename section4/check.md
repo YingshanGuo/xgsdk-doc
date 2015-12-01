@@ -851,29 +851,40 @@
 <td>
 				自检规范
 			</td>
+			
 
 </tr>
 
 <tr>
 <td>
-				金山通行证
+				金山通行证(iOS)
 			</td>
 <td>
-				jinshanIOS
+				ios_jinshan
 			</td>
 
 
 <td>
-				无
+				无，注：支付调用的是金山通行证接口
 			</td>
 </tr>
+<tr>
+<td>
+			 金山正版
+			</td>
+<td>ios_jinshanApple
+			</td>
 
+
+<td>无，注：支付调用的是西瓜接口
+			</td>
+</tr>
 
 <tr>
 <td>
 				appStore(iOS正版渠道)
 			</td>
-<td>无
+<td>ios_xgAppstore
 			</td>
 
 
@@ -885,7 +896,19 @@
 <td>
 				小米ios
 			</td>
+<td>ios_xiaomiApple
+			</td>
+
+
 <td>无
+			</td>
+</tr>
+
+<tr>
+<td>
+				xoyobox正版
+			</td>
+<td>ios_xoyoApple
 			</td>
 
 
