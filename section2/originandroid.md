@@ -81,9 +81,6 @@
 				<li><a href="#onVirtualCurrencyConsume">消费虚拟货币</li>
 			</ul>
 	</li>
-    <li>
-		<a href="#version">文档版本</a>
-	</li>
 </ol>
 
 
@@ -1250,15 +1247,3 @@ XGSDK.getInstance().setUserCallBack(new UserCallBack() {})；
 	</tr>
 </table>
 
-****
-
-<a id="version"></a>
-###文档版本说明
-<table>
-<tr>
-<td>SDK版本</td><td>文档版本</td> <td>DK修改内容</td> <td>文档修改内容</td> <td>修改日期</td>  
-</tr>
-<tr>
-<td>2.0.2</td><td>1.0</td> <td>初版</td> <td>初版</td> <td>2015.10.30</td>
-</tr>
-</table>
