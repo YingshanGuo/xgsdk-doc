@@ -15,6 +15,9 @@ This is the summary of my book.
     * [原生引擎](section2/origin.md)
         * [android](section2/originandroid.md)
         * [ios](section2/originios.md)
+    * [模拟接入](section2/debug.md)
+	    * [Cocos2d-x引擎](section2/debugCocos2dx.md)
+	    * [Unity3d引擎](section2/debugUnity3d.md)
     * [错误码列表](section2/error.md)
 
 * [服务端接入指南](section3/README.md)  
